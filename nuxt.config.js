@@ -21,12 +21,16 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: {
+    color: '#fff'
+  },
 
   /*
   ** Global CSS
   */
   css: [
+    '@fortawesome/fontawesome-free/css/all.css',
+    '@/assets/scss/main.scss'
   ],
 
   /*
@@ -39,6 +43,7 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    ['nuxt-buefy', { css: true, materialDesignIcons: false }]
   ],
 
   /*
