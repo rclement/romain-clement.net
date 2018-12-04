@@ -1,3 +1,5 @@
+import shrinkRay from 'shrink-ray-current'
+
 const pkg = require('./package')
 
 module.exports = {
@@ -65,6 +67,10 @@ module.exports = {
         })
       }
     }
+  },
+
+  render: {
+    compressor: shrinkRay()
   },
 
   sitemap: {
