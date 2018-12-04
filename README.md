@@ -2,6 +2,8 @@
 
 > Romain Clement - Freelance Software Engineer
 
+[![Build Status](https://travis-ci.org/rclement/romain-clement.net.svg?branch=master)](https://travis-ci.org/rclement/romain-clement.net)
+
 ## Build Setup
 
 ``` bash
