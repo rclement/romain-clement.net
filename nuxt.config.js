@@ -43,6 +43,7 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/sitemap',
     ['nuxt-buefy', { css: true, materialDesignIcons: false }]
   ],
 
@@ -64,5 +65,17 @@ module.exports = {
         })
       }
     }
+  },
+
+  sitemap: {
+    path: '/sitemap.xml',
+    hostname: 'https://' + pkg.name,
+    cacheTime: 1000 * 60 * 15,
+    gzip: true,
+    generate: true,
+    exclude: [],
+    routes: [
+      '/'
+    ]
   }
 }
