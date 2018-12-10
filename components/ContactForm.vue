@@ -1,5 +1,6 @@
 <template>
   <form
+    ref="form"
     :action="url"
     class="contact-form"
     method="POST">
@@ -61,7 +62,7 @@
     <b-field>
       <button
         :disabled="isDisabled"
-        class="button is-link"
+        class="button"
         type="submit">
         Send
       </button>
@@ -112,7 +113,8 @@ export default {
       return (
         !this.form.name.value ||
         !this.form.email.value ||
-        !this.form.message.value
+        !this.form.message.value ||
+        !this.$refs.form.checkValidity()
       )
     }
   }
