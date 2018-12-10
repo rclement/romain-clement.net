@@ -35,6 +35,27 @@
               size="is-medium"/>
           </a>
         </div>
+
+        <button
+          class="button is-primary is-medium"
+          @click="isModalContactFormActive = true">
+          Let's talk!
+        </button>
+
+        <b-modal
+          :active.sync="isModalContactFormActive"
+          has-modal-card>
+          <div
+            class="modal-card has-text-left">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Let's talk!</p>
+            </header>
+
+            <section class="modal-card-body">
+              <contact-form/>
+            </section>
+          </div>
+        </b-modal>
       </div>
     </div>
 
@@ -44,15 +65,23 @@
 
 <script>
 import Logo from '~/components/Logo.vue'
+import ContactForm from '~/components/ContactForm.vue'
 
 export default {
   components: {
-    Logo
+    Logo,
+    ContactForm
+  },
+
+  data() {
+    return {
+      isModalContactFormActive: false
+    }
   }
 }
 </script>
 
-<style>
+<style scoped>
 .title {
   font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;

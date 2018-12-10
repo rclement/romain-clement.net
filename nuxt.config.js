@@ -6,6 +6,13 @@ module.exports = {
   mode: 'universal',
 
   /*
+  ** Environment variable properties
+  */
+  env: {
+    contactEmail: 'contact@romain-clement.net'
+  },
+
+  /*
   ** Headers of the page
   */
   head: {
