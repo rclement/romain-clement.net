@@ -13,6 +13,13 @@ module.exports = {
   },
 
   /*
+  ** Router configuration
+  */
+  router: {
+    linkExactActiveClass: 'is-active'
+  },
+
+  /*
   ** Headers of the page
   */
   head: {

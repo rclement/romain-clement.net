@@ -1,49 +1,27 @@
 <template>
   <div>
+    <header class="section">
+      <div class="container">
+        <navbar/>
+      </div>
+    </header>
+
     <nuxt/>
 
-    <footer class="footer has-background-dark has-text-light">
-      <div class="content has-text-centered">
-        <p>
-          Copyright © 2018 - present, Romain Clement
-        </p>
-        <p>
-          Romain Clement
-          <br>
-          80 cours Liberation Gal de Gaulle
-          <br>
-          38100 Grenoble
-          <br>
-          France
-          <br>
-          SIRET: 84126565500016
-        </p>
-      </div>
+    <footer class="footer">
+      <credits/>
     </footer>
   </div>
 </template>
 
-<style>
-html {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
+<script>
+import Navbar from '@/components/Navbar.vue'
+import Credits from '@/components/Credits.vue'
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
+export default {
+  components: {
+    Navbar,
+    Credits
+  }
 }
-
-.footer {
-  padding: 3rem 1.5rem 3rem;
-}
-</style>
+</script>
