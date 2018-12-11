@@ -62,15 +62,17 @@
           <div class="tile is-parent">
             <article class="tile is-child box has-text-centered">
               <p class="title">Full-stack development</p>
-              <p class="subtitle">Have a web-oriented project?</p>
+              <p class="subtitle">Fancy a new online service?</p>
 
               <div class="content">
                 <p>
-                  I develop software for
-                  <strong>web-services (back-end, API)</strong>
-                  and
-                  <strong>web-apps (front-end)</strong>
-                  , and implement a strategy for
+                  I can help on choosing and orchestrating the proper technological stack, developing software for
+                  <strong>web-services</strong>
+                  (back-end, API),
+                  <strong>web-apps</strong>
+                  (front-end),
+                  <strong>mobile apps</strong>,
+                  and implementing a strategy for
                   <strong>continuous integration and deployment</strong>.
                 </p>
               </div>
@@ -81,6 +83,7 @@
                 <span class="tag">Flask</span>
                 <span class="tag">Node.js</span>
                 <span class="tag">Vue.js</span>
+                <span class="tag">React-Native</span>
                 <span class="tag">PostgreSQL</span>
                 <span class="tag">MongoDB</span>
                 <span class="tag">Redis</span>
@@ -94,11 +97,15 @@
           <div class="tile is-parent">
             <article class="tile is-child box has-text-centered">
               <p class="title">Audio software</p>
-              <p class="subtitle">Have an audio and/or music related project?</p>
+              <p class="subtitle">An audio and/or music related project in mind?</p>
 
               <div class="content">
                 <p>
-                  I engineer multi-platform (MacOS, Windows, Linux) and performant software for
+                  I can help making those waves happen by engineering
+                  <strong>multi-platform</strong>
+                  (MacOS, Windows, Linux) and
+                  <strong>performant</strong>
+                  software for
                   <strong>desktop applications</strong>
                   and
                   <strong>audio plug-ins</strong>.
