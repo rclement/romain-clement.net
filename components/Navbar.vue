@@ -75,6 +75,17 @@
             icon="viadeo"
             size="is-small"/>
         </a>
+
+        <a
+          class="navbar-item"
+          href="https://www.malt.fr/profile/romainclement/"
+          alt="Malt"
+          target="_blank">
+          <b-icon
+            pack="fab"
+            icon="connectdevelop"
+            size="is-small"/>
+        </a>
       </div>
     </div>
 
