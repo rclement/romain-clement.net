@@ -23,7 +23,13 @@
                 <p>
                   I'm
                   <strong>CTO</strong>
-                  at Sylha and a
+                  at
+                  <a
+                    class="has-text-dark"
+                    href="https://sylha.io">
+                    Sylha
+                  </a>
+                  and a
                   <strong>freelance software engineer</strong>
                   building
                   <strong>web</strong>
