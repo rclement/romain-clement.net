@@ -27,7 +27,11 @@
                   I'm
                   <strong>CTO</strong>
                   at
-                  <a href="https://sylha.io">Sylha</a>
+                  <a
+                    href="https://sylha.io"
+                    target="_blank">
+                    Sylha
+                  </a>
                   and a
                   <strong>freelance software engineer</strong>
                   building
@@ -48,7 +52,11 @@
 
                 <p>
                   I am currently accepting new
-                  <a href="https://www.malt.fr/profile/romainclement/">freelancing contracts</a>.
+                  <a
+                    href="https://www.malt.fr/profile/romainclement/"
+                    target="_blank">
+                    freelancing contracts
+                  </a>.
                 </p>
 
                 <button

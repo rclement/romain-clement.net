@@ -93,7 +93,6 @@
         <a
           class="navbar-item"
           href="https://www.malt.fr/profile/romainclement/"
-          alt="Malt"
           target="_blank"
           @click="closeNavbarContent">
           <b-icon

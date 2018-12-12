@@ -38,7 +38,6 @@
         <a
           class="has-text-dark"
           href="https://www.malt.fr/profile/romainclement/"
-          alt="Malt"
           target="_blank">
           <b-icon
             class="link-icon"
