@@ -10,7 +10,7 @@
       </header>
 
       <section class="modal-card-body">
-        <contact-form/>
+        <contact-form :subject="subject"/>
       </section>
     </div>
   </b-modal>
@@ -28,6 +28,10 @@ export default {
     active: {
       type: Boolean,
       default: false
+    },
+    subject: {
+      type: String,
+      default: ''
     }
   }
 }

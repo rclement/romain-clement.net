@@ -52,7 +52,7 @@
 
                 <button
                   class="button is-outlined"
-                  @click="isModalContactFormActive = true">
+                  @click="isModalContactFormActive = true; modalContactSubject= 'New opportunity'">
                   Let's talk!
                 </button>
               </div>
@@ -97,6 +97,12 @@
                 <span class="tag">Mangopay</span>
                 <span class="tag">Docker</span>
               </div>
+
+              <button
+                class="button is-outlined"
+                @click="isModalContactFormActive = true; modalContactSubject= 'New project - Fullstack development'">
+                New project
+              </button>
             </article>
           </div>
 
@@ -127,13 +133,21 @@
                 <span class="tag">AU</span>
                 <span class="tag">AAX</span>
               </div>
+
+              <button
+                class="button is-outlined"
+                @click="isModalContactFormActive = true; modalContactSubject= 'New project - Audio software'">
+                New project
+              </button>
             </article>
           </div>
         </div>
       </div>
     </section>
 
-    <modal-contact-form :active.sync="isModalContactFormActive"/>
+    <modal-contact-form
+      :active.sync="isModalContactFormActive"
+      :subject="modalContactSubject"/>
   </div>
 </template>
 
@@ -149,7 +163,8 @@ export default {
 
   data() {
     return {
-      isModalContactFormActive: false
+      isModalContactFormActive: false,
+      modalContactSubject: ''
     }
   }
 }

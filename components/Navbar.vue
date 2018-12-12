@@ -89,7 +89,9 @@
       </div>
     </div>
 
-    <modal-contact-form :active.sync="isModalContactFormActive"/>
+    <modal-contact-form
+      :active.sync="isModalContactFormActive"
+      subject="Contact"/>
   </nav>
 </template>
 

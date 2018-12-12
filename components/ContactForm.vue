@@ -6,13 +6,6 @@
     method="POST">
     <b-field style="display:none">
       <b-input
-        v-model="form.subject.value"
-        :name="form.subject.name"
-        type="hidden"/>
-    </b-field>
-
-    <b-field style="display:none">
-      <b-input
         v-model="form.language.value"
         :name="form.language.name"
         type="hidden"/>
@@ -50,6 +43,15 @@
         required/>
     </b-field>
 
+    <b-field label="Subject">
+      <b-input
+        v-model="form.subject.value"
+        :name="form.subject.name"
+        type="text"
+        maxlength="100"
+        required/>
+    </b-field>
+
     <b-field label="Message">
       <b-input
         v-model="form.message.value"
@@ -72,14 +74,17 @@
 
 <script>
 export default {
+  props: {
+    subject: {
+      type: String,
+      default: ''
+    }
+  },
+
   data() {
     return {
       url: `https://formspree.io/${process.env.contactEmail}`,
       form: {
-        subject: {
-          name: '_subject',
-          value: 'Contact'
-        },
         language: {
           name: '_language',
           value: 'fr'
@@ -100,6 +105,10 @@ export default {
           name: '_replyto',
           value: ''
         },
+        subject: {
+          name: '_subject',
+          value: this.subject
+        },
         message: {
           name: 'message',
           value: ''
@@ -113,6 +122,7 @@ export default {
       return (
         !this.form.name.value ||
         !this.form.email.value ||
+        !this.form.subject.value ||
         !this.form.message.value ||
         !this.$refs.form.checkValidity()
       )
