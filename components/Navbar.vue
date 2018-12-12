@@ -34,11 +34,17 @@
           Home
         </nuxt-link>
 
-        <!-- <nuxt-link
+        <nuxt-link
+          class="navbar-item"
+          to="/freelance">
+          Freelance
+        </nuxt-link>
+
+        <nuxt-link
           class="navbar-item"
           to="/software">
           Software
-        </nuxt-link> -->
+        </nuxt-link>
 
         <a
           class="navbar-item"

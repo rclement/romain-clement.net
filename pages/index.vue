@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <section class="hero">
+    <section class="hero is-medium">
       <div class="hero-body">
         <div class="container">
           <div class="columns is-vcentered">
@@ -24,11 +24,7 @@
                   I'm
                   <strong>CTO</strong>
                   at
-                  <a
-                    class="has-text-dark"
-                    href="https://sylha.io">
-                    Sylha
-                  </a>
+                  <a href="https://sylha.io">Sylha</a>
                   and a
                   <strong>freelance software engineer</strong>
                   building
@@ -47,7 +43,8 @@
                 </p>
 
                 <p>
-                  I am currently accepting new contracts.
+                  I am currently accepting new
+                  <a href="https://www.malt.fr/profile/romainclement/">freelancing contracts</a>.
                 </p>
 
                 <button
@@ -62,85 +59,28 @@
       </div>
     </section>
 
+    <separator/>
+
     <section class="section">
-      <div class="container">
-        <div class="tile is-ancestor">
-          <div class="tile is-parent">
-            <article class="tile is-child box has-text-centered">
-              <p class="title">Full-stack development</p>
-              <p class="subtitle">Fancy a new online service?</p>
+      <div class="container has-text-centered">
+        <p class="title">Companies I've worked with</p>
 
-              <div class="content">
-                <p>
-                  I can help on choosing and orchestrating the proper technological stack, developing software for
-                  <strong>web-services</strong>
-                  (back-end, API),
-                  <strong>web-apps</strong>
-                  (front-end),
-                  <strong>mobile apps</strong>,
-                  and implementing a strategy for
-                  <strong>continuous integration and deployment</strong>.
-                </p>
-              </div>
+        <div class="clients">
+          <img
+            class="client image"
+            src="@/assets/img/logo-parrot.png">
 
-              <div
-                class="tags are-centered">
-                <span class="tag">Python</span>
-                <span class="tag">Flask</span>
-                <span class="tag">Node.js</span>
-                <span class="tag">Vue.js</span>
-                <span class="tag">React-Native</span>
-                <span class="tag">PostgreSQL</span>
-                <span class="tag">MongoDB</span>
-                <span class="tag">Redis</span>
-                <span class="tag">Stripe</span>
-                <span class="tag">Mangopay</span>
-                <span class="tag">Docker</span>
-              </div>
+          <img
+            class="client image"
+            src="@/assets/img/logo-eiosis.png">
 
-              <button
-                class="button is-outlined"
-                @click="isModalContactFormActive = true; modalContactSubject= 'New project - Fullstack development'">
-                New project
-              </button>
-            </article>
-          </div>
+          <img
+            class="client image"
+            src="@/assets/img/logo-slatedigital.png">
 
-          <div class="tile is-parent">
-            <article class="tile is-child box has-text-centered">
-              <p class="title">Audio software</p>
-              <p class="subtitle">An audio and/or music related project in mind?</p>
-
-              <div class="content">
-                <p>
-                  I can help making those waves happen by engineering
-                  <strong>multi-platform</strong>
-                  (MacOS, Windows, Linux) and
-                  <strong>performant</strong>
-                  software for
-                  <strong>desktop applications</strong>
-                  and
-                  <strong>audio plug-ins</strong>.
-                </p>
-              </div>
-
-              <div class="tags are-centered">
-                <span class="tag">C++</span>
-                <span class="tag">JUCE</span>
-                <span class="tag">OpenGL</span>
-                <span class="tag">CMake</span>
-                <span class="tag">VST</span>
-                <span class="tag">AU</span>
-                <span class="tag">AAX</span>
-              </div>
-
-              <button
-                class="button is-outlined"
-                @click="isModalContactFormActive = true; modalContactSubject= 'New project - Audio software'">
-                New project
-              </button>
-            </article>
-          </div>
+          <img
+            class="client image"
+            src="@/assets/img/logo-sylha.png">
         </div>
       </div>
     </section>
@@ -154,11 +94,13 @@
 <script>
 import Logo from '~/components/Logo.vue'
 import ModalContactForm from '~/components/ModalContactForm.vue'
+import Separator from '~/components/Separator.vue'
 
 export default {
   components: {
     Logo,
-    ModalContactForm
+    ModalContactForm,
+    Separator
   },
 
   data() {
@@ -181,8 +123,26 @@ export default {
   word-spacing: 5px;
 }
 
-.tags.are-centered {
+.clients {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+
+.client {
+  -webkit-box-flex: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin: 2rem;
+  height: 50px;
 }
 </style>
