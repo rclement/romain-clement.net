@@ -88,6 +88,10 @@ module.exports = {
     compressor: shrinkRay()
   },
 
+  generate: {
+    fallback: true
+  },
+
   sitemap: {
     path: '/sitemap.xml',
     hostname: 'https://' + pkg.name,
