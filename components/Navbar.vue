@@ -16,7 +16,7 @@
         aria-label="menu"
         aria-expanded="false"
         data-target="navbarContent"
-        @click="navbarContentOpen = !navbarContentOpen">
+        @click="toggleNavbarContent">
         <span aria-hidden="true"/>
         <span aria-hidden="true"/>
         <span aria-hidden="true"/>
@@ -30,32 +30,36 @@
       <div class="navbar-end">
         <nuxt-link
           class="navbar-item"
-          to="/">
+          to="/"
+          @click.native="closeNavbarContent">
           Home
         </nuxt-link>
 
         <nuxt-link
           class="navbar-item"
-          to="/freelance">
+          to="/freelance"
+          @click.native="closeNavbarContent">
           Freelance
         </nuxt-link>
 
         <nuxt-link
           class="navbar-item"
-          to="/software">
+          to="/software"
+          @click.native="closeNavbarContent">
           Software
         </nuxt-link>
 
         <a
           class="navbar-item"
-          @click="isModalContactFormActive = true">
+          @click="openModalContactForm">
           Contact
         </a>
 
         <a
           class="navbar-item"
           href="https://github.com/rclement/"
-          target="_blank">
+          target="_blank"
+          @click="closeNavbarContent">
           <b-icon
             pack="fab"
             icon="github"
@@ -65,7 +69,8 @@
         <a
           class="navbar-item"
           href="https://www.linkedin.com/in/romainclement/"
-          target="_blank">
+          target="_blank"
+          @click="closeNavbarContent">
           <b-icon
             pack="fab"
             icon="linkedin"
@@ -75,7 +80,8 @@
         <a
           class="navbar-item"
           href="https://www.viadeo.com/p/002qw6xj8rnwk5v/"
-          target="_blank">
+          target="_blank"
+          @click="closeNavbarContent">
           <b-icon
             pack="fab"
             icon="viadeo"
@@ -86,7 +92,8 @@
           class="navbar-item"
           href="https://www.malt.fr/profile/romainclement/"
           alt="Malt"
-          target="_blank">
+          target="_blank"
+          @click="closeNavbarContent">
           <b-icon
             pack="fab"
             icon="connectdevelop"
@@ -115,6 +122,21 @@ export default {
     return {
       navbarContentOpen: false,
       isModalContactFormActive: false
+    }
+  },
+
+  methods: {
+    openModalContactForm() {
+      this.isModalContactFormActive = true
+      this.navbarContentOpen = false
+    },
+
+    toggleNavbarContent() {
+      this.navbarContentOpen = !this.navbarContentOpen
+    },
+
+    closeNavbarContent() {
+      this.navbarContentOpen = false
     }
   }
 }
