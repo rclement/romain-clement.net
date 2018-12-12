@@ -1,5 +1,8 @@
 @import "~bulma/sass/utilities/_all";
 
+$primary: #3891AC;
+$primary-invert: findColorInvert($primary);
+
 $family-primary: "Quicksand", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 
 $footer-padding: 3rem 1.5rem 3rem;

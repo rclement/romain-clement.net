@@ -4,10 +4,12 @@
     role="navigation"
     aria-label="main navigation">
     <div class="navbar-brand">
-      <!-- <logo
+      <div
         class="navbar-item"
-        style="height: 50px;"/>
-      <strong class="navbar-item"/> -->
+        @click.native="closeNavbarContent">
+        <logo/>
+        <strong class="navbar-item"/>
+      </div>
 
       <a
         :class="{ 'is-active': navbarContentOpen }"
@@ -141,3 +143,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.navbar-item img {
+  max-height: 2.5rem;
+}
+</style>

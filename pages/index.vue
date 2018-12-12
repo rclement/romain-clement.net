@@ -5,7 +5,10 @@
         <div class="container">
           <div class="columns is-vcentered">
             <div class="column is-half has-text-centered">
-              <logo/>
+              <figure
+                class="image container is-256x256">
+                <img src="@/assets/img/mountains.png">
+              </figure>
 
               <h1 class="title is-hero">
                 Romain Clement
@@ -30,7 +33,8 @@
                   building
                   <strong>web</strong>
                   and
-                  <strong>audio</strong> applications.
+                  <strong>audio</strong>
+                  applications, based in the French Alps.
                 </p>
 
                 <p>
@@ -92,13 +96,11 @@
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
 import ModalContactForm from '~/components/ModalContactForm.vue'
 import Separator from '~/components/Separator.vue'
 
 export default {
   components: {
-    Logo,
     ModalContactForm,
     Separator
   },
@@ -144,5 +146,10 @@ export default {
   flex-shrink: 0;
   margin: 2rem;
   height: 50px;
+}
+
+.image.is-256x256 {
+  height: 256px;
+  width: 256px;
 }
 </style>
