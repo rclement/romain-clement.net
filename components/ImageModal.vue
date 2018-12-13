@@ -4,6 +4,8 @@
       @click="isImageModalActive = true">
       <img
         :src="src"
+        :title="title"
+        :alt="title"
         :style="`height: ${height};`"
         class="image">
     </a>
@@ -20,6 +22,10 @@
 export default {
   props: {
     src: {
+      type: String,
+      default: ''
+    },
+    title: {
       type: String,
       default: ''
     },
