@@ -55,7 +55,7 @@ export default {
     services: [
       {
         title: 'Développement full-stack',
-        subtitle: 'Envie d\'un nouveau service en ligne?',
+        subtitle: 'Envie d\'un nouveau service en ligne ?',
         content: `
           <p>
             Je peux apporter mon aide dans le choix et l\'orchestration de la stack technologique la plus adaptée, en développant des
@@ -73,7 +73,7 @@ export default {
       },
       {
         title: 'Audio numérique',
-        subtitle: 'Un projet lié à l\'audio et/ou la musique en tête?',
+        subtitle: 'Un projet lié à l\'audio et/ou la musique en tête ?',
         content: `
           <p>
             Je peux apporter mon expertise dans la manifestation de ces ondes sonores en concevant des
