@@ -76,57 +76,17 @@
         </div>
 
         <a
+          v-for="link in $t('links.social')"
+          :key="link.name"
+          :href="link.url"
+          :title="link.name"
+          :alt="link.name"
           class="navbar-item"
-          href="https://github.com/rclement/"
           target="_blank"
           @click="closeNavbarContent">
           <b-icon
-            pack="fab"
-            icon="github"
-            size="is-small"/>
-        </a>
-
-        <a
-          class="navbar-item"
-          href="https://www.linkedin.com/in/romainclement/"
-          target="_blank"
-          @click="closeNavbarContent">
-          <b-icon
-            pack="fab"
-            icon="linkedin"
-            size="is-small"/>
-        </a>
-
-        <a
-          class="navbar-item"
-          href="https://www.viadeo.com/p/002qw6xj8rnwk5v/"
-          target="_blank"
-          @click="closeNavbarContent">
-          <b-icon
-            pack="fab"
-            icon="viadeo"
-            size="is-small"/>
-        </a>
-
-        <a
-          class="navbar-item"
-          href="https://www.malt.fr/profile/romainclement/"
-          target="_blank"
-          @click="closeNavbarContent">
-          <b-icon
-            pack="fab"
-            icon="connectdevelop"
-            size="is-small"/>
-        </a>
-
-        <a
-          class="navbar-item"
-          href="https://keybase.io/rmnclmnt/"
-          target="_blank"
-          @click="closeNavbarContent">
-          <b-icon
-            pack="fab"
-            icon="keybase"
+            :pack="link.icon.pack"
+            :icon="link.icon.name"
             size="is-small"/>
         </a>
       </div>

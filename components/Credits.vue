@@ -3,86 +3,44 @@
     <div class="content has-text-centered">
       <div class="links">
         <a
+          v-for="link in [...$t('links.social'), ...$t('links.other')]"
+          :key="link.name"
+          :href="link.url"
+          :title="link.name"
+          :alt="link.name"
           class="has-text-dark"
-          href="https://github.com/rclement/"
           target="_blank">
           <b-icon
+            :pack="link.icon.pack"
+            :icon="link.icon.name"
             class="link-icon"
-            pack="fab"
-            icon="github"
-            size="is-small"/>
-        </a>
-
-        <a
-          class="has-text-dark"
-          href="https://www.linkedin.com/in/romainclement/"
-          target="_blank">
-          <b-icon
-            class="link-icon"
-            pack="fab"
-            icon="linkedin"
-            size="is-small"/>
-        </a>
-
-        <a
-          class="has-text-dark"
-          href="https://www.viadeo.com/p/002qw6xj8rnwk5v/"
-          target="_blank">
-          <b-icon
-            class="link-icon"
-            pack="fab"
-            icon="viadeo"
-            size="is-small"/>
-        </a>
-
-        <a
-          class="has-text-dark"
-          href="https://www.malt.fr/profile/romainclement/"
-          target="_blank">
-          <b-icon
-            class="link-icon"
-            pack="fab"
-            icon="connectdevelop"
-            size="is-small"/>
-        </a>
-
-        <a
-          class="has-text-dark"
-          href="https://keybase.io/rmnclmnt/"
-          target="_blank">
-          <b-icon
-            class="link-icon"
-            pack="fab"
-            icon="keybase"
-            size="is-small"/>
-        </a>
-
-        <a
-          class="has-text-dark"
-          href="/gpg.asc"
-          target="_blank">
-          <b-icon
-            class="link-icon"
-            pack="fas"
-            icon="key"
             size="is-small"/>
         </a>
       </div>
 
       <p>
-        Copyright © 2018 - present, Romain Clement
+        {{ $t('credits.copyright.text') }} © {{ $t('credits.copyright.start') }} - {{ $t('credits.copyright.end') }}, {{ $t('credits.copyright.author') }}
       </p>
 
       <p>
-        Romain Clement
-        <br>
-        80 cours Liberation - Gal de Gaulle
-        <br>
-        38100 Grenoble
-        <br>
-        France
-        <br>
-        SIRET: 84126565500016
+        <a
+          :href="$t('credits.company.link.url')"
+          :title="$t('credits.company.link.name')"
+          :alt="$t('credits.company.link.name')"
+          class="has-text-dark"
+          target="_blank">
+          {{ $t('credits.company.name') }}
+          <br>
+          {{ $t('credits.company.address') }}
+          <br>
+          {{ $t('credits.company.kind') }}
+          <span
+            v-for="registration in $t('credits.company.registrations')"
+            :key="registration.type">
+            <br>
+            {{ registration.type }}: {{ registration.value }}
+          </span>
+        </a>
       </p>
     </div>
   </div>

@@ -1,4 +1,7 @@
+import common from './common'
+
 export default {
+  ...common,
   lang: 'English',
   navbar: {
     home: 'Home',
