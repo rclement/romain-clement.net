@@ -45,6 +45,28 @@
             icon="connectdevelop"
             size="is-small"/>
         </a>
+
+        <a
+          class="has-text-dark"
+          href="https://keybase.io/rmnclmnt/"
+          target="_blank">
+          <b-icon
+            class="link-icon"
+            pack="fab"
+            icon="keybase"
+            size="is-small"/>
+        </a>
+
+        <a
+          class="has-text-dark"
+          href="/gpg.asc"
+          target="_blank">
+          <b-icon
+            class="link-icon"
+            pack="fas"
+            icon="key"
+            size="is-small"/>
+        </a>
       </div>
 
       <p>

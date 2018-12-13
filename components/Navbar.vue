@@ -118,6 +118,17 @@
             icon="connectdevelop"
             size="is-small"/>
         </a>
+
+        <a
+          class="navbar-item"
+          href="https://keybase.io/rmnclmnt/"
+          target="_blank"
+          @click="closeNavbarContent">
+          <b-icon
+            pack="fab"
+            icon="keybase"
+            size="is-small"/>
+        </a>
       </div>
     </div>
 
