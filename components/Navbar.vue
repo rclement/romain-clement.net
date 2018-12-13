@@ -4,12 +4,13 @@
     role="navigation"
     aria-label="main navigation">
     <div class="navbar-brand">
-      <div
+      <nuxt-link
+        :to="localePath('index')"
         class="navbar-item"
         @click.native="closeNavbarContent">
         <logo/>
-        <strong class="navbar-item"/>
-      </div>
+        <!-- <strong class="navbar-item"/> -->
+      </nuxt-link>
 
       <a
         :class="{ 'is-active': navbarContentOpen }"
@@ -31,31 +32,48 @@
       class="navbar-menu">
       <div class="navbar-end">
         <nuxt-link
+          :to="localePath('index')"
           class="navbar-item"
-          to="/"
           @click.native="closeNavbarContent">
-          Home
+          {{ $t('navbar.home') }}
         </nuxt-link>
 
         <nuxt-link
+          :to="localePath('freelance')"
           class="navbar-item"
-          to="/freelance"
           @click.native="closeNavbarContent">
-          Freelance
+          {{ $t('navbar.freelance') }}
         </nuxt-link>
 
         <nuxt-link
+          :to="localePath('software')"
           class="navbar-item"
-          to="/software"
           @click.native="closeNavbarContent">
-          Software
+          {{ $t('navbar.software') }}
         </nuxt-link>
 
         <a
           class="navbar-item"
           @click="openModalContactForm">
-          Contact
+          {{ $t('navbar.contact') }}
         </a>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            {{ $t('navbar.language') }}
+          </a>
+
+          <div class="navbar-dropdown">
+            <nuxt-link
+              v-for="locale in $i18n.locales"
+              :key="locale.code"
+              :to="switchLocalePath(locale.code)"
+              class="navbar-item"
+              @click.native="closeNavbarContent">
+              {{ locale.name }}
+            </nuxt-link>
+          </div>
+        </div>
 
         <a
           class="navbar-item"
@@ -105,7 +123,7 @@
 
     <modal-contact-form
       :active.sync="isModalContactFormActive"
-      subject="Contact"/>
+      :subject="$t('navbar.contact')"/>
   </nav>
 </template>
 

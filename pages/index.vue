@@ -11,60 +11,24 @@
               </figure>
 
               <h1 class="title is-hero">
-                Romain Clement
+                {{ $t('home.title') }}
               </h1>
 
               <h2 class="subtitle is-hero">
-                Freelance Software Engineer
+                {{ $t('home.subtitle') }}
               </h2>
             </div>
 
             <div class="column is-half">
-              <div class="content">
-                <p>Hi, I'm Romain Clement</p>
+              <div
+                class="content"
+                v-html="$t('home.presentation')"/>
 
-                <p>
-                  I'm
-                  <strong>CTO</strong>
-                  at
-                  <a
-                    href="https://sylha.io"
-                    target="_blank">
-                    Sylha
-                  </a>
-                  and a
-                  <strong>freelance software engineer</strong>
-                  building
-                  <strong>web</strong>
-                  and
-                  <strong>audio</strong>
-                  applications, based in the French Alps.
-                </p>
-
-                <p>
-                  I strive for
-                  <strong>code quality</strong>
-                  and
-                  <strong>continuous</strong>
-                  processes, while being an
-                  <strong>open-source enthusiast</strong>.
-                </p>
-
-                <p>
-                  I am currently accepting new
-                  <a
-                    href="https://www.malt.fr/profile/romainclement/"
-                    target="_blank">
-                    freelancing contracts
-                  </a>.
-                </p>
-
-                <button
-                  class="button is-outlined"
-                  @click="isModalContactFormActive = true; modalContactSubject= 'New opportunity'">
-                  Let's talk!
-                </button>
-              </div>
+              <button
+                class="button is-outlined"
+                @click="openModalContactForm($t('home.newOpportunity'))">
+                {{ $t('home.letsTalk') }}
+              </button>
             </div>
           </div>
         </div>
@@ -75,7 +39,7 @@
 
     <section class="section">
       <div class="container has-text-centered">
-        <p class="title">Companies I've worked with</p>
+        <p class="title">{{ $t('home.companies') }}</p>
 
         <div class="clients">
           <img
@@ -117,6 +81,13 @@ export default {
     return {
       isModalContactFormActive: false,
       modalContactSubject: ''
+    }
+  },
+
+  methods: {
+    openModalContactForm(subject) {
+      this.modalContactSubject = subject
+      this.isModalContactFormActive = true
     }
   }
 }

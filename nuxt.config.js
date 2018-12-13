@@ -1,6 +1,10 @@
 import shrinkRay from 'shrink-ray-current'
+import localeEn from './assets/locales/en'
+import localeFr from './assets/locales/fr'
 
 const pkg = require('./package')
+const production = process.env.NODE_ENV === 'production'
+const baseUrl = production ? `https://${pkg.name}` : ''
 
 module.exports = {
   mode: 'universal',
@@ -60,8 +64,33 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    ['nuxt-i18n', {
+      baseUrl: baseUrl,
+      locales: [
+        {
+          name: 'English',
+          code: 'en',
+          iso: 'en-US'
+        },
+        {
+          name: 'Français',
+          code: 'fr',
+          iso: 'fr-FR'
+        }
+      ],
+      defaultLocale: 'en',
+      vueI18n: {
+        fallbackLocale: 'en',
+        messages: {
+          en: localeEn,
+          fr: localeFr
+        }
+      }
+    }],
+    ['nuxt-buefy', {
+      css: true, materialDesignIcons: false
+    }],
     '@nuxtjs/sitemap',
-    ['nuxt-buefy', { css: true, materialDesignIcons: false }]
   ],
 
   /*
@@ -94,7 +123,7 @@ module.exports = {
 
   sitemap: {
     path: '/sitemap.xml',
-    hostname: 'https://' + pkg.name,
+    hostname: baseUrl,
     cacheTime: 1000 * 60 * 15,
     gzip: true,
     generate: true,
