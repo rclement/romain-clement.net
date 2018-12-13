@@ -72,7 +72,7 @@ export default {
     other: [
       {
         name: 'GPG',
-        url: '/gpg.key',
+        url: '/gpg.asc',
         icon: {
           pack: 'fas',
           name: 'key'
