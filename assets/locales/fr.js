@@ -4,6 +4,7 @@ export default {
   ...common,
   lang: 'Français',
   title: 'Romain Clement',
+  keywords: 'romain, clement, independant, logiciel, ingenieur, grenoble, developpement, web, audio, plugins, python, flask, nodejs, nuxtjs, vuejs, c++, juce',
   navbar: {
     home: 'Accueil',
     freelance: 'Freelance',
