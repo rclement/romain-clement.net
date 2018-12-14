@@ -23,7 +23,8 @@ export default {
         <strong>
           <a
             href="https://sylha.io"
-            target="_blank">
+            title="Sylha"
+            alt="Sylha">
             Sylha
           </a>
         </strong>
@@ -48,7 +49,8 @@ export default {
         <strong>
           <a
             href="https://www.malt.fr/profile/romainclement/"
-            target="_blank">
+            title="Malt"
+            alt="Malt">
             freelancing contracts
           </a>
         </strong>.
@@ -108,13 +110,15 @@ export default {
           <p>
             <a
               href="https://github.com/rclement/meeblip-controller/releases/latest"
-              target="_blank">
+              title="Meeblip Controller GitHub Releases"
+              alt="Meeblip Controller GitHub Releases">
               <img src="https://img.shields.io/github/release/rclement/meeblip-controller.svg">
             </a>
 
             <a
               href="https://github.com/rclement/meeblip-controller"
-              target="_blank">
+              title="Meeblip Controller GitHub"
+              alt="Meeblip Controller GitHub">
               <img src="https://img.shields.io/github/license/rclement/meeblip-controller.svg">
               <img src="https://img.shields.io/github/stars/rclement/meeblip-controller.svg">
             </a>
@@ -124,7 +128,8 @@ export default {
             Meeblip Controller is a real-time MIDI controller for the
             <a
               href="https://meeblip.com/products/meeblip-anode-synth"
-              target="_blank">
+              title="Meeblip Anode"
+              alt="Meeblip Anode">
               Meeblip Anode
             </a>
             synthesizer, available on MacOS, Windows and Linux as an audio plug-in (VST, VST3, AU) and a standalone app.

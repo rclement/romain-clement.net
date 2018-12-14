@@ -8,8 +8,7 @@
           :href="link.url"
           :title="link.name"
           :alt="link.name"
-          class="has-text-dark"
-          target="_blank">
+          class="has-text-dark">
           <b-icon
             :pack="link.icon.pack"
             :icon="link.icon.name"
@@ -27,8 +26,7 @@
           :href="$t('credits.company.link.url')"
           :title="$t('credits.company.link.name')"
           :alt="$t('credits.company.link.name')"
-          class="has-text-dark"
-          target="_blank">
+          class="has-text-dark">
           {{ $t('credits.company.name') }}
           <br>
           {{ $t('credits.company.address') }}

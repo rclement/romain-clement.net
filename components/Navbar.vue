@@ -82,7 +82,6 @@
           :title="link.name"
           :alt="link.name"
           class="navbar-item"
-          target="_blank"
           @click="closeNavbarContent">
           <b-icon
             :pack="link.icon.pack"

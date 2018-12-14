@@ -23,7 +23,8 @@ export default {
         <strong>
           <a
             href="https://sylha.io"
-            target="_blank">
+            title="Sylha"
+            alt="Sylha">
             Sylha
           </a>
         </strong>
@@ -48,7 +49,8 @@ export default {
         <strong>
           <a
             href="https://www.malt.fr/profile/romainclement/"
-            target="_blank">
+            title="Malt"
+            alt="Malt">
             missions en freelance
           </a>
         </strong>.
@@ -109,13 +111,15 @@ export default {
           <p>
             <a
               href="https://github.com/rclement/meeblip-controller/releases/latest"
-              target="_blank">
+              title="Meeblip Controller GitHub Releases"
+              alt="Meeblip Controller GitHub Releases">
               <img src="https://img.shields.io/github/release/rclement/meeblip-controller.svg">
             </a>
 
             <a
               href="https://github.com/rclement/meeblip-controller"
-              target="_blank">
+              title="Meeblip Controller GitHub"
+              alt="Meeblip Controller GitHub">
               <img src="https://img.shields.io/github/license/rclement/meeblip-controller.svg">
               <img src="https://img.shields.io/github/stars/rclement/meeblip-controller.svg">
             </a>
@@ -125,7 +129,8 @@ export default {
             Meeblip Contoller est un contrôleur MIDI temps-réel pour le synthétiseur
             <a
               href="https://meeblip.com/products/meeblip-anode-synth"
-              target="_blank">
+              title="Meeblip Anode"
+              alt="Meeblip Anode">
               Meeblip Anode
             </a>,
             disponible sur MacOS, Windows et Linux sous la forme d'un plug-in audio (VST, VST3, AU) et d'une application standalone.
