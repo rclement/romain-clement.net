@@ -90,7 +90,7 @@ export default {
 
   head() {
     return {
-      title: `${this.$t('title')} | ${this.$t('home.title')}`,
+      title: this.$t('home.title'),
       meta: [
         {
           hid: 'description',

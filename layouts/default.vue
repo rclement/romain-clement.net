@@ -26,14 +26,9 @@ export default {
 
   head() {
     return {
-      title: this.$t('title'),
+      titleTemplate: `${this.$t('title')} | %s`,
       meta: [
         { charset: 'utf-8' },
-        {
-          hid: 'description',
-          name: 'description',
-          content: this.$t('home.title')
-        },
         {
           hid: 'keywords',
           name: 'keywords',

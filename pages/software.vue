@@ -47,7 +47,7 @@ export default {
 
   head() {
     return {
-      title: `${this.$t('title')} | ${this.$t('software.title')}`,
+      title: `${this.$t('software.title')}`,
       meta: [
         {
           hid: 'description',
