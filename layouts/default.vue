@@ -22,6 +22,25 @@ export default {
   components: {
     Navbar,
     Credits
+  },
+
+  head() {
+    return {
+      title: this.$t('title'),
+      meta: [
+        { charset: 'utf-8' },
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.$t('home.title')
+        },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content: this.$t('keywords')
+        }
+      ]
+    }
   }
 }
 </script>
