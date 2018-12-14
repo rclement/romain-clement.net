@@ -49,6 +49,19 @@ export default {
     ModalContactForm
   },
 
+  head() {
+    return {
+      title: `${this.$t('title')} | ${this.$t('freelance.title')}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.$t('freelance.title')
+        }
+      ]
+    }
+  },
+
   data() {
     return {
       isModalContactFormActive: false,

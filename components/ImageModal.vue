@@ -12,7 +12,10 @@
 
     <b-modal :active.sync="isImageModalActive">
       <p class="image">
-        <img :src="src">
+        <img
+          :src="src"
+          :title="title"
+          :alt="title">
       </p>
     </b-modal>
   </div>

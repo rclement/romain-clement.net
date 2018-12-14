@@ -43,6 +43,19 @@ import ImageModal from '@/components/ImageModal'
 export default {
   components: {
     ImageModal
+  },
+
+  head() {
+    return {
+      title: `${this.$t('title')} | ${this.$t('software.title')}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.$t('software.title')
+        }
+      ]
+    }
   }
 }
 </script>

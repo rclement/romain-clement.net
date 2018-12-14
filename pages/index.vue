@@ -7,15 +7,18 @@
             <div class="column is-half has-text-centered">
               <figure
                 class="image container is-256x256">
-                <img src="@/assets/img/mountains.png">
+                <img
+                  src="@/assets/img/mountains.png"
+                  title="Mountains"
+                  alt="Mountains">
               </figure>
 
               <h1 class="title is-hero">
-                {{ $t('home.title') }}
+                {{ $t('title') }}
               </h1>
 
               <h2 class="subtitle is-hero">
-                {{ $t('home.subtitle') }}
+                {{ $t('home.title') }}
               </h2>
             </div>
 
@@ -44,19 +47,27 @@
         <div class="clients">
           <img
             class="client image"
-            src="@/assets/img/logo-parrot.png">
+            src="@/assets/img/logo-parrot.png"
+            title="Parrot Logo"
+            alt="Parrot Logo">
 
           <img
             class="client image"
-            src="@/assets/img/logo-eiosis.png">
+            src="@/assets/img/logo-eiosis.png"
+            title="Eiosis Logo"
+            alt="Eiosis Logo">
 
           <img
             class="client image"
-            src="@/assets/img/logo-slatedigital.png">
+            src="@/assets/img/logo-slatedigital.png"
+            title="Slate Digital Logo"
+            alt="Slate Digital Logo">
 
           <img
             class="client image"
-            src="@/assets/img/logo-sylha.png">
+            src="@/assets/img/logo-sylha.png"
+            title="Sylha Logo"
+            alt="Sylha Logo">
         </div>
       </div>
     </section>
@@ -75,6 +86,19 @@ export default {
   components: {
     ModalContactForm,
     Separator
+  },
+
+  head() {
+    return {
+      title: `${this.$t('title')} | ${this.$t('home.title')}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.$t('home.title')
+        }
+      ]
+    }
   },
 
   data() {

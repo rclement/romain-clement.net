@@ -3,6 +3,7 @@ import common from './common'
 export default {
   ...common,
   lang: 'English',
+  title: 'Romain Clement',
   navbar: {
     home: 'Home',
     freelance: 'Freelance',
@@ -11,8 +12,7 @@ export default {
     language: 'Language'
   },
   home: {
-    title: 'Romain Clement',
-    subtitle: 'Freelance Software Engineer',
+    title: 'Freelance Software Engineer',
     presentation:`
       <p>Hi, I'm Romain Clement</p>
       <p>
@@ -54,6 +54,7 @@ export default {
     companies: 'Companies I\'ve worked with'
   },
   freelance: {
+    title: 'Freelance',
     newProject: 'New project',
     services: [
       {
@@ -93,6 +94,7 @@ export default {
     ]
   },
   software: {
+    title: 'Software',
     projects: [
       {
         title: 'Meeblip Controller',
