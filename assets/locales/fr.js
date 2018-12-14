@@ -20,11 +20,13 @@ export default {
         Je suis
         <strong>directeur technique</strong>
         chez
-        <a
-          href="https://sylha.io"
-          target="_blank">
-          Sylha
-        </a>
+        <strong>
+          <a
+            href="https://sylha.io"
+            target="_blank">
+            Sylha
+          </a>
+        </strong>
         et
         <strong>ingénieur logiciel indépendant</strong>
         développant des applications
@@ -43,11 +45,13 @@ export default {
       </p>
       <p>
         J'accèpte actuellement de nouvelles
-        <a
-          href="https://www.malt.fr/profile/romainclement/"
-          target="_blank">
-          missions en freelance
-        </a>.
+        <strong>
+          <a
+            href="https://www.malt.fr/profile/romainclement/"
+            target="_blank">
+            missions en freelance
+          </a>
+        </strong>.
       </p>
     `,
     letsTalk: 'Parlons-en !',

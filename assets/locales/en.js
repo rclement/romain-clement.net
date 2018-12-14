@@ -20,11 +20,13 @@ export default {
         I'm
         <strong>CTO</strong>
         at
-        <a
-          href="https://sylha.io"
-          target="_blank">
-          Sylha
-        </a>
+        <strong>
+          <a
+            href="https://sylha.io"
+            target="_blank">
+            Sylha
+          </a>
+        </strong>
         and a
         <strong>freelance software engineer</strong>
         building
@@ -43,11 +45,13 @@ export default {
       </p>
       <p>
         I am currently accepting new
-        <a
-          href="https://www.malt.fr/profile/romainclement/"
-          target="_blank">
-          freelancing contracts
-        </a>.
+        <strong>
+          <a
+            href="https://www.malt.fr/profile/romainclement/"
+            target="_blank">
+            freelancing contracts
+          </a>
+        </strong>.
       </p>
     `,
     letsTalk: 'Let\'s talk!',
