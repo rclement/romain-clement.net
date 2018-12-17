@@ -46,16 +46,7 @@ export default {
   },
 
   head() {
-    return {
-      title: `${this.$t('software.title')}`,
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: this.$t('software.title')
-        }
-      ]
-    }
+    return this.$pageHead('software')
   }
 }
 </script>

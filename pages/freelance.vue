@@ -50,16 +50,7 @@ export default {
   },
 
   head() {
-    return {
-      title: `${this.$t('freelance.title')}`,
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: this.$t('freelance.title')
-        }
-      ]
-    }
+    return this.$pageHead('freelance')
   },
 
   data() {

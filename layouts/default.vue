@@ -22,20 +22,6 @@ export default {
   components: {
     Navbar,
     Credits
-  },
-
-  head() {
-    return {
-      titleTemplate: `${this.$t('title')} | %s`,
-      meta: [
-        { charset: 'utf-8' },
-        {
-          hid: 'keywords',
-          name: 'keywords',
-          content: this.$t('keywords')
-        }
-      ]
-    }
   }
 }
 </script>

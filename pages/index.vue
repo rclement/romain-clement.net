@@ -89,16 +89,7 @@ export default {
   },
 
   head() {
-    return {
-      title: this.$t('home.title'),
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: this.$t('home.title')
-        }
-      ]
-    }
+    return this.$pageHead('home')
   },
 
   data() {
