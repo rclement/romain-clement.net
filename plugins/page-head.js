@@ -2,6 +2,7 @@ import Vue from 'vue'
 
 Vue.prototype.$pageHead = function(i18nPageTag) {
   const baseUrl = process.env.baseUrl
+  const canonicalUrl = `${baseUrl}${this.$route.path}`
   const commonTitle = this.$t('title')
   const commonKeywords = this.$t('keywords')
   const pageTitle = this.$t(`${i18nPageTag}.title`)
@@ -46,6 +47,9 @@ Vue.prototype.$pageHead = function(i18nPageTag) {
         property: 'og:image',
         content: logoUrl
       }
+    ],
+    link: [
+      { rel: 'canonical', href: canonicalUrl }
     ]
   }
 }
