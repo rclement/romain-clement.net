@@ -5,6 +5,8 @@ import localeFr from './assets/locales/fr'
 const pkg = require('./package')
 const production = process.env.NODE_ENV === 'production'
 const baseUrl = production ? `https://${pkg.name}` : ''
+const sitemapPath = '/sitemap.xml'
+const sitemapUrl = `${baseUrl}${sitemapPath}`
 
 module.exports = {
   mode: 'universal',
@@ -94,7 +96,8 @@ module.exports = {
     ['nuxt-robots-module', [
         {
           UserAgent: '*',
-          Allow: '/'
+          Allow: '/',
+          Sitemap: sitemapUrl
         }
       ]
     ]
@@ -129,7 +132,7 @@ module.exports = {
   },
 
   sitemap: {
-    path: '/sitemap.xml',
+    path: sitemapPath,
     hostname: baseUrl,
     cacheTime: 1000 * 60 * 15,
     gzip: true,
