@@ -7,6 +7,7 @@ Vue.prototype.$pageHead = function(i18nPageTag) {
   const pageTitle = this.$t(`${i18nPageTag}.title`)
   const pageUrl = `${baseUrl}${this.switchLocalePath(this.$i18n.locale)}`
   const title = `${commonTitle} | ${pageTitle}`
+  const logoUrl = `${baseUrl}${require('@/assets/img/logo.png')}`
 
   return {
     title: title,
@@ -20,12 +21,6 @@ Vue.prototype.$pageHead = function(i18nPageTag) {
         hid: 'keywords',
         name: 'keywords',
         content: commonKeywords
-      },
-      {
-        hid: 'og:image',
-        name: 'og:image',
-        property: 'og:image',
-        content: require('@/assets/img/logo.png')
       },
       {
         hid: 'og:title',
@@ -44,6 +39,12 @@ Vue.prototype.$pageHead = function(i18nPageTag) {
         name: 'og:url',
         property: 'og:url',
         content: pageUrl
+      },
+      {
+        hid: 'og:image',
+        name: 'og:image',
+        property: 'og:image',
+        content: logoUrl
       }
     ]
   }
