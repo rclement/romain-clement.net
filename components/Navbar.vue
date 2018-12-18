@@ -87,6 +87,7 @@
             :pack="link.icon.pack"
             :icon="link.icon.name"
             size="is-small"/>
+          <span class="is-hidden-desktop">{{ link.name }}</span>
         </a>
       </div>
     </div>
