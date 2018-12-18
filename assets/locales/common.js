@@ -53,6 +53,14 @@ export default {
         }
       },
       {
+        name: 'Xing',
+        url: 'https://www.xing.com/profile/Romain_Clement2',
+        icon: {
+          pack: 'fab',
+          name: 'xing'
+        }
+      },
+      {
         name: 'Malt',
         url: 'https://www.malt.fr/profile/romainclement',
         icon: {
