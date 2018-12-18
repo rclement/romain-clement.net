@@ -49,7 +49,10 @@ Vue.prototype.$pageHead = function(i18nPageTag) {
       }
     ],
     link: [
-      { rel: 'canonical', href: canonicalUrl }
+      {
+        rel: 'canonical',
+        href: canonicalUrl
+      }
     ]
   }
 }
