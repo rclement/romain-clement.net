@@ -4,7 +4,8 @@ export default {
   ...common,
   lang: 'English',
   title: 'Romain Clement',
-  keywords: 'romain, clement, freelance, software, engineer, grenoble, development, web, audio, plugins, python, flask, nodejs, nuxtjs, vuejs, c++, juce',
+  keywords:
+    'romain, clement, freelance, software, engineer, grenoble, development, web, audio, plugins, python, flask, nodejs, nuxtjs, vuejs, c++, juce',
   navbar: {
     home: 'Home',
     freelance: 'Freelance',
@@ -15,7 +16,7 @@ export default {
   credits: {
     social: {
       getInTouch: 'Get in touch',
-      hireMe: 'Hire me',
+      hireMe: 'Hire me'
     },
     copyright: {
       text: 'Copyright',
@@ -39,13 +40,14 @@ export default {
       ],
       link: {
         name: 'Infogreffe - Registre du commerce et des sociétés',
-        url: 'https://www.infogreffe.fr/entreprise-societe/841265655-clement-romain-84126565500016.html?afficherretour=true&tab=entrep'
+        url:
+          'https://www.infogreffe.fr/entreprise-societe/841265655-clement-romain-84126565500016.html?afficherretour=true&tab=entrep'
       }
     }
   },
   home: {
     title: 'Freelance Software Engineer',
-    presentation:`
+    presentation: `
       <p>Hi, I'm Romain Clement</p>
       <p>
         I'm
@@ -80,13 +82,14 @@ export default {
         <strong>freelancing contracts</strong>.
       </p>
     `,
-    letsTalk: 'Let\'s talk!',
+    letsTalk: "Let's talk!",
     newOpportunity: 'New opportunity',
-    companies: 'Companies I\'ve worked with'
+    companies: "Companies I've worked with"
   },
   freelance: {
     title: 'Freelance',
-    presentation: 'I am available for new freelance software development contracts regarding full-stack development and/or digital audio applications.',
+    presentation:
+      'I am available for new freelance software development contracts regarding full-stack development and/or digital audio applications.',
     profile: 'My freelancer profile can be found on {comet} and {malt}.',
     newProject: 'New project',
     services: [
@@ -105,7 +108,19 @@ export default {
             <strong>continuous integration and deployment</strong>.
           </p>
         `,
-        tags: ['Python', 'Flask', 'Node.js', 'Vue.js', 'React-Native', 'PostgreSQL', 'MongoDB', 'Redis', 'Stripe', 'Mangopay', 'Docker']
+        tags: [
+          'Python',
+          'Flask',
+          'Node.js',
+          'Vue.js',
+          'React-Native',
+          'PostgreSQL',
+          'MongoDB',
+          'Redis',
+          'Stripe',
+          'Mangopay',
+          'Docker'
+        ]
       },
       {
         title: 'Digital audio',
@@ -122,7 +137,17 @@ export default {
             <strong>audio plug-ins</strong>.
           </p>
         `,
-        tags: ['C++', 'CMake', 'JUCE', 'FRUT', 'DSP', 'OpenGL', 'VST', 'AU', 'AAX']
+        tags: [
+          'C++',
+          'CMake',
+          'JUCE',
+          'FRUT',
+          'DSP',
+          'OpenGL',
+          'VST',
+          'AU',
+          'AAX'
+        ]
       }
     ]
   },
@@ -167,7 +192,8 @@ export default {
         `,
         tags: ['C++', 'CMake', 'JUCE', 'FRUT', 'MIDI', 'VST', 'VST3', 'AU'],
         image: {
-          src: "https://raw.githubusercontent.com/rclement/meeblip-controller/master/ext/meeblip-controller-screenshot.png",
+          src:
+            'https://raw.githubusercontent.com/rclement/meeblip-controller/master/ext/meeblip-controller-screenshot.png',
           title: 'Meeblip Controller screenshot',
           height: '400px'
         }

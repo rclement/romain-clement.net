@@ -32,11 +32,14 @@ module.exports = {
   head: {
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Quicksand:300,400' }
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css?family=Quicksand:300,400'
+      }
     ]
   },
 
@@ -50,50 +53,54 @@ module.exports = {
   /*
   ** Global CSS
   */
-  css: [
-    '@fortawesome/fontawesome-free/css/all.css',
-    '@/assets/scss/main.scss'
-  ],
+  css: ['@fortawesome/fontawesome-free/css/all.css', '@/assets/scss/main.scss'],
 
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: [
-    '~/plugins/page-head'
-  ],
+  plugins: ['~/plugins/page-head'],
 
   /*
   ** Nuxt.js modules
   */
   modules: [
-    ['nuxt-i18n', {
-      baseUrl: baseUrl,
-      locales: [
-        {
-          name: 'English',
-          code: 'en',
-          iso: 'en-US'
-        },
-        {
-          name: 'Français',
-          code: 'fr',
-          iso: 'fr-FR'
-        }
-      ],
-      defaultLocale: 'en',
-      vueI18n: {
-        fallbackLocale: 'en',
-        messages: {
-          en: localeEn,
-          fr: localeFr
+    [
+      'nuxt-i18n',
+      {
+        baseUrl: baseUrl,
+        locales: [
+          {
+            name: 'English',
+            code: 'en',
+            iso: 'en-US'
+          },
+          {
+            name: 'Français',
+            code: 'fr',
+            iso: 'fr-FR'
+          }
+        ],
+        defaultLocale: 'en',
+        vueI18n: {
+          fallbackLocale: 'en',
+          messages: {
+            en: localeEn,
+            fr: localeFr
+          }
         }
       }
-    }],
-    ['nuxt-buefy', {
-      css: true, materialDesignIcons: false
-    }],
+    ],
+    [
+      'nuxt-buefy',
+      {
+        css: true,
+        materialDesignIcons: false
+      }
+    ],
     '@nuxtjs/sitemap',
-    ['nuxt-robots-module', [
+    [
+      'nuxt-robots-module',
+      [
         {
           UserAgent: '*',
           Allow: '/',
@@ -138,8 +145,6 @@ module.exports = {
     gzip: true,
     generate: true,
     exclude: [],
-    routes: [
-      '/'
-    ]
+    routes: ['/']
   }
 }

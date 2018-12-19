@@ -4,7 +4,8 @@ export default {
   ...common,
   lang: 'Français',
   title: 'Romain Clement',
-  keywords: 'romain, clement, independant, logiciel, ingenieur, grenoble, developpement, web, audio, plugins, python, flask, nodejs, nuxtjs, vuejs, c++, juce',
+  keywords:
+    'romain, clement, independant, logiciel, ingenieur, grenoble, developpement, web, audio, plugins, python, flask, nodejs, nuxtjs, vuejs, c++, juce',
   navbar: {
     home: 'Accueil',
     freelance: 'Freelance',
@@ -15,7 +16,7 @@ export default {
   credits: {
     social: {
       getInTouch: 'Prise de contact',
-      hireMe: 'Propositions de contrats',
+      hireMe: 'Propositions de contrats'
     },
     copyright: {
       text: 'Tous droits réservés',
@@ -39,7 +40,8 @@ export default {
       ],
       link: {
         name: 'Infogreffe - Registre du commerce et des sociétés',
-        url: 'https://www.infogreffe.fr/entreprise-societe/841265655-clement-romain-84126565500016.html?afficherretour=true&tab=entrep'
+        url:
+          'https://www.infogreffe.fr/entreprise-societe/841265655-clement-romain-84126565500016.html?afficherretour=true&tab=entrep'
       }
     }
   },
@@ -82,17 +84,18 @@ export default {
     `,
     letsTalk: 'Parlons-en !',
     newOpportunity: 'Nouvelle opportunité',
-    companies: 'Sociétés avec lesquelles j\'ai travaillé'
+    companies: "Sociétés avec lesquelles j'ai travaillé"
   },
   freelance: {
     title: 'Freelance',
-    presentation: 'J\'accepte de nouvelles missions freelance en développement full-stack et/ou audio numérique.',
+    presentation:
+      "J'accepte de nouvelles missions freelance en développement full-stack et/ou audio numérique.",
     profile: 'Mon profil de freelancer se trouve sur {comet} et {malt}.',
     newProject: 'Nouveau projet',
     services: [
       {
         title: 'Développement full-stack',
-        subtitle: 'Envie d\'un nouveau service en ligne ?',
+        subtitle: "Envie d'un nouveau service en ligne ?",
         content: `
           <p>
             Je peux apporter mon aide dans le choix et l\'orchestration de la stack technologique la plus adaptée, en développant des
@@ -106,11 +109,23 @@ export default {
             <strong>d\'intégration et déploiement continu</strong>.
           </p>
         `,
-        tags: ['Python', 'Flask', 'Node.js', 'Vue.js', 'React-Native', 'PostgreSQL', 'MongoDB', 'Redis', 'Stripe', 'Mangopay', 'Docker']
+        tags: [
+          'Python',
+          'Flask',
+          'Node.js',
+          'Vue.js',
+          'React-Native',
+          'PostgreSQL',
+          'MongoDB',
+          'Redis',
+          'Stripe',
+          'Mangopay',
+          'Docker'
+        ]
       },
       {
         title: 'Audio numérique',
-        subtitle: 'Un projet lié à l\'audio et/ou la musique en tête ?',
+        subtitle: "Un projet lié à l'audio et/ou la musique en tête ?",
         content: `
           <p>
             Je peux apporter mon expertise dans la manifestation de ces ondes sonores en concevant des
@@ -123,7 +138,17 @@ export default {
             (MacOS, Windows, Linux).
           </p>
         `,
-        tags: ['C++', 'CMake', 'JUCE', 'FRUT', 'DSP', 'OpenGL', 'VST', 'AU', 'AAX']
+        tags: [
+          'C++',
+          'CMake',
+          'JUCE',
+          'FRUT',
+          'DSP',
+          'OpenGL',
+          'VST',
+          'AU',
+          'AAX'
+        ]
       }
     ]
   },
@@ -168,7 +193,8 @@ export default {
         `,
         tags: ['C++', 'CMake', 'JUCE', 'FRUT', 'MIDI', 'VST', 'VST3', 'AU'],
         image: {
-          src: "https://raw.githubusercontent.com/rclement/meeblip-controller/master/ext/meeblip-controller-screenshot.png",
+          src:
+            'https://raw.githubusercontent.com/rclement/meeblip-controller/master/ext/meeblip-controller-screenshot.png',
           title: 'Meeblip Controller capture',
           height: '400px'
         }
