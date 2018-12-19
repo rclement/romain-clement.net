@@ -3,7 +3,7 @@
     <div class="content has-text-centered">
       <div class="links">
         <a
-          v-for="link in [...$t('links.social'), ...$t('links.other')]"
+          v-for="link in [...$t('links.social'), ...$t('links.freelancing'), ...$t('links.other')]"
           :key="link.name"
           :href="link.url"
           :title="link.name"

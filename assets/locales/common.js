@@ -61,19 +61,29 @@ export default {
         }
       },
       {
-        name: 'Malt',
-        url: 'https://www.malt.fr/profile/romainclement',
-        icon: {
-          pack: 'fab',
-          name: 'connectdevelop'
-        }
-      },
-      {
         name: 'Keybase',
         url: 'https://keybase.io/rmnclmnt',
         icon: {
           pack: 'fab',
           name: 'keybase'
+        }
+      }
+    ],
+    freelancing: [
+      {
+        name: 'Comet',
+        url: 'https://app.comet.co/freelancer/profile/1Lk2D8V5jB',
+        icon: {
+          pack: 'fas',
+          name: 'rocket'
+        }
+      },
+      {
+        name: 'Malt',
+        url: 'https://www.malt.fr/profile/romainclement',
+        icon: {
+          pack: 'fab',
+          name: 'connectdevelop'
         }
       }
     ],
