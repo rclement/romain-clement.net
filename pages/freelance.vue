@@ -2,6 +2,37 @@
   <div class="freelance">
     <section class="section">
       <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-half has-text-centered">
+            <p class="subtitle">
+              {{ $t('freelance.presentation') }}
+            </p>
+
+            <i18n
+              path="freelance.profile"
+              tag="p">
+              <a
+                v-for="link in $t('links.freelancing')"
+                :key="link.name"
+                :href="link.url"
+                :title="link.name"
+                :alt="link.name"
+                :place="link.name.toLowerCase()">
+                <b-icon
+                  :pack="link.icon.pack"
+                  :icon="link.icon.name"
+                  class="link-icon"
+                  size="is-small"/>
+                {{ link.name }}
+              </a>
+            </i18n>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
         <div class="tile is-ancestor">
           <div
             v-for="service in services"

@@ -93,6 +93,8 @@ export default {
   },
   freelance: {
     title: 'Freelance',
+    presentation: 'J\'accepte de nouvelles missions freelance en développement full-stack et/ou audio numérique.',
+    profile: 'Mon profil de freelancer se trouve sur {comet} et {malt}.',
     newProject: 'Nouveau projet',
     services: [
       {

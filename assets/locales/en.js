@@ -93,6 +93,8 @@ export default {
   },
   freelance: {
     title: 'Freelance',
+    presentation: 'I am available for new freelance software development contracts regarding full-stack development and/or digital audio applications.',
+    profile: 'My freelancer profile can be found on {comet} and {malt}.',
     newProject: 'New project',
     services: [
       {
