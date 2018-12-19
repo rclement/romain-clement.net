@@ -77,14 +77,7 @@ export default {
       </p>
       <p>
         J'accèpte actuellement de nouvelles
-        <strong>
-          <a
-            href="https://www.malt.fr/profile/romainclement/"
-            title="Malt"
-            alt="Malt">
-            missions en freelance
-          </a>
-        </strong>.
+        <strong>missions en freelance</strong>.
       </p>
     `,
     letsTalk: 'Parlons-en !',

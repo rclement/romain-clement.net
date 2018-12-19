@@ -77,14 +77,7 @@ export default {
       </p>
       <p>
         I am currently accepting new
-        <strong>
-          <a
-            href="https://www.malt.fr/profile/romainclement/"
-            title="Malt"
-            alt="Malt">
-            freelancing contracts
-          </a>
-        </strong>.
+        <strong>freelancing contracts</strong>.
       </p>
     `,
     letsTalk: 'Let\'s talk!',
