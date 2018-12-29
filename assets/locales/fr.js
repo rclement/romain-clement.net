@@ -45,6 +45,13 @@ export default {
       }
     }
   },
+  contact: {
+    name: 'Nom',
+    email: 'E-mail',
+    subject: 'Sujet',
+    message: 'Message',
+    send: 'Envoyer'
+  },
   home: {
     title: 'Ingénieur Logiciel Indépendant',
     presentation: `

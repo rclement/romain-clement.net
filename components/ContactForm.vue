@@ -4,61 +4,17 @@
     :action="url"
     class="contact-form"
     method="POST">
-    <b-field style="display:none">
+    <b-field
+      v-for="field in fields"
+      :key="field.name"
+      :class="{'is-hidden': field.hidden}"
+      :label="field.label">
       <b-input
-        v-model="form.language.value"
-        :name="form.language.name"
-        type="hidden"/>
-    </b-field>
-
-    <b-field style="display:none">
-      <b-input
-        v-model="form.format.value"
-        :name="form.format.name"
-        type="hidden"/>
-    </b-field>
-
-    <b-field style="display:none">
-      <b-input
-        v-model="form.next.value"
-        :name="form.next.name"
-        type="hidden"/>
-    </b-field>
-
-    <b-field label="Name">
-      <b-input
-        v-model="form.name.value"
-        :name="form.name.name"
-        type="text"
-        maxlength="50"
-        required/>
-    </b-field>
-
-    <b-field label="Email">
-      <b-input
-        v-model="form.email.value"
-        :name="form.email.name"
-        type="email"
-        maxlength="50"
-        required/>
-    </b-field>
-
-    <b-field label="Subject">
-      <b-input
-        v-model="form.subject.value"
-        :name="form.subject.name"
-        type="text"
-        maxlength="100"
-        required/>
-    </b-field>
-
-    <b-field label="Message">
-      <b-input
-        v-model="form.message.value"
-        :name="form.message.name"
-        type="textarea"
-        maxlength="200"
-        required/>
+        v-model="field.value"
+        :name="field.name"
+        :type="field.type"
+        :maxlength="field.maxlength"
+        :required="field.required"/>
     </b-field>
 
     <b-field>
@@ -66,7 +22,7 @@
         :disabled="isDisabled"
         class="button"
         type="submit">
-        Send
+        {{ $t('contact.send') }}
       </button>
     </b-field>
   </form>
@@ -84,34 +40,66 @@ export default {
   data() {
     return {
       url: `https://formspree.io/${process.env.contactEmail}`,
-      form: {
+      fields: {
         language: {
+          label: '',
           name: '_language',
-          value: this.$i18n.locale
+          type: 'hidden',
+          value: this.$i18n.locale,
+          hidden: true
         },
         format: {
+          label: '',
           name: '_format',
-          value: 'html'
+          type: 'hidden',
+          value: 'html',
+          hidden: true
         },
         next: {
+          label: '',
           name: '_next',
-          value: ''
+          type: 'hidden',
+          value: '',
+          hidden: true
+        },
+        honeypot: {
+          label: '',
+          name: '_gotcha',
+          type: 'hidden',
+          value: '',
+          hidden: true
         },
         name: {
+          label: this.$t('contact.name'),
           name: 'name',
-          value: ''
+          type: 'text',
+          maxlength: 50,
+          value: '',
+          required: true
         },
         email: {
+          label: this.$t('contact.email'),
           name: '_replyto',
-          value: ''
+          type: 'email',
+          maxlength: 50,
+          value: '',
+          required: true
         },
         subject: {
+          label: this.$t('contact.subject'),
           name: '_subject',
-          value: this.subject
+          type: 'text',
+          maxlength: 100,
+          value: this.subject,
+          required: true
         },
         message: {
+          label: this.$t('contact.message'),
           name: 'message',
-          value: ''
+          type: 'textarea',
+          maxlength: 200,
+          value: '',
+          required: true
         }
       }
     }
@@ -120,10 +108,10 @@ export default {
   computed: {
     isDisabled() {
       return (
-        !this.form.name.value ||
-        !this.form.email.value ||
-        !this.form.subject.value ||
-        !this.form.message.value ||
+        !this.fields.name.value ||
+        !this.fields.email.value ||
+        !this.fields.subject.value ||
+        !this.fields.message.value ||
         !this.$refs.form.checkValidity()
       )
     }

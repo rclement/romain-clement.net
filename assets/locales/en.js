@@ -45,6 +45,13 @@ export default {
       }
     }
   },
+  contact: {
+    name: 'Name',
+    email: 'E-mail',
+    subject: 'Subject',
+    message: 'Message',
+    send: 'Send'
+  },
   home: {
     title: 'Freelance Software Engineer',
     presentation: `
