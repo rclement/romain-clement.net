@@ -87,7 +87,7 @@ export default {
       form: {
         language: {
           name: '_language',
-          value: 'fr'
+          value: this.$i18n.locale
         },
         format: {
           name: '_format',
