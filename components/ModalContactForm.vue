@@ -6,7 +6,9 @@
     <div
       class="modal-card has-text-left">
       <header class="modal-card-head">
-        <p class="modal-card-title">Contact form</p>
+        <p class="modal-card-title">
+          {{ $t('contact.title') }}
+        </p>
       </header>
 
       <section class="modal-card-body">

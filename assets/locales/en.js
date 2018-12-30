@@ -46,6 +46,7 @@ export default {
     }
   },
   contact: {
+    title: 'Contact form',
     name: 'Name',
     email: 'E-mail',
     subject: 'Subject',
