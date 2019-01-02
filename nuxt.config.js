@@ -7,6 +7,7 @@ const production = process.env.NODE_ENV === 'production'
 const baseUrl = production ? `https://${pkg.name}` : ''
 const sitemapPath = '/sitemap.xml'
 const sitemapUrl = `${baseUrl}${sitemapPath}`
+const matomoUrl = 'matomo.docker.me'
 
 module.exports = {
   mode: 'universal',
@@ -23,7 +24,8 @@ module.exports = {
   ** Router configuration
   */
   router: {
-    linkExactActiveClass: 'is-active'
+    linkExactActiveClass: 'is-active',
+    middleware: ['matomo-consent']
   },
 
   /*
@@ -107,6 +109,13 @@ module.exports = {
           Sitemap: sitemapUrl
         }
       ]
+    ],
+    [
+      'nuxt-matomo',
+      {
+        matomoUrl: `//${matomoUrl}/`,
+        siteId: 1
+      }
     ]
   ],
 
