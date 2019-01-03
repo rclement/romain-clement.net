@@ -97,6 +97,7 @@ module.exports = {
         materialDesignIcons: false
       }
     ],
+    '@nuxtjs/pwa',
     '@nuxtjs/sitemap',
     [
       'nuxt-robots-module',
@@ -136,6 +137,10 @@ module.exports = {
 
   generate: {
     fallback: true
+  },
+
+  icon: {
+    iconSrc: 'assets/img/logo.png'
   },
 
   sitemap: {
