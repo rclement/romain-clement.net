@@ -1,6 +1,5 @@
 import shrinkRay from 'shrink-ray-current'
-import localeEn from './assets/locales/en'
-import localeFr from './assets/locales/fr'
+import locales from './locales'
 
 const pkg = require('./package')
 const production = process.env.NODE_ENV === 'production'
@@ -81,12 +80,13 @@ module.exports = {
           }
         ],
         defaultLocale: 'en',
+        detectBrowserLanguage: {
+          useCookie: true,
+          cookieKey: 'i18n_redirected'
+        },
         vueI18n: {
           fallbackLocale: 'en',
-          messages: {
-            en: localeEn,
-            fr: localeFr
-          }
+          messages: locales
         }
       }
     ],
