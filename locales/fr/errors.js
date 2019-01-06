@@ -5,5 +5,5 @@ export default {
       message: 'Il semblerait que vous soyez perdu !'
     }
   },
-  backToHome: 'Retour à l\'accueil'
+  backToHome: `Retour à l\'accueil`
 }
