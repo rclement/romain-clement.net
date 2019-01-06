@@ -1,7 +1,7 @@
 export default {
   title: 'Software',
-  projects: [
-    {
+  projects: {
+    'meeblip-controller': {
       title: 'Meeblip Controller',
       subtitle: 'Take full control over your Meeblip Anode!',
       content: `
@@ -34,7 +34,12 @@ export default {
         </p>
 
         <p>
-          Download it, it's free and open-source!
+          <a
+            href="https://github.com/rclement/meeblip-controller/releases/latest"
+            title="Download Meeblip Controller"
+            alt="Download Meeblip Controller">
+            Download it
+          </a>, it's free and open-source!
         </p>
       `,
       tags: ['C++', 'CMake', 'JUCE', 'FRUT', 'MIDI', 'VST', 'VST3', 'AU'],
@@ -45,5 +50,5 @@ export default {
         height: '400px'
       }
     }
-  ]
+  }
 }

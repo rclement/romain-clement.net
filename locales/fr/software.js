@@ -1,7 +1,7 @@
 export default {
   title: 'Logiciels',
-  projects: [
-    {
+  projects: {
+    'meeblip-controller': {
       title: 'Meeblip Controller',
       subtitle: 'Reprenez les pleins pouvoirs sur votre Meeblip Anode !',
       content: `
@@ -34,7 +34,12 @@ export default {
         </p>
 
         <p>
-          Téléchargez-le, c'est gratuit et libre!
+          <a
+            href="https://github.com/rclement/meeblip-controller/releases/latest"
+            title="Télécharger Meeblip Controller"
+            alt="Télécharger Meeblip Controller">
+            Téléchargez-le
+          </a>, c'est gratuit et libre!
         </p>
       `,
       tags: ['C++', 'CMake', 'JUCE', 'FRUT', 'MIDI', 'VST', 'VST3', 'AU'],
@@ -45,5 +50,5 @@ export default {
         height: '400px'
       }
     }
-  ]
+  }
 }
