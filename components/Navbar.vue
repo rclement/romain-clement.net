@@ -9,8 +9,11 @@
         class="navbar-item"
         @click.native="closeNavbarContent">
         <logo/>
-        <!-- <strong class="navbar-item"/> -->
       </nuxt-link>
+
+      <p class="navbar-item">
+        <strong>{{ $t('navbar.tagline') }}</strong>
+      </p>
 
       <a
         :class="{ 'is-active': navbarContentOpen }"
