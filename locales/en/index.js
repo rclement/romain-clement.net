@@ -1,5 +1,6 @@
 import contact from './contact'
 import credits from './credits'
+import errors from './errors'
 import freelance from './freelance'
 import home from './home'
 import navbar from './navbar'
@@ -15,5 +16,6 @@ export default {
   contact: contact,
   home: home,
   freelance: freelance,
-  software: software
+  software: software,
+  errors: errors
 }
