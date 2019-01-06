@@ -22,6 +22,7 @@ module.exports = {
   ** Router configuration
   */
   router: {
+    linkActiveClass: 'is-active',
     linkExactActiveClass: 'is-active'
   },
 
