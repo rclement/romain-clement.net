@@ -11,7 +11,8 @@
     class="cookie-consent"
     @status="status"
     @clicked-accept="accept"
-    @clicked-decline="decline">
+    @clicked-decline="decline"
+    @clicked-postpone="decline">
 
     <!-- Optional -->
     <div slot="postponeContent">
@@ -66,7 +67,7 @@ export default {
         this.clear()
       } else if (val == 'accept') {
         this.accept()
-      } else {
+      } else if (val == 'decline') {
         this.decline()
       }
     },
