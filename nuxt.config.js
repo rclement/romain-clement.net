@@ -2,10 +2,13 @@ import shrinkRay from 'shrink-ray-current'
 import locales from './locales'
 
 const pkg = require('./package')
+const development = process.env.NODE_ENV === 'development'
 const production = process.env.NODE_ENV === 'production'
 const baseUrl = production ? `https://${pkg.name}` : ''
 const sitemapPath = '/sitemap.xml'
 const sitemapUrl = `${baseUrl}${sitemapPath}`
+const matomoUrl = process.env.MATOMO_URL
+const matomoSiteId = process.env.MATOMO_SITE_ID
 
 module.exports = {
   mode: 'universal',
@@ -22,7 +25,8 @@ module.exports = {
   ** Router configuration
   */
   router: {
-    linkExactActiveClass: 'is-active'
+    linkExactActiveClass: 'is-active',
+    middleware: ['matomo-consent']
   },
 
   /*
@@ -52,7 +56,11 @@ module.exports = {
   /*
   ** Global CSS
   */
-  css: ['@fortawesome/fontawesome-free/css/all.css', '@/assets/scss/main.scss'],
+  css: [
+    '@fortawesome/fontawesome-free/css/all.css',
+    'vue-cookie-accept-decline/dist/vue-cookie-accept-decline.css',
+    '@/assets/scss/main.scss'
+  ],
 
   /*
   ** Plugins to load before mounting the App
@@ -108,7 +116,21 @@ module.exports = {
           Sitemap: sitemapUrl
         }
       ]
-    ]
+    ],
+    ...(matomoUrl !== undefined
+      ? [
+          'nuxt-matomo',
+          {
+            matomoUrl: `//${matomoUrl}/`,
+            siteId: matomoSiteId,
+            consentRequired: true,
+            cookies: false,
+            doNotTrack: true,
+            debug: development
+          }
+        ]
+      : []
+    )
   ],
 
   /*

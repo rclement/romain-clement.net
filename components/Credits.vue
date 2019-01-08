@@ -61,12 +61,41 @@
         </div>
       </div>
 
-      <p>
+      <p class="has-bottom-padding">
         {{ $t('credits.copyright.text') }} © {{ $t('credits.copyright.start') }} - {{ $t('credits.copyright.end') }}, {{ $t('credits.copyright.author') }}
       </p>
+
+      <p class="has-bottom-padding">
+        <a @click="updateCookiePrefs">
+          {{ $t('credits.cookies.update') }}
+        </a>
+      </p>
     </div>
+
+    <cookie-consent
+      id="cookie-consent"
+      ref="cookie-consent"/>
   </div>
 </template>
+
+<script>
+import CookieConsent from '@/components/CookieConsent'
+
+export default {
+  components: {
+    CookieConsent
+  },
+
+  methods: {
+    updateCookiePrefs() {
+      let cookieConsent = this.$refs['cookie-consent']
+      if (cookieConsent) {
+        cookieConsent.clear()
+      }
+    }
+  }
+}
+</script>
 
 <style scoped>
 .link-icon {
@@ -74,6 +103,10 @@
 }
 
 .links {
+  padding: 0rem 0rem 1rem 0rem;
+}
+
+.has-bottom-padding {
   padding: 0rem 0rem 1rem 0rem;
 }
 </style>

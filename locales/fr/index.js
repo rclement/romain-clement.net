@@ -1,4 +1,5 @@
 import contact from './contact'
+import cookies from './cookies'
 import credits from './credits'
 import errors from './errors'
 import freelance from './freelance'
@@ -17,5 +18,6 @@ export default {
   home: home,
   freelance: freelance,
   software: software,
+  cookies: cookies,
   errors: errors
 }

@@ -28,5 +28,8 @@ export default {
       url:
         'https://www.infogreffe.fr/entreprise-societe/841265655-clement-romain-84126565500016.html?afficherretour=true&tab=entrep'
     }
+  },
+  cookies: {
+    update: 'Update cookies policy'
   }
 }
