@@ -20,7 +20,16 @@
 
     <!-- Optional -->
     <div slot="message">
-      {{ $t('cookies.consent') }}
+      <div class="has-text-centered">
+        <p>{{ $t('cookies.consent') }}</p>
+        <a
+          href="https://cookiesandyou.com"
+          title="Cookies and you"
+          alt="Cookies and you"
+          place="learn">
+          {{ $t('cookies.learnMore') }}
+        </a>
+      </div>
     </div>
 
     <!-- Optional -->
