@@ -82,11 +82,11 @@ export default {
     },
 
     accept() {
-      this.$store.dispatch('matomo/accept')
+      this.$store.dispatch('analytics/accept')
     },
 
     decline() {
-      this.$store.dispatch('matomo/decline')
+      this.$store.dispatch('analytics/decline')
     }
   }
 }
