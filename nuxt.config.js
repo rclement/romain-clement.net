@@ -7,7 +7,8 @@ const production = process.env.NODE_ENV === 'production'
 const baseUrl = production ? `https://${pkg.name}` : ''
 const sitemapPath = '/sitemap.xml'
 const sitemapUrl = `${baseUrl}${sitemapPath}`
-const matomoUrl = 'matomo.docker.me'
+const matomoUrl = process.env.MATOMO_URL
+const matomoSiteId = process.env.MATOMO_SITE_ID
 
 module.exports = {
   mode: 'universal',
@@ -116,17 +117,20 @@ module.exports = {
         }
       ]
     ],
-    [
-      'nuxt-matomo',
-      {
-        matomoUrl: `//${matomoUrl}/`,
-        siteId: 1,
-        consentRequired: true,
-        cookies: false,
-        doNotTrack: true,
-        debug: development
-      }
-    ]
+    ...(matomoUrl !== undefined
+      ? [
+          'nuxt-matomo',
+          {
+            matomoUrl: `//${matomoUrl}/`,
+            siteId: matomoSiteId,
+            consentRequired: true,
+            cookies: false,
+            doNotTrack: true,
+            debug: development
+          }
+        ]
+      : []
+    )
   ],
 
   /*
