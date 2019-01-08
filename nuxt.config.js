@@ -1,6 +1,5 @@
 import shrinkRay from 'shrink-ray-current'
-import localeEn from './assets/locales/en'
-import localeFr from './assets/locales/fr'
+import locales from './locales'
 
 const pkg = require('./package')
 const development = process.env.NODE_ENV === 'development'
@@ -88,12 +87,13 @@ module.exports = {
           }
         ],
         defaultLocale: 'en',
+        detectBrowserLanguage: {
+          useCookie: true,
+          cookieKey: 'i18n_redirected'
+        },
         vueI18n: {
           fallbackLocale: 'en',
-          messages: {
-            en: localeEn,
-            fr: localeFr
-          }
+          messages: locales
         }
       }
     ],
@@ -104,6 +104,7 @@ module.exports = {
         materialDesignIcons: false
       }
     ],
+    '@nuxtjs/pwa',
     '@nuxtjs/sitemap',
     [
       'nuxt-robots-module',
@@ -154,6 +155,10 @@ module.exports = {
 
   generate: {
     fallback: true
+  },
+
+  icon: {
+    iconSrc: 'assets/img/logo.png'
   },
 
   sitemap: {

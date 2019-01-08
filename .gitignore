@@ -67,6 +67,9 @@ typings/
 
 # nuxt.js build output
 .nuxt
+sw.*
+robots.txt*
+sitemap.xml*
 
 # Nuxt generate
 dist

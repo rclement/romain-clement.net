@@ -1,12 +1,12 @@
 <template>
-  <div>
+  <div class="layout">
     <header class="section">
       <div class="container">
         <navbar/>
       </div>
     </header>
 
-    <nuxt/>
+    <nuxt class="main"/>
 
     <footer class="footer">
       <credits/>
@@ -29,3 +29,15 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
+}
+</style>

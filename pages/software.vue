@@ -1,12 +1,10 @@
 <template>
   <div class="software">
-    <section
-      id="meeblip-controller"
-      class="section">
+    <section class="section">
       <div class="container">
         <div
-          v-for="project in $t('software.projects')"
-          :key="project.title"
+          v-for="(project, key) in $t('software.projects')"
+          :key="key"
           class="columns is-vcentered">
           <div class="column">
             <h1 class="title">{{ project.title }}</h1>
