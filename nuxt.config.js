@@ -3,6 +3,7 @@ import localeEn from './assets/locales/en'
 import localeFr from './assets/locales/fr'
 
 const pkg = require('./package')
+const development = process.env.NODE_ENV === 'development'
 const production = process.env.NODE_ENV === 'production'
 const baseUrl = production ? `https://${pkg.name}` : ''
 const sitemapPath = '/sitemap.xml'
@@ -55,7 +56,11 @@ module.exports = {
   /*
   ** Global CSS
   */
-  css: ['@fortawesome/fontawesome-free/css/all.css', '@/assets/scss/main.scss'],
+  css: [
+    '@fortawesome/fontawesome-free/css/all.css',
+    'vue-cookie-accept-decline/dist/vue-cookie-accept-decline.css',
+    '@/assets/scss/main.scss'
+  ],
 
   /*
   ** Plugins to load before mounting the App
@@ -114,7 +119,11 @@ module.exports = {
       'nuxt-matomo',
       {
         matomoUrl: `//${matomoUrl}/`,
-        siteId: 1
+        siteId: 1,
+        consentRequired: true,
+        cookies: false,
+        doNotTrack: true,
+        debug: development
       }
     ]
   ],

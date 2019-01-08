@@ -1,12 +1,9 @@
 export default function({ route, store }) {
   route.meta.matomo = {
-    ...(!store.state.consent.analytics
+    ...(!store.state.matomo.consent
       ? { requireConsent: ['requireConsent'] }
       : {}),
-    ...(!store.state.consent.analytics
-      ? { disableCookies: ['disableCookies'] }
-      : {}),
-    ...(store.state.consent.analytics
+    ...(store.state.matomo.consent
       ? { setConsentGiven: ['setConsentGiven'] }
       : {})
   }
