@@ -1,7 +1,7 @@
 <template>
   <vue-cookie-accept-decline
-    :ref="'cookieConsent'"
-    :element-id="'cookieConsent'"
+    :ref="id"
+    :element-id="id"
     :debug="false"
     :position="'bottom-left'"
     :type="'floating'"
@@ -53,6 +53,13 @@ export default {
     VueCookieAcceptDecline
   },
 
+  props: {
+    id: {
+      type: String,
+      default: ''
+    }
+  },
+
   methods: {
     status(val) {
       if (val === 'postpone') {
@@ -65,8 +72,11 @@ export default {
     },
 
     clear() {
-      this.$refs.cookieConsent.removeCookie()
-      this.$refs.cookieConsent.init()
+      let cookieConsent = this.$refs[this.id]
+      if (cookieConsent) {
+        cookieConsent.removeCookie()
+        cookieConsent.init()
+      }
       this.decline()
     },
 
