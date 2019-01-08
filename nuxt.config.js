@@ -129,8 +129,7 @@ module.exports = {
             debug: development
           }
         ]
-      : []
-    )
+      : [])
   ],
 
   /*
