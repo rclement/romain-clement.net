@@ -1,10 +1,12 @@
 import Vue from 'vue'
 
 export default function({ app, store }) {
+  const dnt = store.state.analytics.dnt
   const consent = store.state.analytics.consent
+  const track = !dnt && consent
 
   if (process.client) {
-    if (consent) {
+    if (track) {
       Vue.$ga.enable()
     } else {
       Vue.$ga.disable()

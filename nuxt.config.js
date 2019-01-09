@@ -73,7 +73,10 @@ module.exports = {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: ['~/plugins/page-head'],
+  plugins: [
+    { src: '~/plugins/dnt-support', ssr: false },
+    '~/plugins/page-head'
+  ],
 
   /*
   ** Nuxt.js modules
