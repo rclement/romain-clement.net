@@ -1,14 +1,17 @@
 import shrinkRay from 'shrink-ray-current'
 import locales from './locales'
 
+require('dotenv').config()
+
 const pkg = require('./package')
 const development = process.env.NODE_ENV === 'development'
 const production = process.env.NODE_ENV === 'production'
 const baseUrl = production ? `https://${pkg.name}` : ''
 const sitemapPath = '/sitemap.xml'
 const sitemapUrl = `${baseUrl}${sitemapPath}`
-const matomoUrl = process.env.MATOMO_URL
-const matomoSiteId = process.env.MATOMO_SITE_ID
+const matomoUrl = process.env.MATOMO_URL || undefined
+const matomoSiteId = process.env.MATOMO_SITE_ID || undefined
+const googleAnalyticsId = process.env.GOOGLE_ANALYTICS_ID || undefined
 
 module.exports = {
   mode: 'universal',
@@ -26,7 +29,7 @@ module.exports = {
   */
   router: {
     linkExactActiveClass: 'is-active',
-    middleware: ['matomo-consent']
+    middleware: ['matomo-consent', 'google-analytics-consent']
   },
 
   /*
@@ -71,6 +74,7 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/dotenv',
     [
       'nuxt-i18n',
       {
@@ -117,17 +121,33 @@ module.exports = {
         }
       ]
     ],
-    ...(matomoUrl !== undefined
+    ...(matomoUrl && matomoSiteId
       ? [
-          'nuxt-matomo',
-          {
-            matomoUrl: `//${matomoUrl}/`,
-            siteId: matomoSiteId,
-            consentRequired: true,
-            cookies: false,
-            doNotTrack: true,
-            debug: development
-          }
+          [
+            'nuxt-matomo',
+            {
+              matomoUrl: `//${matomoUrl}/`,
+              siteId: matomoSiteId,
+              consentRequired: true,
+              cookies: false,
+              doNotTrack: true,
+              debug: development
+            }
+          ]
+        ]
+      : []),
+    ...(googleAnalyticsId
+      ? [
+          [
+            '@nuxtjs/google-analytics',
+            {
+              id: googleAnalyticsId,
+              debug: {
+                enabled: development,
+                sendHitTask: production
+              }
+            }
+          ]
         ]
       : [])
   ],
