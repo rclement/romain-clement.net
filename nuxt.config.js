@@ -164,7 +164,8 @@ module.exports = {
               disabled: development,
               disableClientSide: development,
               config: {
-                environment: environment
+                environment: environment,
+                release: pkg.version
               }
             }
           ]
