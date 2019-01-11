@@ -13,6 +13,8 @@ const baseUrl = production ? `https://${pkg.name}` : ''
 const sitemapPath = '/sitemap.xml'
 const sitemapUrl = `${baseUrl}${sitemapPath}`
 
+const mailerUrl = process.env.MAILER_URL
+const formspreeUrl = process.env.FORMSPREE_URL
 const matomoUrl = process.env.MATOMO_URL || undefined
 const matomoSiteId = process.env.MATOMO_SITE_ID || undefined
 const googleAnalyticsId = process.env.GOOGLE_ANALYTICS_ID || undefined
@@ -25,7 +27,9 @@ module.exports = {
   ** Environment variable properties
   */
   env: {
-    BASE_URL: baseUrl
+    BASE_URL: baseUrl,
+    MAILER_URL: mailerUrl,
+    FORMSPREE_URL: formspreeUrl
   },
 
   /*
