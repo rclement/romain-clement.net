@@ -1,7 +1,7 @@
 import Vue from 'vue'
 
 Vue.prototype.$pageHead = function(i18nPageTag) {
-  const baseUrl = process.env.baseUrl
+  const baseUrl = process.env.BASE_URL
   const canonicalUrl = `${baseUrl}${this.$route.path}`
   const commonTitle = this.$t('title')
   const commonKeywords = this.$t('keywords')

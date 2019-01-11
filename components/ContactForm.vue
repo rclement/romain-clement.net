@@ -1,9 +1,9 @@
 <template>
   <form
     ref="form"
-    :action="url"
     class="contact-form"
-    method="POST">
+    method="POST"
+    @submit.prevent="sendMail">
     <b-field
       v-for="field in fields"
       :key="field.name"
@@ -25,6 +25,11 @@
         {{ $t('contact.send') }}
       </button>
     </b-field>
+
+    <b-loading
+      :is-full-page="true"
+      :can-cancel="false"
+      :active.sync="loading"/>
   </form>
 </template>
 
@@ -39,7 +44,7 @@ export default {
 
   data() {
     return {
-      url: `https://formspree.io/${process.env.contactEmail}`,
+      loading: false,
       fields: {
         language: {
           label: '',
@@ -114,6 +119,78 @@ export default {
         !this.fields.message.value ||
         !this.$refs.form.checkValidity()
       )
+    }
+  },
+
+  methods: {
+    clear() {
+      this.fields.name.value = ''
+      this.fields.email.value = ''
+      this.fields.subject.value = ''
+      this.fields.message.value = ''
+    },
+
+    showSuccessNotification() {
+      this.$toast.open({
+        duration: 2000,
+        position: 'is-top',
+        message: this.$t('contact.success'),
+        type: 'is-success'
+      })
+    },
+
+    showFailureNotification() {
+      this.$toast.open({
+        duration: 5000,
+        position: 'is-top',
+        message: this.$t('contact.failure'),
+        type: 'is-danger'
+      })
+    },
+
+    async sendMailFormspree() {
+      const url = process.env.FORMSPREE_URL
+      if (!url) {
+        return
+      }
+
+      return await this.$axios.$post(url, {
+        _language: this.fields.language.value,
+        _format: this.fields.format.value,
+        _next: this.fields.next.value,
+        _gotcha: this.fields.honeypot.value,
+        _replyto: this.fields.email.value,
+        name: this.fields.name.value,
+        _subject: this.fields.subject.value,
+        message: this.fields.message.value
+      })
+    },
+
+    async sendMailMailer() {
+      const url = process.env.MAILER_URL + '/api/mail'
+      if (!url) {
+        return
+      }
+
+      return await this.$axios.$post(url, {
+        email: this.fields.email.value,
+        name: this.fields.name.value,
+        subject: this.fields.subject.value,
+        message: this.fields.message.value,
+        honeypot: this.fields.honeypot.value
+      })
+    },
+
+    async sendMail() {
+      this.loading = true
+      try {
+        await this.sendMailMailer()
+        this.clear()
+        this.showSuccessNotification()
+      } catch (e) {
+        this.showFailureNotification()
+      }
+      this.loading = false
     }
   }
 }

@@ -4,5 +4,7 @@ export default {
   email: 'E-mail',
   subject: 'Sujet',
   message: 'Message',
-  send: 'Envoyer'
+  send: 'Envoyer',
+  success: 'Merci pour votre message !',
+  failure: `Votre message n\'a pu être envoyé, veuillez ré-essayer ultérieurement.`
 }

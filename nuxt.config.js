@@ -25,8 +25,7 @@ module.exports = {
   ** Environment variable properties
   */
   env: {
-    baseUrl: baseUrl,
-    contactEmail: 'contact@romain-clement.net'
+    BASE_URL: baseUrl
   },
 
   /*
@@ -83,6 +82,7 @@ module.exports = {
   */
   modules: [
     '@nuxtjs/dotenv',
+    '@nuxtjs/axios',
     [
       'nuxt-i18n',
       {
@@ -202,6 +202,10 @@ module.exports = {
 
   generate: {
     fallback: true
+  },
+
+  axios: {
+    debug: development
   },
 
   icon: {
