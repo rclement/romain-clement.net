@@ -167,7 +167,7 @@ export default {
     },
 
     async sendMailMailer() {
-      const url = process.env.MAILER_URL + '/api/mail'
+      const url = `${process.env.MAILER_URL}/api/mail`
       if (!url) {
         return
       }
