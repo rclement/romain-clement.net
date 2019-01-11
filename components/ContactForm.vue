@@ -172,13 +172,17 @@ export default {
         return
       }
 
-      return await this.$axios.$post(url, {
-        email: this.fields.email.value,
-        name: this.fields.name.value,
-        subject: this.fields.subject.value,
-        message: this.fields.message.value,
-        honeypot: this.fields.honeypot.value
-      })
+      return await this.$axios.$post(
+        url,
+        {
+          email: this.fields.email.value,
+          name: this.fields.name.value,
+          subject: this.fields.subject.value,
+          message: this.fields.message.value,
+          honeypot: this.fields.honeypot.value
+        },
+        { headers: { 'Content-Type': 'application/json' } }
+      )
     },
 
     async sendMail() {
