@@ -172,7 +172,13 @@ module.exports = {
               disableClientSide: development,
               config: {
                 environment: environment,
-                release: pkg.version
+                release: pkg.version,
+                beforeSend: function(event) {
+                  if (event.exception) {
+                    Sentry.showReportDialog()
+                  }
+                  return event
+                }
               }
             }
           ]
