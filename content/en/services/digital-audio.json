@@ -1,0 +1,16 @@
+{
+  "title": "Digital audio",
+  "subtitle": "An audio and/or music related project in mind?",
+  "body": "I can help making those waves happen by engineering **multi-platform** (MacOS, Windows, Linux) and **performant** software for **desktop applications** and **audio plug-ins**.",
+  "tags": [
+    "C++",
+    "CMake",
+    "JUCE",
+    "FRUT",
+    "DSP",
+    "OpenGL",
+    "VST",
+    "AU",
+    "AAX"
+  ]
+}
