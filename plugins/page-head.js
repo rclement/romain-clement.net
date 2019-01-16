@@ -3,8 +3,8 @@ import Vue from 'vue'
 Vue.prototype.$pageHead = function(i18nPageTag) {
   const baseUrl = process.env.BASE_URL
   const canonicalUrl = `${baseUrl}${this.$route.path}`
-  const commonTitle = this.$t('title')
-  const commonKeywords = this.$t('keywords')
+  const commonTitle = this.$t('head.title')
+  const commonKeywords = this.$t('head.keywords').join(',')
   const pageTitle = this.$t(`${i18nPageTag}.title`)
   const pageUrl = `${baseUrl}${this.switchLocalePath(this.$i18n.locale)}`
   const title = `${commonTitle} | ${pageTitle}`

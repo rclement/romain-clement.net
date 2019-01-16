@@ -3,15 +3,15 @@
     <section class="section">
       <div class="container">
         <div
-          v-for="(project, key) in $t('software.projects')"
+          v-for="(project, key) in $t('projects')"
           :key="key"
           class="columns is-vcentered">
           <div class="column">
             <h1 class="title">{{ project.title }}</h1>
-            <h6 class="subtitle">{{ project.subtitle }}</h6>
+            <h6 class="subtitle">{{ project.description }}</h6>
             <div
               class="content"
-              v-html="project.content"/>
+              v-html="$md.render(project.body)"/>
 
             <div class="tags">
               <span
@@ -25,9 +25,10 @@
 
           <div class="column is-centered">
             <image-modal
-              :src="project.image.src"
-              :title="project.image.title"
-              :height="project.image.height"/>
+              v-if="project.thumbnail"
+              :src="project.thumbnail"
+              :title="project.title"
+              height="400px"/>
           </div>
         </div>
       </div>

@@ -14,7 +14,7 @@
               </figure>
 
               <h1 class="title is-hero">
-                {{ $t('title') }}
+                {{ $t('head.title') }}
               </h1>
 
               <h2 class="subtitle is-hero">
@@ -25,7 +25,7 @@
             <div class="column is-half">
               <div
                 class="content"
-                v-html="$t('home.presentation')"/>
+                v-html="$md.render($t('home.presentation'))"/>
 
               <button
                 class="button is-outlined"
