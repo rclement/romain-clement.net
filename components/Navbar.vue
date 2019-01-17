@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="navbar"
+    class="navbar is-transparent"
     role="navigation"
     aria-label="main navigation">
     <div class="navbar-brand">
@@ -66,7 +66,7 @@
             {{ $t('navbar.language') }}
           </a>
 
-          <div class="navbar-dropdown">
+          <div class="navbar-dropdown is-boxed">
             <nuxt-link
               v-for="locale in $i18n.locales"
               :key="locale.code"
