@@ -1,5 +1,4 @@
 backend:
-  # name: test-repo
   name: github
   repo: rclement/romain-clement.net
   branch: netlify-cms-support
@@ -15,6 +14,16 @@ slug:
   sanitize_replacement: "-"
 
 collections:
+  - label: Tags
+    name: tags
+    folder: "content/tags"
+    create: true
+    slug: "{{slug}}"
+    extension: json
+    format: json
+    fields:
+      - {label: Title, name: title, widget: string}
+
   - label: Common
     name: common
     files:
@@ -213,40 +222,46 @@ collections:
       file: "content/fr/software.json"
 
   - &projects
-    name: "projects-en"
-    label: "Projects (en)"
+    name: projects-en
+    label: Projects (en)
     folder: "content/en/projects"
     create: true
     slug: "{{slug}}"
-    extension: "json"
-    format: "json"
+    extension: json
+    format: json
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Description", name: "description", widget: "string"}
-      - {label: "Tags", name: "tags", widget: "list"}
-      - {label: "Thumbnail", name: "thumbnail", widget: "image", required: false}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: Title, name: title, widget: string}
+      - {label: Description, name: description, widget: string}
+      - label: Tags
+        name: tags
+        widget: list
+        field: {label: Tag, name: tag, widget: relation, collection: tags, searchFields: ["title"], valueField: title, displayFields: ["title"]}
+      - {label: Thumbnail, name: thumbnail, widget: image, required: false}
+      - {label: Body, name: body, widget: markdown}
 
   - <<: *projects
-    label: "Projects (fr)"
-    name: "projects-fr"
+    label: Projects (fr)
+    name: projects-fr
     folder: "content/fr/projects"
 
   - &services
-    label: "Services (en)"
-    name: "services-en"
+    label: Services (en)
+    name: services-en
     folder: "content/en/services"
     create: true
     slug: "{{slug}}"
-    extension: "json"
-    format: "json"
+    extension: json
+    format: json
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Subtitle", name: "subtitle", widget: "string"}
-      - {label: "Tags", name: "tags", widget: "list"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: Title, name: title, widget: string}
+      - {label: Subtitle, name: subtitle, widget: string}
+      - label: Tags
+        name: tags
+        widget: list
+        field: {label: Tag, name: tag, widget: relation, collection: tags, searchFields: ["title"], valueField: title, displayFields: ["title"]}
+      - {label: Body, name: body, widget: markdown}
 
   - <<: *services
-    label: "Services (fr)"
-    name: "services-fr"
+    label: Services (fr)
+    name: services-fr
     folder: "content/fr/services"
