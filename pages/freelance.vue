@@ -12,7 +12,7 @@
               path="freelance.profile"
               tag="p">
               <a
-                v-for="link in $t('links.freelancing')"
+                v-for="link in $t('common.links.freelancing')"
                 :key="link.name"
                 :href="link.url"
                 :title="link.name"

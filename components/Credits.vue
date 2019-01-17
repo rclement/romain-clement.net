@@ -6,7 +6,7 @@
           <div class="links">
             <p>{{ $t('credits.social.getInTouch') }}</p>
             <a
-              v-for="link in [...$t('links.social'), ...$t('links.other')]"
+              v-for="link in [...$t('common.links.social'), ...$t('common.links.other')]"
               :key="link.name"
               :href="link.url"
               :title="link.name"
@@ -23,7 +23,7 @@
           <div class="links">
             <p>{{ $t('credits.social.hireMe') }}</p>
             <a
-              v-for="link in $t('links.freelancing')"
+              v-for="link in $t('common.links.freelancing')"
               :key="link.name"
               :href="link.url"
               :title="link.name"

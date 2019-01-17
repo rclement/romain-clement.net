@@ -79,7 +79,7 @@
         </div>
 
         <a
-          v-for="link in $t('links.social')"
+          v-for="link in $t('common.links.social')"
           :key="link.name"
           :href="link.url"
           :title="link.name"

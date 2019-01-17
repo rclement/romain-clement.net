@@ -50,7 +50,7 @@ function findLocaleContent(locale) {
   const commonPath = path.join('content', 'common')
   const localePath = path.join('content', locale)
   return {
-    ...findContent(commonPath),
+    common: findContent(commonPath),
     ...findContent(localePath)
   }
 }
