@@ -16,7 +16,7 @@ slug:
 collections:
   - label: Tags
     name: tags
-    folder: "content/tags"
+    folder: "content/common/tags"
     create: true
     slug: "{{slug}}"
     extension: json
