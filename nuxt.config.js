@@ -1,10 +1,8 @@
 import shrinkRay from 'shrink-ray-current'
+import content from './content'
 
 require('dotenv').config()
 
-const glob = require('glob')
-const path = require('path')
-const fs = require('fs')
 const pkg = require('./package')
 
 const environment = process.env.NODE_ENV
@@ -21,44 +19,6 @@ const matomoUrl = process.env.MATOMO_URL || undefined
 const matomoSiteId = process.env.MATOMO_SITE_ID || undefined
 const googleAnalyticsId = process.env.GOOGLE_ANALYTICS_ID || undefined
 const sentryDsn = process.env.SENTRY_DSN || undefined
-
-function findContent(basepath) {
-  const extension = '.json'
-  const searchPattern = `{${basepath}/*/,${basepath}/*${extension}}`
-
-  return glob
-    .sync(searchPattern)
-    .map(filepath => {
-      const isdir = fs.lstatSync(filepath).isDirectory()
-      const name = isdir
-        ? path.basename(filepath)
-        : path.basename(filepath, extension)
-      const content = isdir ? findContent(filepath) : require(`./${filepath}`)
-
-      return {
-        name: name,
-        content: content
-      }
-    })
-    .reduce((obj, item) => {
-      obj[item.name] = item.content
-      return obj
-    }, {})
-}
-
-function findLocaleContent(locale) {
-  const commonPath = path.join('content', 'common')
-  const localePath = path.join('content', locale)
-  return {
-    common: findContent(commonPath),
-    ...findContent(localePath)
-  }
-}
-
-const locales = {
-  en: findLocaleContent('en'),
-  fr: findLocaleContent('fr')
-}
 
 module.exports = {
   mode: 'universal',
@@ -125,27 +85,16 @@ module.exports = {
       'nuxt-i18n',
       {
         baseUrl: baseUrl,
-        locales: [
-          {
-            name: 'English',
-            code: 'en',
-            iso: 'en-US'
-          },
-          {
-            name: 'Français',
-            code: 'fr',
-            iso: 'fr-FR'
-          }
-        ],
-        defaultLocale: 'en',
+        locales: content.locales,
+        defaultLocale: content.defaultLocale,
         strategy: 'prefix_except_default',
         detectBrowserLanguage: {
           useCookie: true,
           cookieKey: 'i18n_redirected'
         },
         vueI18n: {
-          fallbackLocale: 'en',
-          messages: locales
+          fallbackLocale: content.defaultLocale,
+          messages: content.messages
         }
       }
     ],
