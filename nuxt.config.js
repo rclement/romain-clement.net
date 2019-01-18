@@ -88,13 +88,7 @@ module.exports = {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' }
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Quicksand:300,400'
-      }
-    ]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
 
   /*
@@ -155,6 +149,7 @@ module.exports = {
         }
       }
     ],
+    'nuxt-webfontloader',
     [
       'nuxt-buefy',
       {
@@ -267,6 +262,12 @@ module.exports = {
     linkify: true,
     breaks: true,
     html: true
+  },
+
+  webfontloader: {
+    google: {
+      families: ['Quicksand:300,400']
+    }
   },
 
   icon: {
