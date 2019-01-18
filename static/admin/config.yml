@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: rclement/romain-clement.net
-  branch: netlify-cms-support
+  branch: master
 
 media_folder: "static/media"
 public_folder: "/media"
