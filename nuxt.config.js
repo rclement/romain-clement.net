@@ -44,11 +44,6 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' }
-    ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     script: [
       {
         src: 'https://identity.netlify.com/v1/netlify-identity-widget.js',
@@ -227,6 +222,11 @@ module.exports = {
 
   icon: {
     iconSrc: 'assets/img/logo.png'
+  },
+
+  meta: {
+    ogSiteName: pkg.name,
+    ogHost: baseUrl
   },
 
   sitemap: {
