@@ -56,9 +56,6 @@ const messages = locales.reduce((obj, item) => {
   return obj
 }, {})
 
-console.log(locales)
-console.log(messages)
-
 export default {
   locales: locales,
   defaultLocale: locales[0].code,
