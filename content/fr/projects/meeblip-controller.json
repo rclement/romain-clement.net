@@ -1,7 +1,16 @@
 {
   "title": "Meeblip Controller",
   "description": "Reprenez les pleins pouvoirs sur votre Meeblip Anode !",
-  "tags": ["C++", "CMake", "JUCE", "FRUT", "MIDI", "VST", "VST3", "AU"],
+  "tags": [
+    "C++",
+    "CMake",
+    "JUCE",
+    "FRUT",
+    "MIDI",
+    "VST",
+    "VST3",
+    "AU"
+  ],
   "thumbnail": "https://raw.githubusercontent.com/rclement/meeblip-controller/master/ext/meeblip-controller-screenshot.png",
-  "body": "[![Meeblip Controller GitHub Releases](https://img.shields.io/github/release/rclement/meeblip-controller.svg)](https://github.com/rclement/meeblip-controller/releases/latest) [![Meeblip Controller GitHub](https://img.shields.io/github/license/rclement/meeblip-controller.svg)](https://github.com/rclement/meeblip-controller) [![Meeblip Controller GitHub](https://img.shields.io/github/stars/rclement/meeblip-controller.svg)](https://github.com/rclement/meeblip-controller)\n\nMeeblip Controller is a real-time MIDI controller for the [Meeblip Anode](https://meeblip.com/products/meeblip-anode-synth) synthesizer, available on MacOS, Windows and Linux as an audio plug-in (VST, VST3, AU) and a standalone app.\n\n[Download it](https://github.com/rclement/meeblip-controller/releases/latest), it's free and open-source!"
+  "body": "[![Meeblip Controller GitHub Releases](https://img.shields.io/github/release/rclement/meeblip-controller.svg)](https://github.com/rclement/meeblip-controller/releases/latest) [![Meeblip Controller GitHub](https://img.shields.io/github/license/rclement/meeblip-controller.svg)](https://github.com/rclement/meeblip-controller) [![Meeblip Controller GitHub](https://img.shields.io/github/stars/rclement/meeblip-controller.svg)](https://github.com/rclement/meeblip-controller)\n\nMeeblip Contoller est un contrôleur MIDI temps-réel pour le synthétiseur [Meeblip Anode](https://meeblip.com/products/meeblip-anode-synth), disponible sur MacOS, Windows et Linux sous la forme d'un plug-in audio (VST, VST3, AU) et d'une application standalone.\n\n[Téléchargez-le](https://github.com/rclement/meeblip-controller/releases/latest), c'est gratuit et libre!"
 }
