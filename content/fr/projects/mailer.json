@@ -1,0 +1,12 @@
+{
+  "title": "Mailer",
+  "description": "Ultra-simple micro-service d'envoi de mail pour site-web statique",
+  "tags": [
+    "Python",
+    "Flask",
+    "Docker",
+    "Serverless",
+    "Microservice"
+  ],
+  "body": "[![Mailer GitHub Tags](https://img.shields.io/github/tag/rclement/mailer.svg)](https://github.com/rclement/mailer/releases/latest) [![Mailer GitHub](https://img.shields.io/github/license/rclement/mailer.svg)](https://github.com/rclement/mailer) [![Mailer GitHub](https://img.shields.io/github/stars/rclement/mailer.svg)](https://github.com/rclement/mailer)\n\nLors de la réalisation de site-web statiques, tout le monde a besoin d'un formulaire de contact, mais cela requiert un traitement côté serveur. `mailer` fournit pour cela un micro-service ultra-simple (utilisable comme une fonction _serverless_), permettant l'envoi de mails à partir d'un simple formulaire utilisant une unique requête AJAX."
+}

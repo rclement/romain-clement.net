@@ -1,0 +1,18 @@
+{
+  "title": "Développement full-stack",
+  "subtitle": "Envie d'un nouveau service en ligne ?",
+  "tags": [
+    "Python",
+    "Flask",
+    "Node.js",
+    "Vue.js",
+    "React-Native",
+    "PostgreSQL",
+    "MongoDB",
+    "Redis",
+    "Stripe",
+    "Mangopay",
+    "Docker"
+  ],
+  "body": "Je peux apporter mon aide dans le choix et l'orchestration de la stack technologique la plus adaptée, en développant des **web-services** (back-end, API), des **web-apps** (front-end), des **applications mobiles**, et implémenter une stratégie **d'intégration et déploiement continu**.\n"
+}

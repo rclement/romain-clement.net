@@ -1,0 +1,12 @@
+{
+  "title": "Mailer",
+  "description": "Dead-simple mailer micro-service for static websites",
+  "tags": [
+    "Python",
+    "Flask",
+    "Docker",
+    "Serverless",
+    "Microservice"
+  ],
+  "body": "[![Mailer GitHub Tags](https://img.shields.io/github/tag/rclement/mailer.svg)](https://github.com/rclement/mailer/releases/latest) [![Mailer GitHub](https://img.shields.io/github/license/rclement/mailer.svg)](https://github.com/rclement/mailer) [![Mailer GitHub](https://img.shields.io/github/stars/rclement/mailer.svg)](https://github.com/rclement/mailer)\n\nWhen building static websites, everyone needs a contact form, but that requires some server-side processing. `mailer` provides a dead-simple micro-service (usable as a serverless function) for this purpose, enabling one to send mails from a simple form using a single AJAX request."
+}

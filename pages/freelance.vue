@@ -12,7 +12,7 @@
               path="freelance.profile"
               tag="p">
               <a
-                v-for="link in $t('links.freelancing')"
+                v-for="link in $t('common.links.freelancing')"
                 :key="link.name"
                 :href="link.url"
                 :title="link.name"
@@ -35,7 +35,7 @@
       <div class="container">
         <div class="tile is-ancestor">
           <div
-            v-for="service in services"
+            v-for="service in $t('services')"
             :key="service.title"
             class="tile is-parent">
             <article class="tile is-child box has-text-centered">
@@ -44,7 +44,7 @@
 
               <div
                 class="content"
-                v-html="service.content"/>
+                v-html="$md.render(service.body)"/>
 
               <div class="tags are-centered">
                 <span
@@ -87,8 +87,7 @@ export default {
   data() {
     return {
       isModalContactFormActive: false,
-      modalContactSubject: '',
-      services: this.$t('freelance.services')
+      modalContactSubject: ''
     }
   },
 

@@ -1,0 +1,16 @@
+{
+  "title": "Audio numérique",
+  "subtitle": "Un projet lié à l'audio et/ou la musique en tête ?",
+  "tags": [
+    "C++",
+    "CMake",
+    "JUCE",
+    "FRUT",
+    "DSP",
+    "OpenGL",
+    "VST",
+    "AU",
+    "AAX"
+  ],
+  "body": "Je peux apporter mon expertise dans la manifestation de ces ondes sonores en concevant des **applications natives** et des **plug-ins audio**, **performants** et **multiplatformes** (MacOS, Windows, Linux).\n"
+}

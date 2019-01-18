@@ -34,7 +34,11 @@ export default {
   computed: {
     err() {
       const codes = this.$t('errors.codes')
-      return codes[this.error.statusCode]
+      for (const err of codes) {
+        if (err.code === this.error.statusCode) {
+          return err
+        }
+      }
     }
   }
 }

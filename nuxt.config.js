@@ -1,8 +1,10 @@
 import shrinkRay from 'shrink-ray-current'
-import locales from './locales'
 
 require('dotenv').config()
 
+const glob = require('glob')
+const path = require('path')
+const fs = require('fs')
 const pkg = require('./package')
 
 const environment = process.env.NODE_ENV
@@ -19,6 +21,44 @@ const matomoUrl = process.env.MATOMO_URL || undefined
 const matomoSiteId = process.env.MATOMO_SITE_ID || undefined
 const googleAnalyticsId = process.env.GOOGLE_ANALYTICS_ID || undefined
 const sentryDsn = process.env.SENTRY_DSN || undefined
+
+function findContent(basepath) {
+  const extension = '.json'
+  const searchPattern = `{${basepath}/*/,${basepath}/*${extension}}`
+
+  return glob
+    .sync(searchPattern)
+    .map(filepath => {
+      const isdir = fs.lstatSync(filepath).isDirectory()
+      const name = isdir
+        ? path.basename(filepath)
+        : path.basename(filepath, extension)
+      const content = isdir ? findContent(filepath) : require(`./${filepath}`)
+
+      return {
+        name: name,
+        content: content
+      }
+    })
+    .reduce((obj, item) => {
+      obj[item.name] = item.content
+      return obj
+    }, {})
+}
+
+function findLocaleContent(locale) {
+  const commonPath = path.join('content', 'common')
+  const localePath = path.join('content', locale)
+  return {
+    common: findContent(commonPath),
+    ...findContent(localePath)
+  }
+}
+
+const locales = {
+  en: findLocaleContent('en'),
+  fr: findLocaleContent('fr')
+}
 
 module.exports = {
   mode: 'universal',
@@ -104,6 +144,7 @@ module.exports = {
           }
         ],
         defaultLocale: 'en',
+        strategy: 'prefix_except_default',
         detectBrowserLanguage: {
           useCookie: true,
           cookieKey: 'i18n_redirected'
@@ -121,6 +162,7 @@ module.exports = {
         materialDesignIcons: false
       }
     ],
+    '@nuxtjs/markdownit',
     '@nuxtjs/pwa',
     '@nuxtjs/sitemap',
     [
@@ -129,6 +171,7 @@ module.exports = {
         {
           UserAgent: '*',
           Allow: '/',
+          Disallow: '/admin',
           Sitemap: sitemapUrl
         }
       ]
@@ -216,6 +259,14 @@ module.exports = {
 
   axios: {
     debug: development
+  },
+
+  markdownit: {
+    injected: true,
+    preset: 'default',
+    linkify: true,
+    breaks: true,
+    html: true
   },
 
   icon: {

@@ -1,17 +1,14 @@
-@import "~bulma/sass/utilities/_all";
-
 // brand colors
-$blue: #3890AB;
-$brown: #464846;
+$romain-blue: #3890AB;
+$romain-dark: #464846;
+$white: #ffffff;
 
-// bulma global variables
-$primary: $blue;
-$link: $blue;
+// bulma initial variables
+$blue: $romain-blue;
+$grey-darker: $romain-dark;
 $family-sans-serif: "Quicksand", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-$family-primary: $family-sans-serif;
 
 // bulma component variables
-$navbar-item-hover-background-color: rgba(#ffffff, 0.0);
 $footer-padding: 3rem 1.5rem 3rem;
 
 @import "~bulma/bulma.sass";

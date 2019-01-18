@@ -1,0 +1,267 @@
+backend:
+  name: github
+  repo: rclement/romain-clement.net
+  branch: netlify-cms-support
+
+media_folder: "static/media"
+public_folder: "/media"
+
+# publish_mode: editorial_workflow
+
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "-"
+
+collections:
+  - label: Tags
+    name: tags
+    folder: "content/common/tags"
+    create: true
+    slug: "{{slug}}"
+    extension: json
+    format: json
+    fields:
+      - {label: Title, name: title, widget: string}
+
+  - label: Common
+    name: common
+    files:
+    - label: Links
+      name: links
+      format: json
+      file: "content/common/links.json"
+      fields:
+        - label: Social Links
+          name: social
+          widget: list
+          fields: &linkField
+            - {label: Name, name: name, widget: string}
+            - {label: Url, name: url, widget: string}
+            - label: Icon
+              name: icon
+              widget: object
+              fields:
+                - {label: Pack, name: pack, widget: select, options: ["fas", "fab"]}
+                - {label: Name, name: name, widget: string}
+        - label: Freelancing Links
+          name: freelancing
+          widget: list
+          fields: *linkField
+        - label: Other Links
+          name: other
+          widget: list
+          fields: *linkField
+
+  - label: Pages (en)
+    name: pages-en
+    files:
+    - &pageContact
+      label: Contact
+      name: contact
+      format: json
+      file: "content/en/contact.json"
+      fields:
+        - {label: Title, name: title, widget: string}
+        - {label: Name, name: name, widget: string}
+        - {label: E-mail, name: email, widget: string}
+        - {label: Subject, name: subject, widget: string}
+        - {label: Message, name: message, widget: string}
+        - {label: Send, name: send, widget: string}
+        - {label: Success, name: success, widget: string}
+        - {label: Failure, name: failure, widget: string}
+
+    - &pageCookies
+      label: Cookies
+      name: cookies
+      format: json
+      file: "content/en/cookies.json"
+      fields:
+        - {label: Consent, name: consent, widget: string}
+        - {label: Accept, name: accept, widget: string}
+        - {label: Decline, name: decline, widget: string}
+        - {label: Learn more, name: learnMore, widget: string}
+
+    - &pageCredits
+      label: Credits
+      name: credits
+      format: json
+      file: "content/en/credits.json"
+      fields:
+        - label: Social
+          name: social
+          widget: object
+          fields:
+            - {label: Get in touch, name: getInTouch, widget: string}
+            - {label: Hire me, name: hireMe, widget: string}
+        - label: Copyright
+          name: copyright
+          widget: object
+          fields:
+            - {label: Text, name: text, widget: string}
+            - {label: Start, name: start, widget: string}
+            - {label: End, name: end, widget: string}
+            - {label: Author, name: author, widget: string}
+        - label: Company
+          name: company
+          widget: object
+          fields:
+            - {label: Name, name: name, widget: string}
+            - {label: Address, name: address, widget: string}
+            - {label: Kind, name: kind, widget: select, options: ["Micro-entreprise", "EIRL", "EURL", "SA", "SARL", "SAS", "SASU"]}
+            - label: Registrations
+              name: registrations
+              widget: list
+              fields:
+                - {label: Type, name: type, widget: select, options: ["SIRET", "NAF"]}
+                - {label: Value, name: value, widget: string }
+            - label: Link
+              name: link
+              widget: object
+              fields:
+                - {label: Name, name: name, widget: string}
+                - {label: URL, name: url, widget: string}
+        - label: Cookies
+          name: cookies
+          widget: object
+          fields:
+            - {label: Update, name: update, widget: string}
+
+    - &pageErrors
+      label: Errors
+      name: errors
+      format: json
+      file: "content/en/errors.json"
+      fields:
+        - label: Codes
+          name: codes
+          widget: list
+          fields:
+            - label: Error
+              name: error
+              widget: object
+              fields:
+                - {label: Code, name: code, widget: number}
+                - {label: Title, name: title, widget: string}
+                - {label: Message, name: message, widget: string}
+        - {label: Back to home, name: backToHome, widget: string}
+
+    - &pageFreelance
+      label: Freelance
+      name: freelance
+      format: json
+      file: "content/en/freelance.json"
+      fields:
+        - {label: Title, name: title, widget: string}
+        - {label: Presentation, name: presentation, widget: string}
+        - {label: Profile, name: profile, widget: string}
+        - {label: New project, name: newProject, widget: string}
+
+    - &pageHead
+      label: Head
+      name: head
+      format: json
+      file: "content/en/head.json"
+      fields:
+        - {label: Title, name: title, widget: string}
+        - {label: Keywords, name: keywords, widget: list}
+
+    - &pageHome
+      label: Home
+      name: home
+      format: json
+      file: "content/en/home.json"
+      fields:
+        - {label: Title, name: title, widget: string}
+        - {label: Presentation, name: presentation, widget: markdown}
+        - {label: Let's talk, name: letsTalk, widget: string}
+        - {label: New opportunity, name: newOpportunity, widget: string}
+        - {label: Companies, name: companies, widget: string}
+
+    - &pageNavbar
+      label: Navbar
+      name: navbar
+      format: json
+      file: "content/en/navbar.json"
+      fields:
+        - {label: Tagline, name: tagline, widget: string}
+        - {label: Home, name: home, widget: string}
+        - {label: Freelance, name: freelance, widget: string}
+        - {label: Software, name: software, widget: string}
+        - {label: Contact, name: contact, widget: string}
+        - {label: Language, name: language, widget: string}
+
+    - &pageSoftware
+      label: Software
+      name: software
+      format: json
+      file: "content/en/software.json"
+      fields:
+        - {label: Title, name: title, widget: string}
+
+  - label: Pages (fr)
+    name: pages-fr
+    files:
+    - <<: *pageContact
+      file: "content/fr/contact.json"
+    - <<: *pageCookies
+      file: "content/fr/cookies.json"
+    - <<: *pageCredits
+      file: "content/fr/credits.json"
+    - <<: *pageErrors
+      file: "content/fr/errors.json"
+    - <<: *pageFreelance
+      file: "content/fr/freelance.json"
+    - <<: *pageHead
+      file: "content/fr/head.json"
+    - <<: *pageHome
+      file: "content/fr/home.json"
+    - <<: *pageNavbar
+      file: "content/fr/navbar.json"
+    - <<: *pageSoftware
+      file: "content/fr/software.json"
+
+  - &projects
+    name: projects-en
+    label: Projects (en)
+    folder: "content/en/projects"
+    create: true
+    slug: "{{slug}}"
+    extension: json
+    format: json
+    fields:
+      - {label: Title, name: title, widget: string}
+      - {label: Description, name: description, widget: string}
+      - label: Tags
+        name: tags
+        widget: list
+        field: {label: Tag, name: tag, widget: relation, collection: tags, searchFields: ["title"], valueField: title, displayFields: ["title"]}
+      - {label: Thumbnail, name: thumbnail, widget: image, required: false}
+      - {label: Body, name: body, widget: markdown}
+
+  - <<: *projects
+    label: Projects (fr)
+    name: projects-fr
+    folder: "content/fr/projects"
+
+  - &services
+    label: Services (en)
+    name: services-en
+    folder: "content/en/services"
+    create: true
+    slug: "{{slug}}"
+    extension: json
+    format: json
+    fields:
+      - {label: Title, name: title, widget: string}
+      - {label: Subtitle, name: subtitle, widget: string}
+      - label: Tags
+        name: tags
+        widget: list
+        field: {label: Tag, name: tag, widget: relation, collection: tags, searchFields: ["title"], valueField: title, displayFields: ["title"]}
+      - {label: Body, name: body, widget: markdown}
+
+  - <<: *services
+    label: Services (fr)
+    name: services-fr
+    folder: "content/fr/services"
