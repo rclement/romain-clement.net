@@ -68,6 +68,7 @@ module.exports = {
   css: [
     '@fortawesome/fontawesome-free/css/all.css',
     'vue-cookie-accept-decline/dist/vue-cookie-accept-decline.css',
+    'highlight.js/styles/ocean.css',
     '@/assets/scss/main.scss'
   ],
 
@@ -214,7 +215,11 @@ module.exports = {
     preset: 'default',
     linkify: true,
     breaks: true,
-    html: true
+    html: true,
+    langPrefix: 'language-',
+    use: [
+      'markdown-it-highlightjs'
+    ]
   },
 
   webfontloader: {
