@@ -18,6 +18,8 @@ const formspreeUrl = process.env.FORMSPREE_URL
 const matomoUrl = process.env.MATOMO_URL || undefined
 const matomoSiteId = process.env.MATOMO_SITE_ID || undefined
 const googleAnalyticsId = process.env.GOOGLE_ANALYTICS_ID || undefined
+const googleRecaptchaSiteKey =
+  process.env.GOOGLE_RECAPTCHA_SITE_KEY || undefined
 const sentryDsn = process.env.SENTRY_DSN || undefined
 
 module.exports = {
@@ -29,7 +31,8 @@ module.exports = {
   env: {
     BASE_URL: baseUrl,
     MAILER_URL: mailerUrl,
-    FORMSPREE_URL: formspreeUrl
+    FORMSPREE_URL: formspreeUrl,
+    GOOGLE_RECAPTCHA_SITE_KEY: googleRecaptchaSiteKey
   },
 
   /*

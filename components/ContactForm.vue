@@ -3,7 +3,7 @@
     ref="form"
     class="contact-form"
     method="POST"
-    @submit.prevent="sendMail">
+    @submit.prevent="executeRecaptcha">
     <b-field
       v-for="field in fields"
       :key="field.name"
@@ -16,6 +16,13 @@
         :maxlength="field.maxlength"
         :required="field.required"/>
     </b-field>
+
+    <vue-recaptcha
+      ref="invisibleRecaptcha"
+      :sitekey="recaptchaSiteKey"
+      size="invisible"
+      @verify="onVerifyRecaptcha"
+      @expired="onExpiredRecaptcha"/>
 
     <b-field>
       <button
@@ -34,7 +41,26 @@
 </template>
 
 <script>
+import VueRecaptcha from 'vue-recaptcha'
+
 export default {
+  components: {
+    VueRecaptcha
+  },
+
+  head() {
+    return {
+      script: [
+        {
+          src: `https://www.google.com/recaptcha/api.js?onload=vueRecaptchaApiLoaded&render=explicit&hl=${
+            this.$i18n.locale
+          }`,
+          type: 'text/javascript'
+        }
+      ]
+    }
+  },
+
   props: {
     subject: {
       type: String,
@@ -106,7 +132,9 @@ export default {
           value: '',
           required: true
         }
-      }
+      },
+      recaptchaSiteKey: process.env.GOOGLE_RECAPTCHA_SITE_KEY,
+      recaptchaToken: null
     }
   },
 
@@ -148,6 +176,24 @@ export default {
       })
     },
 
+    executeRecaptcha() {
+      this.loading = true
+      if (!this.recaptchaToken) {
+        this.$refs.invisibleRecaptcha.execute()
+      } else {
+        this.sendMail()
+      }
+    },
+
+    onVerifyRecaptcha(response) {
+      this.recaptchaToken = response
+      this.sendMail()
+    },
+
+    onExpiredRecaptcha() {
+      this.recaptchaToken = null
+    },
+
     async sendMailFormspree() {
       const url = process.env.FORMSPREE_URL
       if (!url) {
@@ -177,12 +223,12 @@ export default {
         name: this.fields.name.value,
         subject: this.fields.subject.value,
         message: this.fields.message.value,
-        honeypot: this.fields.honeypot.value
+        honeypot: this.fields.honeypot.value,
+        recaptcha: this.recaptchaToken
       })
     },
 
     async sendMail() {
-      this.loading = true
       try {
         await this.sendMailMailer()
         this.clear()
