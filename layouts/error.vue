@@ -39,6 +39,12 @@ export default {
           return err
         }
       }
+
+      return {
+        code: 500,
+        title: '',
+        message: ''
+      }
     }
   }
 }
