@@ -55,11 +55,12 @@
           {{ $t('navbar.software') }}
         </nuxt-link>
 
-        <a
+        <nuxt-link
+          :to="localePath('contact')"
           class="navbar-item"
-          @click="openModalContactForm">
+          @click.native="closeNavbarContent">
           {{ $t('navbar.contact') }}
-        </a>
+        </nuxt-link>
 
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">
@@ -94,36 +95,24 @@
         </a>
       </div>
     </div>
-
-    <modal-contact-form
-      :active.sync="isModalContactFormActive"
-      :subject="$t('navbar.contact')"/>
   </nav>
 </template>
 
 <script>
 import Logo from '~/components/Logo.vue'
-import ModalContactForm from '~/components/ModalContactForm.vue'
 
 export default {
   components: {
-    Logo,
-    ModalContactForm
+    Logo
   },
 
   data() {
     return {
-      navbarContentOpen: false,
-      isModalContactFormActive: false
+      navbarContentOpen: false
     }
   },
 
   methods: {
-    openModalContactForm() {
-      this.isModalContactFormActive = true
-      this.navbarContentOpen = false
-    },
-
     toggleNavbarContent() {
       this.navbarContentOpen = !this.navbarContentOpen
     },
