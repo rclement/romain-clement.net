@@ -217,9 +217,7 @@ module.exports = {
     breaks: true,
     html: true,
     langPrefix: 'language-',
-    use: [
-      'markdown-it-highlightjs'
-    ]
+    use: ['markdown-it-highlightjs']
   },
 
   webfontloader: {
