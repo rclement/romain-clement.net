@@ -180,6 +180,11 @@ collections:
         - {label: Let's talk, name: letsTalk, widget: string}
         - {label: New opportunity, name: newOpportunity, widget: string}
         - {label: Companies, name: companies, widget: string}
+        - {label: Mountains, name: mountains, widget: image, allow_multiple: false}
+        - {label: Parrot, name: parrot, widget: image, allow_multiple: false}
+        - {label: Eiosis, name: eiosis, widget: image, allow_multiple: false}
+        - {label: Slate Digital, name: slatedigital, widget: image, allow_multiple: false}
+        - {label: Sylha, name: sylha, widget: image, allow_multiple: false}
 
     - &pageNavbar
       label: Navbar

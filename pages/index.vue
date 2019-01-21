@@ -8,7 +8,7 @@
               <figure
                 class="image container is-256x256">
                 <img
-                  src="@/assets/img/mountains.png"
+                  :src="$t('home.mountains')"
                   title="Mountains"
                   alt="Mountains">
               </figure>
@@ -46,26 +46,26 @@
 
         <div class="clients">
           <img
+            :src="$t('home.parrot')"
             class="client image"
-            src="@/assets/img/logo-parrot.png"
             title="Parrot Logo"
             alt="Parrot Logo">
 
           <img
+            :src="$t('home.eiosis')"
             class="client image"
-            src="@/assets/img/logo-eiosis.png"
             title="Eiosis Logo"
             alt="Eiosis Logo">
 
           <img
+            :src="$t('home.slatedigital')"
             class="client image"
-            src="@/assets/img/logo-slatedigital.png"
             title="Slate Digital Logo"
             alt="Slate Digital Logo">
 
           <img
+            :src="$t('home.sylha')"
             class="client image"
-            src="@/assets/img/logo-sylha.png"
             title="Sylha Logo"
             alt="Sylha Logo">
         </div>
