@@ -187,6 +187,7 @@ collections:
       format: json
       file: "content/en/navbar.json"
       fields:
+        - {label: Logo (minimum size 512x512), name: logo, widget: image, allow_multiple: false, pattern: ["^\/media\/logo.png$", "Must be named `logo.png`"], default: "/media/logo.png"}
         - {label: Tagline, name: tagline, widget: string}
         - {label: Home, name: home, widget: string}
         - {label: Freelance, name: freelance, widget: string}
