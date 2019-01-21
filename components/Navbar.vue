@@ -8,7 +8,7 @@
         :to="localePath('index')"
         class="navbar-item"
         @click.native="closeNavbarContent">
-        <logo/>
+        <logo :size="120"/>
       </nuxt-link>
 
       <p class="navbar-item">
