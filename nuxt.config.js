@@ -227,7 +227,8 @@ module.exports = {
   },
 
   icon: {
-    iconSrc: 'assets/img/logo.png'
+    iconSrc: 'static/media/logo.png',
+    accessibleIcons: true
   },
 
   meta: {
