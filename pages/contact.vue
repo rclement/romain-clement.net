@@ -19,6 +19,10 @@ import ContactForm from '~/components/ContactForm'
 export default {
   components: {
     ContactForm
+  },
+
+  head() {
+    return this.$pageHead('contact')
   }
 }
 </script>
