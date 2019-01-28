@@ -1,7 +1,7 @@
 {
   "title": "Full-stack development",
+  "slug": "fullstack-development",
   "subtitle": "Fancy a new online service?",
-  "body": "I can help on choosing and orchestrating the proper technological stack, developing software for **web-services** (back-end, API), **web-apps** (front-end), **mobile apps**, and implementing a strategy for **continuous integration and deployment**.",
   "tags": [
     "Python",
     "Flask",

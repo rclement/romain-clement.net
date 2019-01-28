@@ -1,5 +1,6 @@
 {
   "title": "Meeblip Controller",
+  "slug": "meeblip-controller",
   "description": "Take full control over your Meeblip Anode!",
   "tags": [
     "C++",

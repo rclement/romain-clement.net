@@ -235,11 +235,12 @@ collections:
     label: Projects (en)
     folder: "content/en/projects"
     create: true
-    slug: "{{slug}}"
+    identifier_field: slug
     extension: json
     format: json
     fields:
       - {label: Title, name: title, widget: string}
+      - {label: Slug, name: slug, widget: string}
       - {label: Description, name: description, widget: string}
       - label: Tags
         name: tags
@@ -258,11 +259,12 @@ collections:
     name: services-en
     folder: "content/en/services"
     create: true
-    slug: "{{slug}}"
+    identifier_field: slug
     extension: json
     format: json
     fields:
       - {label: Title, name: title, widget: string}
+      - {label: Slug, name: slug, widget: string}
       - {label: Subtitle, name: subtitle, widget: string}
       - label: Tags
         name: tags

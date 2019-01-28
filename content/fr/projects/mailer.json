@@ -1,5 +1,6 @@
 {
   "title": "Mailer",
+  "slug": "mailer",
   "description": "Ultra-simple micro-service d'envoi de mail pour site-web statique",
   "tags": [
     "Python",

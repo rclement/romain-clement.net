@@ -1,5 +1,6 @@
 {
   "title": "Mailer",
+  "slug": "mailer",
   "description": "Dead-simple mailer micro-service for static websites",
   "tags": [
     "Python",
