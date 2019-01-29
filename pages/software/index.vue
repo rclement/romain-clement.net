@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import ImageModal from '@/components/ImageModal'
+import ImageModal from '~/components/ImageModal'
 
 export default {
   components: {

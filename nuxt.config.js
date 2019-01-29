@@ -69,16 +69,13 @@ module.exports = {
     '@fortawesome/fontawesome-free/css/all.css',
     'vue-cookie-accept-decline/dist/vue-cookie-accept-decline.css',
     'highlight.js/styles/ocean.css',
-    '@/assets/scss/main.scss'
+    '~/assets/scss/main.scss'
   ],
 
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: [
-    '~/plugins/dnt-support.client',
-    '~/plugins/page-head'
-  ],
+  plugins: ['~/plugins/dnt-support.client', '~/plugins/page-head'],
 
   /*
   ** Nuxt.js modules

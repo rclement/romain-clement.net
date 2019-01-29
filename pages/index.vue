@@ -79,8 +79,8 @@
 </template>
 
 <script>
-import ModalContactForm from '~/components/ModalContactForm.vue'
-import Separator from '~/components/Separator.vue'
+import ModalContactForm from '~/components/ModalContactForm'
+import Separator from '~/components/Separator'
 
 export default {
   components: {

@@ -73,7 +73,7 @@
 </template>
 
 <script>
-import ModalContactForm from '~/components/ModalContactForm.vue'
+import ModalContactForm from '~/components/ModalContactForm'
 
 export default {
   components: {

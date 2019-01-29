@@ -15,8 +15,8 @@
 </template>
 
 <script>
-import Navbar from '@/components/Navbar.vue'
-import Credits from '@/components/Credits.vue'
+import Navbar from '~/components/Navbar'
+import Credits from '~/components/Credits'
 
 export default {
   components: {

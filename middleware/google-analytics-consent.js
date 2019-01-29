@@ -1,6 +1,6 @@
 import Vue from 'vue'
 
-export default function({ app, store }) {
+export default function({ store }) {
   const dnt = store.state.analytics.dnt
   const consent = store.state.analytics.consent
   const track = !dnt && consent
