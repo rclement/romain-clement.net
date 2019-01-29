@@ -203,7 +203,8 @@ module.exports = {
   },
 
   generate: {
-    fallback: true
+    fallback: true,
+    routes: content.dynamicRoutes
   },
 
   axios: {
@@ -243,6 +244,6 @@ module.exports = {
     gzip: true,
     generate: true,
     exclude: [],
-    routes: ['/']
+    routes: content.dynamicRoutes
   }
 }

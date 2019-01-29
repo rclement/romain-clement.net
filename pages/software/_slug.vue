@@ -1,14 +1,11 @@
 <template>
-  <div class="software">
+  <div class="software-slug">
     <section class="section">
       <div class="container">
-        <div
-          v-for="(project, key) in $t('projects')"
-          :key="key"
-          class="columns is-vcentered">
+        <div class="columns is-vcentered">
           <div class="column">
-            <h1 class="title">{{ project.title }}</h1>
-            <h6 class="subtitle">{{ project.description }}</h6>
+            <p class="title">{{ project.title }}</p>
+            <p class="subtitle">{{ project.description }}</p>
             <div
               class="content"
               v-html="$md.render(project.body)"/>
@@ -44,16 +41,19 @@ export default {
     ImageModal
   },
 
-  head() {
-    return this.$pageHead('software')
+  async asyncData({ app, route, error }) {
+    const slug = route.params.slug
+    const i18nKey = `projects.${slug}`
+    const project = app.i18n.t(i18nKey)
+
+    if (project === i18nKey) {
+      return error({ statusCode: 404 })
+    }
+
+    return {
+      slug: slug,
+      project: project
+    }
   }
 }
 </script>
-
-<style scoped>
-.column.is-centered {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-</style>

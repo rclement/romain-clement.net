@@ -51,13 +51,47 @@ const locales = [
   }
 ]
 
+const defaultLocale = locales[0].code
+
 const messages = locales.reduce((obj, item) => {
   obj[item.code] = findLocaleContent(item.code)
   return obj
 }, {})
 
+const dynamicCollections = [
+  {
+    content: 'projects',
+    route: 'software'
+  }
+]
+
+const dynamicRoutes = Object.entries(messages).reduce((obj, [key, item]) => {
+  const isDefaultLocale = key === defaultLocale
+
+  obj.push(
+    ...dynamicCollections.reduce((routes, collection) => {
+      const localeCollection = item[collection.content]
+      if (localeCollection !== undefined) {
+        routes.push(
+          ...Object.keys(localeCollection).map(m => {
+            let route = `/${collection.route}/${m}`
+            if (!isDefaultLocale) {
+              route = `/${key}${route}`
+            }
+            return route
+          })
+        )
+      }
+      return routes
+    }, [])
+  )
+
+  return obj
+}, [])
+
 export default {
   locales: locales,
-  defaultLocale: locales[0].code,
-  messages: messages
+  defaultLocale: defaultLocale,
+  messages: messages,
+  dynamicRoutes: dynamicRoutes
 }
