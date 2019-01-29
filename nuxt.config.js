@@ -76,7 +76,7 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: '~/plugins/dnt-support', ssr: false },
+    '~/plugins/dnt-support.client',
     '~/plugins/page-head'
   ],
 
