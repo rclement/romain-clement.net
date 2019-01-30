@@ -234,6 +234,21 @@ module.exports = {
     ogHost: baseUrl
   },
 
+  workbox: {
+    runtimeCaching: [
+      {
+        urlPattern: 'https://fonts.(?:googleapis|gstatic).com/(.*)',
+        strategyOptions: {
+          cacheName: 'google-fonts',
+          cacheExpiration: {
+            maxEntries: 30,
+            maxAgeSeconds: 300
+          }
+        }
+      }
+    ]
+  },
+
   sitemap: {
     path: sitemapPath,
     hostname: baseUrl,
