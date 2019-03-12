@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/rmnclmnt
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://romain-clement.net
+  * I am rmnclmnt (https://keybase.io/rmnclmnt) on keybase.
+  * I have a public key ASD0eJyGsaum2aIoeTGt3INyNsOB_FaXB7V9KKPTxtTC-go
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01202408b6bb00fd42b3ef499df7ba62cb6a0728efcff25fb7aeaeb06973439e63d60a",
+      "host": "keybase.io",
+      "kid": "0120f4789c86b1aba6d9a2287931addc837236c381fc569707b57d28a3d3c6d4c2fa0a",
+      "uid": "fd650216677c7ba26468dbd4f050bc19",
+      "username": "rmnclmnt"
+    },
+    "merkle_root": {
+      "ctime": 1552383191,
+      "hash": "fe1e03cc5a875abe9d44eb246b3328ef11ba4f17fd462fa1259f94a03fa1eef3bfff25e31004a559c4f557fe01eda30741e50014c365c98445a240a6080a96c0",
+      "hash_meta": "bb92c1aa26d51cda594f9f32dc32c39e7398cfa1e0921295bf6da1e5ca30fef6",
+      "seqno": 4928302
+    },
+    "service": {
+      "entropy": "CpCoeCD2IeYTbHfirxUAAytT",
+      "hostname": "romain-clement.net",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "3.1.0"
+  },
+  "ctime": 1552383200,
+  "expire_in": 504576000,
+  "prev": "98e246cabd3f32fdcb489e57b7cc44ccfd0461eda6498ca254be1aec7dc9de1a",
+  "seqno": 14,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg9HichrGrptmiKHkxrdyDcjbDgfxWlwe1fSij08bUwvoKp3BheWxvYWTESpcCDsQgmOJGyr0/Mv3LSJ5Xt8xEzP0EYe2mSYyiVL4a7H3J3hrEIJkRIg3Y0W4mAcROS/a47Xb5HyFqPkgH5tE/gtIfVoVCAgHCo3NpZ8RAEVB0DwaHn18VtfjncxT/vwpnftVzBcr8S811NSRlO5XLONdMakgUYLSqE3jcMm67etpeyr8gri2d9W1/YWAWCahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIIjcy490hvAYI/JmDyXeDqYNzAh2St9cazuUqLbJg7J5o3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/rmnclmnt
+
+==================================================================
