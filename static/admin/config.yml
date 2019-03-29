@@ -1,9 +1,10 @@
 backend:
-  # name: git-gateway
-  # accept_roles:
-  #   - admin
-  #   - editor
-  name: github
+  name: git-gateway
+  site_domain: romain-clement-net.netlify.com
+  accept_roles:
+    - admin
+    - editor
+  # name: github
   repo: rclement/romain-clement.net
   branch: master
 
