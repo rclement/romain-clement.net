@@ -1,11 +1,7 @@
 import Vue from 'vue'
 import { library, config } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import {
-  faExclamationCircle,
-  faKey,
-  faRocket
-} from '@fortawesome/free-solid-svg-icons'
+import { faKey, faRocket, faSadTear } from '@fortawesome/free-solid-svg-icons'
 import {
   faConnectdevelop,
   faGithub,
@@ -18,9 +14,9 @@ import {
 config.autoAddCss = false
 
 library.add(
-  faExclamationCircle,
   faKey,
   faRocket,
+  faSadTear,
   faConnectdevelop,
   faGithub,
   faKeybase,

@@ -3,9 +3,10 @@
     <div class="container has-text-centered">
       <b-icon
         pack="fas"
-        icon="exclamation-circle"
-        class="link-icon"
-        size="is-large"/>
+        icon="sad-tear"
+        size="is-large"
+        type="is-danger"
+      />
 
       <p class="title">
         {{ err.title }}
