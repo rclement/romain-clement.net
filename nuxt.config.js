@@ -1,13 +1,13 @@
-import shrinkRay from 'shrink-ray-current'
 import content from './content'
-
-require('dotenv').config()
-
-const pkg = require('./package')
+import pkg from './package'
 
 const environment = process.env.NODE_ENV
 const development = environment === 'development'
 const production = environment === 'production'
+
+if (development) {
+  require('dotenv').config()
+}
 
 const baseUrl = production ? `https://${pkg.name}` : ''
 const sitemapPath = '/sitemap.xml'
@@ -109,6 +109,7 @@ export default {
     '@nuxtjs/pwa',
     '@nuxtjs/sitemap',
     'nuxt-robots-module',
+    'nuxt-compress',
     ...(matomoUrl && matomoSiteId
       ? [
           [
@@ -146,10 +147,6 @@ export default {
         })
       }
     }
-  },
-
-  render: {
-    compressor: shrinkRay()
   },
 
   generate: {
@@ -227,6 +224,15 @@ export default {
       Sitemap: sitemapUrl
     }
   ],
+
+  'nuxt-compress': {
+    gzip: {
+      cache: true
+    },
+    brotli: {
+      threshold: 10240
+    }
+  },
 
   ...(googleAnalyticsId
     ? {
