@@ -1,8 +1,9 @@
 backend:
-  name: git-gateway
-  accept_roles:
-    - admin
-    - editor
+  # name: git-gateway
+  # accept_roles:
+  #   - admin
+  #   - editor
+  name: github
   repo: rclement/romain-clement.net
   branch: master
 
