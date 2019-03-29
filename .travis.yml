@@ -8,13 +8,15 @@ cache:
 
 branches:
   only:
-  - master
+    - master
 
 install:
   - npm install
 
 script:
+  - npm audit
   - npm run lint
+  - npm run test
   - npm run generate
 
 deploy:
