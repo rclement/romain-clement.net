@@ -9,7 +9,13 @@ if (development) {
   require('dotenv').config()
 }
 
-const baseUrl = production ? `https://${pkg.name}` : ''
+const appName = pkg.name
+const appAuthor = pkg.author
+const appDescription = pkg.description
+const appTitle = `${appName} | ${appDescription}`
+const appVersion = pkg.version
+
+const baseUrl = production ? `https://${appName}` : ''
 const sitemapPath = '/sitemap.xml'
 const sitemapUrl = `${baseUrl}${sitemapPath}`
 
@@ -25,9 +31,6 @@ const sentryDsn = process.env.SENTRY_DSN || undefined
 export default {
   mode: 'universal',
 
-  /*
-  ** Environment variable properties
-  */
   env: {
     BASE_URL: baseUrl,
     MAILER_URL: mailerUrl,
@@ -35,54 +38,27 @@ export default {
     GOOGLE_RECAPTCHA_SITE_KEY: googleRecaptchaSiteKey
   },
 
-  /*
-  ** Router configuration
-  */
   router: {
     linkExactActiveClass: 'is-active',
     middleware: ['matomo-consent', 'google-analytics-consent']
   },
 
-  /*
-  ** Headers of the page
-  */
-  head: {
-    script: [
-      {
-        src: 'https://identity.netlify.com/v1/netlify-identity-widget.js',
-        type: 'text/javascript'
-      }
-    ]
-  },
-
-  /*
-  ** Customize the progress-bar color
-  */
   loading: {
     color: 'black'
   },
 
-  /*
-  ** Global CSS
-  */
   css: [
     '@fortawesome/fontawesome-svg-core/styles.css',
     'highlight.js/styles/ocean.css',
     '~/assets/scss/main.scss'
   ],
 
-  /*
-  ** Plugins to load before mounting the App
-  */
   plugins: [
     { src: '~/plugins/dnt', mode: 'client' },
     '~/plugins/fontawesome',
     '~/plugins/page-head'
   ],
 
-  /*
-  ** Nuxt.js modules
-  */
   modules: [
     '@nuxtjs/dotenv',
     '@nuxtjs/axios',
@@ -129,9 +105,6 @@ export default {
     ...(sentryDsn ? ['@nuxtjs/sentry'] : [])
   ],
 
-  /*
-  ** Build configuration
-  */
   build: {
     /*
     ** You can extend webpack config here
@@ -187,7 +160,10 @@ export default {
   },
 
   meta: {
-    ogSiteName: pkg.name,
+    name: appTitle,
+    author: appAuthor,
+    description: appDescription,
+    lang: content.defaultLocale,
     ogHost: baseUrl
   },
 
@@ -255,7 +231,7 @@ export default {
           disableClientSide: development,
           config: {
             environment: environment,
-            release: pkg.version,
+            release: appVersion,
             beforeSend: function(event) {
               if (event.exception) {
                 Sentry.showReportDialog()
