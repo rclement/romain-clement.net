@@ -22,7 +22,7 @@ const googleRecaptchaSiteKey =
   process.env.GOOGLE_RECAPTCHA_SITE_KEY || undefined
 const sentryDsn = process.env.SENTRY_DSN || undefined
 
-module.exports = {
+export default {
   mode: 'universal',
 
   /*
@@ -66,8 +66,7 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    '@fortawesome/fontawesome-free/css/all.css',
-    'vue-cookie-accept-decline/dist/vue-cookie-accept-decline.css',
+    '@fortawesome/fontawesome-svg-core/styles.css',
     'highlight.js/styles/ocean.css',
     '~/assets/scss/main.scss'
   ],
@@ -75,7 +74,11 @@ module.exports = {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: ['~/plugins/dnt-support.client', '~/plugins/page-head'],
+  plugins: [
+    { src: '~/plugins/dnt', mode: 'client' },
+    '~/plugins/fontawesome',
+    '~/plugins/page-head'
+  ],
 
   /*
   ** Nuxt.js modules
@@ -101,27 +104,11 @@ module.exports = {
       }
     ],
     'nuxt-webfontloader',
-    [
-      'nuxt-buefy',
-      {
-        css: true,
-        materialDesignIcons: false
-      }
-    ],
+    'nuxt-buefy',
     '@nuxtjs/markdownit',
     '@nuxtjs/pwa',
     '@nuxtjs/sitemap',
-    [
-      'nuxt-robots-module',
-      [
-        {
-          UserAgent: '*',
-          Allow: '/',
-          Disallow: '/admin',
-          Sitemap: sitemapUrl
-        }
-      ]
-    ],
+    'nuxt-robots-module',
     ...(matomoUrl && matomoSiteId
       ? [
           [
@@ -137,42 +124,8 @@ module.exports = {
           ]
         ]
       : []),
-    ...(googleAnalyticsId
-      ? [
-          [
-            '@nuxtjs/google-analytics',
-            {
-              id: googleAnalyticsId,
-              debug: {
-                enabled: development,
-                sendHitTask: production
-              }
-            }
-          ]
-        ]
-      : []),
-    ...(sentryDsn
-      ? [
-          [
-            '@nuxtjs/sentry',
-            {
-              dsn: sentryDsn,
-              disabled: development,
-              disableClientSide: development,
-              config: {
-                environment: environment,
-                release: pkg.version,
-                beforeSend: function(event) {
-                  if (event.exception) {
-                    Sentry.showReportDialog()
-                  }
-                  return event
-                }
-              }
-            }
-          ]
-        ]
-      : [])
+    ...(googleAnalyticsId ? ['@nuxtjs/google-analytics'] : []),
+    ...(sentryDsn ? ['@nuxtjs/sentry'] : [])
   ],
 
   /*
@@ -224,6 +177,13 @@ module.exports = {
     }
   },
 
+  buefy: {
+    css: false,
+    materialDesignIcons: false,
+    defaultIconPack: 'fas',
+    defaultIconComponent: 'font-awesome-icon'
+  },
+
   icon: {
     iconSrc: 'static/media/logo.png',
     accessibleIcons: true
@@ -257,5 +217,47 @@ module.exports = {
     generate: true,
     exclude: [],
     routes: content.dynamicRoutes
-  }
+  },
+
+  robots: [
+    {
+      UserAgent: '*',
+      Allow: '/',
+      Disallow: '/admin',
+      Sitemap: sitemapUrl
+    }
+  ],
+
+  ...(googleAnalyticsId
+    ? {
+        googleAnalytics: {
+          id: googleAnalyticsId,
+          disabled: true,
+          debug: {
+            enabled: development,
+            sendHitTask: production
+          }
+        }
+      }
+    : {}),
+
+  ...(sentryDsn
+    ? {
+        sentry: {
+          dsn: sentryDsn,
+          disabled: development,
+          disableClientSide: development,
+          config: {
+            environment: environment,
+            release: pkg.version,
+            beforeSend: function(event) {
+              if (event.exception) {
+                Sentry.showReportDialog()
+              }
+              return event
+            }
+          }
+        }
+      }
+    : {})
 }

@@ -12,8 +12,8 @@
     @status="status"
     @clicked-accept="accept"
     @clicked-decline="decline"
-    @clicked-postpone="decline">
-
+    @clicked-postpone="decline"
+  >
     <!-- Optional -->
     <div slot="postponeContent">
       &times;
@@ -27,7 +27,8 @@
           href="https://cookiesandyou.com"
           title="Cookies and you"
           alt="Cookies and you"
-          place="learn">
+          place="learn"
+        >
           {{ $t('cookies.learnMore') }}
         </a>
       </div>
@@ -65,9 +66,9 @@ export default {
     status(val) {
       if (val === 'postpone') {
         this.clear()
-      } else if (val == 'accept') {
+      } else if (val === 'accept') {
         this.accept()
-      } else if (val == 'decline') {
+      } else if (val === 'decline') {
         this.decline()
       }
     },
@@ -91,3 +92,7 @@ export default {
   }
 }
 </script>
+
+<style>
+@import 'vue-cookie-accept-decline/dist/vue-cookie-accept-decline.css';
+</style>

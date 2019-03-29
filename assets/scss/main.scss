@@ -1,15 +1,29 @@
 // brand colors
-$romain-blue: #3890AB;
+$romain-blue: #3890ab;
 $romain-dark: #464846;
-$white: #ffffff;
 
 // bulma initial variables
 $blue: $romain-blue;
+$cyan: $romain-blue;
 $grey-darker: $romain-dark;
-$family-sans-serif: "Quicksand", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$family-sans-serif: 'Quicksand', BlinkMacSystemFont, -apple-system, 'Segoe UI',
+  'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+  'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+
+// bulma derived variables
+$custom-colors: (
+  'romain-blue': (
+    $romain-blue,
+    findColorInvert($romain-blue)
+  ),
+  'romain-dark': (
+    $romain-dark,
+    findColorInvert($romain-dark)
+  )
+);
 
 // bulma component variables
 $footer-padding: 3rem 1.5rem 3rem;
 
-@import "~bulma/bulma.sass";
-@import "~buefy/src/scss/buefy";
+@import '~bulma/bulma.sass';
+@import '~buefy/src/scss/buefy';
