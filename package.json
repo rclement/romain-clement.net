@@ -33,12 +33,12 @@
     "nuxt-matomo": "^1.2.2",
     "nuxt-robots-module": "^1.5.1",
     "nuxt-webfontloader": "^1.0.0",
-    "vue-cookie-accept-decline": "^5.1.0",
+    "vue-cookie-accept-decline": "^5.2.1",
     "vue-recaptcha": "^1.1.1"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
-    "eslint": "^5.15.3",
+    "eslint": "^5.16.0",
     "eslint-config-prettier": "^3.6.0",
     "eslint-loader": "^2.1.2",
     "eslint-plugin-prettier": "2.6.2",
