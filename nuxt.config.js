@@ -196,7 +196,6 @@ export default {
     hostname: baseUrl,
     cacheTime: 1000 * 60 * 15,
     gzip: true,
-    generate: true,
     exclude: [],
     routes: content.dynamicRoutes
   },
