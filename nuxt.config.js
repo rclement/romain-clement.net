@@ -43,15 +43,6 @@ export default {
     middleware: ['matomo-consent', 'google-analytics-consent']
   },
 
-  head: {
-    script: [
-      {
-        src: 'https://identity.netlify.com/v1/netlify-identity-widget.js',
-        type: 'text/javascript'
-      }
-    ]
-  },
-
   loading: {
     color: 'black'
   },
