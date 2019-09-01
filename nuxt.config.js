@@ -73,6 +73,7 @@ export default {
           useCookie: true,
           cookieKey: 'i18n_redirected'
         },
+        seo: true,
         vueI18n: {
           fallbackLocale: content.defaultLocale,
           messages: content.messages
@@ -188,6 +189,7 @@ export default {
     cacheTime: 1000 * 60 * 15,
     gzip: true,
     exclude: [],
+    trailingSlash: true,
     routes: content.dynamicRoutes
   },
 

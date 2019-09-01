@@ -27,7 +27,6 @@
           href="https://cookiesandyou.com"
           title="Cookies and you"
           alt="Cookies and you"
-          place="learn"
         >
           {{ $t('cookies.learnMore') }}
         </a>

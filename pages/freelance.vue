@@ -13,11 +13,11 @@
               tag="p">
               <a
                 v-for="link in $t('common.links.freelancing')"
+                :slot="link.name.toLowerCase()"
                 :key="link.name"
                 :href="link.url"
                 :title="link.name"
-                :alt="link.name"
-                :place="link.name.toLowerCase()">
+                :alt="link.name">
                 <b-icon
                   :pack="link.icon.pack"
                   :icon="link.icon.name"
