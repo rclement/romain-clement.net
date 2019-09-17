@@ -159,7 +159,7 @@ export default {
     },
 
     showSuccessNotification() {
-      this.$toast.open({
+      this.$buefy.toast.open({
         duration: 2000,
         position: 'is-top',
         message: this.$t('contact.success'),
@@ -168,7 +168,7 @@ export default {
     },
 
     showFailureNotification() {
-      this.$toast.open({
+      this.$buefy.toast.open({
         duration: 5000,
         position: 'is-top',
         message: this.$t('contact.failure'),
