@@ -97,6 +97,7 @@ jobs:
         uses: actions/download-artifact@v1
         with:
           name: build
+          path: dist
       - name: Deploy to Zeit Now
         run: cd dist && now --confirm --token $NOW_TOKEN
 
@@ -123,3 +124,4 @@ jobs:
         uses: actions/download-artifact@v1
         with:
           name: build
+          path: dist
