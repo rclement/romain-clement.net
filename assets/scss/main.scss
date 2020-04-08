@@ -3,12 +3,9 @@ $romain-blue: #3890ab;
 $romain-dark: #464846;
 
 // bulma initial variables
-$blue: $romain-blue;
-$cyan: $romain-blue;
-$grey-darker: $romain-dark;
-$family-sans-serif: 'Quicksand', BlinkMacSystemFont, -apple-system, 'Segoe UI',
-  'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-  'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+// $blue: $romain-blue;
+// $cyan: $romain-blue;
+// $grey-darker: $romain-dark;
 
 // bulma derived variables
 $custom-colors: (
@@ -23,7 +20,9 @@ $custom-colors: (
 );
 
 // bulma component variables
+$dimensions: 16 24 32 48 64 96 128 256 512;
 $footer-padding: 3rem 1.5rem 3rem;
 
-@import '~bulma/bulma.sass';
+// bulma and buefy styles
+@import '~bulma';
 @import '~buefy/src/scss/buefy';

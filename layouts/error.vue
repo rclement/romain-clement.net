@@ -1,52 +1,49 @@
 <template>
-  <section class="section">
-    <div class="container has-text-centered">
-      <b-icon
-        pack="fas"
-        icon="sad-tear"
-        size="is-large"
-        type="is-danger"
-      />
+  <section class="hero is-fullheight-with-navbar">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <div v-if="statusCode === 404">
+          <p class="title">
+            {{ $t('error.pageNotFound.title') }}
+          </p>
 
-      <p class="title">
-        {{ err.title }}
-      </p>
+          <p class="subtitle">
+            {{ $t('error.pageNotFound.subtitle') }}
+          </p>
+        </div>
 
-      <p class="subtitle">
-        {{ err.message }}
-      </p>
-
-      <nuxt-link :to="localePath('index')">
-        {{ $t('errors.backToHome') }}
-      </nuxt-link>
+        <nuxt-link :to="localePath('index')">
+          {{ $t('error.backToHome') }}
+        </nuxt-link>
+      </div>
     </div>
   </section>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue, { PropOptions } from 'vue'
+
+interface Error {
+  statusCode: number
+  message: string
+}
+
+export default Vue.extend({
   props: {
     error: {
       type: Object,
-      default: null
-    }
+      required: true,
+    } as PropOptions<Error>,
   },
 
   computed: {
-    err() {
-      const codes = this.$t('errors.codes')
-      for (const err of codes) {
-        if (err.code === this.error.statusCode) {
-          return err
-        }
-      }
+    statusCode(): number {
+      return this.error.statusCode || 500
+    },
+  },
 
-      return {
-        code: 500,
-        title: '',
-        message: ''
-      }
-    }
-  }
-}
+  head() {
+    return this.$nuxtI18nSeo()
+  },
+})
 </script>

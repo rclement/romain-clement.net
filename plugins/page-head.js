@@ -1,6 +1,6 @@
 import Vue from 'vue'
 
-Vue.prototype.$pageHead = function(i18nPageTag) {
+Vue.prototype.$pageHead = function (i18nPageTag) {
   const baseUrl = process.env.BASE_URL
   const canonicalUrl = `${baseUrl}${this.$route.path}`
   const commonTitle = this.$t('head.title')
@@ -10,48 +10,48 @@ Vue.prototype.$pageHead = function(i18nPageTag) {
   const title = `${commonTitle} | ${pageTitle}`
 
   return {
-    title: title,
+    title,
     meta: [
       {
         hid: 'description',
         name: 'description',
-        content: pageTitle
+        content: pageTitle,
       },
       {
         hid: 'keywords',
         name: 'keywords',
-        content: commonKeywords
+        content: commonKeywords,
       },
       {
         hid: 'og:title',
         name: 'og:title',
         property: 'og:title',
-        content: title
+        content: title,
       },
       {
         hid: 'og:description',
         name: 'og:description',
         property: 'og:description',
-        content: pageTitle
+        content: pageTitle,
       },
       {
         hid: 'og:host',
         name: 'og:host',
         property: 'og:host',
-        content: pageUrl
+        content: pageUrl,
       },
       {
         hid: 'og:url',
         name: 'og:url',
         property: 'og:url',
-        content: pageUrl
-      }
+        content: pageUrl,
+      },
     ],
     link: [
       {
         rel: 'canonical',
-        href: canonicalUrl
-      }
-    ]
+        href: canonicalUrl,
+      },
+    ],
   }
 }

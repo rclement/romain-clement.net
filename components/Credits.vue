@@ -1,112 +1,131 @@
 <template>
-  <div class="credits">
-    <div class="container has-text-centered">
-      <div class="columns is-vcentered">
-        <div class="column is-half">
-          <div class="links">
-            <p>{{ $t('credits.social.getInTouch') }}</p>
-            <a
-              v-for="link in [...$t('common.links.social'), ...$t('common.links.other')]"
-              :key="link.name"
-              :href="link.url"
-              :title="link.name"
-              :alt="link.name"
-              class="has-text-dark">
-              <b-icon
-                :pack="link.icon.pack"
-                :icon="link.icon.name"
-                class="link-icon"
-                size="is-small"/>
-            </a>
-          </div>
+  <footer class="footer">
+    <div class="content has-text-centered heading">
+      <div class="columns">
+        <div class="column is-one-fifth is-offset-one-fifth">
+          <a
+            :href="infogreffe.url"
+            :title="infogreffe.name"
+            :alt="infogreffe.name"
+            class="has-text-dark"
+          >
+            <p>
+              <strong>{{ $t('credits.about.title') }}</strong>
+            </p>
 
-          <div class="links">
-            <p>{{ $t('credits.social.hireMe') }}</p>
-            <a
-              v-for="link in $t('common.links.freelancing')"
-              :key="link.name"
-              :href="link.url"
-              :title="link.name"
-              :alt="link.name"
-              class="has-text-dark">
-              <b-icon
-                :pack="link.icon.pack"
-                :icon="link.icon.name"
-                class="link-icon"
-                size="is-small"/>
-            </a>
-          </div>
+            <p>
+              {{ $t('credits.about.company.name') }}
+              <br />
+              {{ $t('credits.about.company.kind') }}
+            </p>
+
+            <p>
+              {{ $t('credits.about.company.address.line1') }}
+              <br />
+              {{ $t('credits.about.company.address.postcode') }}
+              {{ $t('credits.about.company.address.city') }}
+              <br />
+              {{ $t('credits.about.company.address.country') }}
+            </p>
+
+            <p>
+              <span
+                v-for="registration in $t(
+                  'credits.about.company.registrations'
+                )"
+                :key="registration.type"
+              >
+                {{ registration.type }}: {{ registration.value }}
+                <br />
+              </span>
+            </p>
+          </a>
         </div>
 
-        <div class="column is-half">
+        <div class="column is-one-fifth is-offset-one-fifth">
           <p>
-            <a
-              :href="$t('credits.company.link.url')"
-              :title="$t('credits.company.link.name')"
-              :alt="$t('credits.company.link.name')"
-              class="has-text-dark">
-              {{ $t('credits.company.name') }}
-              <br>
-              {{ $t('credits.company.address') }}
-              <br>
-              {{ $t('credits.company.kind') }}
-              <span
-                v-for="registration in $t('credits.company.registrations')"
-                :key="registration.type">
-                <br>
-                {{ registration.type }}: {{ registration.value }}
-              </span>
-            </a>
+            <strong>{{ $t('credits.credits.title') }}</strong>
           </p>
+
+          <i18n path="credits.credits.powered" tag="p">
+            <template v-slot:nuxt>
+              <a :href="nuxt.url" :title="nuxt.name" :alt="nuxt.name">
+                <span>{{ nuxt.name }}</span>
+              </a>
+            </template>
+
+            <template v-slot:bulma>
+              <a :href="bulma.url" :title="bulma.name" :alt="bulma.name">
+                {{ bulma.name }}
+              </a>
+            </template>
+
+            <template v-slot:fontawesome>
+              <a
+                :href="fontawesome.url"
+                :title="fontawesome.name"
+                :alt="fontawesome.name"
+              >
+                {{ fontawesome.name }}
+              </a>
+            </template>
+          </i18n>
+
+          <i18n path="credits.credits.analytics" tag="p">
+            <template v-slot:chiffre>
+              <a :href="chiffre.url" :title="chiffre.name" :alt="chiffre.name">
+                <span>{{ chiffre.name }}</span>
+              </a>
+            </template>
+          </i18n>
+
+          <i18n path="credits.credits.website" tag="p">
+            <template v-slot:license>
+              <a :href="license.url" :title="license.name" :alt="license.name">
+                <span>{{ license.name }}</span>
+              </a>
+            </template>
+          </i18n>
+
+          <div class="block">
+            <a :href="github.url" :title="github.name" :alt="github.name">
+              <b-icon pack="fab" icon="github" />
+            </a>
+          </div>
         </div>
       </div>
 
-      <p class="has-bottom-padding">
-        {{ $t('credits.copyright.text') }} © {{ $t('credits.copyright.start') }} - {{ $t('credits.copyright.end') }}, {{ $t('credits.copyright.author') }}
-      </p>
+      <div class="columns">
+        <div class="column is-half is-offset-one-quarter">
+          <p>
+            {{ $t('credits.copyright.text') }} ©
+            {{ $t('credits.copyright.start') }} -
+            {{ $t('credits.copyright.end') }},
+            {{ $t('credits.copyright.owner') }}
+          </p>
 
-      <p class="has-bottom-padding">
-        <a @click="updateCookiePrefs">
-          {{ $t('credits.cookies.update') }}
-        </a>
-      </p>
+          <p>{{ $t('credits.version') }} {{ appVersion }}</p>
+        </div>
+      </div>
     </div>
-
-    <cookie-consent
-      id="cookie-consent"
-      ref="cookie-consent"/>
-  </div>
+  </footer>
 </template>
 
-<script>
-import CookieConsent from '~/components/CookieConsent'
+<script lang="ts">
+import Vue from 'vue'
 
-export default {
-  components: {
-    CookieConsent
-  },
-
-  methods: {
-    updateCookiePrefs() {
-      let cookieConsent = this.$refs['cookie-consent']
-      if (cookieConsent) {
-        cookieConsent.clear()
-      }
+export default Vue.extend({
+  data() {
+    return {
+      appVersion: process.env.APP_VERSION,
+      infogreffe: this.$t('common.links.infogreffe'),
+      nuxt: this.$t('common.links.nuxt'),
+      bulma: this.$t('common.links.bulma'),
+      fontawesome: this.$t('common.links.fontawesome'),
+      chiffre: this.$t('common.links.chiffre'),
+      github: this.$t('common.app.repository'),
+      license: this.$t('common.app.license'),
     }
-  }
-}
+  },
+})
 </script>
-
-<style scoped>
-.link-icon {
-  padding: 0rem 1rem;
-}
-
-.links {
-  padding: 0rem 0rem 1rem 0rem;
-}
-
-.has-bottom-padding {
-  padding: 0rem 0rem 1rem 0rem;
-}
-</style>

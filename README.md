@@ -3,6 +3,9 @@
 > Romain Clement - Freelance Software Engineer
 
 [![Build Status](https://travis-ci.org/rclement/romain-clement.net.svg?branch=master)](https://travis-ci.org/rclement/romain-clement.net)
+[![Github Tag](https://img.shields.io/github/tag/rclement/romain-clement.net.svg)](https://github.com/rclement/romain-clement.net/releases/latest)
+[![GitHub Action CI/CD](https://github.com/rclement/romain-clement.net/workflows/CI/CD/badge.svg)](https://github.com/rclement/romain-clement.net/actions?query=workflow%3A%22CI%2FCD%22)
+[![Coverage Status](https://img.shields.io/codecov/c/github/rclement/romain-clement.net)](https://codecov.io/gh/rclement/romain-clement.net)
 
 ## Build Setup
 

@@ -1,131 +1,74 @@
 <template>
-  <nav
-    class="navbar is-transparent"
-    role="navigation"
-    aria-label="main navigation">
-    <div class="navbar-brand">
-      <nuxt-link
-        :to="localePath('index')"
-        class="navbar-item"
-        @click.native="closeNavbarContent">
-        <logo :size="120"/>
-      </nuxt-link>
+  <div class="container">
+    <div class="columns">
+      <div class="column is-three-fifths is-offset-one-fifth">
+        <b-navbar transparent>
+          <template slot="brand">
+            <b-navbar-item :to="localePath('index')" tag="nuxt-link">
+              <img src="~/assets/svg/logo.svg" alt="Logo" />
+            </b-navbar-item>
+          </template>
 
-      <p class="navbar-item">
-        <strong>{{ $t('navbar.tagline') }}</strong>
-      </p>
+          <template slot="start">
+            <b-navbar-item :to="localePath('index')" tag="nuxt-link">
+              {{ $t('navbar.home') }}
+            </b-navbar-item>
 
-      <a
-        :class="{ 'is-active': navbarContentOpen }"
-        class="navbar-burger burger"
-        role="button"
-        aria-label="menu"
-        aria-expanded="false"
-        data-target="navbarContent"
-        @click="toggleNavbarContent">
-        <span aria-hidden="true"/>
-        <span aria-hidden="true"/>
-        <span aria-hidden="true"/>
-      </a>
-    </div>
+            <b-navbar-item
+              :to="localePath('index') + '#freelancing'"
+              tag="nuxt-link"
+            >
+              {{ $t('home.freelancing.title') }}
+            </b-navbar-item>
 
-    <div
-      id="navbarContent"
-      :class="{ 'is-active': navbarContentOpen }"
-      class="navbar-menu">
-      <div class="navbar-end">
-        <nuxt-link
-          :to="localePath('index')"
-          class="navbar-item"
-          @click.native="closeNavbarContent">
-          {{ $t('navbar.home') }}
-        </nuxt-link>
+            <b-navbar-item
+              :to="localePath('index') + '#open-source'"
+              tag="nuxt-link"
+            >
+              {{ $t('home.oss.title') }}
+            </b-navbar-item>
 
-        <nuxt-link
-          :to="localePath('freelance')"
-          class="navbar-item"
-          @click.native="closeNavbarContent">
-          {{ $t('navbar.freelance') }}
-        </nuxt-link>
+            <b-navbar-item :to="localePath('index') + '#talks'" tag="nuxt-link">
+              {{ $t('home.talks.title') }}
+            </b-navbar-item>
 
-        <nuxt-link
-          :to="localePath('software')"
-          class="navbar-item"
-          @click.native="closeNavbarContent">
-          {{ $t('navbar.software') }}
-        </nuxt-link>
+            <b-navbar-item :to="localePath('index') + '#music'" tag="nuxt-link">
+              {{ $t('home.music.title') }}
+            </b-navbar-item>
 
-        <nuxt-link
-          :to="localePath('contact')"
-          class="navbar-item"
-          @click.native="closeNavbarContent">
-          {{ $t('navbar.contact') }}
-        </nuxt-link>
+            <b-navbar-item
+              :to="localePath('index') + '#contact'"
+              tag="nuxt-link"
+            >
+              {{ $t('home.contact.title') }}
+            </b-navbar-item>
+          </template>
 
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">
-            {{ $t('navbar.language') }}
-          </a>
-
-          <div class="navbar-dropdown is-boxed">
-            <nuxt-link
-              v-for="locale in $i18n.locales"
-              :key="locale.code"
-              :to="switchLocalePath(locale.code)"
-              class="navbar-item"
-              @click.native="closeNavbarContent">
-              {{ locale.name }}
-            </nuxt-link>
-          </div>
-        </div>
-
-        <a
-          v-for="link in $t('common.links.social')"
-          :key="link.name"
-          :href="link.url"
-          :title="link.name"
-          :alt="link.name"
-          class="navbar-item"
-          @click="closeNavbarContent">
-          <b-icon
-            :pack="link.icon.pack"
-            :icon="link.icon.name"
-            size="is-small"/>
-          <span class="is-hidden-desktop">{{ link.name }}</span>
-        </a>
+          <template slot="end">
+            <b-navbar-dropdown
+              :label="$t('navbar.language')"
+              right
+              hoverable
+              boxed
+            >
+              <b-navbar-item
+                v-for="locale in $i18n.locales"
+                :key="locale.code"
+                :to="switchLocalePath(locale.code)"
+                tag="nuxt-link"
+              >
+                {{ locale.name }}
+              </b-navbar-item>
+            </b-navbar-dropdown>
+          </template>
+        </b-navbar>
       </div>
     </div>
-  </nav>
+  </div>
 </template>
 
-<script>
-import Logo from '~/components/Logo'
+<script lang="ts">
+import Vue from 'vue'
 
-export default {
-  components: {
-    Logo
-  },
-
-  data() {
-    return {
-      navbarContentOpen: false
-    }
-  },
-
-  methods: {
-    toggleNavbarContent() {
-      this.navbarContentOpen = !this.navbarContentOpen
-    },
-
-    closeNavbarContent() {
-      this.navbarContentOpen = false
-    }
-  }
-}
+export default Vue.extend({})
 </script>
-
-<style>
-.navbar-item img {
-  max-height: 2.5rem;
-}
-</style>
