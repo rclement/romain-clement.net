@@ -3,6 +3,7 @@ name: CI/CD
 on: [push]
 
 env:
+  IS_PRODUCTION: ${{ contains(github.ref, 'tags') }}
   NODE_VERSION: '12.16.1'
 
 jobs:
@@ -36,18 +37,19 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
 
-  build:
-    name: Build
+  build-preview:
+    name: Build Preview
     needs: test
     runs-on: ubuntu-latest
+    if: ! env.IS_PRODUCTION
 
     env:
       BASE_PROTOCOL: ${{ secrets.BASE_PROTOCOL }}
-      BASE_URL: ${{ secrets.BASE_URL }}
+      BASE_URL: ${{ secrets.BASE_URL_PREVIEW }}
       MAILER_URL: ${{ secrets.MAILER_URL }}
-      CHIFFRE_PUBLIC_KEY: ${{ secrets.CHIFFRE_PUBLIC_KEY }}
-      CHIFFRE_PROJECT_ID: ${{ secrets.CHIFFRE_PROJECT_ID }}
-      SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
+      CHIFFRE_PUBLIC_KEY: ""
+      CHIFFRE_PROJECT_ID: ""
+      SENTRY_DSN: ""
 
     steps:
       - uses: actions/checkout@v2
@@ -67,13 +69,49 @@ jobs:
       - name: Upload build artifacts
         uses: actions/upload-artifact@v1
         with:
-          name: build
+          name: build-preview
+          path: dist
+
+  build-production:
+    name: Build Production
+    needs: test
+    runs-on: ubuntu-latest
+    if: env.IS_PRODUCTION
+
+    env:
+      BASE_PROTOCOL: ${{ secrets.BASE_PROTOCOL }}
+      BASE_URL: ${{ secrets.BASE_URL }}
+      MAILER_URL: ${{ secrets.MAILER_URL }}
+      CHIFFRE_PUBLIC_KEY: ${{ secrets.CHIFFRE_PUBLIC_KEY }}
+      CHIFFRE_PROJECT_ID: ${{ secrets.CHIFFRE_PROJECT_ID }}
+      SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Cache Node.js modules
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
+      - name: Install Dependencies
+        run: npm install
+      - name: Build package
+        run: npm run generate
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v1
+        with:
+          name: build-production
           path: dist
 
   deploy-preview:
     name: Deploy Preview
     needs: build
     runs-on: ubuntu-latest
+    if: ! env.IS_PRODUCTION
 
     env:
       NOW_ORG_ID: ${{ secrets.NOW_ORG_ID }}
@@ -96,7 +134,7 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v1
         with:
-          name: build
+          name: build-preview
           path: dist
       - name: Deploy to Zeit Now
         run: cd dist && now --confirm --token $NOW_TOKEN
@@ -105,7 +143,7 @@ jobs:
     name: Deploy Production
     needs: build
     runs-on: ubuntu-latest
-    if: contains(github.ref, 'tags')
+    if: env.IS_PRODUCTION
 
     steps:
       - uses: actions/checkout@v2
@@ -123,7 +161,7 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v1
         with:
-          name: build
+          name: build-production
           path: dist
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
