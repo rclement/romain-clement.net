@@ -3,7 +3,6 @@ name: CI/CD
 on: [push]
 
 env:
-  IS_PRODUCTION: ${{ contains(github.ref, 'tags') }}
   NODE_VERSION: '12.16.1'
 
 jobs:
@@ -41,6 +40,7 @@ jobs:
     name: Build Preview
     needs: test
     runs-on: ubuntu-latest
+    if: "! contains(github.ref, 'tags')"
 
     env:
       BASE_PROTOCOL: ${{ secrets.BASE_PROTOCOL }}
@@ -75,7 +75,7 @@ jobs:
     name: Build Production
     needs: test
     runs-on: ubuntu-latest
-    if: env.IS_PRODUCTION
+    if: contains(github.ref, 'tags')
 
     env:
       BASE_PROTOCOL: ${{ secrets.BASE_PROTOCOL }}
@@ -110,6 +110,7 @@ jobs:
     name: Deploy Preview
     needs: build
     runs-on: ubuntu-latest
+    if: "! contains(github.ref, 'tags')"
 
     env:
       NOW_ORG_ID: ${{ secrets.NOW_ORG_ID }}
@@ -141,7 +142,7 @@ jobs:
     name: Deploy Production
     needs: build
     runs-on: ubuntu-latest
-    if: env.IS_PRODUCTION
+    if: contains(github.ref, 'tags')
 
     steps:
       - uses: actions/checkout@v2
