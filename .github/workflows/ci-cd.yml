@@ -108,7 +108,7 @@ jobs:
 
   deploy-preview:
     name: Deploy Preview
-    needs: build
+    needs: build-preview
     runs-on: ubuntu-latest
     if: "! contains(github.ref, 'tags')"
 
@@ -140,7 +140,7 @@ jobs:
 
   deploy-production:
     name: Deploy Production
-    needs: build
+    needs: build-production
     runs-on: ubuntu-latest
     if: contains(github.ref, 'tags')
 
