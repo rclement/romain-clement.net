@@ -41,7 +41,6 @@ jobs:
     name: Build Preview
     needs: test
     runs-on: ubuntu-latest
-    if: ! env.IS_PRODUCTION
 
     env:
       BASE_PROTOCOL: ${{ secrets.BASE_PROTOCOL }}
@@ -111,7 +110,6 @@ jobs:
     name: Deploy Preview
     needs: build
     runs-on: ubuntu-latest
-    if: ! env.IS_PRODUCTION
 
     env:
       NOW_ORG_ID: ${{ secrets.NOW_ORG_ID }}
