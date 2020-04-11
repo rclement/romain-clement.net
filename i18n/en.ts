@@ -41,10 +41,44 @@ export default {
 
     freelancing: {
       title: 'Freelancing',
-      whatICanDo:
-        'My current domains of interest and expertise include data engineering, automated quality assurance, privacy-by-design, cryptography and active learning. My favorite technical stacks include Python, Node.js, TypeScript, Nuxt.js/Vue.js, PostgreSQL, Redis, Docker, GitLab-CI, GitHub Actions. And I am currently exploring the brave new world of {rust}!',
-      whatIWontDo: `I am not the right man for the job if you are looking for webdesign, CMS-based monolith websites (Wordpress, Drupal, etc.), PHP, develop massive user-data-aggregation systems, privacy-invasive systems.`,
-      companiesIveWorkedWith: `Since 2012, I've been working with various companies. I believe in building software with privacy in mind from the ground-up: this is something we can choose willingly from the start, empowering businesses to find their true added value. Designing privacy-friendly systems goes hand in hand with transparency and security. I am currently accepting new contracts.`,
+      interests: {
+        text: `My current domains of interest and expertise include {data},
+        {ci-cd}, {privacy-by-design}, {e2ee} and {active-learning}.`,
+        data: 'data engineering',
+        cicd: 'continuous integration / continuous deployment',
+        privacyByDesign: 'privacy by design',
+        e2ee: 'end-to-end encryption',
+        activeLearning: 'active learning',
+      },
+      stacks: {
+        text: `My favorite technical stacks include {python}, {node}, {typescript},
+        {nuxt}, {postgresql}, {docker}, {gitlab-ci}, {github-actions}.
+        And I am currently {exploring} the brave new world of {rust}!`,
+        python: 'Python',
+        node: 'Node.js',
+        typescript: 'TypeScript',
+        nuxt: 'Nuxt.js',
+        postgresql: 'PostgreSQL',
+        docker: 'Docker',
+        gitlabCI: 'GitLab-CI',
+        githubActions: 'GitHub Actions',
+        exploring: 'exploring',
+        rust: 'Rust',
+      },
+      notInterested: {
+        text: `I am not the right man for the job if you are looking for webdesign,
+        CMS-based monolith websites (Wordpress, Drupal, etc.), PHP,
+        develop massive user-data aggregation systems, privacy-invasive systems.`,
+      },
+      moto: {
+        text: `Since 2012, I've been working with various companies.
+        I believe in building software with privacy in mind from the ground-up:
+        this is something we can choose willingly from the start, empowering businesses
+        to find their true added value.
+        Designing privacy-friendly systems goes hand in hand with transparency and security.
+        {new-contracts}.`,
+        newContracts: 'I am currently accepting new contracts',
+      },
     },
 
     oss: {

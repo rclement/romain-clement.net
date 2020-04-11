@@ -51,7 +51,6 @@ export default {
       name: 'Simplon.co',
       url: 'https://simplon.co',
       img: '/media/simplon.png',
-      year: '2019 - 2020',
       job: 'Data Developer Training',
       skills: [
         'data analysis',
@@ -66,7 +65,6 @@ export default {
       name: 'Wattamate',
       url: 'https://wattamate.com',
       img: '/media/wattamate.png',
-      year: '2019 - 2020',
       job: 'Backend Software Development',
       skills: [
         'microservices',
@@ -84,7 +82,6 @@ export default {
       name: 'Pulsar',
       url: 'https://pulsar.audio',
       img: '/media/pulsar.png',
-      year: '2018',
       job: 'Audio Software Development',
       skills: ['dsp', 'c++', 'cmake', 'opengl', 'juce', 'vst', 'au', 'aax'],
     },
@@ -305,9 +302,41 @@ export default {
       name: 'Python Meetup Grenoble',
       url: 'https://www.meetup.com/fr-FR/Groupe-dutilisateurs-Python-Grenoble/',
     },
+    python: {
+      name: 'Python',
+      url: 'https://python.org',
+    },
+    node: {
+      name: 'Node.js',
+      url: 'https://nodejs.org',
+    },
+    typescript: {
+      name: 'TypeScript',
+      url: 'https://www.typescriptlang.org',
+    },
     nuxt: {
       name: 'Nuxt.js',
       url: 'https://nuxtjs.org',
+    },
+    postgresql: {
+      name: 'PostgreSQL',
+      url: 'https://www.postgresql.org',
+    },
+    docker: {
+      name: 'Docker',
+      url: 'https://docker.com',
+    },
+    gitlabCI: {
+      name: 'GitLab-CI',
+      url: 'https://docs.gitlab.com/ce/ci/',
+    },
+    githubActions: {
+      name: 'Github Actions',
+      url: 'https://github.com/features/actions',
+    },
+    rust: {
+      name: 'Rust',
+      url: 'https://www.rust-lang.org',
     },
     bulma: {
       name: 'Bulma',
@@ -320,6 +349,18 @@ export default {
     chiffre: {
       name: 'Chiffre',
       url: 'https://chiffre.io',
+    },
+    privacyByDesign: {
+      name: 'Privacy by design',
+      url: 'https://en.wikipedia.org/wiki/Privacy_by_design',
+    },
+    e2ee: {
+      name: 'End-to-end encryption',
+      url: 'https://en.wikipedia.org/wiki/End-to-end_encryption',
+    },
+    activeLearning: {
+      name: 'Active learning',
+      url: 'https://en.wikipedia.org/wiki/Active_learning',
     },
   },
 }
