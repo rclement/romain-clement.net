@@ -21,7 +21,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.13.0",
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "@fortawesome/vue-fontawesome": "^0.1.9",
-    "@nuxt/typescript-runtime": "^0.4.4",
+    "@nuxt/typescript-runtime": "^0.4.5",
     "@nuxtjs/axios": "^5.9.7",
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/pwa": "^3.0.0-beta.20",
@@ -35,7 +35,7 @@
     "vuelidate": "^0.7.5"
   },
   "devDependencies": {
-    "@nuxt/typescript-build": "^0.6.4",
+    "@nuxt/typescript-build": "^0.6.5",
     "@nuxtjs/eslint-config-typescript": "^1.0.2",
     "@nuxtjs/eslint-module": "^1.0.0",
     "@types/faker": "^4.1.11",
