@@ -1,18 +1,10 @@
 // brand colors
-$romain-blue: #3890ab;
-$romain-dark: #464846;
+$romain-dark: #4a5153;
 
 // bulma initial variables
-// $blue: $romain-blue;
-// $cyan: $romain-blue;
-// $grey-darker: $romain-dark;
 
 // bulma derived variables
 $custom-colors: (
-  'romain-blue': (
-    $romain-blue,
-    findColorInvert($romain-blue)
-  ),
   'romain-dark': (
     $romain-dark,
     findColorInvert($romain-dark)

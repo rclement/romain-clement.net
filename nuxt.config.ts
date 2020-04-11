@@ -126,7 +126,7 @@ const config: Configuration = {
       name: appName,
       short_name: appName,
       description: appDescription,
-      background_color: appColor,
+      background_color: '#ffffff',
       theme_color: appColor,
     },
   },
