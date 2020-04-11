@@ -166,7 +166,7 @@ export default Vue.extend({
       honeypot: '',
       loading: false,
       pgp: this.$t('common.links.pgp'),
-      mailer: this.$t('common.projects.mailer'),
+      mailer: this.$t('common.links.mailer'),
     }
   },
 

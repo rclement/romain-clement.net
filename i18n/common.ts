@@ -1,6 +1,6 @@
 export default {
   app: {
-    name: 'Romain Clement',
+    name: 'Romain Clement - Software Engineer & Trainer',
     keywords: [
       'romain',
       'clement',
@@ -26,23 +26,73 @@ export default {
       url: 'https://github.com/rclement/romain-clement.net/blob/master/LICENSE',
     },
   },
-  companies: {
-    pulsar: {
-      name: 'Pulsar',
-      url: 'https://pulsar.audio',
+  company: {
+    name: 'Monsieur Romain Clement',
+    address: {
+      line1: '80 cours Liberation - Gen de Gaulle',
+      postcode: '38100',
+      city: 'Grenoble',
+      country: 'France',
     },
-    wattamate: {
-      name: 'Wattamate',
-      url: 'https://wattamate.com',
-    },
-    simplon: {
+    kind: 'Micro-entreprise',
+    registrations: [
+      {
+        type: 'SIRET',
+        value: '841 265 655 00016',
+      },
+      {
+        type: 'NAF',
+        value: '6201Z (Computer programming activities)',
+      },
+    ],
+  },
+  companies: [
+    {
       name: 'Simplon.co',
       url: 'https://simplon.co',
+      img: '/media/simplon.png',
+      year: '2019 - 2020',
+      job: 'Data Developer Training',
+      skills: [
+        'data analysis',
+        'data engineering',
+        'project management',
+        'python',
+        'sql',
+        'cloud',
+      ],
     },
-  },
-  projects: {
-    mailer: {
+    {
+      name: 'Wattamate',
+      url: 'https://wattamate.com',
+      img: '/media/wattamate.png',
+      year: '2019 - 2020',
+      job: 'Backend Software Development',
+      skills: [
+        'microservices',
+        'ci/cd',
+        'cloud',
+        'security',
+        'python',
+        'sql',
+        'nosql',
+        'docker',
+        'kubernetes',
+      ],
+    },
+    {
+      name: 'Pulsar',
+      url: 'https://pulsar.audio',
+      img: '/media/pulsar.png',
+      year: '2018',
+      job: 'Audio Software Development',
+      skills: ['dsp', 'c++', 'cmake', 'opengl', 'juce', 'vst', 'au', 'aax'],
+    },
+  ],
+  projects: [
+    {
       name: 'Mailer',
+      tagline: 'Dead-simple mailer micro-service for static websites',
       url: 'https://github.com/rclement/mailer',
       tags: ['python', 'smtp', 'pgp', 'docker', 'microservice', 'serverless'],
       badges: [
@@ -63,8 +113,9 @@ export default {
         },
       ],
     },
-    nuxtChiffre: {
+    {
       name: 'Nuxt Chiffre Module',
+      tagline: 'Chiffre Analytics module for Nuxt.js',
       url: 'https://github.com/rclement/nuxt-chiffre',
       tags: ['typescript', 'nuxt.js', 'analytics', 'e2ee'],
       badges: [
@@ -85,8 +136,9 @@ export default {
         },
       ],
     },
-    cozyTagAndPass: {
+    {
       name: 'Cozy Konnector Tag&Pass',
+      tagline: 'Cozy konnector to fetch bills from Tag&Pass',
       url: 'https://github.com/konnectors/tagandpass',
       tags: ['cozy', 'node.js', 'data', 'scraping'],
       badges: [
@@ -107,8 +159,9 @@ export default {
         },
       ],
     },
-    cozyThomann: {
+    {
       name: 'Cozy Konnector Thomann',
+      tagline: 'Cozy konnector to fetch bills from Thomann',
       url: 'https://github.com/konnectors/thomann',
       tags: ['cozy', 'node.js', 'data', 'scraping'],
       badges: [
@@ -129,8 +182,9 @@ export default {
         },
       ],
     },
-    meeblipController: {
+    {
       name: 'Meeblip Controller',
+      tagline: 'MIDI controller for the Meeblip Anode synthesizer',
       url: 'https://github.com/rclement/meeblip-controller',
       tags: ['c++', 'cmake', 'juce', 'midi', 'audio', 'vst', 'au', 'aax'],
       badges: [
@@ -155,33 +209,44 @@ export default {
         },
       ],
     },
-  },
-  keynotes: {
-    pythonCelery: {
-      name: 'Python + Celery',
-      event: 'Python Meetup Grenoble',
+  ],
+  keynotes: [
+    {
+      title: 'Python + Celery',
+      subtitle: 'Manage your asynchronous tasks with Celery',
       date: '2019-10-30',
       url: 'https://talks.romain-clement.net/talk_python_celery.html',
-    },
-    modernPythonDevelopment: {
-      name: 'Modern Python Development',
       event: 'Python Meetup Grenoble',
+      event_url:
+        'https://www.meetup.com/fr-FR/Groupe-dutilisateurs-Python-Grenoble/events/265211758/',
+    },
+    {
+      title: 'Modern Python Development',
+      subtitle: 'Python software development for the modern age',
       date: '2019-03-28',
       url: 'https://slides.com/rmnclmnt/modern-python-development',
+      event: 'Python Meetup Grenoble',
+      event_url:
+        'https://www.meetup.com/Groupe-dutilisateurs-Python-Grenoble/events/258789375/',
     },
-    swarmFactor: {
-      name: 'The Swarm Factor',
-      event: 'Docker Meetup Grenoble',
+    {
+      title: 'The Swarm Factor',
+      subtitle: '12-factor Docker Swarm stacks',
       date: '2019-03-26',
       url: 'https://slides.com/rmnclmnt/swarm-factor',
+      event: 'Docker Meetup Grenoble',
+      event_url: 'https://www.meetup.com/Docker-Grenoble/events/258790334/',
     },
-  },
-  bands: {
-    hambush: {
+  ],
+  bands: [
+    {
       name: 'Hambush',
+      style: 'Progressive Rock / Metal',
+      text: 'Bass guitar, mixing, mastering, web',
       url: 'https://hambush-music.com',
+      img: '/media/hambush.png',
     },
-  },
+  ],
   links: {
     pgp: {
       name: 'PGP',
@@ -227,6 +292,10 @@ export default {
     comet: {
       name: 'Comet',
       url: 'https://app.comet.co/freelancer/profile/1Lk2D8V5jB',
+    },
+    mailer: {
+      name: 'Mailer',
+      url: 'https://github.com/rclement/mailer',
     },
     meetup: {
       name: 'Meetup',

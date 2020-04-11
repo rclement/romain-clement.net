@@ -11,25 +11,21 @@
 
     <br />
 
-    <article v-for="band in bands" :key="band.info.name" class="media">
+    <article v-for="band in bands" :key="band.name" class="media">
       <div class="media-left">
         <figure class="image is-64x64">
-          <a
-            :href="band.link.url"
-            :title="band.link.name"
-            :alt="band.link.name"
-          >
-            <img :src="band.img" :alt="band.info.name" />
+          <a :href="band.url" :title="band.name" :alt="band.name">
+            <img :src="band.img" :alt="band.name" />
           </a>
         </figure>
       </div>
       <div class="media-content">
         <div class="content">
           <p>
-            <strong>{{ band.info.name }}</strong>
-            <small>{{ band.info.style }}</small>
+            <strong>{{ band.name }}</strong>
+            <small>{{ band.style }}</small>
             <br />
-            {{ band.info.text }}
+            {{ band.text }}
           </p>
         </div>
       </div>
@@ -43,13 +39,7 @@ import Vue from 'vue'
 export default Vue.extend({
   data() {
     return {
-      bands: [
-        {
-          info: this.$t('home.music.bands.hambush'),
-          link: this.$t('common.bands.hambush'),
-          img: '/media/hambush.png',
-        },
-      ],
+      bands: this.$t('common.bands'),
     }
   },
 })

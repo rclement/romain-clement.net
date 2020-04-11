@@ -27,19 +27,11 @@
 
     <br />
 
-    <article
-      v-for="company in companies"
-      :key="company.info.name"
-      class="media"
-    >
+    <article v-for="company in companies" :key="company.name" class="media">
       <div class="media-left">
         <figure class="image is-64x64">
-          <a
-            :href="company.link.url"
-            :title="company.link.name"
-            :alt="company.link.name"
-          >
-            <img :src="company.img" :alt="company.link.name" />
+          <a :href="company.url" :title="company.name" :alt="company.name">
+            <img :src="company.img" :alt="company.name" />
           </a>
         </figure>
       </div>
@@ -47,17 +39,17 @@
         <div class="content">
           <p>
             <strong>
-              {{ company.info.name }}
+              {{ company.name }}
             </strong>
             <small>
-              {{ company.info.year }}
+              {{ company.year }}
             </small>
             <br />
-            {{ company.info.job }}
+            {{ company.job }}
           </p>
 
           <b-taglist>
-            <b-tag v-for="skill in company.info.skills" :key="skill">
+            <b-tag v-for="skill in company.skills" :key="skill">
               {{ skill }}
             </b-tag>
           </b-taglist>
@@ -74,23 +66,7 @@ export default Vue.extend({
   data() {
     return {
       life: this.$t('common.links.life'),
-      companies: [
-        {
-          info: this.$t('home.freelancing.companies.simplon'),
-          link: this.$t('common.companies.simplon'),
-          img: '/media/simplon.png',
-        },
-        {
-          info: this.$t('home.freelancing.companies.wattamate'),
-          link: this.$t('common.companies.wattamate'),
-          img: '/media/wattamate.png',
-        },
-        {
-          info: this.$t('home.freelancing.companies.pulsar'),
-          link: this.$t('common.companies.pulsar'),
-          img: '/media/pulsar.png',
-        },
-      ],
+      companies: this.$t('common.companies'),
     }
   },
 })

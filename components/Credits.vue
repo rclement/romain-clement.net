@@ -14,25 +14,23 @@
             </p>
 
             <p>
-              {{ $t('credits.about.company.name') }}
+              {{ $t('common.company.name') }}
               <br />
-              {{ $t('credits.about.company.kind') }}
+              {{ $t('common.company.kind') }}
             </p>
 
             <p>
-              {{ $t('credits.about.company.address.line1') }}
+              {{ $t('common.company.address.line1') }}
               <br />
-              {{ $t('credits.about.company.address.postcode') }}
-              {{ $t('credits.about.company.address.city') }}
+              {{ $t('common.company.address.postcode') }}
+              {{ $t('common.company.address.city') }}
               <br />
-              {{ $t('credits.about.company.address.country') }}
+              {{ $t('common.company.address.country') }}
             </p>
 
             <p>
               <span
-                v-for="registration in $t(
-                  'credits.about.company.registrations'
-                )"
+                v-for="registration in $t('common.company.registrations')"
                 :key="registration.type"
               >
                 {{ registration.type }}: {{ registration.value }}

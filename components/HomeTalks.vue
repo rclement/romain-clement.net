@@ -19,31 +19,34 @@
 
     <br />
 
-    <article
-      v-for="keynote in keynotes"
-      :key="keynote.info.title"
-      class="media"
-    >
+    <article v-for="keynote in keynotes" :key="keynote.title" class="media">
       <div class="media-content">
         <div class="content">
           <p>
             <strong>
               <a
-                :href="keynote.link.url"
-                :title="keynote.link.name"
-                :alt="keynote.link.name"
+                :href="keynote.url"
+                :title="keynote.title"
+                :alt="keynote.title"
                 class="has-text-dark"
               >
-                {{ keynote.info.title }}
+                {{ keynote.title }}
               </a>
             </strong>
             <small>
-              {{ $d(new Date(keynote.link.date), 'short') }}
+              {{ $d(new Date(keynote.date), 'short') }}
             </small>
             <br />
-            <small>{{ keynote.link.event }}</small>
+            <a
+              :href="keynote.event_url"
+              :title="keynote.event"
+              :alt="keynote.event"
+              class="has-text-dark"
+            >
+              <small>{{ keynote.event }}</small>
+            </a>
             <br />
-            {{ keynote.info.subtitle }}
+            {{ keynote.subtitle }}
           </p>
         </div>
       </div>
@@ -57,20 +60,7 @@ import Vue from 'vue'
 export default Vue.extend({
   data() {
     return {
-      keynotes: [
-        {
-          info: this.$t('home.talks.keynotes.pythonCelery'),
-          link: this.$t('common.keynotes.pythonCelery'),
-        },
-        {
-          info: this.$t('home.talks.keynotes.modernPythonDevelopment'),
-          link: this.$t('common.keynotes.modernPythonDevelopment'),
-        },
-        {
-          info: this.$t('home.talks.keynotes.swarmFactor'),
-          link: this.$t('common.keynotes.swarmFactor'),
-        },
-      ],
+      keynotes: this.$t('common.keynotes'),
       meetupPythonGrenoble: this.$t('common.links.meetupPythonGrenoble'),
     }
   },

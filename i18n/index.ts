@@ -1,6 +1,5 @@
 import common from './common'
 import en from './en'
-import fr from './fr'
 import hacker from './hacker'
 
 const locales = [
@@ -8,11 +7,6 @@ const locales = [
     name: 'English',
     code: 'en',
     iso: 'en-US',
-  },
-  {
-    name: 'Français',
-    code: 'fr',
-    iso: 'fr-FR',
   },
   {
     name: 'Hacker',
@@ -27,10 +21,6 @@ const messages = {
   en: {
     common,
     ...en,
-  },
-  fr: {
-    common,
-    ...fr,
   },
   hk: {
     common,
@@ -52,22 +42,6 @@ const dateTimeFormats = {
       weekday: 'short',
       hour: 'numeric',
       minute: 'numeric',
-    },
-  },
-  fr: {
-    short: {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric',
-    },
-    long: {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric',
-      weekday: 'short',
-      hour: 'numeric',
-      minute: 'numeric',
-      hour12: false,
     },
   },
   hk: {
