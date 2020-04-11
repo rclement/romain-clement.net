@@ -45,21 +45,17 @@
           </template>
 
           <template slot="end">
-            <b-navbar-dropdown
-              :label="$t('navbar.language')"
-              right
-              hoverable
-              boxed
-            >
-              <b-navbar-item
-                v-for="locale in $i18n.locales"
-                :key="locale.code"
-                :to="switchLocalePath(locale.code)"
-                tag="nuxt-link"
-              >
-                {{ locale.name }}
-              </b-navbar-item>
-            </b-navbar-dropdown>
+            <b-navbar-item>
+              <div class="field">
+                <b-switch
+                  v-model="terminalMode"
+                  size="is-small"
+                  type="is-dark"
+                  data-switch-terminal
+                  @input="setTerminalMode"
+                />
+              </div>
+            </b-navbar-item>
           </template>
         </b-navbar>
       </div>
@@ -70,5 +66,18 @@
 <script lang="ts">
 import Vue from 'vue'
 
-export default Vue.extend({})
+export default Vue.extend({
+  data() {
+    return {
+      terminalMode: false,
+    }
+  },
+
+  methods: {
+    setTerminalMode(value: boolean): void {
+      const locale = value ? 'tm' : (this.$i18n.defaultLocale as string)
+      this.$router.replace(this.switchLocalePath(locale))
+    },
+  },
+})
 </script>

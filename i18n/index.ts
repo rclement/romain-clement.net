@@ -1,6 +1,6 @@
 import common from './common'
 import en from './en'
-import hacker from './hacker'
+import term from './term'
 
 const locales = [
   {
@@ -9,9 +9,9 @@ const locales = [
     iso: 'en-US',
   },
   {
-    name: 'Hacker',
-    code: 'hk',
-    iso: 'hk-HK',
+    name: 'Terminal',
+    code: 'tm',
+    iso: 'tm-TM',
   },
 ]
 
@@ -22,9 +22,9 @@ const messages = {
     common,
     ...en,
   },
-  hk: {
+  tm: {
     common,
-    ...hacker,
+    ...term,
   },
 }
 
@@ -44,7 +44,7 @@ const dateTimeFormats = {
       minute: 'numeric',
     },
   },
-  hk: {
+  tm: {
     short: {
       year: '2-digit',
       month: '2-digit',
