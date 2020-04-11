@@ -50,7 +50,7 @@ describe('components/navbar', () => {
 
     switchInput.trigger('click')
     await flushPromises()
-    expect(wrapper.vm.$route.path).toBe('/tm')
+    expect(wrapper.vm.$route.path).toBe('/und')
 
     switchInput.trigger('click')
     await flushPromises()

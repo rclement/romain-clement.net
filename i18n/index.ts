@@ -10,8 +10,8 @@ const locales = [
   },
   {
     name: 'Terminal',
-    code: 'tm',
-    iso: 'tm-TM',
+    code: 'und',
+    iso: 'und',
   },
 ]
 
@@ -22,7 +22,7 @@ const messages = {
     common,
     ...en,
   },
-  tm: {
+  und: {
     common,
     ...term,
   },
@@ -44,7 +44,7 @@ const dateTimeFormats = {
       minute: 'numeric',
     },
   },
-  tm: {
+  und: {
     short: {
       year: '2-digit',
       month: '2-digit',

@@ -1,22 +1,25 @@
 export default {
   app: {
-    name: 'Romain Clement - Software Engineer & Trainer',
+    name: 'Romain Clement | Freelance Software Engineer & Trainer',
+    shortName: 'Romain Clement',
+    description: 'Freelance Software Engineer & Trainer',
     keywords: [
       'romain',
       'clement',
       'freelance',
       'software',
       'engineer',
+      'developer',
       'grenoble',
-      'development',
       'web',
+      'data',
       'cloud-native',
       'python',
       'nodejs',
       'privacy',
       'e2ee',
     ],
-    color: '#3890ab',
+    color: '#4a5153',
     repository: {
       name: 'Github',
       url: 'https://github.com/rclement/romain-clement.net',

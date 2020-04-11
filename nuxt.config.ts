@@ -7,8 +7,9 @@ require('dotenv').config()
 const appCommon = i18n.messages.en.common.app
 
 const appName = appCommon.name
+const appShortName = appCommon.shortName
+const appDescription = appCommon.description
 const appAuthor = process.env.npm_package_author_name || ''
-const appDescription = process.env.npm_package_description || ''
 const appVersion = process.env.npm_package_version || ''
 const appKeywords = appCommon.keywords
 const appColor = appCommon.color
@@ -30,9 +31,6 @@ const config: Configuration = {
   mode: 'universal',
 
   env: {
-    APP_NAME: appName,
-    APP_AUTHOR: appAuthor,
-    APP_DESCRIPTION: appDescription,
     APP_VERSION: appVersion,
     STATIC_PREFIX: staticPrefix,
     MAILER_URL: mailerUrl,
@@ -124,7 +122,7 @@ const config: Configuration = {
     },
     manifest: {
       name: appName,
-      short_name: appName,
+      short_name: appShortName,
       description: appDescription,
       background_color: '#ffffff',
       theme_color: appColor,

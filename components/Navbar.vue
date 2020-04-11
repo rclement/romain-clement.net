@@ -75,7 +75,7 @@ export default Vue.extend({
 
   methods: {
     setTerminalMode(value: boolean): void {
-      const locale = value ? 'tm' : (this.$i18n.defaultLocale as string)
+      const locale = value ? 'und' : (this.$i18n.defaultLocale as string)
       this.$router.replace(this.switchLocalePath(locale))
     },
   },
