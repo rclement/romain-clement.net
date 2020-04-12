@@ -295,7 +295,7 @@ export default {
     },
     mailer: {
       name: 'Mailer',
-      url: 'https://github.com/rclement/mailer',
+      url: 'https://mailer.romain-clement.net',
     },
     meetup: {
       name: 'Meetup',
