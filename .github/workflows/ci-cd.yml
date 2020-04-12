@@ -40,7 +40,7 @@ jobs:
     name: Build Preview
     needs: test
     runs-on: ubuntu-latest
-    if: "! contains(github.ref, 'tags')"
+    if: "! contains(github.ref, 'master')"
 
     env:
       BASE_PROTOCOL: ${{ secrets.BASE_PROTOCOL }}
@@ -75,7 +75,7 @@ jobs:
     name: Build Production
     needs: test
     runs-on: ubuntu-latest
-    if: contains(github.ref, 'tags')
+    if: contains(github.ref, 'master')
 
     env:
       BASE_PROTOCOL: ${{ secrets.BASE_PROTOCOL }}
@@ -110,7 +110,7 @@ jobs:
     name: Deploy Preview
     needs: build-preview
     runs-on: ubuntu-latest
-    if: "! contains(github.ref, 'tags')"
+    if: "! contains(github.ref, 'master')"
 
     env:
       NOW_ORG_ID: ${{ secrets.NOW_ORG_ID }}
@@ -142,7 +142,7 @@ jobs:
     name: Deploy Production
     needs: build-production
     runs-on: ubuntu-latest
-    if: contains(github.ref, 'tags')
+    if: contains(github.ref, 'master')
 
     steps:
       - uses: actions/checkout@v2
