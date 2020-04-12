@@ -83,13 +83,17 @@ export default {
 
     oss: {
       title: 'Open-Source',
-      text: `I truly believe free and open-source software is key in building transparent and privacy-conscious software. Here are some open-source projects I've either contributed and/or initiated.`,
+      text: `I truly believe free and open-source software is key in building
+      transparent and privacy-conscious software. Here are some open-source projects
+      I've either contributed and/or initiated on {github} and {gitlab}.`,
+      github: 'GitHub',
+      gitlab: 'GitLab',
     },
 
     talks: {
       title: 'Talks',
-      text:
-        'I enjoy attending and hosting tech meetups (co-organizer of the {meetup-python-grenoble}), and also giving a few technical talks once in a while.',
+      text: `I enjoy attending and hosting tech meetups (co-organizer of the
+        {meetup-python-grenoble}), and also giving a few technical talks once in a while.`,
     },
 
     music: {
@@ -100,7 +104,9 @@ export default {
     contact: {
       title: 'Contact',
       subtitle: `Looking for a freelance software developer for your next project? Let's talk!`,
-      notice: `This message will be encrypted using my {pgp} public key. If you'd like me to respond with end-to-end encryption, do not forget to attach your PGP public key!`,
+      notice: `This message will be encrypted using my {pgp} public key.
+      If you'd like me to respond with end-to-end encryption,
+      do not forget to attach your PGP public key!`,
       email: {
         label: 'E-mail',
       },

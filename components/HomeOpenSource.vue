@@ -5,9 +5,19 @@
       {{ $t('home.oss.title') }}
     </p>
 
-    <p>
-      {{ $t('home.oss.text') }}
-    </p>
+    <i18n path="home.oss.text" tag="p">
+      <template v-slot:github>
+        <a :href="github.url" :title="github.name" :alt="github.name">
+          <span>{{ $t('home.oss.github') }}</span>
+        </a>
+      </template>
+
+      <template v-slot:gitlab>
+        <a :href="gitlab.url" :title="gitlab.name" :alt="gitlab.name">
+          <span>{{ $t('home.oss.gitlab') }}</span>
+        </a>
+      </template>
+    </i18n>
 
     <br />
 
@@ -57,6 +67,8 @@ export default Vue.extend({
   data() {
     return {
       projects: this.$t('common.projects'),
+      github: this.$t('common.links.github'),
+      gitlab: this.$t('common.links.gitlab'),
     }
   },
 })
