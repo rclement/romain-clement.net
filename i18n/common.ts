@@ -21,7 +21,7 @@ export default {
     ],
     color: '#4a5153',
     repository: {
-      name: 'Github',
+      name: 'GitHub',
       url: 'https://github.com/rclement/romain-clement.net',
     },
     license: {
@@ -257,11 +257,11 @@ export default {
       url: 'https://life.romain-clement.net',
     },
     github: {
-      name: 'Github',
+      name: 'GitHub',
       url: 'https://github.com/rclement',
     },
     gitlab: {
-      name: 'Gitlab',
+      name: 'GitLab',
       url: 'https://gitlab.com/rclement',
     },
     keybase: {
@@ -334,7 +334,7 @@ export default {
       url: 'https://docs.gitlab.com/ce/ci/',
     },
     githubActions: {
-      name: 'Github Actions',
+      name: 'GitHub Actions',
       url: 'https://github.com/features/actions',
     },
     rust: {
