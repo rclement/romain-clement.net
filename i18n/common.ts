@@ -249,6 +249,11 @@ export default {
       img: '/media/hambush.png',
     },
   ],
+  feeds: {
+    rss: { name: 'RSS', type: 'rss2', file: 'rss.xml' },
+    atom: { name: 'Atom', type: 'atom1', file: 'atom.xml' },
+    json: { name: 'JSON', type: 'json1', file: 'feed.json' },
+  },
   links: {
     pgp: {
       name: 'PGP',

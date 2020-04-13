@@ -1,11 +1,10 @@
 import { Configuration } from '@nuxt/types'
-
 import i18n from './i18n'
+import { findContent } from './content'
 
 require('dotenv').config()
 
 const appCommon = i18n.messages.en.common.app
-
 const appName = appCommon.name
 const appShortName = appCommon.shortName
 const appDescription = appCommon.description
@@ -26,6 +25,55 @@ const hostname = `${baseProtocol}://${baseUrl}${staticPrefix}`
 
 const sitemapPath = '/sitemap.xml'
 const sitemapUrl = `${hostname}${sitemapPath}`
+
+const content = findContent()
+
+const articlesDynamicRoutes = Object.entries(content.articles).reduce(
+  (obj: string[], [key, _]) => {
+    const localeRoutes = i18n.locales.map((l) => {
+      const code = l.code
+      let route = `/articles/${key}`
+      if (code !== i18n.defaultLocale) {
+        route = `/${code}${route}`
+      }
+      return route
+    })
+
+    obj.push(...localeRoutes)
+    return obj
+  },
+  []
+)
+
+const contentDynamicRoutes = [...articlesDynamicRoutes]
+
+const feedsCommon = i18n.messages.en.common.feeds
+
+function feedCreateArticles(feed: { [key: string]: any }) {
+  feed.options = {
+    title: 'Romain Clement | Articles',
+    description: 'Articles from Romain Clement',
+    link: hostname,
+  }
+
+  Object.values(content.articles).forEach((article) => {
+    const url = `${hostname}/articles/${article.slug}`
+    feed.addItem({
+      date: article.meta.published,
+      title: article.meta.title,
+      id: url,
+      link: url,
+      description: article.meta.summary,
+      content: article.meta.summary,
+    })
+  })
+
+  feed.addContributor({
+    name: appAuthor,
+    email: 'contact@romain-clement.net',
+    link: hostname,
+  })
+}
 
 const config: Configuration = {
   mode: 'universal',
@@ -56,6 +104,7 @@ const config: Configuration = {
 
   generate: {
     fallback: true,
+    routes: contentDynamicRoutes,
   },
 
   plugins: ['~/plugins/font-awesome.ts', '~/plugins/vuelidate.ts'],
@@ -64,6 +113,7 @@ const config: Configuration = {
     '@nuxtjs/dotenv',
     '@nuxt/typescript-build',
     '@nuxtjs/eslint-module',
+    '~/modules/content.ts',
     ['nuxt-cname-module', { baseUrl, generateCNAME: true }],
   ],
 
@@ -74,6 +124,7 @@ const config: Configuration = {
     'nuxt-buefy',
     '@nuxtjs/sentry',
     '@nuxtjs/pwa',
+    '@nuxtjs/feed',
     '@nuxtjs/robots',
     '@nuxtjs/sitemap',
   ],
@@ -82,6 +133,10 @@ const config: Configuration = {
     typeCheck: {
       eslint: true,
     },
+  },
+
+  content: {
+    content,
   },
 
   chiffre: {
@@ -129,6 +184,24 @@ const config: Configuration = {
     },
   },
 
+  feed: [
+    {
+      path: `/feed/articles/${feedsCommon.rss.file}`,
+      type: feedsCommon.rss.type,
+      create: feedCreateArticles,
+    },
+    {
+      path: `/feed/articles/${feedsCommon.atom.file}`,
+      type: feedsCommon.atom.type,
+      create: feedCreateArticles,
+    },
+    {
+      path: `/feed/articles/${feedsCommon.json.file}`,
+      type: feedsCommon.json.type,
+      create: feedCreateArticles,
+    },
+  ],
+
   robots: [
     {
       UserAgent: '*',
@@ -141,6 +214,7 @@ const config: Configuration = {
     path: sitemapPath,
     hostname,
     gzip: true,
+    routes: contentDynamicRoutes,
   },
 }
 

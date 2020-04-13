@@ -42,6 +42,10 @@
             >
               {{ $t('home.contact.title') }}
             </b-navbar-item>
+
+            <b-navbar-item :to="localePath('articles')" tag="nuxt-link">
+              {{ $t('articles.title') }}
+            </b-navbar-item>
           </template>
 
           <template slot="end">

@@ -129,4 +129,9 @@ export default {
       powered: 'Powered by {mailer}',
     },
   },
+
+  articles: {
+    title: 'Articles',
+    text: 'I write about software engineering related topics.',
+  },
 }

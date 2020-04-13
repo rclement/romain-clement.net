@@ -11,8 +11,10 @@ import {
   faKey,
   faLaptopCode,
   faMusic,
+  faNewspaper,
   faPaperPlane,
   faRocket,
+  faRss,
   faUser,
 } from '@fortawesome/free-solid-svg-icons'
 import {
@@ -37,8 +39,10 @@ library.add(
   faKey,
   faLaptopCode,
   faMusic,
+  faNewspaper,
   faPaperPlane,
   faRocket,
+  faRss,
   faUser,
   faConnectdevelop,
   faGithub,
