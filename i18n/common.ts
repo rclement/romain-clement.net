@@ -61,7 +61,9 @@ export default {
         'project management',
         'python',
         'sql',
+        'etl',
         'cloud',
+        'active learning',
       ],
     },
     {
