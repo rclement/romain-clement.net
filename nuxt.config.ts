@@ -27,7 +27,6 @@ const sitemapPath = '/sitemap.xml'
 const sitemapUrl = `${hostname}${sitemapPath}`
 
 const content = findContent()
-
 const articlesDynamicRoutes = Object.entries(content.articles).reduce(
   (obj: string[], [key, _]) => {
     const localeRoutes = i18n.locales.map((l) => {
@@ -44,35 +43,49 @@ const articlesDynamicRoutes = Object.entries(content.articles).reduce(
   },
   []
 )
-
 const contentDynamicRoutes = [...articlesDynamicRoutes]
 
-const feedsCommon = i18n.messages.en.common.feeds
+const feedArticles = () => {
+  const feedsCommon = i18n.messages.en.common.feeds
+  const baseUrlArticles = '/articles'
+  const baseUrlFeed = `${feedsCommon.basepath}${baseUrlArticles}`
 
-function feedCreateArticles(feed: { [key: string]: any }) {
-  feed.options = {
-    title: 'Romain Clement | Articles',
-    description: 'Articles from Romain Clement',
-    link: hostname,
+  function feedCreateArticles(feed: { [key: string]: any }) {
+    const baseLinkArticles = `${hostname}${baseUrlArticles}`
+
+    feed.options = {
+      title: 'Articles from Romain Clement',
+      description: i18n.messages.en.articles.text,
+      id: baseLinkArticles,
+      link: baseLinkArticles,
+      feedLinks: {
+        rss: `${hostname}${baseUrlFeed}/${feedsCommon.formats.rss.file}`,
+        atom: `${hostname}${baseUrlFeed}/${feedsCommon.formats.atom.file}`,
+        json: `${hostname}${baseUrlFeed}/${feedsCommon.formats.json.file}`,
+      },
+    }
+
+    Object.values(content.articles).forEach((article) => {
+      const url = `${baseLinkArticles}/${article.slug}`
+      feed.addItem({
+        title: article.meta.title,
+        id: url,
+        link: url,
+        date: article.meta.published,
+        description: article.meta.summary,
+        content: article.meta.summary,
+        author: Object.values(feedsCommon.authors),
+      })
+    })
+
+    feed.addContributor(feedsCommon.authors.romain)
   }
 
-  Object.values(content.articles).forEach((article) => {
-    const url = `${hostname}/articles/${article.slug}`
-    feed.addItem({
-      date: article.meta.published,
-      title: article.meta.title,
-      id: url,
-      link: url,
-      description: article.meta.summary,
-      content: article.meta.summary,
-    })
-  })
-
-  feed.addContributor({
-    name: appAuthor,
-    email: 'contact@romain-clement.net',
-    link: hostname,
-  })
+  return Object.values(feedsCommon.formats).map((f) => ({
+    path: `${baseUrlFeed}/${f.file}`,
+    type: f.type,
+    create: feedCreateArticles,
+  }))
 }
 
 const config: Configuration = {
@@ -184,23 +197,7 @@ const config: Configuration = {
     },
   },
 
-  feed: [
-    {
-      path: `/feed/articles/${feedsCommon.rss.file}`,
-      type: feedsCommon.rss.type,
-      create: feedCreateArticles,
-    },
-    {
-      path: `/feed/articles/${feedsCommon.atom.file}`,
-      type: feedsCommon.atom.type,
-      create: feedCreateArticles,
-    },
-    {
-      path: `/feed/articles/${feedsCommon.json.file}`,
-      type: feedsCommon.json.type,
-      create: feedCreateArticles,
-    },
-  ],
+  feed: feedArticles,
 
   robots: [
     {

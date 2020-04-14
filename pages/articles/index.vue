@@ -6,25 +6,28 @@
           <div class="column is-half is-offset-one-quarter">
             <div class="level">
               <div class="level-left">
-                <p class="title">
-                  <b-icon pack="fas" icon="newspaper" size="is-large" />
-                  {{ $t('articles.title') }}
-                </p>
+                <div class="level-item">
+                  <p class="title">
+                    <b-icon pack="fas" icon="newspaper" size="is-large" />
+                    {{ $t('articles.title') }}
+                  </p>
+                </div>
               </div>
 
               <div class="level-right">
                 <div class="level-item">
                   <b-icon pack="fas" icon="rss" size="is-small" />
-                </div>
-
-                <div v-for="feed in feeds" :key="feed.name" class="level-item">
-                  <a
-                    :href="`/feed/articles/${feed.file}`"
-                    :title="feed.name"
-                    :alt="feed.name"
-                  >
-                    {{ feed.name }}
-                  </a>
+                  <template v-for="feed in feeds.formats">
+                    <slot>|</slot>
+                    <a
+                      :key="feed.name"
+                      :href="`${feeds.basepath}/articles/${feed.file}`"
+                      :title="feed.name"
+                      :alt="feed.name"
+                    >
+                      {{ feed.name }}
+                    </a>
+                  </template>
                 </div>
               </div>
             </div>

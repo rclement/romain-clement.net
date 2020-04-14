@@ -250,9 +250,19 @@ export default {
     },
   ],
   feeds: {
-    rss: { name: 'RSS', type: 'rss2', file: 'rss.xml' },
-    atom: { name: 'Atom', type: 'atom1', file: 'atom.xml' },
-    json: { name: 'JSON', type: 'json1', file: 'feed.json' },
+    basepath: '/feed',
+    authors: {
+      romain: {
+        name: 'Romain Clement',
+        email: 'contact@romain-clement.net',
+        link: 'https://romain-clement.net',
+      },
+    },
+    formats: {
+      rss: { name: 'rss', type: 'rss2', file: 'rss.xml' },
+      atom: { name: 'atom', type: 'atom1', file: 'atom.xml' },
+      json: { name: 'json', type: 'json1', file: 'feed.json' },
+    },
   },
   links: {
     pgp: {
