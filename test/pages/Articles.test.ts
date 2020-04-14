@@ -5,9 +5,15 @@ import Buefy from 'buefy'
 import Articles from '~/pages/articles/index.vue'
 import { generateArticles } from '~/test/utils'
 
+function createData(articles: { [key: string]: any }) {
+  return () => ({
+    articles: Object.values(articles),
+  })
+}
+
 function createWrapper(
   component: Vue.VueConstructor<Vue>,
-  optionalMocks?: object
+  optionalData?: () => object
 ) {
   const localVue = createLocalVue()
   localVue.use(Buefy)
@@ -16,7 +22,6 @@ function createWrapper(
     $t: (msg: string) => msg,
     $d: (msg: Date) => msg,
     localePath: (path: string) => path,
-    ...optionalMocks,
   }
 
   const stubs = {
@@ -27,19 +32,22 @@ function createWrapper(
     localVue,
     mocks,
     stubs,
+    data: optionalData,
   })
 }
 
 describe('pages/articles', () => {
   test('is a Vue instance', () => {
     const articles = generateArticles(0)
-    const wrapper = createWrapper(Articles, { articles })
+    const wrapperData = createData(articles)
+    const wrapper = createWrapper(Articles, wrapperData)
     expect(wrapper.isVueInstance()).toBeTruthy()
   })
 
   test('can display some articles', () => {
     const articles = generateArticles(3)
-    const wrapper = createWrapper(Articles, { articles })
+    const wrapperData = createData(articles)
+    const wrapper = createWrapper(Articles, wrapperData)
 
     Object.values(articles).forEach((article) => {
       const articleComp = wrapper.find(`article[data-slug=${article.slug}]`)
@@ -62,7 +70,8 @@ describe('pages/articles', () => {
 
   test('can get some articles from asyncdata', async () => {
     const articles = generateArticles(3)
-    const wrapper = createWrapper(Articles, { articles })
+    const wrapperData = createData(articles)
+    const wrapper = createWrapper(Articles, wrapperData)
 
     if (wrapper.vm.$options.asyncData) {
       const context = {} as Context

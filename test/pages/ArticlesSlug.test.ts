@@ -6,9 +6,15 @@ import faker from 'faker'
 import ArticlesSlug from '~/pages/articles/_slug.vue'
 import { generateArticles } from '~/test/utils'
 
+function createData(article: object) {
+  return () => ({
+    article,
+  })
+}
+
 function createWrapper(
   component: Vue.VueConstructor<Vue>,
-  optionalMocks?: object
+  optionalData?: () => object
 ) {
   const localVue = createLocalVue()
   localVue.use(Buefy)
@@ -17,7 +23,6 @@ function createWrapper(
     $t: (msg: string) => msg,
     $d: (msg: Date) => msg,
     localePath: (path: string) => path,
-    ...optionalMocks,
   }
 
   const stubs = {
@@ -28,22 +33,24 @@ function createWrapper(
     localVue,
     mocks,
     stubs,
+    data: optionalData,
   })
 }
 
 describe('pages/articles/slug', () => {
   test('is a Vue instance', () => {
     const articles = generateArticles(1)
-    const wrapper = createWrapper(ArticlesSlug, {
-      article: Object.values(articles)[0],
-    })
+    const article = Object.values(articles)[0]
+    const wrapperData = createData(article)
+    const wrapper = createWrapper(ArticlesSlug, wrapperData)
     expect(wrapper.isVueInstance()).toBeTruthy()
   })
 
   test('can display an article', () => {
     const articles = generateArticles(1)
     const article = Object.values(articles)[0]
-    const wrapper = createWrapper(ArticlesSlug, { article })
+    const wrapperData = createData(article)
+    const wrapper = createWrapper(ArticlesSlug, wrapperData)
 
     const title = wrapper.find('p.title')
     expect(title.text()).toBe(article.meta.title)
@@ -63,7 +70,8 @@ describe('pages/articles/slug', () => {
   test('can get a valid article from asyncdata', async () => {
     const articles = generateArticles(2)
     const article = Object.values(articles)[0]
-    const wrapper = createWrapper(ArticlesSlug, { article })
+    const wrapperData = createData(article)
+    const wrapper = createWrapper(ArticlesSlug, wrapperData)
 
     if (wrapper.vm.$options.asyncData) {
       const context = {} as Context
@@ -81,7 +89,8 @@ describe('pages/articles/slug', () => {
   test('return an error with an invalid slug', async () => {
     const articles = generateArticles(2)
     const article = Object.values(articles)[0]
-    const wrapper = createWrapper(ArticlesSlug, { article })
+    const wrapperData = createData(article)
+    const wrapper = createWrapper(ArticlesSlug, wrapperData)
 
     if (wrapper.vm.$options.asyncData) {
       const context = {} as Context
