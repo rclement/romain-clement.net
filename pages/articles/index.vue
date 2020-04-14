@@ -40,6 +40,7 @@
             <article
               v-for="article in articles"
               :key="article.slug"
+              :data-slug="article.slug"
               class="media"
             >
               <div class="media-content">
