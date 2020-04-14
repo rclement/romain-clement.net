@@ -27,6 +27,7 @@ function createWrapper(
 
   const stubs = {
     NuxtLink: RouterLinkStub,
+    i18n: true,
   }
 
   return mount(component, {
@@ -54,9 +55,6 @@ describe('pages/articles/slug', () => {
 
     const title = wrapper.find('p.title')
     expect(title.text()).toBe(article.meta.title)
-
-    const published = wrapper.find('p.subtitle > small')
-    expect(published.text()).toBe(new Date(article.meta.published).toString())
 
     const tags = wrapper.findAll('.tag > span')
     article.meta.tags.forEach((tag: string, idx: number) => {

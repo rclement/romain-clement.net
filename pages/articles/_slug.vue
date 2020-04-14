@@ -6,16 +6,28 @@
           <p class="title">
             {{ article.meta.title }}
           </p>
-          <p class="subtitle">
-            <small>{{ $d(new Date(article.meta.published), 'short') }}</small>
-            |
-            <template v-for="tag in article.meta.tags">
-              <b-tag :key="tag" type="is-info">
-                {{ tag }}
-              </b-tag>
-              <slot> </slot>
-            </template>
+
+          <p class="subtitle is-6">
+            <small>
+              <i18n path="articles.slug.published">
+                <template v-slot:date>
+                  {{ $d(new Date(article.meta.published), 'short') }}
+                </template>
+              </i18n>
+              <br />
+              <i18n path="articles.slug.reading">
+                <template v-slot:time>
+                  {{ $tc('articles.slug.minutes', article.readingTime) }}
+                </template>
+              </i18n>
+            </small>
           </p>
+
+          <b-taglist>
+            <b-tag v-for="tag in article.meta.tags" :key="tag">
+              {{ tag }}
+            </b-tag>
+          </b-taglist>
 
           <hr />
 

@@ -3,11 +3,12 @@ import path from 'path'
 import glob from 'glob'
 import Markdownit from 'markdown-it'
 import frontmatter from 'gray-matter'
+import readingTime from 'reading-time'
 
 export interface ContentItem {
-  filepath: string
   filename: string
   slug: string
+  readingTime: number
   meta: { [key: string]: any }
   content: string
 }
@@ -21,7 +22,8 @@ export interface Content {
 }
 
 function loadContentItem(filepath: string): ContentItem {
-  const filename = path.basename(filepath, path.extname(filepath))
+  const filename = path.basename(filepath)
+  const slug = path.basename(filepath, path.extname(filepath))
 
   const fileContent = fs.readFileSync(filepath, 'utf-8')
   const matter = frontmatter(fileContent)
@@ -30,16 +32,12 @@ function loadContentItem(filepath: string): ContentItem {
   const md = new Markdownit()
   const content = md.render(matter.content)
 
-  // const published = new Date(meta.published)
-  // const year = published.getUTCFullYear().toString()
-  // const month = (published.getUTCMonth() + 1).toString().padStart(2, '0')
-  // const slug = `${year}/${month}/${filename}`
-  const slug = `${filename}`
+  const rt = Math.ceil(readingTime(matter.content).minutes)
 
   return {
-    filepath,
     filename,
     slug,
+    readingTime: rt,
     meta,
     content,
   }

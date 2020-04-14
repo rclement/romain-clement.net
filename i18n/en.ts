@@ -132,6 +132,12 @@ export default {
 
   articles: {
     title: 'Articles',
-    text: 'I write about software engineering related topics.',
+    text: `I write about software engineering related topics,
+    mostly tips and tricks I stumble across as worth mentioning.`,
+    slug: {
+      published: 'Published on {date}',
+      minutes: '{n} minute | {n} minutes',
+      reading: 'Estimated reading time of {time}',
+    },
   },
 }

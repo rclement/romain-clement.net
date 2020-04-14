@@ -7,11 +7,10 @@ export function generateArticles(num: number = 1) {
 
   for (let i = 0; i < num; ++i) {
     const slug = faker.lorem.slug()
-    const filename = faker.system.commonFileName('md')
     const art = {
-      filepath: filename,
-      filename,
+      filename: faker.system.commonFileName('md'),
       slug,
+      readingTime: faker.random.number(10),
       meta: {
         title: faker.lorem.sentence(),
         summary: faker.lorem.sentence(),
