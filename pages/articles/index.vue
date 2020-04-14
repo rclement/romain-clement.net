@@ -16,18 +16,17 @@
 
               <div class="level-right">
                 <div class="level-item">
-                  <b-icon pack="fas" icon="rss" size="is-small" />
-                  <template v-for="feed in feeds.formats">
-                    <slot>|</slot>
-                    <a
-                      :key="feed.name"
-                      :href="`${feeds.basepath}/articles/${feed.file}`"
-                      :title="feed.name"
-                      :alt="feed.name"
-                    >
-                      {{ feed.name }}
-                    </a>
-                  </template>
+                  <b-icon class="feed" pack="fas" icon="rss" size="is-small" />
+                  <a
+                    v-for="feed in feeds.formats"
+                    :key="feed.name"
+                    :href="`${feeds.basepath}/articles/${feed.file}`"
+                    :title="feed.name"
+                    :alt="feed.name"
+                    class="feed"
+                  >
+                    {{ feed.name }}
+                  </a>
                 </div>
               </div>
             </div>
@@ -104,3 +103,9 @@ export default Vue.extend({
   },
 })
 </script>
+
+<style scoped>
+.feed {
+  margin-right: 0.5rem;
+}
+</style>
