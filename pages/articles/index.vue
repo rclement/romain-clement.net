@@ -37,8 +37,22 @@
 
             <br />
 
+            <b-field grouped group-multiline>
+              <div v-for="tag in filterTags" :key="tag" class="control">
+                <b-tag
+                  :aria-close-label="`Close Tag ${tag}`"
+                  type="is-info"
+                  attached
+                  closable
+                  @close="removeFilterTag(tag)"
+                >
+                  {{ tag }}
+                </b-tag>
+              </div>
+            </b-field>
+
             <div
-              v-for="yearArticles in yearSortedArticles"
+              v-for="yearArticles in filteredArticles"
               :key="yearArticles.year"
             >
               <p class="subtitle">
@@ -75,7 +89,9 @@
 
                     <b-taglist>
                       <b-tag v-for="tag in article.meta.tags" :key="tag">
-                        {{ tag }}
+                        <span @click="addFilterTag(tag)">
+                          {{ tag }}
+                        </span>
                       </b-tag>
                     </b-taglist>
                   </div>
@@ -104,13 +120,19 @@ export default Vue.extend({
   data() {
     return {
       articles: [] as ContentItem[],
+      filterTags: new Set<string>(),
       feeds: this.$t('common.feeds'),
     }
   },
 
   computed: {
-    yearSortedArticles(): { year: number; articles: ContentItem[] }[] {
-      const byYear = this.articles.reduce(
+    filteredArticles(): { year: number; articles: ContentItem[] }[] {
+      const tagsList = Array.from(this.filterTags)
+      const tagFiltered = this.articles.filter((a) =>
+        tagsList.every((t: string) => a.meta.tags.includes(t))
+      )
+
+      const byYear = tagFiltered.reduce(
         (obj: { [key: string]: ContentItem[] }, a) => {
           const year = new Date(a.meta.published).getFullYear()
           const yearStr = year.toString()
@@ -129,6 +151,18 @@ export default Vue.extend({
           articles: value,
         }))
         .sort((a, b) => b.year - a.year)
+    },
+  },
+
+  methods: {
+    addFilterTag(tag: string): void {
+      this.filterTags.add(tag)
+      this.filterTags = new Set<string>(this.filterTags)
+    },
+
+    removeFilterTag(tag: string): void {
+      this.filterTags.delete(tag)
+      this.filterTags = new Set<string>(this.filterTags)
     },
   },
 })
