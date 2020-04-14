@@ -79,7 +79,7 @@ describe('pages/articles/slug', () => {
       const data = await wrapper.vm.$options.asyncData(context as Context)
       expect(data).toBeDefined()
 
-      const dataObj = data as { article: { [key: string]: any }[] }
+      const dataObj = data as { article: object }
       expect(dataObj.article).toBe(article)
     }
   })

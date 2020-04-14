@@ -1,9 +1,10 @@
 import faker from 'faker'
+import { ContentItem } from '~/content'
 
 faker.seed(1234)
 
 export function generateArticles(num: number = 1) {
-  const articles: { [key: string]: any } = {}
+  const articles: ContentItem[] = []
 
   for (let i = 0; i < num; ++i) {
     const slug = faker.lorem.slug()
@@ -27,7 +28,7 @@ export function generateArticles(num: number = 1) {
       <h2>${faker.lorem.sentence()}</h2>
       <p>${faker.lorem.paragraph()}</p>`,
     }
-    articles[slug] = art
+    articles.push(art)
   }
 
   return articles

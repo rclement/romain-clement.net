@@ -5,9 +5,9 @@ import Buefy from 'buefy'
 import Articles from '~/pages/articles/index.vue'
 import { generateArticles } from '~/test/utils'
 
-function createData(articles: { [key: string]: any }) {
+function createData(articles: object[]) {
   return () => ({
-    articles: Object.values(articles),
+    articles,
   })
 }
 
@@ -49,7 +49,7 @@ describe('pages/articles', () => {
     const wrapperData = createData(articles)
     const wrapper = createWrapper(Articles, wrapperData)
 
-    Object.values(articles).forEach((article) => {
+    articles.forEach((article) => {
       const articleComp = wrapper.find(`article[data-slug=${article.slug}]`)
 
       const title = articleComp.find('.content > p > strong > a')
@@ -80,8 +80,8 @@ describe('pages/articles', () => {
       const data = await wrapper.vm.$options.asyncData(context as Context)
       expect(data).toBeDefined()
 
-      const dataObj = data as { articles: { [key: string]: any }[] }
-      expect(dataObj.articles.length).toBe(Object.values(articles).length)
+      const dataObj = data as { articles: object[] }
+      expect(dataObj.articles.length).toBe(articles.length)
     }
   })
 })

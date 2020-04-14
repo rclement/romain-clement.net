@@ -13,12 +13,8 @@ export interface ContentItem {
   content: string
 }
 
-export interface ContentCategory {
-  [key: string]: ContentItem
-}
-
 export interface Content {
-  [key: string]: ContentCategory
+  [key: string]: ContentItem[]
 }
 
 function loadContentItem(filepath: string): ContentItem {
@@ -43,16 +39,19 @@ function loadContentItem(filepath: string): ContentItem {
   }
 }
 
-function findContentItems(basepath: string): ContentCategory {
+function findContentItems(basepath: string): ContentItem[] {
   const searchPattern = `${basepath}/**/*.md`
 
   return glob
     .sync(searchPattern)
-    .reduce((obj: ContentCategory, filepath: string) => {
+    .reduce((obj: ContentItem[], filepath: string) => {
       const item = loadContentItem(filepath)
-      obj[item.slug] = item
+      if (!item.meta.draft) {
+        obj.push(item)
+      }
       return obj
-    }, {})
+    }, [])
+    .sort((a, b) => +new Date(b.meta.published) - +new Date(a.meta.published))
 }
 
 export function findContent(): Content {

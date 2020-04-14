@@ -48,7 +48,7 @@ import Vue from 'vue'
 export default Vue.extend({
   asyncData(context) {
     const slug = context.params.slug
-    const article = context.$content.articles[slug]
+    const article = context.$content.articles.find((a) => a.slug === slug)
 
     if (!article) {
       return context.error({ statusCode: 404 })

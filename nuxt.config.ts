@@ -27,22 +27,19 @@ const sitemapPath = '/sitemap.xml'
 const sitemapUrl = `${hostname}${sitemapPath}`
 
 const content = findContent()
-const articlesDynamicRoutes = Object.entries(content.articles).reduce(
-  (obj: string[], [key, _]) => {
-    const localeRoutes = i18n.locales.map((l) => {
-      const code = l.code
-      let route = `/articles/${key}`
-      if (code !== i18n.defaultLocale) {
-        route = `/${code}${route}`
-      }
-      return route
-    })
+const articlesDynamicRoutes = content.articles.reduce((obj: string[], a) => {
+  const localeRoutes = i18n.locales.map((l) => {
+    const code = l.code
+    let route = `/articles/${a.slug}`
+    if (code !== i18n.defaultLocale) {
+      route = `/${code}${route}`
+    }
+    return route
+  })
 
-    obj.push(...localeRoutes)
-    return obj
-  },
-  []
-)
+  obj.push(...localeRoutes)
+  return obj
+}, [])
 const contentDynamicRoutes = [...articlesDynamicRoutes]
 
 const feedArticles = () => {
@@ -65,7 +62,7 @@ const feedArticles = () => {
       },
     }
 
-    Object.values(content.articles).forEach((article) => {
+    content.articles.forEach((article) => {
       const url = `${baseLinkArticles}/${article.slug}`
       feed.addItem({
         title: article.meta.title,

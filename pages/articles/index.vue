@@ -96,15 +96,8 @@ import { ContentItem } from '~/content'
 
 export default Vue.extend({
   asyncData(context) {
-    const articles = Object.values(context.$content.articles).filter(
-      (item) => !item.meta.draft
-    )
-    articles.sort(
-      (a, b) => +new Date(b.meta.published) - +new Date(a.meta.published)
-    )
-
     return {
-      articles,
+      articles: context.$content.articles,
     }
   },
 
