@@ -37,19 +37,23 @@
 
             <br />
 
-            <b-field grouped group-multiline>
-              <div v-for="tag in filterTags" :key="tag" class="control">
-                <b-tag
-                  :aria-close-label="`Close Tag ${tag}`"
-                  type="is-info"
-                  attached
-                  closable
-                  @close="removeFilterTag(tag)"
-                >
-                  {{ tag }}
-                </b-tag>
-              </div>
+            <b-field :label="$t('articles.tags.label')">
+              <b-taginput
+                v-model="selectedTags"
+                :data="shortlistTags"
+                :allow-new="false"
+                :open-on-focus="true"
+                :maxtags="5"
+                :placeholder="$t('articles.tags.placeholder')"
+                autocomplete
+                icon-pack="fas"
+                icon="tag"
+                @typing="findShortlistTags"
+                @input="updateShortlistTags"
+              />
             </b-field>
+
+            <br />
 
             <div
               v-for="yearArticles in filteredArticles"
@@ -81,7 +85,7 @@
                         </nuxt-link>
                       </strong>
                       <small>
-                        {{ $d(new Date(article.meta.published), 'short') }}
+                        {{ $d(article.meta.published, 'short') }}
                       </small>
                     </p>
 
@@ -89,9 +93,7 @@
 
                     <b-taglist>
                       <b-tag v-for="tag in article.meta.tags" :key="tag">
-                        <span @click="addFilterTag(tag)">
-                          {{ tag }}
-                        </span>
+                        {{ tag }}
                       </b-tag>
                     </b-taglist>
                   </div>
@@ -117,24 +119,41 @@ export default Vue.extend({
       return a
     })
 
+    // const tags = new Set<string>()
+    // articles.forEach((a) => {
+    //   a.meta.tags.forEach((t) => {
+    //     tags.add(t)
+    //   })
+    // })
+
+    const tags = articles.reduce((obj, a) => {
+      a.meta.tags.forEach((t) => {
+        obj.add(t)
+      })
+      return obj
+    }, new Set<string>())
+
     return {
       articles,
+      tags: Array.from(tags),
+      shortlistTags: Array.from(tags),
     }
   },
 
   data() {
     return {
       articles: [] as ContentItem[],
-      filterTags: new Set<string>(),
+      tags: [] as string[],
+      selectedTags: [] as string[],
+      shortlistTags: [] as string[],
       feeds: this.$t('common.feeds'),
     }
   },
 
   computed: {
     filteredArticles(): { year: number; articles: ContentItem[] }[] {
-      const tagsList = Array.from(this.filterTags)
       const tagFiltered = this.articles.filter((a) =>
-        tagsList.every((t: string) => a.meta.tags.includes(t))
+        this.selectedTags.every((t: string) => a.meta.tags.includes(t))
       )
 
       const byYear = tagFiltered.reduce(
@@ -160,14 +179,16 @@ export default Vue.extend({
   },
 
   methods: {
-    addFilterTag(tag: string): void {
-      this.filterTags.add(tag)
-      this.filterTags = new Set<string>(this.filterTags)
+    findShortlistTags(tag: string): void {
+      this.shortlistTags = this.tags.filter(
+        (t) => t.includes(tag.toLowerCase()) && !this.selectedTags.includes(t)
+      )
     },
 
-    removeFilterTag(tag: string): void {
-      this.filterTags.delete(tag)
-      this.filterTags = new Set<string>(this.filterTags)
+    updateShortlistTags(): void {
+      this.shortlistTags = this.tags.filter(
+        (t) => !this.selectedTags.includes(t)
+      )
     },
   },
 })

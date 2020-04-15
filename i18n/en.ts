@@ -134,6 +134,10 @@ export default {
     title: 'Articles',
     text: `I write about software engineering related topics,
     mostly tips and tricks I stumble across as worth mentioning.`,
+    tags: {
+      label: 'Filter by tags',
+      placeholder: 'Add some tags',
+    },
     slug: {
       by: 'By {author} on {date}',
       minutes: '{n} minute | {n} minutes',

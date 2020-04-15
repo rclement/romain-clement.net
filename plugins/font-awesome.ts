@@ -15,6 +15,7 @@ import {
   faPaperPlane,
   faRocket,
   faRss,
+  faTag,
   faUser,
 } from '@fortawesome/free-solid-svg-icons'
 import {
@@ -43,6 +44,7 @@ library.add(
   faPaperPlane,
   faRocket,
   faRss,
+  faTag,
   faUser,
   faConnectdevelop,
   faGithub,
