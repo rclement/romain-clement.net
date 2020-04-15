@@ -9,12 +9,17 @@
 
           <p class="subtitle is-6">
             <small>
-              <i18n path="articles.slug.published">
+              <i18n path="articles.slug.by">
+                <template v-slot:author>
+                  {{ $t(`common.feeds.authors.${article.meta.author}`).name }}
+                </template>
                 <template v-slot:date>
-                  {{ $d(new Date(article.meta.published), 'short') }}
+                  {{ $d(article.meta.published, 'short') }}
                 </template>
               </i18n>
+
               <br />
+
               <i18n path="articles.slug.reading">
                 <template v-slot:time>
                   {{ $tc('articles.slug.minutes', article.readingTime) }}
@@ -53,6 +58,8 @@ export default Vue.extend({
     if (!article) {
       return context.error({ statusCode: 404 })
     }
+
+    article.meta.published = new Date(article.meta.published)
 
     return {
       article,

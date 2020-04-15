@@ -112,8 +112,13 @@ import { ContentItem } from '~/content'
 
 export default Vue.extend({
   asyncData(context) {
+    const articles = context.$content.articles.map((a) => {
+      a.meta.published = new Date(a.meta.published)
+      return a
+    })
+
     return {
-      articles: context.$content.articles,
+      articles,
     }
   },
 
@@ -134,7 +139,7 @@ export default Vue.extend({
 
       const byYear = tagFiltered.reduce(
         (obj: { [key: string]: ContentItem[] }, a) => {
-          const year = new Date(a.meta.published).getFullYear()
+          const year = a.meta.published.getFullYear()
           const yearStr = year.toString()
           if (!(yearStr in obj)) {
             obj[yearStr] = []

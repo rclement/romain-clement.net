@@ -64,6 +64,9 @@ const feedArticles = () => {
 
     content.articles.forEach((article) => {
       const url = `${baseLinkArticles}/${article.slug}`
+      const authors: { [key: string]: any } = feedsCommon.authors
+      const author = authors[article.meta.author]
+
       feed.addItem({
         title: article.meta.title,
         id: url,
@@ -71,11 +74,9 @@ const feedArticles = () => {
         date: article.meta.published,
         description: article.meta.summary,
         content: article.meta.summary,
-        author: Object.values(feedsCommon.authors),
+        author: [author],
       })
     })
-
-    feed.addContributor(feedsCommon.authors.romain)
   }
 
   return Object.values(feedsCommon.formats).map((f) => ({

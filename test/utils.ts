@@ -15,13 +15,14 @@ export function generateArticles(num: number = 1) {
       meta: {
         title: faker.lorem.sentence(),
         summary: faker.lorem.sentence(),
+        author: faker.internet.userName(),
         tags: [
           faker.company.bsBuzz(),
           faker.company.bsBuzz(),
           faker.company.bsBuzz(),
         ],
         language: 'en',
-        published: faker.date.past().toISOString(),
+        published: faker.date.past(),
         draft: false,
       },
       content: `<p>${faker.lorem.paragraph()}</p>

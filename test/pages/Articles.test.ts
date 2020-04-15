@@ -56,7 +56,7 @@ describe('pages/articles', () => {
       expect(title.text()).toBe(article.meta.title)
 
       const published = articleComp.find('.content > p > small')
-      expect(published.text()).toBe(new Date(article.meta.published).toString())
+      expect(published.text()).toBe(article.meta.published.toString())
 
       const summary = articleComp.find('.content > p + p')
       expect(summary.text()).toBe(article.meta.summary)

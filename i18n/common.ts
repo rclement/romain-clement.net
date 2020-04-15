@@ -252,7 +252,7 @@ export default {
   feeds: {
     basepath: '/feed',
     authors: {
-      romain: {
+      romainclement: {
         name: 'Romain Clement',
         email: 'contact@romain-clement.net',
         link: 'https://romain-clement.net',

@@ -5,11 +5,21 @@ import Markdownit from 'markdown-it'
 import frontmatter from 'gray-matter'
 import readingTime from 'reading-time'
 
+export interface ContentItemMeta {
+  title: string
+  summary: string
+  author: string
+  tags: string[]
+  language: string
+  published: Date
+  draft: boolean
+}
+
 export interface ContentItem {
   filename: string
   slug: string
   readingTime: number
-  meta: { [key: string]: any }
+  meta: ContentItemMeta
   content: string
 }
 
@@ -34,7 +44,15 @@ function loadContentItem(filepath: string): ContentItem {
     filename,
     slug,
     readingTime: rt,
-    meta,
+    meta: {
+      title: meta.title || '',
+      summary: meta.summary || '',
+      author: meta.author || '',
+      tags: meta.tags || [],
+      language: meta.language || '',
+      published: meta.published || '',
+      draft: meta.draft || false,
+    },
     content,
   }
 }
@@ -51,7 +69,7 @@ function findContentItems(basepath: string): ContentItem[] {
       }
       return obj
     }, [])
-    .sort((a, b) => +new Date(b.meta.published) - +new Date(a.meta.published))
+    .sort((a, b) => +b.meta.published - +a.meta.published)
 }
 
 export function findContent(): Content {

@@ -1,6 +1,7 @@
 ---
 title: CI/CD workflows with GitHub Actions
 summary: The current state of [GitHub Actions] is promising but still has some rough edges,when it comes to configuring complete CI/CD workflows. But I've managed to find some tricks to get the job done.
+author: romainclement
 tags: [ci-cd, github, actions, yaml]
 language: en
 published: 2020-04-12
