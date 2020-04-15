@@ -8,8 +8,10 @@ export function generateArticles(num: number = 1) {
 
   for (let i = 0; i < num; ++i) {
     const slug = faker.lorem.slug()
+    const filename = faker.system.commonFileName('md')
     const art = {
-      filename: faker.system.commonFileName('md'),
+      filepath: filename,
+      filename,
       slug,
       readingTime: faker.random.number(10),
       meta: {
