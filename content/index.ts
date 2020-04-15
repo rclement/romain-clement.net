@@ -16,6 +16,7 @@ export interface ContentItemMeta {
 }
 
 export interface ContentItem {
+  filepath: string
   filename: string
   slug: string
   readingTime: number
@@ -27,11 +28,12 @@ export interface Content {
   [key: string]: ContentItem[]
 }
 
-function loadContentItem(filepath: string): ContentItem {
-  const filename = path.basename(filepath)
-  const slug = path.basename(filepath, path.extname(filepath))
+function loadContentItem(absfilepath: string): ContentItem {
+  const filepath = path.relative(path.resolve(__dirname, '..'), absfilepath)
+  const filename = path.basename(absfilepath)
+  const slug = path.basename(absfilepath, path.extname(absfilepath))
 
-  const fileContent = fs.readFileSync(filepath, 'utf-8')
+  const fileContent = fs.readFileSync(absfilepath, 'utf-8')
   const matter = frontmatter(fileContent)
   const meta = matter.data
 
@@ -41,6 +43,7 @@ function loadContentItem(filepath: string): ContentItem {
   const rt = Math.ceil(readingTime(matter.content).minutes)
 
   return {
+    filepath,
     filename,
     slug,
     readingTime: rt,

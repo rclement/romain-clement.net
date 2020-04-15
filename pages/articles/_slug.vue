@@ -39,6 +39,18 @@
           <div class="content">
             <span v-html="article.content" />
           </div>
+
+          <hr />
+
+          <p class="has-text-centered">
+            <i18n path="articles.slug.mistake" tag="small">
+              <template v-slot:url>
+                <a :href="repoUrl" :title="repoName" :alt="repoName">
+                  {{ repoName }}
+                </a>
+              </template>
+            </i18n>
+          </p>
         </div>
       </div>
     </div>
@@ -49,6 +61,7 @@
 /* eslint vue/no-v-html: "off" */
 
 import Vue from 'vue'
+import { ContentItem } from '~/content'
 
 export default Vue.extend({
   asyncData(context) {
@@ -64,6 +77,20 @@ export default Vue.extend({
     return {
       article,
     }
+  },
+
+  data() {
+    return {
+      article: {} as ContentItem,
+      repoName: this.$t('common.app.repository.name'),
+    }
+  },
+
+  computed: {
+    repoUrl(): string {
+      const baseurl = this.$t('common.app.repository.url')
+      return `${baseurl}/blob/master/${this.article.filepath}`
+    },
   },
 })
 </script>

@@ -142,6 +142,7 @@ export default {
       by: 'By {author} on {date}',
       minutes: '{n} minute | {n} minutes',
       reading: 'Estimated reading time of {time}',
+      mistake: 'Found a mistake? Edit this article on {url}!',
     },
   },
 }
