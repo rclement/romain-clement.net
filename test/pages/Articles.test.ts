@@ -2,12 +2,28 @@ import Vue from 'vue'
 import { RouterLinkStub, createLocalVue, mount } from '@vue/test-utils'
 import { Context } from '@nuxt/types'
 import Buefy from 'buefy'
+import flushPromises from 'flush-promises'
 import Articles from '~/pages/articles/index.vue'
+import { ContentItem } from '~/content'
 import { generateArticles } from '~/test/utils'
 
-function createData(articles: object[]) {
+function createData(articles: ContentItem[]) {
+  const art = articles.map((a) => {
+    a.meta.published = new Date(a.meta.published)
+    return a
+  })
+
+  const tags = art.reduce((obj, a) => {
+    a.meta.tags.forEach((t) => {
+      obj.add(t)
+    })
+    return obj
+  }, new Set<string>())
+
   return () => ({
-    articles,
+    articles: art,
+    tags: Array.from(tags),
+    shortlistTags: Array.from(tags),
   })
 }
 
@@ -66,6 +82,55 @@ describe('pages/articles', () => {
         expect(tags.at(idx).text()).toBe(tag)
       })
     })
+  })
+
+  test('can filter articles with tags', async () => {
+    const tags = ['tag1', 'tag2', 'tag3']
+    const articles = generateArticles(3)
+    articles[0].meta.tags = [tags[0], tags[1], tags[2]]
+    articles[1].meta.tags = [tags[0], tags[1]]
+    articles[2].meta.tags = [tags[0]]
+    const wrapperData = createData(articles)
+    const wrapper = createWrapper(Articles, wrapperData)
+
+    articles.forEach((article) => {
+      expect(wrapper.get(`article[data-slug=${article.slug}]`))
+    })
+
+    const tagInput = wrapper.find('input')
+
+    tagInput.setValue(tags[0])
+    await flushPromises()
+    tagInput.trigger('keydown.enter')
+    await flushPromises()
+
+    expect(wrapper.get(`article[data-slug=${articles[0].slug}]`))
+    expect(wrapper.get(`article[data-slug=${articles[1].slug}]`))
+    expect(wrapper.get(`article[data-slug=${articles[2].slug}]`))
+
+    tagInput.setValue(tags[1])
+    await flushPromises()
+    tagInput.trigger('keydown.enter')
+    await flushPromises()
+
+    expect(wrapper.get(`article[data-slug=${articles[0].slug}]`))
+    expect(wrapper.get(`article[data-slug=${articles[1].slug}]`))
+    expect(() =>
+      wrapper.get(`article[data-slug=${articles[2].slug}]`)
+    ).toThrow()
+
+    tagInput.setValue(tags[2])
+    await flushPromises()
+    tagInput.trigger('keydown.enter')
+    await flushPromises()
+
+    expect(wrapper.get(`article[data-slug=${articles[0].slug}]`))
+    expect(() =>
+      wrapper.get(`article[data-slug=${articles[1].slug}]`)
+    ).toThrow()
+    expect(() =>
+      wrapper.get(`article[data-slug=${articles[2].slug}]`)
+    ).toThrow()
   })
 
   test('can get some articles from asyncdata', async () => {
