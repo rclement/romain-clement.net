@@ -119,13 +119,6 @@ export default Vue.extend({
       return a
     })
 
-    // const tags = new Set<string>()
-    // articles.forEach((a) => {
-    //   a.meta.tags.forEach((t) => {
-    //     tags.add(t)
-    //   })
-    // })
-
     const tags = articles.reduce((obj, a) => {
       a.meta.tags.forEach((t) => {
         obj.add(t)
