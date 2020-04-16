@@ -145,8 +145,19 @@ describe('pages/articles', () => {
       const data = await wrapper.vm.$options.asyncData(context as Context)
       expect(data).toBeDefined()
 
-      const dataObj = data as { articles: object[] }
+      const dataObj = data as {
+        articles: object[]
+        tags: string[]
+        shortlistTags: string[]
+      }
       expect(dataObj.articles.length).toBe(articles.length)
+
+      articles.forEach((article) => {
+        article.meta.tags.forEach((tag) => {
+          expect(dataObj.tags.includes(tag))
+          expect(dataObj.shortlistTags.includes(tag))
+        })
+      })
     }
   })
 })
