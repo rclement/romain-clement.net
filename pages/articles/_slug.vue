@@ -65,6 +65,7 @@
 /* eslint vue/no-v-html: "off" */
 
 import Vue from 'vue'
+import { ContentItem } from '~/content'
 
 export default Vue.extend({
   asyncData(context) {
@@ -84,7 +85,41 @@ export default Vue.extend({
 
   data() {
     return {
+      article: {} as ContentItem,
       repo: this.$t('common.app.repository'),
+    }
+  },
+
+  head() {
+    const meta = [
+      { name: 'description', value: this.article.meta.summary },
+      { name: 'keywords', value: this.article.meta.tags.join(',') },
+      { name: 'og:title', value: this.article.meta.title },
+      { name: 'og:description', value: this.article.meta.summary },
+      { name: 'og:type', value: 'article' },
+      {
+        name: 'article:published_time',
+        value: this.article.meta.published.toISOString().split('T')[0],
+      },
+      {
+        name: 'article:author',
+        value: this.$t(`common.feeds.authors.${this.article.meta.author}.name`),
+      },
+      ...this.article.meta.tags.map((t) => ({
+        nohid: true,
+        name: 'article:tag',
+        value: t,
+      })),
+    ]
+
+    return {
+      title: this.article.meta.title,
+      meta: meta.map((m) => ({
+        ...(m.nohid ? {} : { hid: m.name }),
+        name: m.name,
+        property: m.name,
+        content: m.value,
+      })),
     }
   },
 })

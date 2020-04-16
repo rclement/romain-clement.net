@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import VueMeta from 'vue-meta'
 import { RouterLinkStub, createLocalVue, mount } from '@vue/test-utils'
 import { Context } from '@nuxt/types'
 import Buefy from 'buefy'
@@ -17,6 +18,7 @@ function createWrapper(
   optionalData?: () => object
 ) {
   const localVue = createLocalVue()
+  localVue.use(VueMeta, { keyName: 'head' })
   localVue.use(Buefy)
 
   const mocks = {
@@ -101,5 +103,40 @@ describe('pages/articles/slug', () => {
 
       expect(context.error).toHaveBeenCalledTimes(1)
     }
+  })
+
+  test('return proper meta tags', () => {
+    const articles = generateArticles(1)
+    const article = Object.values(articles)[0]
+    const wrapperData = createData(article)
+    const wrapper = createWrapper(ArticlesSlug, wrapperData)
+
+    const head = wrapper.vm.$meta().refresh().metaInfo
+    expect(head.title).toBe(article.meta.title)
+    expect(head.meta).toBeDefined()
+    expect(head.meta?.find((v) => v.name === 'description')?.content).toBe(
+      article.meta.summary
+    )
+    expect(head.meta?.find((v) => v.name === 'keywords')?.content).toBe(
+      article.meta.tags.join(',')
+    )
+    expect(head.meta?.find((v) => v.name === 'og:title')?.content).toBe(
+      article.meta.title
+    )
+    expect(head.meta?.find((v) => v.name === 'og:description')?.content).toBe(
+      article.meta.summary
+    )
+    expect(head.meta?.find((v) => v.name === 'og:type')?.content).toBe(
+      'article'
+    )
+    expect(
+      head.meta?.find((v) => v.name === 'article:published_time')?.content
+    ).toBe(article.meta.published.toISOString().split('T')[0])
+    expect(head.meta?.find((v) => v.name === 'article:author')?.content).toBe(
+      `common.feeds.authors.${article.meta.author}.name`
+    )
+    expect(
+      head.meta?.filter((v) => v.name === 'article:tag').map((t) => t.content)
+    ).toEqual(expect.arrayContaining(article.meta.tags))
   })
 })
