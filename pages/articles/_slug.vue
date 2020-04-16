@@ -90,23 +90,25 @@ export default Vue.extend({
     }
   },
 
-  head() {
+  head(): object {
     const meta = [
-      { name: 'description', value: this.article.meta.summary },
-      { name: 'keywords', value: this.article.meta.tags.join(',') },
-      { name: 'og:title', value: this.article.meta.title },
-      { name: 'og:description', value: this.article.meta.summary },
-      { name: 'og:type', value: 'article' },
+      { hid: true, name: 'description', value: this.article.meta.summary },
+      { hid: true, name: 'keywords', value: this.article.meta.tags.join(',') },
+      { hid: true, name: 'og:title', value: this.article.meta.title },
+      { hid: true, name: 'og:description', value: this.article.meta.summary },
+      { hid: true, name: 'og:type', value: 'article' },
       {
+        hid: true,
         name: 'article:published_time',
         value: this.article.meta.published.toISOString().split('T')[0],
       },
       {
+        hid: true,
         name: 'article:author',
         value: this.$t(`common.feeds.authors.${this.article.meta.author}.name`),
       },
       ...this.article.meta.tags.map((t) => ({
-        nohid: true,
+        hid: false,
         name: 'article:tag',
         value: t,
       })),
@@ -115,7 +117,7 @@ export default Vue.extend({
     return {
       title: this.article.meta.title,
       meta: meta.map((m) => ({
-        ...(m.nohid ? {} : { hid: m.name }),
+        ...(m.hid ? { hid: m.name } : {}),
         name: m.name,
         property: m.name,
         content: m.value,
