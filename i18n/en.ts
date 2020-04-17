@@ -132,8 +132,8 @@ export default {
 
   articles: {
     title: 'Articles',
-    text: `I write about software engineering related topics,
-    mostly tips and tricks I stumble across as worth mentioning.`,
+    text: `I mostly write about software engineering for cloud-native applications.
+    And some other stuff.`,
     tags: {
       label: 'Filter by tags',
       placeholder: 'Add some tags',
