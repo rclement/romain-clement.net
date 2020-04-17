@@ -128,8 +128,8 @@ export default Vue.extend({
 
     return {
       articles,
-      tags: Array.from(tags),
-      shortlistTags: Array.from(tags),
+      tags: Array.from(tags).sort(),
+      shortlistTags: Array.from(tags).sort(),
     }
   },
 
