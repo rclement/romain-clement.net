@@ -18,4 +18,6 @@ messages.home.talks.title = 'lorem ipsum'
 messages.home.music.title = 'sin(2𝛑ft)'
 messages.home.contact.title = 'echo'
 
+messages.articles.title = 'logs'
+
 export default messages
