@@ -60,14 +60,14 @@ function loadContentItem(absfilepath: string): ContentItem {
   }
 }
 
-function findContentItems(basepath: string): ContentItem[] {
+function findContentItems(basepath: string, drafts = false): ContentItem[] {
   const searchPattern = `${basepath}/**/*.md`
 
   return glob
     .sync(searchPattern)
     .reduce((obj: ContentItem[], filepath: string) => {
       const item = loadContentItem(filepath)
-      if (!item.meta.draft) {
+      if (drafts || !item.meta.draft) {
         obj.push(item)
       }
       return obj
@@ -75,12 +75,12 @@ function findContentItems(basepath: string): ContentItem[] {
     .sort((a, b) => +b.meta.published - +a.meta.published)
 }
 
-export function findContent(): Content {
+export function findContent(drafts = false): Content {
   const basepath = path.resolve(__dirname)
   return fs.readdirSync(basepath).reduce((obj: Content, dir: string) => {
     const itemsPath = path.resolve(__dirname, dir)
     if (fs.lstatSync(itemsPath).isDirectory()) {
-      const items = findContentItems(itemsPath)
+      const items = findContentItems(itemsPath, drafts)
       obj[dir] = items
     }
     return obj

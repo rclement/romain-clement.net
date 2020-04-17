@@ -4,6 +4,8 @@ import { findContent } from './content'
 
 require('dotenv').config()
 
+const development = process.env.NODE_ENV === 'development'
+
 const appCommon = i18n.messages.en.common.app
 const appName = appCommon.name
 const appShortName = appCommon.shortName
@@ -26,7 +28,7 @@ const hostname = `${baseProtocol}://${baseUrl}${staticPrefix}`
 const sitemapPath = '/sitemap.xml'
 const sitemapUrl = `${hostname}${sitemapPath}`
 
-const content = findContent()
+const content = findContent(development)
 const articlesDynamicRoutes = content.articles.reduce((obj: string[], a) => {
   const localeRoutes = i18n.locales.map((l) => {
     const code = l.code
