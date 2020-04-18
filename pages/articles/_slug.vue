@@ -7,32 +7,23 @@
             {{ article.meta.title }}
           </p>
 
-          <p class="subtitle is-6">
-            <small>
-              <i18n path="articles.slug.by">
-                <template v-slot:author>
-                  {{ $t(`common.feeds.authors.${article.meta.author}`).name }}
-                </template>
-                <template v-slot:date>
-                  {{ $d(article.meta.published, 'short') }}
-                </template>
-              </i18n>
-
-              <br />
-
-              <i18n path="articles.slug.reading">
-                <template v-slot:time>
-                  {{ $tc('articles.slug.minutes', article.readingTime) }}
-                </template>
-              </i18n>
-            </small>
-          </p>
-
           <b-taglist>
             <b-tag v-for="tag in article.meta.tags" :key="tag">
               {{ tag }}
             </b-tag>
           </b-taglist>
+
+          <p class="heading">
+            {{ $d(article.meta.published, 'short') }}
+            ·
+            {{ $t(`common.feeds.authors.${article.meta.author}`).name }}
+            ·
+            <i18n path="articles.slug.reading">
+              <template v-slot:time>
+                {{ $tc('articles.slug.minutes', article.readingTime) }}
+              </template>
+            </i18n>
+          </p>
 
           <hr />
 

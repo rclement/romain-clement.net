@@ -132,16 +132,14 @@ export default {
 
   articles: {
     title: 'Articles',
-    text: `I mostly write about software engineering for cloud-native applications.
-    And some other stuff.`,
+    text: `I mostly write about software engineering for cloud-native applications. And some other stuff.`,
     tags: {
       label: 'Filter by tags',
       placeholder: 'Add some tags',
     },
     slug: {
-      by: 'By {author} on {date}',
       minutes: '{n} minute | {n} minutes',
-      reading: 'Estimated reading time of {time}',
+      reading: '{time} read',
       mistake: 'Found a mistake? Edit this article on {url}!',
     },
   },
