@@ -40,7 +40,7 @@ jobs:
     name: Build Preview
     needs: test
     runs-on: ubuntu-latest
-    if: "! contains(github.ref, 'master')"
+    if: contains(github.ref, 'feature-')
 
     env:
       BASE_PROTOCOL: ${{ secrets.BASE_PROTOCOL }}
@@ -110,7 +110,7 @@ jobs:
     name: Deploy Preview
     needs: build-preview
     runs-on: ubuntu-latest
-    if: "! contains(github.ref, 'master')"
+    if: contains(github.ref, 'feature-')
 
     env:
       NOW_ORG_ID: ${{ secrets.NOW_ORG_ID }}
