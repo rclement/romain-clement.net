@@ -1,6 +1,6 @@
 ---
 title: GitOps CI/CD workflows with GitHub Actions
-summary: >
+summary: >-
   The current state of GitHub Actions is promising but still has some rough edges,
   when it comes to configuring complete GitOps CI/CD workflows.
   But I've managed to find some tricks to get the job done.
@@ -225,7 +225,7 @@ so that's a already a win!
 
 ## Conclusion
 
-The [GitHub Actions] platform allows more than just CI/CD, being built on a
+The [GitHub Actions][github-actions] platform allows more than just CI/CD, being built on a
 marketplace community, being integrated with non-Git events (issues, etc.)
 and supporting not just Linux-based builds with Windows and MacOS virtual machines.
 
