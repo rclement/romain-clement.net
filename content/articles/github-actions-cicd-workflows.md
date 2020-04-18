@@ -7,7 +7,7 @@ summary: >-
 author: romainclement
 tags: [devops, gitops, ci-cd, github, actions, yaml]
 language: en
-published: 2020-04-12
+published: 2020-04-18
 draft: false
 ---
 
