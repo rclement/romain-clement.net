@@ -31,8 +31,8 @@
     "@nuxtjs/sitemap": "^2.2.0",
     "nuxt": "^2.12.2",
     "nuxt-buefy": "^0.3.26",
-    "nuxt-chiffre": "^0.1.1",
-    "nuxt-i18n": "^6.9.1",
+    "nuxt-chiffre": "^0.2.1",
+    "nuxt-i18n": "^6.9.2",
     "vuelidate": "^0.7.5"
   },
   "devDependencies": {
