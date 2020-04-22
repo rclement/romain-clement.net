@@ -61,7 +61,7 @@
     "markdown-it": "^10.0.0",
     "node-sass": "^4.13.1",
     "nuxt-cname-module": "^1.1.1",
-    "prettier": "^2.0.4",
+    "prettier": "^2.0.5",
     "reading-time": "^1.2.0",
     "sass-loader": "^8.0.2",
     "ts-jest": "^24.3.0",
