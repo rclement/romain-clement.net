@@ -30,7 +30,7 @@
     "@nuxtjs/sentry": "^4.0.1",
     "@nuxtjs/sitemap": "^2.2.0",
     "nuxt": "^2.12.2",
-    "nuxt-buefy": "^0.3.26",
+    "nuxt-buefy": "^0.3.27",
     "nuxt-chiffre": "^0.2.1",
     "nuxt-i18n": "^6.9.2",
     "vuelidate": "^0.7.5"
