@@ -36,7 +36,7 @@
     "vuelidate": "^0.7.5"
   },
   "devDependencies": {
-    "@nuxt/typescript-build": "^0.6.5",
+    "@nuxt/typescript-build": "^0.6.6",
     "@nuxtjs/eslint-config-typescript": "^1.0.2",
     "@nuxtjs/eslint-module": "^1.0.0",
     "@types/faker": "^4.1.11",
