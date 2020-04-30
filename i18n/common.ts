@@ -93,6 +93,29 @@ export default {
   ],
   projects: [
     {
+      name: 'Griffonage',
+      tagline: 'Scribble careless drawings with friends, privately',
+      url: 'https://github.com/griffonnage/griffonnage',
+      tags: ['typescript', 'nuxt.js', 'socket.io', 'tweetnacl.js', 'e2ee'],
+      badges: [
+        {
+          name: 'Stars',
+          img: 'https://img.shields.io/github/stars/griffonnage/griffonnage',
+          url: 'https://github.com/griffonnage/griffonnage',
+        },
+        {
+          name: 'Version',
+          img: 'https://img.shields.io/github/tag/griffonnage/griffonnage.svg',
+          url: 'https://github.com/griffonnage/griffonnage/releases/latest',
+        },
+        {
+          name: 'License',
+          img: 'https://img.shields.io/github/license/griffonnage/griffonnage',
+          url: 'https://github.com/griffonnage/griffonnage/blob/master/LICENSE',
+        },
+      ],
+    },
+    {
       name: 'Mailer',
       tagline: 'Dead-simple mailer micro-service for static websites',
       url: 'https://github.com/rclement/mailer',
