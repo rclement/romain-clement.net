@@ -1,8 +1,8 @@
 ---
 title: Scrubbing URL fragments from Sentry crash reports
 summary: >-
-  When activating Sentry crash reporting in JavaScript/TypeScript client-side code,
-  the default mechanism sends captures and send the current URL, including any URL
+  When activating Sentry crash reporting in JavaScript client-side code,
+  the default mechanism captures and sends the current URL, including any URL
   fragments. This can pose a privacy issue when dealing with client-side end-to-end
   encrypted applications.
 author: romainclement
