@@ -9,7 +9,7 @@ author: romainclement
 tags: [e2ee, typescript, web, privacy, sentry]
 language: en
 published: 2020-05-01
-draft: true
+draft: false
 ---
 
 When activating [Sentry][sentry] crash reporting in JavaScript client-side code,
@@ -66,9 +66,9 @@ client-side JavaScript code.
 I have been using the [Sentry][sentry] service for both hobby and professionnal
 software for the last two years. Crash reports are working great accross all
 programming languages and frameworks (JavaScript, TypeScript, Python, Rust, Vue.js,
-React.js, you name it!). Being able to track bugs only when it happens instead of
-relying on server logs parsing (when you have access to it) is so much more efficient
-and it helps delivering quality product in no time. Cherry on top: it is
+React.js, you name it!). Being able to track bugs only when they happen instead of
+relying on server logs parsing (when you have access to them) is so much more
+efficient and it helps delivering quality product in no time. Cherry on top: it is
 [open-source][sentry-oss] and can be easily self-hosted (if that's a requirement)!
 
 The Sentry team has been dedicated to respect user's privacy since the beginning
