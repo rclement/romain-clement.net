@@ -93,7 +93,7 @@ export default {
   ],
   projects: [
     {
-      name: 'Griffonage',
+      name: 'Griffonnage',
       tagline: 'Scribble careless drawings with friends, privately',
       url: 'https://github.com/griffonnage/griffonnage',
       tags: ['typescript', 'nuxt.js', 'socket.io', 'tweetnacl.js', 'e2ee'],
