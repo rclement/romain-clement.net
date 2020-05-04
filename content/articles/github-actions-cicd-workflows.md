@@ -235,16 +235,16 @@ While searching for the current best-practices, it seems I am clearly not alone
 facing those issues and hopefully the GitHub team will fix all those quirks in
 the next updates.
 
-[img-pipeline]: /media/articles/github-actions-cicd-workflows/pipeline.png
-[github-actions]: https://github.com/features/actions
-[gitlab-ci]: https://docs.gitlab.com/ce/ci/
-[gitops]: https://www.gitops.tech
-[jamstack]: https://jamstack.org
-[needs-statement]: https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idneeds
-[if-statement]: https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idif
-[set-env-statement]: https://help.github.com/en/actions/reference/workflow-commands-for-github-actions#setting-an-environment-variable
-[context-expression-syntax]: https://help.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions
-[env-context]: https://help.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions#env-context
-[shell-parameter-expansion]: https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
-[yaml-anchors]: https://docs.gitlab.com/ce/ci/yaml/#anchors
-[dry]: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
+[img-pipeline]: /media/articles/github-actions-cicd-workflows/pipeline.png "GitOps CI/CD Pipeline"
+[github-actions]: https://github.com/features/actions "GitHub Actions"
+[gitlab-ci]: https://docs.gitlab.com/ce/ci/ "GitLab-CI"
+[gitops]: https://www.gitops.tech "GitOps"
+[jamstack]: https://jamstack.org "JAMStack"
+[needs-statement]: https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idneeds "GitHub Actions - Workflow Syntax"
+[if-statement]: https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idif "GitHub Actions - Workflow Syntax"
+[set-env-statement]: https://help.github.com/en/actions/reference/workflow-commands-for-github-actions#setting-an-environment-variable "GitHub Actions - Workflow Commands"
+[context-expression-syntax]: https://help.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions "GitHub Actions - Context and Expression Syntax"
+[env-context]: https://help.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions#env-context "GitHub Actions - Context and Expression Syntax"
+[shell-parameter-expansion]: https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html "GNU Bash Shell Parameter Expansion"
+[yaml-anchors]: https://docs.gitlab.com/ce/ci/yaml/#anchors "GitLab-CI YAML Anchors"
+[dry]: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself "Wikipedia - Don't Repeat Yourself"
