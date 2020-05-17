@@ -30,7 +30,7 @@
     "@nuxtjs/sentry": "^4.0.3",
     "@nuxtjs/sitemap": "^2.3.0",
     "nuxt": "^2.12.2",
-    "nuxt-buefy": "^0.3.29",
+    "nuxt-buefy": "^0.3.30",
     "nuxt-chiffre": "^0.3.0",
     "nuxt-i18n": "^6.11.1",
     "vuelidate": "^0.7.5"
@@ -39,7 +39,7 @@
     "@nuxt/typescript-build": "^0.6.6",
     "@nuxtjs/eslint-config-typescript": "^2.0.0",
     "@nuxtjs/eslint-module": "^2.0.0",
-    "@types/faker": "^4.1.11",
+    "@types/faker": "^4.1.12",
     "@types/glob": "^7.1.1",
     "@types/jest": "^25.2.2",
     "@types/markdown-it": "^10.0.1",
