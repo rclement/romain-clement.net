@@ -133,6 +133,11 @@ jobs:
     runs-on: ubuntu-latest
     if: contains(github.ref, 'master')
 
+    env:
+      NOW_ORG_ID: ${{ secrets.NOW_ORG_ID }}
+      NOW_PROJECT_ID: ${{ secrets.NOW_PROJECT_ID }}
+      NOW_TOKEN: ${{ secrets.NOW_TOKEN }}
+
     steps:
       - uses: actions/checkout@v2
       - name: Download build artifacts
@@ -140,6 +145,8 @@ jobs:
         with:
           name: build-production
           path: dist
+      - name: Deploy to Zeit Now
+        run: cd dist && now --confirm --token $NOW_TOKEN --prod
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
