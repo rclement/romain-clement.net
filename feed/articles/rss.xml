@@ -4,7 +4,7 @@
         <title>Articles from Romain Clement</title>
         <link>https://romain-clement.net/articles</link>
         <description>I mostly write about software engineering for cloud-native applications. And some other stuff.</description>
-        <lastBuildDate>Tue, 26 May 2020 22:40:43 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 26 May 2020 22:41:10 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>https://github.com/nuxt-community/feed-module</generator>
         <atom:link href="https://romain-clement.net/feed/articles/atom.xml" rel="self" type="application/rss+xml"/>
@@ -24,15 +24,6 @@
             <pubDate>Sat, 18 Apr 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[The current state of GitHub Actions is promising but still has some rough edges, when it comes to configuring complete GitOps CI/CD workflows. But I've managed to find some tricks to get the job done.]]></description>
             <content:encoded><![CDATA[The current state of GitHub Actions is promising but still has some rough edges, when it comes to configuring complete GitOps CI/CD workflows. But I've managed to find some tricks to get the job done.]]></content:encoded>
-            <author>contact@romain-clement.net (Romain Clement)</author>
-        </item>
-        <item>
-            <title><![CDATA[Continuous deployment for Zeit Now apps]]></title>
-            <link>https://romain-clement.net/articles/now-apps-cicd</link>
-            <guid>https://romain-clement.net/articles/now-apps-cicd</guid>
-            <pubDate>Sun, 12 Apr 2020 00:00:00 GMT</pubDate>
-            <description><![CDATA[Deploying Zeit Now apps manually is a breeze. Automating it is another story.]]></description>
-            <content:encoded><![CDATA[Deploying Zeit Now apps manually is a breeze. Automating it is another story.]]></content:encoded>
             <author>contact@romain-clement.net (Romain Clement)</author>
         </item>
     </channel>

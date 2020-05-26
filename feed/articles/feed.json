@@ -28,18 +28,6 @@
                 "name": "Romain Clement",
                 "url": "https://romain-clement.net"
             }
-        },
-        {
-            "id": "https://romain-clement.net/articles/now-apps-cicd",
-            "content_html": "Deploying Zeit Now apps manually is a breeze. Automating it is another story.",
-            "url": "https://romain-clement.net/articles/now-apps-cicd",
-            "title": "Continuous deployment for Zeit Now apps",
-            "summary": "Deploying Zeit Now apps manually is a breeze. Automating it is another story.",
-            "date_modified": "2020-04-12T00:00:00.000Z",
-            "author": {
-                "name": "Romain Clement",
-                "url": "https://romain-clement.net"
-            }
         }
     ]
 }
