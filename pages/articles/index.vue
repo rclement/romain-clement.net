@@ -81,18 +81,18 @@
                             })
                           "
                         >
-                          {{ article.meta.title }}
+                          {{ article.title }}
                         </nuxt-link>
                       </strong>
                       <small>
-                        {{ $d(article.meta.published, 'short') }}
+                        {{ $d(article.published, 'short') }}
                       </small>
                     </p>
 
-                    <p>{{ article.meta.summary }}</p>
+                    <p>{{ article.summary }}</p>
 
                     <b-taglist>
-                      <b-tag v-for="tag in article.meta.tags" :key="tag">
+                      <b-tag v-for="tag in article.tags" :key="tag">
                         {{ tag }}
                       </b-tag>
                     </b-taglist>
@@ -110,17 +110,25 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { ContentItem } from '~/content'
+import { Result } from '@nuxt/content'
+import { Article } from '~/content'
+
+type ArticleResult = Result & Article
 
 export default Vue.extend({
-  asyncData(context) {
-    const articles = context.$content.articles.map((a) => {
-      a.meta.published = new Date(a.meta.published)
+  async asyncData(context) {
+    const contentArticles = (await context
+      .$content('articles')
+      .sortBy('published', 'desc')
+      .fetch()) as ArticleResult[]
+
+    const articles = contentArticles.map((a) => {
+      a.published = new Date(a.published)
       return a
     })
 
     const tags = articles.reduce((obj, a) => {
-      a.meta.tags.forEach((t) => {
+      a.tags.forEach((t) => {
         obj.add(t)
       })
       return obj
@@ -135,7 +143,7 @@ export default Vue.extend({
 
   data() {
     return {
-      articles: [] as ContentItem[],
+      articles: [] as ArticleResult[],
       tags: [] as string[],
       selectedTags: [] as string[],
       shortlistTags: [] as string[],
@@ -144,14 +152,14 @@ export default Vue.extend({
   },
 
   computed: {
-    filteredArticles(): { year: number; articles: ContentItem[] }[] {
+    filteredArticles(): { year: number; articles: ArticleResult[] }[] {
       const tagFiltered = this.articles.filter((a) =>
-        this.selectedTags.every((t: string) => a.meta.tags.includes(t))
+        this.selectedTags.every((t: string) => a.tags.includes(t))
       )
 
       const byYear = tagFiltered.reduce(
-        (obj: { [key: string]: ContentItem[] }, a) => {
-          const year = a.meta.published.getFullYear()
+        (obj: { [key: string]: ArticleResult[] }, a) => {
+          const year = a.published.getFullYear()
           const yearStr = year.toString()
           if (!(yearStr in obj)) {
             obj[yearStr] = []

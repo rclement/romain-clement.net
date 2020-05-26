@@ -1,3 +1,0 @@
-export default (context, inject) => {
-  context.$content = <%= JSON.stringify(options.content, null, 2) %>
-}

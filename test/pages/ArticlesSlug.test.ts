@@ -5,7 +5,11 @@ import { Context } from '@nuxt/types'
 import Buefy from 'buefy'
 import faker from 'faker'
 import ArticlesSlug from '~/pages/articles/_slug.vue'
-import { generateArticles } from '~/test/utils'
+import {
+  NuxtContentStub,
+  generateArticles,
+  mockNuxtContent,
+} from '~/test/utils'
 
 function createData(article: object) {
   return () => ({
@@ -29,6 +33,7 @@ function createWrapper(
 
   const stubs = {
     NuxtLink: RouterLinkStub,
+    NuxtContent: NuxtContentStub,
     i18n: true,
   }
 
@@ -56,15 +61,15 @@ describe('pages/articles/slug', () => {
     const wrapper = createWrapper(ArticlesSlug, wrapperData)
 
     const title = wrapper.find('p.title')
-    expect(title.text()).toBe(article.meta.title)
+    expect(title.text()).toBe(article.title)
 
     const tags = wrapper.findAll('.tag > span')
-    article.meta.tags.forEach((tag: string, idx: number) => {
+    article.tags.forEach((tag: string, idx: number) => {
       expect(tags.at(idx).text()).toBe(tag)
     })
 
     const content = wrapper.find('div.content > span')
-    expect(content.html()).toBe(`<span>${article.content}</span>`)
+    expect(content.html()).toBe(`<span>${article.body}</span>`)
   })
 
   test('can get a valid article from asyncdata', async () => {
@@ -75,7 +80,7 @@ describe('pages/articles/slug', () => {
 
     if (wrapper.vm.$options.asyncData) {
       const context = {} as Context
-      context.$content = { articles }
+      context.$content = mockNuxtContent(articles)
       context.params = { slug: article.slug }
 
       const data = await wrapper.vm.$options.asyncData(context as Context)
@@ -94,7 +99,7 @@ describe('pages/articles/slug', () => {
 
     if (wrapper.vm.$options.asyncData) {
       const context = {} as Context
-      context.$content = { articles }
+      context.$content = mockNuxtContent(articles)
       context.params = { slug: faker.lorem.slug() }
       context.error = jest.fn()
 
@@ -112,31 +117,31 @@ describe('pages/articles/slug', () => {
     const wrapper = createWrapper(ArticlesSlug, wrapperData)
 
     const head = wrapper.vm.$meta().refresh().metaInfo
-    expect(head.title).toBe(article.meta.title)
+    expect(head.title).toBe(article.title)
     expect(head.meta).toBeDefined()
     expect(head.meta?.find((v) => v.name === 'description')?.content).toBe(
-      article.meta.summary
+      article.summary
     )
     expect(head.meta?.find((v) => v.name === 'keywords')?.content).toBe(
-      article.meta.tags.join(',')
+      article.tags.join(',')
     )
     expect(head.meta?.find((v) => v.name === 'og:title')?.content).toBe(
-      article.meta.title
+      article.title
     )
     expect(head.meta?.find((v) => v.name === 'og:description')?.content).toBe(
-      article.meta.summary
+      article.summary
     )
     expect(head.meta?.find((v) => v.name === 'og:type')?.content).toBe(
       'article'
     )
     expect(
       head.meta?.find((v) => v.name === 'article:published_time')?.content
-    ).toBe(article.meta.published.toISOString().split('T')[0])
+    ).toBe(article.published.toISOString().split('T')[0])
     expect(head.meta?.find((v) => v.name === 'article:author')?.content).toBe(
-      `common.feeds.authors.${article.meta.author}.name`
+      `common.feeds.authors.${article.author}.name`
     )
     expect(
       head.meta?.filter((v) => v.name === 'article:tag').map((t) => t.content)
-    ).toEqual(expect.arrayContaining(article.meta.tags))
+    ).toEqual(expect.arrayContaining(article.tags))
   })
 })

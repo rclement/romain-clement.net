@@ -27,6 +27,7 @@
       "@types/jest",
       "@nuxt/types",
       "@nuxt/vue-app",
+      "@nuxt/content",
       "@nuxtjs/axios",
       "nuxt-i18n"
     ]

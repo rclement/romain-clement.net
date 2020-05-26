@@ -4,17 +4,21 @@ import { Context } from '@nuxt/types'
 import Buefy from 'buefy'
 import flushPromises from 'flush-promises'
 import Articles from '~/pages/articles/index.vue'
-import { ContentItem } from '~/content'
-import { generateArticles } from '~/test/utils'
+import {
+  ArticleContent,
+  NuxtContentStub,
+  generateArticles,
+  mockNuxtContent,
+} from '~/test/utils'
 
-function createData(articles: ContentItem[]) {
+function createData(articles: ArticleContent[]) {
   const art = articles.map((a) => {
-    a.meta.published = new Date(a.meta.published)
+    a.published = new Date(a.published)
     return a
   })
 
   const tags = art.reduce((obj, a) => {
-    a.meta.tags.forEach((t) => {
+    a.tags.forEach((t) => {
       obj.add(t)
     })
     return obj
@@ -42,6 +46,7 @@ function createWrapper(
 
   const stubs = {
     NuxtLink: RouterLinkStub,
+    NuxtContent: NuxtContentStub,
   }
 
   return mount(component, {
@@ -69,16 +74,16 @@ describe('pages/articles', () => {
       const articleComp = wrapper.find(`article[data-slug=${article.slug}]`)
 
       const title = articleComp.find('.content > p > strong > a')
-      expect(title.text()).toBe(article.meta.title)
+      expect(title.text()).toBe(article.title)
 
       const published = articleComp.find('.content > p > small')
-      expect(published.text()).toBe(article.meta.published.toString())
+      expect(published.text()).toBe(article.published.toString())
 
       const summary = articleComp.find('.content > p + p')
-      expect(summary.text()).toBe(article.meta.summary)
+      expect(summary.text()).toBe(article.summary)
 
       const tags = articleComp.findAll('.content > .tags > .tag > span')
-      article.meta.tags.forEach((tag: string, idx: number) => {
+      article.tags.forEach((tag: string, idx: number) => {
         expect(tags.at(idx).text()).toBe(tag)
       })
     })
@@ -87,9 +92,9 @@ describe('pages/articles', () => {
   test('can filter articles with tags', async () => {
     const tags = ['tag1', 'tag2', 'tag3']
     const articles = generateArticles(3)
-    articles[0].meta.tags = [tags[0], tags[1], tags[2]]
-    articles[1].meta.tags = [tags[0], tags[1]]
-    articles[2].meta.tags = [tags[0]]
+    articles[0].tags = [tags[0], tags[1], tags[2]]
+    articles[1].tags = [tags[0], tags[1]]
+    articles[2].tags = [tags[0]]
     const wrapperData = createData(articles)
     const wrapper = createWrapper(Articles, wrapperData)
 
@@ -140,7 +145,7 @@ describe('pages/articles', () => {
 
     if (wrapper.vm.$options.asyncData) {
       const context = {} as Context
-      context.$content = { articles }
+      context.$content = mockNuxtContent(articles)
 
       const data = await wrapper.vm.$options.asyncData(context as Context)
       expect(data).toBeDefined()
@@ -153,7 +158,7 @@ describe('pages/articles', () => {
       expect(dataObj.articles.length).toBe(articles.length)
 
       articles.forEach((article) => {
-        article.meta.tags.forEach((tag) => {
+        article.tags.forEach((tag) => {
           expect(dataObj.tags.includes(tag))
           expect(dataObj.shortlistTags.includes(tag))
         })

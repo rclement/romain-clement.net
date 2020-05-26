@@ -1,10 +1,7 @@
 import { Configuration } from '@nuxt/types'
 import i18n from './i18n'
-import { findContent } from './content'
 
 require('dotenv').config()
-
-const development = process.env.NODE_ENV === 'development'
 
 const appCommon = i18n.messages.en.common.app
 const appName = appCommon.name
@@ -28,28 +25,36 @@ const hostname = `${baseProtocol}://${baseUrl}${staticPrefix}`
 const sitemapPath = '/sitemap.xml'
 const sitemapUrl = `${hostname}${sitemapPath}`
 
-const content = findContent(development)
-const articlesDynamicRoutes = content.articles.reduce((obj: string[], a) => {
-  const localeRoutes = i18n.locales.map((l) => {
-    const code = l.code
-    let route = `/articles/${a.slug}`
-    if (code !== i18n.defaultLocale) {
-      route = `/${code}${route}`
-    }
-    return route
-  })
+const contentArticles = async () => {
+  const { $content } = require('@nuxt/content')
+  return await $content('articles').sortBy('published', 'desc').fetch()
+}
 
-  obj.push(...localeRoutes)
-  return obj
-}, [])
-const contentDynamicRoutes = [...articlesDynamicRoutes]
+const contentDynamicRoutes = async () => {
+  type Article = { slug: string }
+  const articles: Article[] = await contentArticles()
+
+  return articles.reduce((obj: string[], a) => {
+    const localeRoutes = i18n.locales.map((l) => {
+      const code = l.code
+      let route = `/articles/${a.slug}`
+      if (code !== i18n.defaultLocale) {
+        route = `/${code}${route}`
+      }
+      return route
+    })
+
+    obj.push(...localeRoutes)
+    return obj
+  }, [])
+}
 
 const feedArticles = () => {
   const feedsCommon = i18n.messages.en.common.feeds
   const baseUrlArticles = '/articles'
   const baseUrlFeed = `${feedsCommon.basepath}${baseUrlArticles}`
 
-  function feedCreateArticles(feed: { [key: string]: any }) {
+  async function feedCreateArticles(feed: { [key: string]: any }) {
     const baseLinkArticles = `${hostname}${baseUrlArticles}`
 
     feed.options = {
@@ -64,18 +69,27 @@ const feedArticles = () => {
       },
     }
 
-    content.articles.forEach((article) => {
+    type Article = {
+      slug: string
+      author: string
+      title: string
+      published: string
+      summary: string
+    }
+    const articles: Article[] = await contentArticles()
+
+    articles.forEach((article) => {
       const url = `${baseLinkArticles}/${article.slug}`
       const authors: { [key: string]: any } = feedsCommon.authors
-      const author = authors[article.meta.author]
+      const author = authors[article.author]
 
       feed.addItem({
-        title: article.meta.title,
+        title: article.title,
         id: url,
         link: url,
-        date: article.meta.published,
-        description: article.meta.summary,
-        content: article.meta.summary,
+        date: article.published,
+        description: article.summary,
+        content: article.summary,
         author: [author],
       })
     })
@@ -117,7 +131,18 @@ const config: Configuration = {
 
   generate: {
     fallback: true,
-    routes: contentDynamicRoutes,
+    routes: async () => await contentDynamicRoutes(),
+  },
+
+  hooks: {
+    // @ts-ignore
+    'content:file:beforeInsert': (document) => {
+      if (document.dir === '/articles') {
+        const readingTime = require('reading-time')
+        const stats = readingTime(document.text, { wordsPerMinute: 130 })
+        document.readingTime = Math.ceil(stats.minutes)
+      }
+    },
   },
 
   plugins: ['~/plugins/font-awesome.ts', '~/plugins/vuelidate.ts'],
@@ -126,7 +151,6 @@ const config: Configuration = {
     '@nuxtjs/dotenv',
     '@nuxt/typescript-build',
     '@nuxtjs/eslint-module',
-    '~/modules/content.ts',
     ['nuxt-cname-module', { baseUrl, generateCNAME: true }],
   ],
 
@@ -135,6 +159,7 @@ const config: Configuration = {
     'nuxt-chiffre',
     'nuxt-i18n',
     'nuxt-buefy',
+    '@nuxt/content',
     '@nuxtjs/sentry',
     '@nuxtjs/pwa',
     '@nuxtjs/feed',
@@ -146,10 +171,6 @@ const config: Configuration = {
     typeCheck: {
       eslint: true,
     },
-  },
-
-  content: {
-    content,
   },
 
   chiffre: {
@@ -211,7 +232,7 @@ const config: Configuration = {
     path: sitemapPath,
     hostname,
     gzip: true,
-    routes: contentDynamicRoutes,
+    routes: async () => await contentDynamicRoutes(),
   },
 }
 

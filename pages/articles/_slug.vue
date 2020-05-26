@@ -4,19 +4,19 @@
       <div class="columns">
         <div class="column is-half is-offset-one-quarter">
           <p class="title">
-            {{ article.meta.title }}
+            {{ article.title }}
           </p>
 
           <b-taglist>
-            <b-tag v-for="tag in article.meta.tags" :key="tag">
+            <b-tag v-for="tag in article.tags" :key="tag">
               {{ tag }}
             </b-tag>
           </b-taglist>
 
           <p class="heading">
-            {{ $d(article.meta.published, 'short') }}
+            {{ $d(article.published, 'short') }}
             ·
-            {{ $t(`common.feeds.authors.${article.meta.author}`).name }}
+            {{ $t(`common.feeds.authors.${article.author}`).name }}
             ·
             <i18n path="articles.slug.reading">
               <template v-slot:time>
@@ -28,7 +28,7 @@
           <hr />
 
           <div class="content">
-            <span v-html="article.content" />
+            <nuxt-content :document="article" />
           </div>
 
           <hr />
@@ -53,52 +53,55 @@
 </template>
 
 <script lang="ts">
-/* eslint vue/no-v-html: "off" */
-
 import Vue from 'vue'
-import { ContentItem } from '~/content'
+import { Result } from '@nuxt/content'
+import { Article } from '~/content'
+
+type ArticleResult = Result & Article
 
 export default Vue.extend({
-  asyncData(context) {
-    const slug = context.params.slug
-    const article = context.$content.articles.find((a) => a.slug === slug)
+  async asyncData(context) {
+    try {
+      const slug = context.params.slug
+      const article = (await context
+        .$content('articles', slug)
+        .fetch()) as ArticleResult
 
-    if (!article) {
+      article.published = new Date(article.published)
+
+      return {
+        article,
+      }
+    } catch (e) {
       return context.error({ statusCode: 404 })
-    }
-
-    article.meta.published = new Date(article.meta.published)
-
-    return {
-      article,
     }
   },
 
   data() {
     return {
-      article: {} as ContentItem,
+      article: {} as ArticleResult,
       repo: this.$t('common.app.repository'),
     }
   },
 
   head(): object {
     const meta = [
-      { hid: true, name: 'description', value: this.article.meta.summary },
-      { hid: true, name: 'keywords', value: this.article.meta.tags.join(',') },
-      { hid: true, name: 'og:title', value: this.article.meta.title },
-      { hid: true, name: 'og:description', value: this.article.meta.summary },
+      { hid: true, name: 'description', value: this.article.summary },
+      { hid: true, name: 'keywords', value: this.article.tags.join(',') },
+      { hid: true, name: 'og:title', value: this.article.title },
+      { hid: true, name: 'og:description', value: this.article.summary },
       { hid: true, name: 'og:type', value: 'article' },
       {
         hid: true,
         name: 'article:published_time',
-        value: this.article.meta.published.toISOString().split('T')[0],
+        value: this.article.published.toISOString().split('T')[0],
       },
       {
         hid: true,
         name: 'article:author',
-        value: this.$t(`common.feeds.authors.${this.article.meta.author}.name`),
+        value: this.$t(`common.feeds.authors.${this.article.author}.name`),
       },
-      ...this.article.meta.tags.map((t) => ({
+      ...this.article.tags.map((t) => ({
         hid: false,
         name: 'article:tag',
         value: t,
@@ -106,7 +109,7 @@ export default Vue.extend({
     ]
 
     return {
-      title: this.article.meta.title,
+      title: this.article.title,
       meta: meta.map((m) => ({
         ...(m.hid ? { hid: m.name } : {}),
         name: m.name,
@@ -117,3 +120,9 @@ export default Vue.extend({
   },
 })
 </script>
+
+<style scoped>
+.icon-link {
+  display: none;
+}
+</style>
