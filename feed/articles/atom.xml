@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://romain-clement.net/articles</id>
     <title>Articles from Romain Clement</title>
-    <updated>2020-05-26T06:35:18.437Z</updated>
+    <updated>2020-05-26T22:40:43.308Z</updated>
     <generator>https://github.com/nuxt-community/feed-module</generator>
     <link rel="alternate" href="https://romain-clement.net/articles"/>
     <link rel="self" href="https://romain-clement.net/feed/articles/atom.xml"/>
@@ -29,6 +29,20 @@
         <updated>2020-04-18T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[The current state of GitHub Actions is promising but still has some rough edges, when it comes to configuring complete GitOps CI/CD workflows. But I've managed to find some tricks to get the job done.]]></summary>
         <content type="html"><![CDATA[The current state of GitHub Actions is promising but still has some rough edges, when it comes to configuring complete GitOps CI/CD workflows. But I've managed to find some tricks to get the job done.]]></content>
+        <author>
+            <name>Romain Clement</name>
+            <email>contact@romain-clement.net</email>
+            <uri>https://romain-clement.net</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Continuous deployment for Zeit Now apps]]></title>
+        <id>https://romain-clement.net/articles/now-apps-cicd</id>
+        <link href="https://romain-clement.net/articles/now-apps-cicd">
+        </link>
+        <updated>2020-04-12T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Deploying Zeit Now apps manually is a breeze. Automating it is another story.]]></summary>
+        <content type="html"><![CDATA[Deploying Zeit Now apps manually is a breeze. Automating it is another story.]]></content>
         <author>
             <name>Romain Clement</name>
             <email>contact@romain-clement.net</email>
