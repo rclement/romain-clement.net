@@ -89,6 +89,23 @@ describe('pages/articles', () => {
     })
   })
 
+  test('can hide draft articles', () => {
+    const articles = generateArticles(3)
+    articles[0].draft = true
+    const wrapperData = createData(articles)
+    const wrapper = createWrapper(Articles, wrapperData)
+
+    articles.forEach((article) => {
+      if (article.draft) {
+        expect(() =>
+          wrapper.get(`article[data-slug=${article.slug}]`)
+        ).toThrow()
+      } else {
+        expect(wrapper.get(`article[data-slug=${article.slug}]`))
+      }
+    })
+  })
+
   test('can filter articles with tags', async () => {
     const tags = ['tag1', 'tag2', 'tag3']
     const articles = generateArticles(3)

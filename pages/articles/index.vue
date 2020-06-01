@@ -153,8 +153,9 @@ export default Vue.extend({
 
   computed: {
     filteredArticles(): { year: number; articles: ArticleResult[] }[] {
-      const tagFiltered = this.articles.filter((a) =>
-        this.selectedTags.every((t: string) => a.tags.includes(t))
+      const tagFiltered = this.articles.filter(
+        (a) =>
+          !a.draft && this.selectedTags.every((t: string) => a.tags.includes(t))
       )
 
       const byYear = tagFiltered.reduce(

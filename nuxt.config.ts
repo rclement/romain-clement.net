@@ -27,7 +27,10 @@ const sitemapUrl = `${hostname}${sitemapPath}`
 
 const contentArticles = async () => {
   const { $content } = require('@nuxt/content')
-  return await $content('articles').sortBy('published', 'desc').fetch()
+  return await $content('articles')
+    .where({ draft: false })
+    .sortBy('published', 'desc')
+    .fetch()
 }
 
 const contentDynamicRoutes = async () => {
