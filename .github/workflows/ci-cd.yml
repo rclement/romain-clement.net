@@ -43,6 +43,7 @@ jobs:
     if: contains(github.ref, 'feature-')
 
     env:
+      APP_ENVIRONMENT: ${{ secrets.APP_ENVIRONMENT_PREVIEW }}
       BASE_PROTOCOL: ${{ secrets.BASE_PROTOCOL }}
       BASE_URL: ${{ secrets.BASE_URL_PREVIEW }}
       MAILER_URL: ${{ secrets.MAILER_URL }}
@@ -78,6 +79,7 @@ jobs:
     if: contains(github.ref, 'master')
 
     env:
+      APP_ENVIRONMENT: ${{ secrets.APP_ENVIRONMENT }}
       BASE_PROTOCOL: ${{ secrets.BASE_PROTOCOL }}
       BASE_URL: ${{ secrets.BASE_URL }}
       MAILER_URL: ${{ secrets.MAILER_URL }}
