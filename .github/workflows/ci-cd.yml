@@ -40,7 +40,7 @@ jobs:
     name: Build Preview
     needs: test
     runs-on: ubuntu-latest
-    if: contains(github.ref, 'feature-')
+    if: ${{ !contains(github.ref, 'master') }}
 
     env:
       APP_ENVIRONMENT: preview
@@ -112,7 +112,7 @@ jobs:
     name: Deploy Preview
     needs: build-preview
     runs-on: ubuntu-latest
-    if: contains(github.ref, 'feature-')
+    if: ${{ !contains(github.ref, 'master') }}
 
     env:
       NOW_ORG_ID: ${{ secrets.NOW_ORG_ID }}
