@@ -2,11 +2,25 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://romain-clement.net/articles</id>
     <title>Articles from Romain Clement</title>
-    <updated>2020-06-08T19:01:31.958Z</updated>
+    <updated>2020-06-08T20:52:32.146Z</updated>
     <generator>https://github.com/nuxt-community/feed-module</generator>
     <link rel="alternate" href="https://romain-clement.net/articles"/>
     <link rel="self" href="https://romain-clement.net/feed/articles/atom.xml"/>
     <subtitle>I mostly write about software engineering for cloud-native applications. And some other stuff.</subtitle>
+    <entry>
+        <title type="html"><![CDATA[Cloudflare setup for CDN and PaaS platforms]]></title>
+        <id>https://romain-clement.net/articles/cloudflare-setup-cdn-paas</id>
+        <link href="https://romain-clement.net/articles/cloudflare-setup-cdn-paas">
+        </link>
+        <updated>2020-06-08T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[When hosting applications using modern CDNs and PaaS platforms such as Vercel and Heroku, configuring Cloudflare as the protecting proxy in front of those services can be challenging. After some research, I managed to find a permanent solution.]]></summary>
+        <content type="html"><![CDATA[When hosting applications using modern CDNs and PaaS platforms such as Vercel and Heroku, configuring Cloudflare as the protecting proxy in front of those services can be challenging. After some research, I managed to find a permanent solution.]]></content>
+        <author>
+            <name>Romain Clement</name>
+            <email>contact@romain-clement.net</email>
+            <uri>https://romain-clement.net</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Scrubbing URL fragments from Sentry crash reports]]></title>
         <id>https://romain-clement.net/articles/sentry-url-fragments</id>

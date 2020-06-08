@@ -6,6 +6,18 @@
     "description": "I mostly write about software engineering for cloud-native applications. And some other stuff.",
     "items": [
         {
+            "id": "https://romain-clement.net/articles/cloudflare-setup-cdn-paas",
+            "content_html": "When hosting applications using modern CDNs and PaaS platforms such as Vercel and Heroku, configuring Cloudflare as the protecting proxy in front of those services can be challenging. After some research, I managed to find a permanent solution.",
+            "url": "https://romain-clement.net/articles/cloudflare-setup-cdn-paas",
+            "title": "Cloudflare setup for CDN and PaaS platforms",
+            "summary": "When hosting applications using modern CDNs and PaaS platforms such as Vercel and Heroku, configuring Cloudflare as the protecting proxy in front of those services can be challenging. After some research, I managed to find a permanent solution.",
+            "date_modified": "2020-06-08T00:00:00.000Z",
+            "author": {
+                "name": "Romain Clement",
+                "url": "https://romain-clement.net"
+            }
+        },
+        {
             "id": "https://romain-clement.net/articles/sentry-url-fragments",
             "content_html": "When activating Sentry crash reporting in JavaScript client-side code, the default mechanism captures and sends the current URL, including any URL fragments. This can pose a privacy issue when dealing with client-side end-to-end encrypted applications.",
             "url": "https://romain-clement.net/articles/sentry-url-fragments",

@@ -4,10 +4,19 @@
         <title>Articles from Romain Clement</title>
         <link>https://romain-clement.net/articles</link>
         <description>I mostly write about software engineering for cloud-native applications. And some other stuff.</description>
-        <lastBuildDate>Mon, 08 Jun 2020 19:01:31 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 08 Jun 2020 20:52:32 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>https://github.com/nuxt-community/feed-module</generator>
         <atom:link href="https://romain-clement.net/feed/articles/atom.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Cloudflare setup for CDN and PaaS platforms]]></title>
+            <link>https://romain-clement.net/articles/cloudflare-setup-cdn-paas</link>
+            <guid>https://romain-clement.net/articles/cloudflare-setup-cdn-paas</guid>
+            <pubDate>Mon, 08 Jun 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[When hosting applications using modern CDNs and PaaS platforms such as Vercel and Heroku, configuring Cloudflare as the protecting proxy in front of those services can be challenging. After some research, I managed to find a permanent solution.]]></description>
+            <content:encoded><![CDATA[When hosting applications using modern CDNs and PaaS platforms such as Vercel and Heroku, configuring Cloudflare as the protecting proxy in front of those services can be challenging. After some research, I managed to find a permanent solution.]]></content:encoded>
+            <author>contact@romain-clement.net (Romain Clement)</author>
+        </item>
         <item>
             <title><![CDATA[Scrubbing URL fragments from Sentry crash reports]]></title>
             <link>https://romain-clement.net/articles/sentry-url-fragments</link>
