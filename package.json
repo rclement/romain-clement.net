@@ -28,7 +28,7 @@
     "@nuxtjs/feed": "^1.1.0",
     "@nuxtjs/pwa": "^3.0.0-beta.20",
     "@nuxtjs/robots": "^2.4.2",
-    "@nuxtjs/sentry": "^4.0.3",
+    "@nuxtjs/sentry": "^4.1.2",
     "@nuxtjs/sitemap": "^2.3.1",
     "nuxt": "^2.12.2",
     "nuxt-buefy": "^0.3.31",
