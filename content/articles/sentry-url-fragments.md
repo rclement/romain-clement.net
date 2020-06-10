@@ -158,23 +158,23 @@ during the COVID-19 lockdown (as an alternative to Skribbl.io and the likes).
 If you're feeling all nerdy and privacy-conscious, come contribute to the project
 on [GitHub][griffonnage-github]!
 
-[griffonnage]: https://griffonnage.now.sh "Griffonnage"
-[griffonnage-github]: https://github.com/griffonnage/griffonnage "Griffonnage GitHub"
-[griffonnage-commit]: https://github.com/griffonnage/griffonnage/commit/1d81adf27d77ec41244179d7616ae993e02a763c "Griffonnage Commit #1d81adf27d"
-[wikipedia-fragment]: https://en.wikipedia.org/wiki/Fragment_identifier "Wikipedia - Fragment Identifier"
-[wikipedia-spa]: https://en.wikipedia.org/wiki/Single-page_application "Wikipedia - Single Page Application"
-[wikipedia-threat-model]: https://en.wikipedia.org/wiki/Threat_model "Wikipedia - Threat Model"
-[html-anchor]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#Linking_to_an_element_on_the_same_page "MDN - Anchor"
-[html-history]: https://developer.mozilla.org/en-US/docs/Web/API/History "MDN - History"
-[html-fragment]: https://www.w3.org/TR/webarch/#media-type-fragid "MDN - Fragment"
-[firefox-send]: https://send.firefox.com "Firefox Send"
-[excalidraw]: https://excalidraw.com "Excalidraw"
-[excalidraw-blog]: https://blog.excalidraw.com/end-to-end-encryption/ "Excalidraw Blog"
-[sentry]: https://sentry.io "Sentry"
-[sentry-oss]: https://sentry.io/_/open-source/ "Sentry Open-Source"
-[sentry-js]: https://docs.sentry.io/platforms/javascript/ "Sentry JS SDK"
-[sentry-sensitive]: https://docs.sentry.io/data-management/sensitive-data/ "Sentry Sensitive Data"
-[sentry-custom]: https://docs.sentry.io/data-management/sensitive-data/#custom-event-processing-in-the-sdk "Sentry Sensitive Data"
-[stripe]: https://stripe.com "Stripe"
-[stripe-url-collection]: https://mtlynch.io/stripe-update/#disclose-url-collection-more-explicitly "Stripe URL Collection"
-[francois-best]: https://francoisbest.com "François Best"
+[griffonnage]: https://griffonnage.now.sh 'Griffonnage'
+[griffonnage-github]: https://github.com/griffonnage/griffonnage 'Griffonnage GitHub'
+[griffonnage-commit]: https://github.com/griffonnage/griffonnage/commit/1d81adf27d77ec41244179d7616ae993e02a763c 'Griffonnage Commit #1d81adf27d'
+[wikipedia-fragment]: https://en.wikipedia.org/wiki/Fragment_identifier 'Wikipedia - Fragment Identifier'
+[wikipedia-spa]: https://en.wikipedia.org/wiki/Single-page_application 'Wikipedia - Single Page Application'
+[wikipedia-threat-model]: https://en.wikipedia.org/wiki/Threat_model 'Wikipedia - Threat Model'
+[html-anchor]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#Linking_to_an_element_on_the_same_page 'MDN - Anchor'
+[html-history]: https://developer.mozilla.org/en-US/docs/Web/API/History 'MDN - History'
+[html-fragment]: https://www.w3.org/TR/webarch/#media-type-fragid 'MDN - Fragment'
+[firefox-send]: https://send.firefox.com 'Firefox Send'
+[excalidraw]: https://excalidraw.com 'Excalidraw'
+[excalidraw-blog]: https://blog.excalidraw.com/end-to-end-encryption/ 'Excalidraw Blog'
+[sentry]: https://sentry.io 'Sentry'
+[sentry-oss]: https://sentry.io/_/open-source/ 'Sentry Open-Source'
+[sentry-js]: https://docs.sentry.io/platforms/javascript/ 'Sentry JS SDK'
+[sentry-sensitive]: https://docs.sentry.io/data-management/sensitive-data/ 'Sentry Sensitive Data'
+[sentry-custom]: https://docs.sentry.io/data-management/sensitive-data/#custom-event-processing-in-the-sdk 'Sentry Sensitive Data'
+[stripe]: https://stripe.com 'Stripe'
+[stripe-url-collection]: https://mtlynch.io/stripe-update/#disclose-url-collection-more-explicitly 'Stripe URL Collection'
+[francois-best]: https://francoisbest.com 'François Best'
