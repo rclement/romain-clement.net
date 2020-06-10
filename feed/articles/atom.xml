@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://romain-clement.net/articles</id>
     <title>Articles from Romain Clement</title>
-    <updated>2020-06-08T20:52:32.146Z</updated>
+    <updated>2020-06-10T07:19:24.421Z</updated>
     <generator>https://github.com/nuxt-community/feed-module</generator>
     <link rel="alternate" href="https://romain-clement.net/articles"/>
     <link rel="self" href="https://romain-clement.net/feed/articles/atom.xml"/>

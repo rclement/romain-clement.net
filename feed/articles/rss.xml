@@ -4,7 +4,7 @@
         <title>Articles from Romain Clement</title>
         <link>https://romain-clement.net/articles</link>
         <description>I mostly write about software engineering for cloud-native applications. And some other stuff.</description>
-        <lastBuildDate>Mon, 08 Jun 2020 20:52:32 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 10 Jun 2020 07:19:24 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>https://github.com/nuxt-community/feed-module</generator>
         <atom:link href="https://romain-clement.net/feed/articles/atom.xml" rel="self" type="application/rss+xml"/>
