@@ -37,7 +37,7 @@
             <i18n path="articles.slug.mistake" tag="small">
               <template v-slot:url>
                 <a
-                  :href="`${repo.url}/blob/master/${article.filepath}`"
+                  :href="`${repo.url}/blob/master/content${article.path}${article.extension}`"
                   :title="repo.name"
                   :alt="repo.name"
                 >
