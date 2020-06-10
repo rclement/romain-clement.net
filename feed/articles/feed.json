@@ -12,6 +12,7 @@
             "title": "Cloudflare setup for CDN and PaaS platforms",
             "summary": "When hosting applications using modern CDNs and PaaS platforms such as Vercel and Heroku, configuring Cloudflare as the protecting proxy in front of those services can be challenging. After some research, I managed to find a permanent solution.",
             "date_modified": "2020-06-08T00:00:00.000Z",
+            "date_published": "2020-06-08T00:00:00.000Z",
             "author": {
                 "name": "Romain Clement",
                 "url": "https://romain-clement.net"
@@ -24,6 +25,7 @@
             "title": "Scrubbing URL fragments from Sentry crash reports",
             "summary": "When activating Sentry crash reporting in JavaScript client-side code, the default mechanism captures and sends the current URL, including any URL fragments. This can pose a privacy issue when dealing with client-side end-to-end encrypted applications.",
             "date_modified": "2020-05-01T00:00:00.000Z",
+            "date_published": "2020-05-01T00:00:00.000Z",
             "author": {
                 "name": "Romain Clement",
                 "url": "https://romain-clement.net"
@@ -36,6 +38,7 @@
             "title": "GitOps CI/CD workflows with GitHub Actions",
             "summary": "The current state of GitHub Actions is promising but still has some rough edges, when it comes to configuring complete GitOps CI/CD workflows. But I've managed to find some tricks to get the job done.",
             "date_modified": "2020-04-18T00:00:00.000Z",
+            "date_published": "2020-04-18T00:00:00.000Z",
             "author": {
                 "name": "Romain Clement",
                 "url": "https://romain-clement.net"

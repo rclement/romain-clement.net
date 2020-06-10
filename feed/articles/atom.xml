@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://romain-clement.net/articles</id>
     <title>Articles from Romain Clement</title>
-    <updated>2020-06-10T07:19:24.421Z</updated>
+    <updated>2020-06-10T18:24:46.971Z</updated>
     <generator>https://github.com/nuxt-community/feed-module</generator>
     <link rel="alternate" href="https://romain-clement.net/articles"/>
     <link rel="self" href="https://romain-clement.net/feed/articles/atom.xml"/>
@@ -20,6 +20,7 @@
             <email>contact@romain-clement.net</email>
             <uri>https://romain-clement.net</uri>
         </author>
+        <published>2020-06-08T00:00:00.000Z</published>
     </entry>
     <entry>
         <title type="html"><![CDATA[Scrubbing URL fragments from Sentry crash reports]]></title>
@@ -34,6 +35,7 @@
             <email>contact@romain-clement.net</email>
             <uri>https://romain-clement.net</uri>
         </author>
+        <published>2020-05-01T00:00:00.000Z</published>
     </entry>
     <entry>
         <title type="html"><![CDATA[GitOps CI/CD workflows with GitHub Actions]]></title>
@@ -48,5 +50,6 @@
             <email>contact@romain-clement.net</email>
             <uri>https://romain-clement.net</uri>
         </author>
+        <published>2020-04-18T00:00:00.000Z</published>
     </entry>
 </feed>
