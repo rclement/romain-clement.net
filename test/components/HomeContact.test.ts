@@ -112,12 +112,6 @@ async function checkCannotSend(wrapper: Wrapper<Vue>): Promise<void> {
 
 describe('components/HomeContact', () => {
   HTMLElement.prototype.insertAdjacentElement = jest.fn()
-
-  test('is a Vue instance', () => {
-    const wrapper = createWrapper(HomeContact)
-    expect(wrapper.isVueInstance()).toBeTruthy()
-  })
-
   it('can send a message and show success', async () => {
     const mockedAxios = mockAxios(true)
     const wrapper = createWrapper(HomeContact, mockedAxios)

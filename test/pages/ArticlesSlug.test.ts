@@ -46,14 +46,6 @@ function createWrapper(
 }
 
 describe('pages/articles/slug', () => {
-  test('is a Vue instance', () => {
-    const articles = generateArticles(1)
-    const article = Object.values(articles)[0]
-    const wrapperData = createData(article)
-    const wrapper = createWrapper(ArticlesSlug, wrapperData)
-    expect(wrapper.isVueInstance()).toBeTruthy()
-  })
-
   test('can display an article', () => {
     const articles = generateArticles(1)
     const article = Object.values(articles)[0]

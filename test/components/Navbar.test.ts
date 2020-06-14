@@ -37,9 +37,12 @@ function createWrapper(component: Vue.VueConstructor<Vue>) {
 }
 
 describe('components/navbar', () => {
-  it('is a Vue instance', () => {
+  it('contains all items', () => {
     const wrapper = createWrapper(Navbar)
-    expect(wrapper.isVueInstance()).toBeTruthy()
+
+    expect(wrapper.findAll('div.navbar-brand > a.navbar-item').length).toBe(1)
+    expect(wrapper.findAll('div.navbar-start > a.navbar-item').length).toBe(7)
+    expect(wrapper.findAll('div.navbar-end > a.navbar-item').length).toBe(1)
   })
 
   it('can switch to terminal mode', async () => {

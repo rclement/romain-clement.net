@@ -58,11 +58,11 @@ function createWrapper(
 }
 
 describe('pages/articles', () => {
-  test('is a Vue instance', () => {
+  test('is empty if no articles', () => {
     const articles = generateArticles(0)
     const wrapperData = createData(articles)
     const wrapper = createWrapper(Articles, wrapperData)
-    expect(wrapper.isVueInstance()).toBeTruthy()
+    expect(() => wrapper.get('article')).toThrow()
   })
 
   test('can display some articles', () => {

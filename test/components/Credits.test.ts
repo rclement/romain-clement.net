@@ -27,8 +27,8 @@ function createWrapper(component: Vue.VueConstructor<Vue>) {
 }
 
 describe('components/credits', () => {
-  it('is a Vue instance', () => {
+  it('contains all columns', () => {
     const wrapper = createWrapper(Credits)
-    expect(wrapper.isVueInstance()).toBeTruthy()
+    expect(wrapper.findAll('div.column').length).toBe(3)
   })
 })
