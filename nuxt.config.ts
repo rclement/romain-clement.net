@@ -135,7 +135,7 @@ const config: Configuration = {
   },
 
   generate: {
-    fallback: true,
+    fallback: '404.html',
     routes: async () => await contentDynamicRoutes(),
   },
 
