@@ -46,6 +46,7 @@ export function mockNuxtContent(articles: any[]) {
     surround: any
     limit: any
     skip: any
+    without: any
     fetch: any
   }
 
@@ -72,6 +73,7 @@ export function mockNuxtContent(articles: any[]) {
       surround: jest.fn(() => generateObj()),
       limit: jest.fn(() => generateObj()),
       skip: jest.fn(() => generateObj()),
+      without: jest.fn(() => generateObj()),
       fetch: jest.fn(() => fetched),
     })
 
