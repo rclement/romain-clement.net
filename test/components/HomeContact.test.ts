@@ -35,7 +35,6 @@ function createWrapper(
   localVue.use(Vuelidate)
 
   const mocks = {
-    $config: {},
     $t: (msg: string) => msg,
     ...optionalMocks,
   }

@@ -238,7 +238,7 @@ export default Vue.extend({
       this.loading = true
 
       try {
-        const url = `${this.$config.MAILER_URL}/api/mail`
+        const url = `${process.env.MAILER_URL}/api/mail`
         const params = {
           name: this.name,
           email: this.email,

@@ -91,7 +91,7 @@ const config: Configuration = {
   target: 'static',
   telemetry: false,
 
-  publicRuntimeConfig: {
+  env: {
     APP_VERSION: appVersion,
     STATIC_PREFIX: staticPrefix,
     MAILER_URL: mailerUrl,
