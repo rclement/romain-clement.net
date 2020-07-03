@@ -34,25 +34,6 @@ const contentArticles = async () => {
     .fetch()
 }
 
-const contentDynamicRoutes = async () => {
-  type Article = { slug: string }
-  const articles: Article[] = await contentArticles()
-
-  return articles.reduce((obj: string[], a) => {
-    const localeRoutes = i18n.locales.map((l) => {
-      const code = l.code
-      let route = `/articles/${a.slug}`
-      if (code !== i18n.defaultLocale) {
-        route = `/${code}${route}`
-      }
-      return route
-    })
-
-    obj.push(...localeRoutes)
-    return obj
-  }, [])
-}
-
 const feedArticles = () => {
   const feedsCommon = i18n.messages.en.common.feeds
   const baseUrlArticles = '/articles'
@@ -109,6 +90,8 @@ const feedArticles = () => {
 
 const config: Configuration = {
   mode: 'universal',
+  target: 'static',
+  telemetry: false,
 
   env: {
     APP_VERSION: appVersion,
@@ -136,7 +119,7 @@ const config: Configuration = {
 
   generate: {
     fallback: '404.html',
-    routes: async () => await contentDynamicRoutes(),
+    exclude: [/^\/.well-known/],
   },
 
   hooks: {
@@ -241,7 +224,6 @@ const config: Configuration = {
     path: sitemapPath,
     hostname,
     gzip: true,
-    routes: async () => await contentDynamicRoutes(),
   },
 }
 
