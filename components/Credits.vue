@@ -115,7 +115,7 @@ import Vue from 'vue'
 export default Vue.extend({
   data() {
     return {
-      appVersion: process.env.APP_VERSION,
+      appVersion: this.$config.APP_VERSION,
       infogreffe: this.$t('common.links.infogreffe'),
       nuxt: this.$t('common.links.nuxt'),
       bulma: this.$t('common.links.bulma'),

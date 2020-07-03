@@ -1,8 +1,6 @@
 import { Configuration } from '@nuxt/types'
 import i18n from './i18n'
 
-require('dotenv').config()
-
 const appCommon = i18n.messages.en.common.app
 const appName = appCommon.name
 const appShortName = appCommon.shortName
@@ -93,7 +91,7 @@ const config: Configuration = {
   target: 'static',
   telemetry: false,
 
-  env: {
+  publicRuntimeConfig: {
     APP_VERSION: appVersion,
     STATIC_PREFIX: staticPrefix,
     MAILER_URL: mailerUrl,
@@ -136,7 +134,6 @@ const config: Configuration = {
   plugins: ['~/plugins/font-awesome.ts', '~/plugins/vuelidate.ts'],
 
   buildModules: [
-    '@nuxtjs/dotenv',
     '@nuxt/typescript-build',
     '@nuxtjs/eslint-module',
     ['nuxt-cname-module', { baseUrl, generateCNAME: true }],
