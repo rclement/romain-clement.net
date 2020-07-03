@@ -1,1 +1,0 @@
-window.__NUXT__={staticAssetsBase:"\u002F_nuxt\u002Fstatic\u002F1593773018",layout:"default",error:null,serverRendered:true,routePath:"\u002Farticles",config:{APP_VERSION:"2.0.0",STATIC_PREFIX:"",MAILER_URL:"https:\u002F\u002Fcontact.romain-clement.net"}};
