@@ -1,14 +1,3 @@
 {
-  "extends": [
-    "config:base",
-    ":preserveSemverRanges",
-    "group:allNonMajor"
-  ],
-  "labels": ["dependencies"],
-  "packageRules": [
-    {
-      "updateTypes": ["minor", "patch", "pin", "digest"],
-      "automerge": true
-    }
-  ]
+  "extends": ["config:base"]
 }
