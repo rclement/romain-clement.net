@@ -154,7 +154,10 @@ const config: Configuration = {
 
   typescript: {
     typeCheck: {
-      eslint: true,
+      eslint: {
+        enabled: true,
+        files: './**/*.{ts,js,vue}',
+      },
     },
   },
 

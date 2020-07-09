@@ -23,7 +23,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.13.1",
     "@fortawesome/vue-fontawesome": "^0.1.10",
     "@nuxt/content": "^1.4.1",
-    "@nuxt/typescript-runtime": "^0.4.10",
+    "@nuxt/typescript-runtime": "^1.0.0",
     "@nuxtjs/axios": "^5.11.0",
     "@nuxtjs/feed": "^1.1.0",
     "@nuxtjs/pwa": "^3.0.0-beta.20",
@@ -38,7 +38,7 @@
   },
   "devDependencies": {
     "@nuxt/types": "^2.13.3",
-    "@nuxt/typescript-build": "^1.0.3",
+    "@nuxt/typescript-build": "^2.0.0",
     "@nuxtjs/eslint-config-typescript": "^2.0.0",
     "@nuxtjs/eslint-module": "^2.0.0",
     "@types/faker": "^4.1.12",
