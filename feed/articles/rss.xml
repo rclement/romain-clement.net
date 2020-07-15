@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Articles from Romain Clement</title>
         <link>https://romain-clement.net/articles</link>
         <description>I mostly write about software engineering for cloud-native applications. And some other stuff.</description>
-        <lastBuildDate>Tue, 14 Jul 2020 22:16:00 GMT</lastBuildDate>
-        <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+        <lastBuildDate>Wed, 15 Jul 2020 08:32:12 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/nuxt-community/feed-module</generator>
-        <atom:link href="https://romain-clement.net/feed/articles/atom.xml" rel="self" type="application/rss+xml"/>
+        <atom:link href="https://romain-clement.net/feed/articles/rss.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[Cloudflare setup for CDN and PaaS platforms]]></title>
             <link>https://romain-clement.net/articles/cloudflare-setup-cdn-paas</link>

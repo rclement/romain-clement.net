@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://romain-clement.net/articles</id>
     <title>Articles from Romain Clement</title>
-    <updated>2020-07-14T22:16:00.791Z</updated>
+    <updated>2020-07-15T08:32:12.947Z</updated>
     <generator>https://github.com/nuxt-community/feed-module</generator>
     <link rel="alternate" href="https://romain-clement.net/articles"/>
     <link rel="self" href="https://romain-clement.net/feed/articles/atom.xml"/>
@@ -10,8 +10,7 @@
     <entry>
         <title type="html"><![CDATA[Cloudflare setup for CDN and PaaS platforms]]></title>
         <id>https://romain-clement.net/articles/cloudflare-setup-cdn-paas</id>
-        <link href="https://romain-clement.net/articles/cloudflare-setup-cdn-paas">
-        </link>
+        <link href="https://romain-clement.net/articles/cloudflare-setup-cdn-paas"/>
         <updated>2020-06-08T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[When hosting applications using modern CDNs and PaaS platforms such as Vercel and Heroku, configuring Cloudflare as the protecting proxy in front of those services can be challenging. After some research, I managed to find a permanent solution.]]></summary>
         <content type="html"><![CDATA[When hosting applications using modern CDNs and PaaS platforms such as Vercel and Heroku, configuring Cloudflare as the protecting proxy in front of those services can be challenging. After some research, I managed to find a permanent solution.]]></content>
@@ -25,8 +24,7 @@
     <entry>
         <title type="html"><![CDATA[Scrubbing URL fragments from Sentry crash reports]]></title>
         <id>https://romain-clement.net/articles/sentry-url-fragments</id>
-        <link href="https://romain-clement.net/articles/sentry-url-fragments">
-        </link>
+        <link href="https://romain-clement.net/articles/sentry-url-fragments"/>
         <updated>2020-05-01T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[When activating Sentry crash reporting in JavaScript client-side code, the default mechanism captures and sends the current URL, including any URL fragments. This can pose a privacy issue when dealing with client-side end-to-end encrypted applications.]]></summary>
         <content type="html"><![CDATA[When activating Sentry crash reporting in JavaScript client-side code, the default mechanism captures and sends the current URL, including any URL fragments. This can pose a privacy issue when dealing with client-side end-to-end encrypted applications.]]></content>
@@ -40,8 +38,7 @@
     <entry>
         <title type="html"><![CDATA[GitOps CI/CD workflows with GitHub Actions]]></title>
         <id>https://romain-clement.net/articles/github-actions-cicd-workflows</id>
-        <link href="https://romain-clement.net/articles/github-actions-cicd-workflows">
-        </link>
+        <link href="https://romain-clement.net/articles/github-actions-cicd-workflows"/>
         <updated>2020-04-18T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[The current state of GitHub Actions is promising but still has some rough edges, when it comes to configuring complete GitOps CI/CD workflows. But I've managed to find some tricks to get the job done.]]></summary>
         <content type="html"><![CDATA[The current state of GitHub Actions is promising but still has some rough edges, when it comes to configuring complete GitOps CI/CD workflows. But I've managed to find some tricks to get the job done.]]></content>
