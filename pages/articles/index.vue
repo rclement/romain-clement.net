@@ -55,52 +55,43 @@
 
             <br />
 
-            <div
-              v-for="yearArticles in filteredArticles"
-              :key="yearArticles.year"
+            <article
+              v-for="article in filteredArticles"
+              :key="article.slug"
+              :data-slug="article.slug"
+              class="media"
             >
-              <p class="subtitle">
-                {{ yearArticles.year }}
-              </p>
+              <div class="media-content">
+                <div class="content">
+                  <p>
+                    <strong>
+                      <nuxt-link
+                        :to="
+                          localePath({
+                            name: 'articles-slug',
+                            params: { slug: article.slug },
+                          })
+                        "
+                      >
+                        {{ article.title }}
+                      </nuxt-link>
+                    </strong>
+                    <br />
+                    <small class="has-text-grey">
+                      {{ $d(article.published, 'short') }}
+                    </small>
+                  </p>
 
-              <article
-                v-for="article in yearArticles.articles"
-                :key="article.slug"
-                :data-slug="article.slug"
-                class="media"
-              >
-                <div class="media-content">
-                  <div class="content">
-                    <p>
-                      <strong>
-                        <nuxt-link
-                          :to="
-                            localePath({
-                              name: 'articles-slug',
-                              params: { slug: article.slug },
-                            })
-                          "
-                        >
-                          {{ article.title }}
-                        </nuxt-link>
-                      </strong>
-                      <small>
-                        {{ $d(article.published, 'short') }}
-                      </small>
-                    </p>
+                  <p>{{ article.summary }}</p>
 
-                    <p>{{ article.summary }}</p>
-
-                    <b-taglist>
-                      <b-tag v-for="tag in article.tags" :key="tag">
-                        {{ tag }}
-                      </b-tag>
-                    </b-taglist>
-                  </div>
+                  <b-taglist>
+                    <b-tag v-for="tag in article.tags" :key="tag">
+                      {{ tag }}
+                    </b-tag>
+                  </b-taglist>
                 </div>
-              </article>
-              <br />
-            </div>
+              </div>
+            </article>
           </div>
         </div>
       </div>
@@ -152,31 +143,11 @@ export default Vue.extend({
   },
 
   computed: {
-    filteredArticles(): { year: number; articles: ArticleResult[] }[] {
-      const tagFiltered = this.articles.filter(
+    filteredArticles(): ArticleResult[] {
+      return this.articles.filter(
         (a) =>
           !a.draft && this.selectedTags.every((t: string) => a.tags.includes(t))
       )
-
-      const byYear = tagFiltered.reduce(
-        (obj: { [key: string]: ArticleResult[] }, a) => {
-          const year = a.published.getFullYear()
-          const yearStr = year.toString()
-          if (!(yearStr in obj)) {
-            obj[yearStr] = []
-          }
-          obj[yearStr].push(a)
-          return obj
-        },
-        {}
-      )
-
-      return Object.entries(byYear)
-        .map(([key, value]) => ({
-          year: Number.parseInt(key),
-          articles: value,
-        }))
-        .sort((a, b) => b.year - a.year)
     },
   },
 
