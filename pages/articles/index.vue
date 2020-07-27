@@ -37,21 +37,23 @@
 
             <br />
 
-            <b-field :label="$t('articles.tags.label')">
-              <b-taginput
-                v-model="selectedTags"
-                :data="shortlistTags"
-                :allow-new="false"
-                :open-on-focus="true"
-                :maxtags="5"
-                :placeholder="$t('articles.tags.placeholder')"
-                autocomplete
-                icon-pack="fas"
-                icon="tag"
-                @typing="findShortlistTags"
-                @input="updateShortlistTags"
-              />
-            </b-field>
+            <section>
+              <b-field :label="$t('articles.tags.label')" horizontal>
+                <b-taginput
+                  v-model="selectedTags"
+                  :data="shortlistTags"
+                  :allow-new="false"
+                  :open-on-focus="true"
+                  :maxtags="5"
+                  :placeholder="$t('articles.tags.placeholder')"
+                  autocomplete
+                  icon-pack="fas"
+                  icon="tag"
+                  @typing="findShortlistTags"
+                  @input="updateShortlistTags"
+                />
+              </b-field>
+            </section>
 
             <br />
 
