@@ -126,8 +126,6 @@ jobs:
         with:
           name: build-preview
           path: dist
-      - name: Install Vercel CLI
-        run: npm install -g vercel
       - name: Deploy to Vercel
         run: cd dist && vercel --confirm --token $VERCEL_TOKEN
 
@@ -149,8 +147,6 @@ jobs:
         with:
           name: build-production
           path: dist
-      - name: Install Vercel CLI
-        run: npm install -g vercel
       - name: Deploy to Vercel
         run: cd dist && vercel --confirm --token $VERCEL_TOKEN --prod
       - name: Deploy to GitHub Pages
