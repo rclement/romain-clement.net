@@ -115,9 +115,9 @@ jobs:
     if: ${{ !contains(github.ref, 'master') }}
 
     env:
-      NOW_ORG_ID: ${{ secrets.NOW_ORG_ID }}
-      NOW_PROJECT_ID: ${{ secrets.NOW_PROJECT_ID }}
-      NOW_TOKEN: ${{ secrets.NOW_TOKEN }}
+      VERCEL_ORG_ID: ${{ secrets.NOW_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.NOW_PROJECT_ID }}
+      VERCEL_TOKEN: ${{ secrets.NOW_TOKEN }}
 
     steps:
       - uses: actions/checkout@v2
@@ -126,8 +126,10 @@ jobs:
         with:
           name: build-preview
           path: dist
-      - name: Deploy to Zeit Now
-        run: cd dist && now --confirm --token $NOW_TOKEN
+      - name: Install Vercel CLI
+        run: npm install -g vercel
+      - name: Deploy to Vercel
+        run: cd dist && vercel --confirm --token $VERCEL_TOKEN
 
   deploy-production:
     name: Deploy Production
@@ -136,9 +138,9 @@ jobs:
     if: contains(github.ref, 'master')
 
     env:
-      NOW_ORG_ID: ${{ secrets.NOW_ORG_ID }}
-      NOW_PROJECT_ID: ${{ secrets.NOW_PROJECT_ID }}
-      NOW_TOKEN: ${{ secrets.NOW_TOKEN }}
+      VERCEL_ORG_ID: ${{ secrets.NOW_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.NOW_PROJECT_ID }}
+      VERCEL_TOKEN: ${{ secrets.NOW_TOKEN }}
 
     steps:
       - uses: actions/checkout@v2
@@ -147,8 +149,10 @@ jobs:
         with:
           name: build-production
           path: dist
-      - name: Deploy to Zeit Now
-        run: cd dist && now --confirm --token $NOW_TOKEN --prod
+      - name: Install Vercel CLI
+        run: npm install -g vercel
+      - name: Deploy to Vercel
+        run: cd dist && vercel --confirm --token $VERCEL_TOKEN --prod
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
