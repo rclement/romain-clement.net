@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import faker from 'faker'
+import { NuxtContentInstance, contentFunc } from '@nuxt/content'
 import { Article } from '~/content'
 
 faker.seed(1234)
@@ -37,21 +38,9 @@ export function generateArticles(num: number = 1): ArticleContent[] {
   return articles
 }
 
-export function mockNuxtContent(articles: any[]) {
-  type Obj = {
-    only: any
-    sortBy: any
-    where: any
-    search: any
-    surround: any
-    limit: any
-    skip: any
-    without: any
-    fetch: any
-  }
-
-  return jest.fn((...args: string[]) => {
-    let fetched = articles
+export function mockNuxtContent(articles: ArticleContent[]): contentFunc {
+  return (...args: Array<string | Object>) => {
+    let fetched: ArticleContent | ArticleContent[] = articles
 
     if (args.length === 2) {
       const slug = args[1]
@@ -65,7 +54,7 @@ export function mockNuxtContent(articles: any[]) {
       }
     }
 
-    const generateObj = (): Obj => ({
+    const generateObj = (): NuxtContentInstance => ({
       only: jest.fn(() => generateObj()),
       sortBy: jest.fn(() => generateObj()),
       where: jest.fn(() => generateObj()),
@@ -74,11 +63,11 @@ export function mockNuxtContent(articles: any[]) {
       limit: jest.fn(() => generateObj()),
       skip: jest.fn(() => generateObj()),
       without: jest.fn(() => generateObj()),
-      fetch: jest.fn(() => fetched),
+      fetch: () => new Promise((resolve) => resolve(fetched as any)),
     })
 
     return generateObj()
-  })
+  }
 }
 
 export const NuxtContentStub = Vue.extend({
