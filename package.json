@@ -58,7 +58,7 @@
     "glob": "^7.1.6",
     "gray-matter": "^4.0.2",
     "husky": "^4.2.5",
-    "jest": "^26.4.0",
+    "jest": "^26.4.1",
     "jest-junit": "^11.1.0",
     "markdown-it": "^11.0.0",
     "node-sass": "^4.14.1",
