@@ -1,7 +1,7 @@
 <template>
   <div>
     <p class="title">
-      <b-icon pack="fas" icon="comments" size="is-large" />
+      <b-icon pack="fas" icon="comments" />
       {{ $t('home.talks.title') }}
     </p>
 

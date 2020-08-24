@@ -1,7 +1,7 @@
 <template>
   <div>
     <p class="title">
-      <b-icon pack="fas" icon="code" size="is-large" />
+      <b-icon pack="fas" icon="code" />
       {{ $t('home.oss.title') }}
     </p>
 

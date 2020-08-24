@@ -21,39 +21,44 @@
 
       <div class="block">
         <a :href="github.url" :title="github.name" :alt="github.name">
-          <b-icon pack="fab" icon="github" type="is-dark" />
+          <b-icon pack="fab" icon="github" size="is-medium" type="is-dark" />
         </a>
 
         <a :href="gitlab.url" :title="gitlab.name" :alt="gitlab.name">
-          <b-icon pack="fab" icon="gitlab" type="is-dark" />
+          <b-icon pack="fab" icon="gitlab" size="is-medium" type="is-dark" />
         </a>
 
         <a :href="keybase.url" :title="keybase.name" :alt="keybase.name">
-          <b-icon pack="fab" icon="keybase" type="is-dark" />
+          <b-icon pack="fab" icon="keybase" size="is-medium" type="is-dark" />
         </a>
 
         <a :href="linkedin.url" :title="linkedin.name" :alt="linkedin.name">
-          <b-icon pack="fab" icon="linkedin" type="is-dark" />
+          <b-icon pack="fab" icon="linkedin" size="is-medium" type="is-dark" />
         </a>
 
         <a :href="viadeo.url" :title="viadeo.name" :alt="viadeo.name">
-          <b-icon pack="fab" icon="viadeo" type="is-dark" />
+          <b-icon pack="fab" icon="viadeo" size="is-medium" type="is-dark" />
         </a>
 
         <a :href="xing.url" :title="xing.name" :alt="xing.name">
-          <b-icon pack="fab" icon="xing" type="is-dark" />
+          <b-icon pack="fab" icon="xing" size="is-medium" type="is-dark" />
         </a>
 
         <a :href="malt.url" :title="malt.name" :alt="malt.name">
-          <b-icon pack="fab" icon="connectdevelop" type="is-dark" />
+          <b-icon
+            pack="fab"
+            icon="connectdevelop"
+            size="is-medium"
+            type="is-dark"
+          />
         </a>
 
         <a :href="comet.url" :title="comet.name" :alt="comet.name">
-          <b-icon pack="fas" icon="rocket" type="is-dark" />
+          <b-icon pack="fas" icon="rocket" size="is-medium" type="is-dark" />
         </a>
 
         <a :href="pgp.url" :title="pgp.name" :alt="pgp.name">
-          <b-icon pack="fas" icon="key" type="is-dark" />
+          <b-icon pack="fas" icon="key" size="is-medium" type="is-dark" />
         </a>
       </div>
 

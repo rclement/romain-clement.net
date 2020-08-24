@@ -1,7 +1,7 @@
 <template>
   <div>
     <p class="title">
-      <b-icon pack="fas" icon="paper-plane" size="is-large" />
+      <b-icon pack="fas" icon="paper-plane" />
       {{ $t('home.contact.title') }}
     </p>
 
