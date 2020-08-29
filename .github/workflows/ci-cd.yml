@@ -24,7 +24,7 @@ jobs:
           restore-keys: |
             ${{ runner.OS }}-node-
       - name: Install dependencies
-        run: npm ci
+        run: npm install
       - name: Check dependencies
         run: npm audit --production || true
       - name: Check code lint
