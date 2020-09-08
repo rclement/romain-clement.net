@@ -32,7 +32,7 @@
     "nuxt": "^2.14.4",
     "nuxt-buefy": "^0.4.3",
     "nuxt-chiffre": "^0.3.0",
-    "nuxt-i18n": "^6.13.12",
+    "nuxt-i18n": "^6.14.2",
     "vuelidate": "^0.7.5"
   },
   "devDependencies": {
