@@ -45,7 +45,7 @@
     "@types/jest": "^26.0.13",
     "@types/markdown-it": "^10.0.2",
     "@types/vuelidate": "^0.7.13",
-    "@vue/test-utils": "^1.0.5",
+    "@vue/test-utils": "^1.1.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.3.0",
