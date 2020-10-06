@@ -25,7 +25,7 @@
     "@nuxt/typescript-runtime": "^2.0.0",
     "@nuxtjs/axios": "^5.12.2",
     "@nuxtjs/feed": "github:nuxt-community/feed-module#master",
-    "@nuxtjs/pwa": "^3.0.2",
+    "@nuxtjs/pwa": "^3.1.0",
     "@nuxtjs/robots": "^2.4.2",
     "@nuxtjs/sentry": "^4.3.5",
     "@nuxtjs/sitemap": "^2.4.0",
