@@ -63,7 +63,7 @@
     "nuxt-cname-module": "^1.1.1",
     "prettier": "^2.1.2",
     "reading-time": "^1.2.0",
-    "sass-loader": "^10.0.2",
+    "sass-loader": "^10.0.3",
     "ts-jest": "^26.4.1",
     "vue-jest": "^3.0.7"
   },
