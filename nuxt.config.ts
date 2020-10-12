@@ -1,4 +1,4 @@
-import { Configuration } from '@nuxt/types'
+import { NuxtConfig } from '@nuxt/types'
 import i18n from './i18n'
 
 const appCommon = i18n.messages.en.common.app
@@ -86,8 +86,7 @@ const feedArticles = () => {
   }))
 }
 
-const config: Configuration = {
-  mode: 'universal',
+const config: NuxtConfig = {
   target: 'static',
   telemetry: false,
 
