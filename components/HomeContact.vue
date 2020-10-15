@@ -93,7 +93,7 @@
             @input="publicKeyFileUpload"
           >
             <a class="button is-info">
-              <b-icon pack="fas" icon="key" size="is-small" />
+              <b-icon pack="fas" icon="key" />
               <span>
                 {{ $t('home.contact.publicKey.select') }}
               </span>
