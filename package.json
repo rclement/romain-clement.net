@@ -64,7 +64,7 @@
     "prettier": "^2.1.2",
     "reading-time": "^1.2.0",
     "sass-loader": "^10.0.4",
-    "ts-jest": "^26.4.2",
+    "ts-jest": "^26.4.3",
     "vue-jest": "^3.0.7"
   },
   "engines": {
