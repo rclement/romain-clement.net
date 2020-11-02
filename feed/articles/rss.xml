@@ -4,7 +4,7 @@
         <title>Articles from Romain Clement</title>
         <link>https://romain-clement.net/articles</link>
         <description>I mostly write about software engineering for cloud-native applications. And some other stuff.</description>
-        <lastBuildDate>Sun, 01 Nov 2020 10:23:03 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 02 Nov 2020 14:09:49 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/nuxt-community/feed-module</generator>
         <atom:link href="https://romain-clement.net/feed/articles/rss.xml" rel="self" type="application/rss+xml"/>
