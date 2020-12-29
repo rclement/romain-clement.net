@@ -51,6 +51,35 @@ export default {
   },
   companies: [
     {
+      name: 'Superprod',
+      url: 'https://www.superprod.net',
+      img: '/media/superprod.png',
+      job: 'Software & Data Engineering',
+      skills: [
+        'project management',
+        'software engineering',
+        'data engineering',
+        'python',
+        'django',
+        'celery',
+        'docker',
+      ],
+    },
+    {
+      name: '440Hz',
+      url: 'https://weare440.com',
+      img: '/media/440hz.png',
+      job: 'Software & Data Engineering',
+      skills: [
+        'data engineering',
+        'python',
+        'etl',
+        'web-scraping',
+        'docker',
+        'cloud',
+      ],
+    },
+    {
       name: 'Simplon.co',
       url: 'https://simplon.co',
       img: '/media/simplon.png',

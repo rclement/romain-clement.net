@@ -54,10 +54,10 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { Result } from '@nuxt/content'
+import { IContentDocument } from '@nuxt/content/types/content'
 import { Article } from '~/content'
 
-type ArticleResult = Result & Article
+type ArticleResult = IContentDocument & Article
 
 export default Vue.extend({
   async asyncData(context) {
@@ -121,7 +121,7 @@ export default Vue.extend({
 })
 </script>
 
-<style scoped>
+<style>
 .icon-link {
   display: none;
 }

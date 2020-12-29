@@ -1,22 +1,32 @@
 import Vue from 'vue'
 import faker from 'faker'
-import { NuxtContentInstance, contentFunc } from '@nuxt/content'
+import { $content } from '@nuxt/content'
+import { QueryBuilder } from '@nuxt/content/types/query-builder'
+import { IContentDocument } from '@nuxt/content/types/content'
 import { Article } from '~/content'
 
 faker.seed(1234)
 
-export type ArticleContent = Article & {
-  slug: string
-  readingTime: number
-  body: object[] | string
-}
+type contentFunc = typeof $content
+
+export type ArticleContent = IContentDocument &
+  Article & {
+    slug: string
+    readingTime: number
+    body: object[] | string
+  }
 
 export function generateArticles(num: number = 1): ArticleContent[] {
   const articles: ArticleContent[] = []
 
   for (let i = 0; i < num; ++i) {
     articles.push({
+      dir: faker.system.directoryPath(),
+      path: faker.system.filePath(),
+      extension: '.md',
       slug: faker.lorem.slug(),
+      createdAt: faker.date.past(),
+      updatedAt: faker.date.past(),
       title: faker.lorem.sentence(),
       summary: faker.lorem.sentence(),
       author: faker.internet.userName(),
@@ -54,7 +64,17 @@ export function mockNuxtContent(articles: ArticleContent[]): contentFunc {
       }
     }
 
-    const generateObj = (): NuxtContentInstance => ({
+    const generateObj = (): QueryBuilder => ({
+      query: '',
+      path: '',
+      init: '',
+      postprocess: [],
+      options: {},
+      onlyKeys: [],
+      withoutKeys: {},
+      sortKeys: [],
+      limitN: 0,
+      skipN: 0,
       only: jest.fn(() => generateObj()),
       sortBy: jest.fn(() => generateObj()),
       where: jest.fn(() => generateObj()),
@@ -63,7 +83,10 @@ export function mockNuxtContent(articles: ArticleContent[]): contentFunc {
       limit: jest.fn(() => generateObj()),
       skip: jest.fn(() => generateObj()),
       without: jest.fn(() => generateObj()),
-      fetch: () => new Promise((resolve) => resolve(fetched as any)),
+      fetch: () =>
+        new Promise<IContentDocument | IContentDocument[]>((resolve) =>
+          resolve(fetched)
+        ),
     })
 
     return generateObj()
