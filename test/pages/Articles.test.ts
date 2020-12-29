@@ -123,7 +123,7 @@ describe('pages/articles', () => {
 
     tagInput.setValue(tags[0])
     await flushPromises()
-    tagInput.trigger('keydown.enter')
+    tagInput.trigger('keydown', { key: 'Enter' })
     await flushPromises()
 
     expect(wrapper.get(`article[data-slug=${articles[0].slug}]`))
@@ -132,7 +132,7 @@ describe('pages/articles', () => {
 
     tagInput.setValue(tags[1])
     await flushPromises()
-    tagInput.trigger('keydown.enter')
+    tagInput.trigger('keydown', { key: 'Enter' })
     await flushPromises()
 
     expect(wrapper.get(`article[data-slug=${articles[0].slug}]`))
@@ -143,7 +143,7 @@ describe('pages/articles', () => {
 
     tagInput.setValue(tags[2])
     await flushPromises()
-    tagInput.trigger('keydown.enter')
+    tagInput.trigger('keydown', { key: 'Enter' })
     await flushPromises()
 
     expect(wrapper.get(`article[data-slug=${articles[0].slug}]`))
