@@ -18,3 +18,23 @@ $footer-padding: 3rem 1.5rem 3rem;
 // bulma and buefy styles
 @import '~bulma';
 @import '~buefy/src/scss/buefy';
+
+// custom styles
+.title {
+  &:hover {
+    .anchor-link {
+      opacity: 0.5;
+    }
+  }
+
+  .anchor-link {
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.anchor-link {
+  transition: all 0.15s ease-out;
+  opacity: 0;
+}

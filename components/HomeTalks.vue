@@ -3,6 +3,7 @@
     <p class="title">
       <b-icon pack="fas" icon="comments" />
       {{ $t('home.talks.title') }}
+      <a class="anchor-link" href="#talks">#</a>
     </p>
 
     <i18n path="home.talks.text" tag="p">

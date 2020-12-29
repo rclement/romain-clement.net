@@ -3,6 +3,7 @@
     <p class="title">
       <b-icon pack="fas" icon="music" />
       {{ $t('home.music.title') }}
+      <a class="anchor-link" href="#music">#</a>
     </p>
 
     <p>
