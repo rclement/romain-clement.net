@@ -47,6 +47,10 @@ export default {
         type: 'NAF',
         value: '6201Z (Computer programming activities)',
       },
+      {
+        type: 'VAT',
+        value: 'FR52841265655',
+      },
     ],
   },
   companies: [
