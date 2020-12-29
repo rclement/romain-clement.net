@@ -57,12 +57,11 @@ export default {
       job: 'Software & Data Engineering',
       skills: [
         'project management',
-        'software engineering',
-        'data engineering',
+        'data',
         'python',
         'django',
-        'celery',
         'docker',
+        'elasticsearch',
       ],
     },
     {
@@ -71,12 +70,13 @@ export default {
       img: '/media/440hz.png',
       job: 'Software & Data Engineering',
       skills: [
-        'data engineering',
+        'data',
         'python',
         'etl',
         'web-scraping',
         'docker',
         'cloud',
+        'devops',
       ],
     },
     {
