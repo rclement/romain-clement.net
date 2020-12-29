@@ -36,14 +36,14 @@ export default Vue.extend({
     } as PropOptions<Error>,
   },
 
+  head() {
+    return this.$nuxtI18nSeo()
+  },
+
   computed: {
     statusCode(): number {
       return this.error.statusCode || 500
     },
-  },
-
-  head() {
-    return this.$nuxtI18nSeo()
   },
 })
 </script>

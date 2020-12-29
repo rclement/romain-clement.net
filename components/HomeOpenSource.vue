@@ -6,13 +6,13 @@
     </p>
 
     <i18n path="home.oss.text" tag="p">
-      <template v-slot:github>
+      <template #github>
         <a :href="github.url" :title="github.name" :alt="github.name">
           <span>{{ $t('home.oss.github') }}</span>
         </a>
       </template>
 
-      <template v-slot:gitlab>
+      <template #gitlab>
         <a :href="gitlab.url" :title="gitlab.name" :alt="gitlab.name">
           <span>{{ $t('home.oss.gitlab') }}</span>
         </a>

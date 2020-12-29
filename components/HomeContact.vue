@@ -13,7 +13,7 @@
 
     <b-message type="is-info" has-icon icon-pack="fas" icon="key">
       <i18n path="home.contact.notice">
-        <template v-slot:pgp>
+        <template #pgp>
           <a :href="pgp.url" :title="pgp.name" :alt="pgp.name">
             <span>{{ pgp.name }}</span>
           </a>
@@ -134,7 +134,7 @@
           tag="p"
           class="heading has-text-centered"
         >
-          <template v-slot:mailer>
+          <template #mailer>
             <a :href="mailer.url" :title="mailer.name" :alt="mailer.name">
               <span>{{ mailer.name }}</span>
             </a>

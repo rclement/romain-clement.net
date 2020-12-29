@@ -55,4 +55,4 @@ library.add(
   faXing
 )
 
-Vue.component('font-awesome-icon', FontAwesomeIcon)
+Vue.component('FontAwesomeIcon', FontAwesomeIcon)

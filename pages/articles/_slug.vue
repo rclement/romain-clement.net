@@ -19,7 +19,7 @@
             {{ $t(`common.feeds.authors.${article.author}`).name }}
             ·
             <i18n path="articles.slug.reading">
-              <template v-slot:time>
+              <template #time>
                 {{ $tc('articles.slug.minutes', article.readingTime) }}
               </template>
             </i18n>
@@ -35,7 +35,7 @@
 
           <p class="has-text-centered">
             <i18n path="articles.slug.mistake" tag="small">
-              <template v-slot:url>
+              <template #url>
                 <a
                   :href="`${repo.url}/blob/master/content${article.path}${article.extension}`"
                   :title="repo.name"

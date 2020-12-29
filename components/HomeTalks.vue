@@ -6,7 +6,7 @@
     </p>
 
     <i18n path="home.talks.text" tag="p">
-      <template v-slot:meetup-python-grenoble>
+      <template #meetup-python-grenoble>
         <a
           :href="meetupPythonGrenoble.url"
           :title="meetupPythonGrenoble.name"

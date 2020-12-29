@@ -46,19 +46,19 @@
           </p>
 
           <i18n path="credits.credits.powered" tag="p">
-            <template v-slot:nuxt>
+            <template #nuxt>
               <a :href="nuxt.url" :title="nuxt.name" :alt="nuxt.name">
                 <span>{{ nuxt.name }}</span>
               </a>
             </template>
 
-            <template v-slot:bulma>
+            <template #bulma>
               <a :href="bulma.url" :title="bulma.name" :alt="bulma.name">
                 {{ bulma.name }}
               </a>
             </template>
 
-            <template v-slot:fontawesome>
+            <template #fontawesome>
               <a
                 :href="fontawesome.url"
                 :title="fontawesome.name"
@@ -70,7 +70,7 @@
           </i18n>
 
           <i18n path="credits.credits.analytics" tag="p">
-            <template v-slot:chiffre>
+            <template #chiffre>
               <a :href="chiffre.url" :title="chiffre.name" :alt="chiffre.name">
                 <span>{{ chiffre.name }}</span>
               </a>
@@ -78,7 +78,7 @@
           </i18n>
 
           <i18n path="credits.credits.website" tag="p">
-            <template v-slot:license>
+            <template #license>
               <a :href="license.url" :title="license.name" :alt="license.name">
                 <span>{{ license.name }}</span>
               </a>
