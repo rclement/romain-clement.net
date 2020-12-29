@@ -87,7 +87,7 @@
 
           <div class="block">
             <a :href="github.url" :title="github.name" :alt="github.name">
-              <b-icon pack="fab" icon="github" />
+              <b-icon pack="fab" icon="github" size="is-large" />
             </a>
           </div>
         </div>
