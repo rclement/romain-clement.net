@@ -13,13 +13,12 @@ const appColor = appCommon.color
 const appEnvironment = process.env.APP_ENVIRONMENT || process.env.NODE_ENV
 const baseUrl = process.env.BASE_URL || ''
 const baseProtocol = process.env.BASE_PROTOCOL || 'https'
-const staticPrefix = process.env.STATIC_PREFIX || ''
 const mailerUrl = process.env.MAILER_URL || ''
 const chiffrePublicKey = process.env.CHIFFRE_PUBLIC_KEY || ''
 const chiffreProjectId = process.env.CHIFFRE_PROJECT_ID || ''
 const sentryDsn = process.env.SENTRY_DSN || ''
 
-const hostname = `${baseProtocol}://${baseUrl}${staticPrefix}`
+const hostname = `${baseProtocol}://${baseUrl}`
 
 const sitemapPath = '/sitemap.xml'
 const sitemapUrl = `${hostname}${sitemapPath}`
@@ -94,7 +93,6 @@ const config: NuxtConfig = {
 
   env: {
     APP_VERSION: appVersion,
-    STATIC_PREFIX: staticPrefix,
     MAILER_URL: mailerUrl,
   },
 
@@ -112,7 +110,6 @@ const config: NuxtConfig = {
   ],
 
   router: {
-    base: `${staticPrefix}/`,
     linkExactActiveClass: 'is-active',
   },
 
