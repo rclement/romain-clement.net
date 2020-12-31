@@ -24,7 +24,16 @@ const hostname = `${baseProtocol}://${baseUrl}${staticPrefix}`
 const sitemapPath = '/sitemap.xml'
 const sitemapUrl = `${hostname}${sitemapPath}`
 
-const contentArticles = async () => {
+type Article = {
+  path: string
+  slug: string
+  author: string
+  title: string
+  published: string
+  summary: string
+}
+
+const contentArticles = async (): Promise<Article[]> => {
   const { $content } = require('@nuxt/content')
   return await $content('articles')
     .where({ draft: false })
@@ -52,13 +61,6 @@ const feedArticles = () => {
       },
     }
 
-    type Article = {
-      slug: string
-      author: string
-      title: string
-      published: string
-      summary: string
-    }
     const articles: Article[] = await contentArticles()
 
     articles.forEach((article) => {
@@ -222,6 +224,20 @@ const config: NuxtConfig = {
   sitemap: {
     path: sitemapPath,
     hostname,
+    routes: async () => {
+      const articles: Article[] = await contentArticles()
+      return articles.map((article) => ({
+        url: article.path,
+        links: i18n.locales.map((locale) => ({
+          lang: locale.code,
+          url:
+            locale.code === i18n.defaultLocale
+              ? article.path
+              : `${locale.code}${article.path}`,
+        })),
+      }))
+    },
+    i18n: true,
     gzip: true,
   },
 }
