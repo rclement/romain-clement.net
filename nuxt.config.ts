@@ -183,6 +183,26 @@ const config: NuxtConfig = {
     defaultIconComponent: 'font-awesome-icon',
   },
 
+  content: {
+    markdown: {
+      // @ts-ignore
+      remarkAutolinkHeadings: {
+        behavior: 'append',
+        linkProperties: {
+          ariaHidden: 'true',
+          tabIndex: -1,
+          title: 'Link to Section',
+          class: ['anchor-link'],
+        },
+        content: {
+          type: 'element',
+          tagName: 'span',
+          children: [{ type: 'text', value: ' # ' }],
+        },
+      },
+    },
+  },
+
   sentry: {
     dsn: sentryDsn,
     config: {

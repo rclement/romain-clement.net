@@ -120,9 +120,3 @@ export default Vue.extend({
   },
 })
 </script>
-
-<style>
-.icon-link {
-  display: none;
-}
-</style>
