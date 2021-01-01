@@ -1,7 +1,7 @@
 <template>
   <div>
     <p class="title">
-      <b-icon pack="fas" icon="code" />
+      <b-icon pack="fas" icon="code" size="is-medium" />
       {{ $t('home.oss.title') }}
       <a class="anchor-link" href="#open-source">#</a>
     </p>

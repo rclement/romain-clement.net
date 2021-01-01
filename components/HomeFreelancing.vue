@@ -1,7 +1,7 @@
 <template>
   <div>
     <p class="title">
-      <b-icon pack="fas" icon="laptop-code" />
+      <b-icon pack="fas" icon="laptop-code" size="is-medium" />
       {{ $t('home.freelancing.title') }}
       <a class="anchor-link" href="#freelancing">#</a>
     </p>
