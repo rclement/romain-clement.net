@@ -1,19 +1,13 @@
 <template>
   <div>
-    <figure class="image container is-256x256">
-      <img src="~/assets/svg/logo.svg" alt="Logo" />
-    </figure>
-
-    <br />
-
     <div class="has-text-centered">
-      <p class="title">
+      <h1 class="title is-size-1-desktop is-size-3">
         {{ $t('home.hero.title') }}
-      </p>
+      </h1>
 
-      <p class="subtitle">
+      <h2 class="subtitle is-size-5">
         {{ $t('home.hero.subtitle') }}
-      </p>
+      </h2>
 
       <p>{{ $t('home.hero.location') }}</p>
 

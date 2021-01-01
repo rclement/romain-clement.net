@@ -34,7 +34,7 @@ export default {
   home: {
     hero: {
       title: 'Romain Clement',
-      subtitle: 'Software Engineer & Trainer',
+      subtitle: 'Freelance Software Engineer & Trainer',
       location: 'Grenoble, France',
       contact: 'Contact',
     },

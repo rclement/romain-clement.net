@@ -1,12 +1,10 @@
 <template>
   <div>
-    <section class="hero is-fullheight-with-navbar">
-      <div class="hero-body">
-        <div class="container">
-          <div class="columns">
-            <div class="column is-half is-offset-one-quarter">
-              <hero-section />
-            </div>
+    <section class="section">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-half is-offset-one-quarter">
+            <hero-section />
           </div>
         </div>
       </div>
