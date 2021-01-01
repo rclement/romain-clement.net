@@ -198,6 +198,7 @@ const config: NuxtConfig = {
       description: appDescription,
       theme_color: appColor,
       ogHost: hostname,
+      ogImage: '/preview.png',
     },
     manifest: {
       name: appName,
