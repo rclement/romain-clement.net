@@ -41,15 +41,13 @@ describe('components/navbar', () => {
     const wrapper = createWrapper(Navbar)
 
     expect(wrapper.findAll('div.navbar-brand > a.navbar-item').length).toBe(1)
-    expect(wrapper.findAll('div.navbar-start > a.navbar-item').length).toBe(7)
+    expect(wrapper.findAll('div.navbar-start > a.navbar-item').length).toBe(2)
     expect(wrapper.findAll('div.navbar-end > a.navbar-item').length).toBe(1)
   })
 
   it('can switch to terminal mode', async () => {
     const wrapper = createWrapper(Navbar)
-
-    const switchInput = wrapper.find('[data-switch-terminal] input')
-    expect(switchInput.attributes('value')).toBe('false')
+    const switchInput = wrapper.find('[data-switch-terminal]')
 
     switchInput.trigger('click')
     await flushPromises()
