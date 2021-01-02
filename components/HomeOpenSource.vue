@@ -3,7 +3,7 @@
     <p class="title">
       <b-icon pack="fas" icon="code" size="is-medium" custom-size="xs" />
       {{ $t('home.oss.title') }}
-      <a class="anchor-link" href="#open-source">#</a>
+      <a class="anchor-link" href="#open-source"></a>
     </p>
 
     <i18n path="home.oss.text" tag="p">

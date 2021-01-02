@@ -3,7 +3,7 @@
     <p class="title">
       <b-icon pack="fas" icon="laptop-code" size="is-medium" custom-size="xs" />
       {{ $t('home.freelancing.title') }}
-      <a class="anchor-link" href="#freelancing">#</a>
+      <a class="anchor-link" href="#freelancing"></a>
     </p>
 
     <i18n path="home.freelancing.interests.text" tag="p">

@@ -3,7 +3,7 @@
     <p class="title">
       <b-icon pack="fas" icon="paper-plane" size="is-medium" custom-size="xs" />
       {{ $t('home.contact.title') }}
-      <a class="anchor-link" href="#contact">#</a>
+      <a class="anchor-link" href="#contact"></a>
     </p>
 
     <p>

@@ -197,7 +197,6 @@ const config: NuxtConfig = {
         content: {
           type: 'element',
           tagName: 'span',
-          children: [{ type: 'text', value: ' # ' }],
         },
       },
     },
