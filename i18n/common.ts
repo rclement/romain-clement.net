@@ -124,6 +124,25 @@ export default {
       skills: ['dsp', 'c++', 'cmake', 'opengl', 'juce', 'vst', 'au', 'aax'],
     },
   ],
+  certifications: [
+    {
+      name: 'Machine Learning',
+      organization: 'Coursera',
+      year: 2020,
+      url: 'https://www.coursera.org/verify/WWWWN9L8982E',
+      img: '/media/coursera.png',
+      tags: ['machine learning', 'data science', 'big data'],
+    },
+    {
+      name: '5 jours pour entreprendre',
+      organization: 'CCI Formation Grenoble',
+      year: 2018,
+      url:
+        'https://www.cciformation-grenoble.fr/formation/5-jours-pour-entreprendre',
+      img: '/media/cci-formation-grenoble.png',
+      tags: ['business', 'entrepreneurship', 'communication', 'marketing'],
+    },
+  ],
   projects: [
     {
       name: 'Griffonnage',

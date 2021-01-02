@@ -81,6 +81,11 @@ export default {
       },
     },
 
+    certifications: {
+      title: 'Certifications',
+      text: 'Always discovering and learning new skills.',
+    },
+
     oss: {
       title: 'Open-Source',
       text: `I truly believe free and open-source software is key in building

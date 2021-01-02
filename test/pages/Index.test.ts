@@ -34,6 +34,7 @@ describe('pages/index', () => {
     const wrapper = createWrapper(Index)
 
     expect(wrapper.get('#freelancing')).toBeTruthy()
+    expect(wrapper.get('#certifications')).toBeTruthy()
     expect(wrapper.get('#open-source')).toBeTruthy()
     expect(wrapper.get('#talks')).toBeTruthy()
     expect(wrapper.get('#music')).toBeTruthy()

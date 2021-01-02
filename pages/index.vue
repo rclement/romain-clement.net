@@ -24,6 +24,16 @@
       <div class="container">
         <div class="columns">
           <div class="column is-half is-offset-one-quarter">
+            <certifications-section />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-half is-offset-one-quarter">
             <open-source-section />
           </div>
         </div>
@@ -66,6 +76,7 @@
 import Vue from 'vue'
 import HeroSection from '~/components/HomeHero.vue'
 import FreelancingSection from '~/components/HomeFreelancing.vue'
+import CertificationsSection from '~/components/HomeCertifications.vue'
 import OpenSourceSection from '~/components/HomeOpenSource.vue'
 import TalksSection from '~/components/HomeTalks.vue'
 import MusicSection from '~/components/HomeMusic.vue'
@@ -75,6 +86,7 @@ export default Vue.extend({
   components: {
     HeroSection,
     FreelancingSection,
+    CertificationsSection,
     OpenSourceSection,
     TalksSection,
     MusicSection,
