@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueMeta from 'vue-meta'
+import VueScrollactive from 'vue-scrollactive'
 import { RouterLinkStub, createLocalVue, mount } from '@vue/test-utils'
 import { Context } from '@nuxt/types'
 import Buefy from 'buefy'
@@ -24,6 +25,7 @@ function createWrapper(
   const localVue = createLocalVue()
   localVue.use(VueMeta, { keyName: 'head' })
   localVue.use(Buefy)
+  localVue.use(VueScrollactive)
 
   const mocks = {
     $t: (msg: string) => msg,
