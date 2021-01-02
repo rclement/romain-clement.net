@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="contact">
     <p class="title">
       <b-icon pack="fas" icon="paper-plane" size="is-medium" custom-size="xs" />
       {{ $t('home.contact.title') }}

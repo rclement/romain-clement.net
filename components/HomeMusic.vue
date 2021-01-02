@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="music">
     <p class="title">
       <b-icon pack="fas" icon="music" size="is-medium" custom-size="xs" />
       {{ $t('home.music.title') }}

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="open-source">
     <p class="title">
       <b-icon pack="fas" icon="code" size="is-medium" custom-size="xs" />
       {{ $t('home.oss.title') }}

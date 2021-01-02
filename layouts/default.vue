@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="dark-mode">
     <navbar />
     <nuxt />
     <credits />

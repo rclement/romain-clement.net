@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="freelancing">
     <p class="title">
       <b-icon pack="fas" icon="laptop-code" size="is-medium" custom-size="xs" />
       {{ $t('home.freelancing.title') }}

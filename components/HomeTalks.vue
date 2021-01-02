@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="talks">
     <p class="title">
       <b-icon pack="fas" icon="comments" size="is-medium" custom-size="xs" />
       {{ $t('home.talks.title') }}

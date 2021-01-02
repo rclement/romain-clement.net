@@ -14,7 +14,7 @@
       <div class="container">
         <div class="columns">
           <div class="column is-half is-offset-one-quarter">
-            <freelancing-section id="freelancing" />
+            <freelancing-section />
           </div>
         </div>
       </div>
@@ -24,7 +24,7 @@
       <div class="container">
         <div class="columns">
           <div class="column is-half is-offset-one-quarter">
-            <open-source-section id="open-source" />
+            <open-source-section />
           </div>
         </div>
       </div>
@@ -34,7 +34,7 @@
       <div class="container">
         <div class="columns">
           <div class="column is-half is-offset-one-quarter">
-            <talks-section id="talks" />
+            <talks-section />
           </div>
         </div>
       </div>
@@ -44,7 +44,7 @@
       <div class="container">
         <div class="columns">
           <div class="column is-half is-offset-one-quarter">
-            <music-section id="music" />
+            <music-section />
           </div>
         </div>
       </div>
@@ -54,7 +54,7 @@
       <div class="container">
         <div class="columns">
           <div class="column is-half is-offset-one-quarter">
-            <contact-section id="contact" />
+            <contact-section />
           </div>
         </div>
       </div>
