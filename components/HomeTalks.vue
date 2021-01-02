@@ -1,7 +1,7 @@
 <template>
   <div>
     <p class="title">
-      <b-icon pack="fas" icon="comments" size="is-medium" />
+      <b-icon pack="fas" icon="comments" size="is-medium" custom-size="xs" />
       {{ $t('home.talks.title') }}
       <a class="anchor-link" href="#talks">#</a>
     </p>

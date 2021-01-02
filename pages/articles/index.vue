@@ -8,7 +8,12 @@
               <div class="level-left">
                 <div class="level-item">
                   <p class="title">
-                    <b-icon pack="fas" icon="newspaper" size="is-medium" />
+                    <b-icon
+                      pack="fas"
+                      icon="newspaper"
+                      size="is-medium"
+                      custom-size="xs"
+                    />
                     {{ $t('articles.title') }}
                   </p>
                 </div>
