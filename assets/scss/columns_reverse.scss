@@ -1,0 +1,17 @@
+// source: https://github.com/jgthms/bulma/issues/1051#issuecomment-607919952
+$breakpoints: (
+  tablet: $tablet,
+  desktop: $desktop,
+  widescreen: $widescreen,
+  fullhd: $fullhd
+);
+
+.columns {
+  @each $name, $value in $breakpoints {
+    &.is-reverse-#{$name} {
+      @include from($value) {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+}

@@ -138,6 +138,7 @@ export default {
       placeholder: 'Add some tags',
     },
     slug: {
+      menu: 'On this page',
       minutes: '{n} minute | {n} minutes',
       reading: '{time} read',
       mistake: 'Found a mistake? Edit this article on {url}!',

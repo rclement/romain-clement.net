@@ -129,7 +129,11 @@ const config: NuxtConfig = {
     },
   },
 
-  plugins: ['~/plugins/font-awesome.ts', '~/plugins/vuelidate.ts'],
+  plugins: [
+    '~/plugins/font-awesome.ts',
+    '~/plugins/vue-scrollactive.ts',
+    '~/plugins/vuelidate.ts',
+  ],
 
   buildModules: [
     '@nuxt/typescript-build',

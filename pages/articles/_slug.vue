@@ -1,8 +1,33 @@
 <template>
   <section class="section">
     <div class="container">
-      <div class="columns">
-        <div class="column is-half is-offset-one-quarter">
+      <div class="columns is-reverse-tablet">
+        <div class="column is-one-quarter">
+          <scrollactive class="sticky" active-class="is-active">
+            <aside class="menu">
+              <p class="menu-label">{{ $t('articles.slug.menu') }}</p>
+              <ul class="menu-list">
+                <li v-for="link of article.toc" :key="link.id">
+                  <nuxt-link
+                    class="scrollactive-item"
+                    :to="`#${link.id}`"
+                    :class="{
+                      'py-2': link.depth === 2,
+                      'ml-2 pb-2': link.depth === 3,
+                      'ml-3 pb-2': link.depth === 4,
+                      'ml-4 pb-2': link.depth === 5,
+                      'ml-5 pb-2': link.depth === 6,
+                    }"
+                  >
+                    {{ link.text }}
+                  </nuxt-link>
+                </li>
+              </ul>
+            </aside>
+          </scrollactive>
+        </div>
+
+        <div class="column is-half">
           <p class="title">
             {{ article.title }}
           </p>
@@ -120,3 +145,10 @@ export default Vue.extend({
   },
 })
 </script>
+
+<style scoped>
+.sticky {
+  position: sticky;
+  top: 4rem;
+}
+</style>
