@@ -138,6 +138,7 @@ const config: NuxtConfig = {
   buildModules: [
     '@nuxt/typescript-build',
     '@nuxtjs/eslint-module',
+    '@nuxtjs/color-mode',
     ['nuxt-cname-module', { baseUrl, generateCNAME: true }],
   ],
 

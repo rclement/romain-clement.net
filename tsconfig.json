@@ -29,6 +29,7 @@
       "@nuxt/vue-app",
       "@nuxt/content",
       "@nuxtjs/axios",
+      "@nuxtjs/color-mode",
       "nuxt-i18n"
     ]
   },
