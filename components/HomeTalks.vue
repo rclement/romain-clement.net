@@ -24,16 +24,14 @@
       <div class="media-content">
         <div class="content">
           <p>
-            <strong>
-              <a
-                :href="keynote.url"
-                :title="keynote.title"
-                :alt="keynote.title"
-                class="has-text-dark"
-              >
-                {{ keynote.title }}
-              </a>
-            </strong>
+            <a
+              :href="keynote.url"
+              :title="keynote.title"
+              :alt="keynote.title"
+              class="has-text-dark"
+            >
+              <strong>{{ keynote.title }}</strong>
+            </a>
             <small>
               {{ $d(new Date(keynote.date), 'short') }}
             </small>

@@ -79,12 +79,13 @@
                             params: { slug: article.slug },
                           })
                         "
+                        class="has-text-dark"
                       >
                         {{ article.title }}
                       </nuxt-link>
                     </strong>
                     <br />
-                    <small class="has-text-grey">
+                    <small class="has-text-weight-light">
                       {{ $d(article.published, 'short') }}
                     </small>
                   </p>

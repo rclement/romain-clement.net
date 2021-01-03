@@ -151,18 +151,16 @@
       <div class="media-content">
         <div class="content">
           <p>
-            <strong>
-              <a
-                :href="company.url"
-                :title="company.name"
-                :alt="company.name"
-                class="has-text-dark"
-              >
-                {{ company.name }}
-              </a>
-            </strong>
+            <a
+              :href="company.url"
+              :title="company.name"
+              :alt="company.name"
+              class="has-text-dark"
+            >
+              <strong>{{ company.name }}</strong>
+            </a>
             <br />
-            {{ company.job }}
+            <small>{{ company.job }}</small>
           </p>
 
           <b-taglist>

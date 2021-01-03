@@ -23,7 +23,14 @@
       <div class="media-content">
         <div class="content">
           <p>
-            <strong>{{ band.name }}</strong>
+            <a
+              :href="band.url"
+              :title="band.name"
+              :alt="band.name"
+              class="has-text-dark"
+            >
+              <strong>{{ band.name }}</strong>
+            </a>
             <small>{{ band.style }}</small>
             <br />
             {{ band.text }}

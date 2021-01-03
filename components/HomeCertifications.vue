@@ -36,7 +36,14 @@
       <div class="media-content">
         <div class="content">
           <p>
-            <strong>{{ certification.name }}</strong>
+            <a
+              :href="certification.url"
+              :title="certification.name"
+              :alt="certification.name"
+              class="has-text-dark"
+            >
+              <strong>{{ certification.name }}</strong>
+            </a>
             <small>
               {{ certification.year }}
             </small>
