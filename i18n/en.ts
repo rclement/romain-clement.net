@@ -135,6 +135,12 @@ export default {
     },
   },
 
+  reading: {
+    title: 'Reading',
+    text: `Feels good to get away from the computer and learn things from books in dead-tree form. Here's a some titles I've read and I highly recommend.`,
+    more: 'More books',
+  },
+
   articles: {
     title: 'Articles',
     text: `I mostly write about software engineering for cloud-native applications. And some other stuff.`,

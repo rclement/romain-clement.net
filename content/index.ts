@@ -7,3 +7,14 @@ export interface Article {
   published: Date
   draft: boolean
 }
+
+export interface Book {
+  title: string
+  authors: string[]
+  language: string
+  published: Date
+  publisher: string
+  isbn: string
+  url: string
+  cover: string
+}

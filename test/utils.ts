@@ -3,7 +3,7 @@ import faker from 'faker'
 import { $content } from '@nuxt/content'
 import { QueryBuilder } from '@nuxt/content/types/query-builder'
 import { IContentDocument } from '@nuxt/content/types/content'
-import { Article } from '~/content'
+import { Article, Book } from '~/content'
 
 faker.seed(1234)
 
@@ -11,6 +11,13 @@ type contentFunc = typeof $content
 
 export type ArticleContent = IContentDocument &
   Article & {
+    slug: string
+    readingTime: number
+    body: object[] | string
+  }
+
+export type BookContent = IContentDocument &
+  Book & {
     slug: string
     readingTime: number
     body: object[] | string
@@ -48,13 +55,40 @@ export function generateArticles(num: number = 1): ArticleContent[] {
   return articles
 }
 
-export function mockNuxtContent(articles: ArticleContent[]): contentFunc {
+export function generateBooks(num: number = 1): BookContent[] {
+  const books: BookContent[] = []
+
+  for (let i = 0; i < num; ++i) {
+    books.push({
+      dir: faker.system.directoryPath(),
+      path: faker.system.filePath(),
+      extension: '.yml',
+      slug: faker.lorem.slug(),
+      createdAt: faker.date.past(),
+      updatedAt: faker.date.past(),
+      body: '',
+      readingTime: faker.random.number(10),
+      title: faker.lorem.sentence(),
+      authors: [`${faker.name.firstName()} ${faker.name.lastName()}`],
+      language: 'en',
+      published: faker.date.past(),
+      publisher: faker.company.companyName(),
+      isbn: faker.lorem.word(13),
+      url: faker.internet.url(),
+      cover: faker.image.image(),
+    })
+  }
+
+  return books
+}
+
+export function mockNuxtContent(documents: IContentDocument[]): contentFunc {
   return (...args: Array<string | Object>) => {
-    let fetched: ArticleContent | ArticleContent[] = articles
+    let fetched: IContentDocument | IContentDocument[] = documents
 
     if (args.length === 2) {
       const slug = args[1]
-      const found = articles.filter((a) => a.slug === slug)
+      const found = documents.filter((d) => d.slug === slug)
       if (found.length === 0) {
         throw new Error(`${slug} not found`)
       } else if (found.length === 1) {

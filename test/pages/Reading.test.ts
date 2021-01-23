@@ -2,8 +2,7 @@ import Vue from 'vue'
 import { RouterLinkStub, createLocalVue, mount } from '@vue/test-utils'
 import { Context } from '@nuxt/types'
 import Buefy from 'buefy'
-import Vuelidate from 'vuelidate'
-import Index from '~/pages/index.vue'
+import Reading from '~/pages/reading.vue'
 import { BookContent, generateBooks, mockNuxtContent } from '~/test/utils'
 
 function createData(books: BookContent[]) {
@@ -23,19 +22,13 @@ function createWrapper(
 ) {
   const localVue = createLocalVue()
   localVue.use(Buefy)
-  localVue.use(Vuelidate)
 
   const mocks = {
     $t: (msg: string) => msg,
-    $d: (msg: Date) => msg,
-    $i18n: { locales: [] },
-    localePath: (path: string) => path,
-    switchLocalePath: (code: string) => code,
   }
 
   const stubs = {
     NuxtLink: RouterLinkStub,
-    i18n: true,
   }
 
   return mount(component, {
@@ -46,23 +39,36 @@ function createWrapper(
   })
 }
 
-describe('pages/index', () => {
-  test('contains all sections', () => {
-    const wrapper = createWrapper(Index)
+describe('pages/books', () => {
+  test('is empty if no books', () => {
+    const books = generateBooks(0)
+    const wrapperData = createData(books)
+    const wrapper = createWrapper(Reading, wrapperData)
+    expect(() => wrapper.get('div[data-slug]')).toThrow()
+  })
 
-    expect(wrapper.get('#freelancing')).toBeTruthy()
-    expect(wrapper.get('#certifications')).toBeTruthy()
-    expect(wrapper.get('#open-source')).toBeTruthy()
-    expect(wrapper.get('#talks')).toBeTruthy()
-    expect(wrapper.get('#music')).toBeTruthy()
-    expect(wrapper.get('#reading')).toBeTruthy()
-    expect(wrapper.get('#contact')).toBeTruthy()
+  test('can display some books', () => {
+    const books = generateBooks(3)
+    const wrapperData = createData(books)
+    const wrapper = createWrapper(Reading, wrapperData)
+
+    books.forEach((book) => {
+      const bookComp = wrapper.get(`div[data-slug=${book.slug}]`)
+
+      const url = bookComp.get('figure > a')
+      expect(url.attributes('href')).toBe(book.url)
+      expect(url.attributes('title')).toBe(book.title)
+      expect(url.attributes('alt')).toBe(book.title)
+
+      const cover = bookComp.get('figure > a > img')
+      expect(cover.attributes('src')).toBe(book.cover)
+    })
   })
 
   test('can get some books from asyncdata', async () => {
     const books = generateBooks(3)
     const wrapperData = createData([])
-    const wrapper = createWrapper(Index, wrapperData)
+    const wrapper = createWrapper(Reading, wrapperData)
 
     if (wrapper.vm.$options.asyncData) {
       const context = {} as Context

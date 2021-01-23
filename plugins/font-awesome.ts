@@ -3,6 +3,7 @@ import { library, config } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import {
   faAt,
+  faBookOpen,
   faCheck,
   faCode,
   faComments,
@@ -34,6 +35,7 @@ config.autoAddCss = false
 
 library.add(
   faAt,
+  faBookOpen,
   faCheck,
   faCode,
   faComments,

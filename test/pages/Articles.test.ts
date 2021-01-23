@@ -71,15 +71,15 @@ describe('pages/articles', () => {
     const wrapper = createWrapper(Articles, wrapperData)
 
     articles.forEach((article) => {
-      const articleComp = wrapper.find(`article[data-slug=${article.slug}]`)
+      const articleComp = wrapper.get(`article[data-slug=${article.slug}]`)
 
-      const title = articleComp.find('.content > p > strong > a')
+      const title = articleComp.get('.content > p > strong > a')
       expect(title.text()).toBe(article.title)
 
-      const published = articleComp.find('.content > p > small')
+      const published = articleComp.get('.content > p > small')
       expect(published.text()).toBe(article.published.toString())
 
-      const summary = articleComp.find('.content > p + p')
+      const summary = articleComp.get('.content > p + p')
       expect(summary.text()).toBe(article.summary)
 
       const tags = articleComp.findAll('.content > .tags > .tag > span')
@@ -119,7 +119,7 @@ describe('pages/articles', () => {
       expect(wrapper.get(`article[data-slug=${article.slug}]`))
     })
 
-    const tagInput = wrapper.find('input')
+    const tagInput = wrapper.get('input')
 
     tagInput.setValue(tags[0])
     await flushPromises()
@@ -157,7 +157,7 @@ describe('pages/articles', () => {
 
   test('can get some articles from asyncdata', async () => {
     const articles = generateArticles(3)
-    const wrapperData = createData(articles)
+    const wrapperData = createData([])
     const wrapper = createWrapper(Articles, wrapperData)
 
     if (wrapper.vm.$options.asyncData) {

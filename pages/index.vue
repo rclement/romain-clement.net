@@ -64,6 +64,16 @@
       <div class="container">
         <div class="columns">
           <div class="column is-half is-offset-one-quarter">
+            <reading-list :books="books" :snippet="true" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-half is-offset-one-quarter">
             <contact-section />
           </div>
         </div>
@@ -74,6 +84,8 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { IContentDocument } from '@nuxt/content/types/content'
+import { Book } from '~/content'
 import HeroSection from '~/components/HomeHero.vue'
 import FreelancingSection from '~/components/HomeFreelancing.vue'
 import CertificationsSection from '~/components/HomeCertifications.vue'
@@ -81,6 +93,9 @@ import OpenSourceSection from '~/components/HomeOpenSource.vue'
 import TalksSection from '~/components/HomeTalks.vue'
 import MusicSection from '~/components/HomeMusic.vue'
 import ContactSection from '~/components/HomeContact.vue'
+import ReadingList from '~/components/ReadingList.vue'
+
+type BookResult = IContentDocument & Book
 
 export default Vue.extend({
   components: {
@@ -90,7 +105,22 @@ export default Vue.extend({
     OpenSourceSection,
     TalksSection,
     MusicSection,
+    ReadingList,
     ContactSection,
+  },
+
+  async asyncData({ $content }) {
+    const books = (await $content('books').limit(3).fetch()) as BookResult[]
+
+    return {
+      books,
+    }
+  },
+
+  data() {
+    return {
+      books: [] as BookResult[],
+    }
   },
 })
 </script>
