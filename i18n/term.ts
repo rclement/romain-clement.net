@@ -14,10 +14,13 @@ messages.home.hero.location = '45.1841,5.7153'
 messages.home.hero.contact = 'ping'
 
 messages.home.freelancing.title = 'async/await'
+messages.home.certifications.title = 'chmod'
 messages.home.oss.title = 'code'
 messages.home.talks.title = 'lorem ipsum'
 messages.home.music.title = 'sin(2𝛑ft)'
 messages.home.contact.title = 'ping'
+
+messages.reading.title = 'cat'
 
 messages.articles.title = 'logs'
 
