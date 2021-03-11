@@ -121,7 +121,7 @@
 
         <div class="field">
           <b-button
-            :disabled="this.$v.$invalid"
+            :disabled="$v.$invalid"
             type="is-primary"
             expanded
             @click="sendMessage"
