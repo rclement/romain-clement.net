@@ -1,3 +1,4 @@
+import { DateTimeFormats } from 'vue-i18n'
 import common from './common'
 import en from './en'
 import term from './term'
@@ -28,7 +29,7 @@ const messages = {
   },
 }
 
-const dateTimeFormats = {
+const dateTimeFormats: DateTimeFormats = {
   en: {
     short: {
       year: 'numeric',
