@@ -3,7 +3,7 @@ name: CI/CD
 on: [push]
 
 env:
-  NODE_VERSION: '14.16.0'
+  NODE_VERSION: '14.16.1'
 
 jobs:
   test:
