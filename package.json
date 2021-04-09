@@ -31,7 +31,7 @@
     "nuxt": "^2.15.4",
     "nuxt-buefy": "^0.4.5",
     "nuxt-chiffre": "^0.3.0",
-    "nuxt-i18n": "^6.23.0",
+    "nuxt-i18n": "^6.24.0",
     "vue-scrollactive": "^0.9.3",
     "vuelidate": "^0.7.6"
   },
