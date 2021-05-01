@@ -71,7 +71,7 @@ describe('pages/articles', () => {
     const wrapper = createWrapper(Articles, wrapperData)
 
     articles.forEach((article) => {
-      const articleComp = wrapper.get(`article[data-slug=${article.slug}]`)
+      const articleComp = wrapper.get(`article[data-slug="${article.slug}"]`)
 
       const title = articleComp.get('.content > p > strong > a')
       expect(title.text()).toBe(article.title)
@@ -98,10 +98,10 @@ describe('pages/articles', () => {
     articles.forEach((article) => {
       if (article.draft) {
         expect(() =>
-          wrapper.get(`article[data-slug=${article.slug}]`)
+          wrapper.get(`article[data-slug="${article.slug}"]`)
         ).toThrow()
       } else {
-        expect(wrapper.get(`article[data-slug=${article.slug}]`))
+        expect(wrapper.get(`article[data-slug="${article.slug}"]`))
       }
     })
   })
@@ -116,7 +116,7 @@ describe('pages/articles', () => {
     const wrapper = createWrapper(Articles, wrapperData)
 
     articles.forEach((article) => {
-      expect(wrapper.get(`article[data-slug=${article.slug}]`))
+      expect(wrapper.get(`article[data-slug="${article.slug}"]`))
     })
 
     const tagInput = wrapper.get('input')
@@ -126,19 +126,19 @@ describe('pages/articles', () => {
     tagInput.trigger('keydown', { key: 'Enter' })
     await flushPromises()
 
-    expect(wrapper.get(`article[data-slug=${articles[0].slug}]`))
-    expect(wrapper.get(`article[data-slug=${articles[1].slug}]`))
-    expect(wrapper.get(`article[data-slug=${articles[2].slug}]`))
+    expect(wrapper.get(`article[data-slug="${articles[0].slug}"]`))
+    expect(wrapper.get(`article[data-slug="${articles[1].slug}"]`))
+    expect(wrapper.get(`article[data-slug="${articles[2].slug}"]`))
 
     tagInput.setValue(tags[1])
     await flushPromises()
     tagInput.trigger('keydown', { key: 'Enter' })
     await flushPromises()
 
-    expect(wrapper.get(`article[data-slug=${articles[0].slug}]`))
-    expect(wrapper.get(`article[data-slug=${articles[1].slug}]`))
+    expect(wrapper.get(`article[data-slug="${articles[0].slug}"]`))
+    expect(wrapper.get(`article[data-slug="${articles[1].slug}"]`))
     expect(() =>
-      wrapper.get(`article[data-slug=${articles[2].slug}]`)
+      wrapper.get(`article[data-slug="${articles[2].slug}"]`)
     ).toThrow()
 
     tagInput.setValue(tags[2])
@@ -146,12 +146,12 @@ describe('pages/articles', () => {
     tagInput.trigger('keydown', { key: 'Enter' })
     await flushPromises()
 
-    expect(wrapper.get(`article[data-slug=${articles[0].slug}]`))
+    expect(wrapper.get(`article[data-slug="${articles[0].slug}"]`))
     expect(() =>
-      wrapper.get(`article[data-slug=${articles[1].slug}]`)
+      wrapper.get(`article[data-slug="${articles[1].slug}"]`)
     ).toThrow()
     expect(() =>
-      wrapper.get(`article[data-slug=${articles[2].slug}]`)
+      wrapper.get(`article[data-slug="${articles[2].slug}"]`)
     ).toThrow()
   })
 

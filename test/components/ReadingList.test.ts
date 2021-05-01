@@ -54,7 +54,7 @@ describe('components/HomeReading', () => {
     const wrapper = createWrapper(ReadingList, props)
 
     books.forEach((book) => {
-      const bookComp = wrapper.get(`div[data-slug=${book.slug}]`)
+      const bookComp = wrapper.get(`div[data-slug="${book.slug}"]`)
 
       const url = bookComp.get('figure > a')
       expect(url.attributes('href')).toBe(book.url)
