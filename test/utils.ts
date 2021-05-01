@@ -45,7 +45,7 @@ export function generateArticles(num: number = 1): ArticleContent[] {
       language: 'en',
       published: faker.date.past(),
       draft: false,
-      readingTime: faker.random.number(10),
+      readingTime: faker.datatype.number(10),
       body: `<p>${faker.lorem.paragraph()}</p>
       <h2>${faker.lorem.sentence()}</h2>
       <p>${faker.lorem.paragraph()}</p>`,
@@ -67,7 +67,7 @@ export function generateBooks(num: number = 1): BookContent[] {
       createdAt: faker.date.past(),
       updatedAt: faker.date.past(),
       body: '',
-      readingTime: faker.random.number(10),
+      readingTime: faker.datatype.number(10),
       title: faker.lorem.sentence(),
       authors: [`${faker.name.firstName()} ${faker.name.lastName()}`],
       language: 'en',

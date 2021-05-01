@@ -53,7 +53,7 @@ describe('pages/books', () => {
     const wrapper = createWrapper(Reading, wrapperData)
 
     books.forEach((book) => {
-      const bookComp = wrapper.get(`div[data-slug=${book.slug}]`)
+      const bookComp = wrapper.get(`div[data-slug="${book.slug}"]`)
 
       const url = bookComp.get('figure > a')
       expect(url.attributes('href')).toBe(book.url)
