@@ -7,10 +7,10 @@
     "items": [
         {
             "id": "https://romain-clement.net/articles/static-data-warehouse-sqlite-metabase",
-            "content_html": "Does a data warehouse need to be costly? Maybe not. A quick note on using SQLite combined with Metabase to host and exploit a static SQL database easily and cheaply. This use-case is especially true for small-data applications.",
+            "content_html": "Does a data warehouse need to be costly? Maybe not. A quick note on using SQLite combined with Metabase to host and exploit a static SQL database easily and cheaply. This use-case is especially true for small data applications.",
             "url": "https://romain-clement.net/articles/static-data-warehouse-sqlite-metabase",
             "title": "Static Data Warehouse using SQLite and Metabase",
-            "summary": "Does a data warehouse need to be costly? Maybe not. A quick note on using SQLite combined with Metabase to host and exploit a static SQL database easily and cheaply. This use-case is especially true for small-data applications.",
+            "summary": "Does a data warehouse need to be costly? Maybe not. A quick note on using SQLite combined with Metabase to host and exploit a static SQL database easily and cheaply. This use-case is especially true for small data applications.",
             "date_modified": "2021-05-04T00:00:00.000Z",
             "date_published": "2021-05-04T00:00:00.000Z",
             "author": {
