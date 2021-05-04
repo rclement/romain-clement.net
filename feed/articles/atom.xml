@@ -2,11 +2,25 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://romain-clement.net/articles</id>
     <title>Articles from Romain Clement</title>
-    <updated>2021-05-01T12:28:22.104Z</updated>
+    <updated>2021-05-04T08:13:33.981Z</updated>
     <generator>https://github.com/nuxt-community/feed-module</generator>
     <link rel="alternate" href="https://romain-clement.net/articles"/>
     <link rel="self" href="https://romain-clement.net/feed/articles/atom.xml"/>
     <subtitle>I mostly write about software engineering for cloud-native applications. And some other stuff.</subtitle>
+    <entry>
+        <title type="html"><![CDATA[Static Data Warehouse using SQLite and Metabase]]></title>
+        <id>https://romain-clement.net/articles/static-data-warehouse-sqlite-metabase</id>
+        <link href="https://romain-clement.net/articles/static-data-warehouse-sqlite-metabase"/>
+        <updated>2021-05-04T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Does a data warehouse need to be costly? Maybe not. A quick note on using SQLite combined with Metabase to host and exploit a static SQL database easily and cheaply. This use-case is especially true for small-data applications.]]></summary>
+        <content type="html"><![CDATA[Does a data warehouse need to be costly? Maybe not. A quick note on using SQLite combined with Metabase to host and exploit a static SQL database easily and cheaply. This use-case is especially true for small-data applications.]]></content>
+        <author>
+            <name>Romain Clement</name>
+            <email>contact@romain-clement.net</email>
+            <uri>https://romain-clement.net</uri>
+        </author>
+        <published>2021-05-04T00:00:00.000Z</published>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Cloudflare setup for CDN and PaaS platforms]]></title>
         <id>https://romain-clement.net/articles/cloudflare-setup-cdn-paas</id>

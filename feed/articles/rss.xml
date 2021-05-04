@@ -4,10 +4,19 @@
         <title>Articles from Romain Clement</title>
         <link>https://romain-clement.net/articles</link>
         <description>I mostly write about software engineering for cloud-native applications. And some other stuff.</description>
-        <lastBuildDate>Sat, 01 May 2021 12:28:22 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 04 May 2021 08:13:33 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/nuxt-community/feed-module</generator>
         <atom:link href="https://romain-clement.net/feed/articles/rss.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Static Data Warehouse using SQLite and Metabase]]></title>
+            <link>https://romain-clement.net/articles/static-data-warehouse-sqlite-metabase</link>
+            <guid>https://romain-clement.net/articles/static-data-warehouse-sqlite-metabase</guid>
+            <pubDate>Tue, 04 May 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[Does a data warehouse need to be costly? Maybe not. A quick note on using SQLite combined with Metabase to host and exploit a static SQL database easily and cheaply. This use-case is especially true for small-data applications.]]></description>
+            <content:encoded><![CDATA[Does a data warehouse need to be costly? Maybe not. A quick note on using SQLite combined with Metabase to host and exploit a static SQL database easily and cheaply. This use-case is especially true for small-data applications.]]></content:encoded>
+            <author>contact@romain-clement.net (Romain Clement)</author>
+        </item>
         <item>
             <title><![CDATA[Cloudflare setup for CDN and PaaS platforms]]></title>
             <link>https://romain-clement.net/articles/cloudflare-setup-cdn-paas</link>
