@@ -4,10 +4,19 @@
         <title>Articles from Romain Clement</title>
         <link>https://romain-clement.net/articles</link>
         <description>I mostly write about software engineering for cloud-native applications. And some other stuff.</description>
-        <lastBuildDate>Tue, 04 May 2021 10:15:58 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 05 May 2021 06:22:05 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/nuxt-community/feed-module</generator>
         <atom:link href="https://romain-clement.net/feed/articles/rss.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Python packages development using Pipenv]]></title>
+            <link>https://romain-clement.net/articles/python-packages-development-pipenv</link>
+            <guid>https://romain-clement.net/articles/python-packages-development-pipenv</guid>
+            <pubDate>Wed, 05 May 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[I have been using Pipenv for Python applications since 2018 quite successfully. However, when developing Python packages, things can get trickier. This is a quick note on how I resolve this situation.]]></description>
+            <content:encoded><![CDATA[I have been using Pipenv for Python applications since 2018 quite successfully. However, when developing Python packages, things can get trickier. This is a quick note on how I resolve this situation.]]></content:encoded>
+            <author>contact@romain-clement.net (Romain Clement)</author>
+        </item>
         <item>
             <title><![CDATA[Static Data Warehouse using SQLite and Metabase]]></title>
             <link>https://romain-clement.net/articles/static-data-warehouse-sqlite-metabase</link>

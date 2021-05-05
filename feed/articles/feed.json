@@ -6,6 +6,19 @@
     "description": "I mostly write about software engineering for cloud-native applications. And some other stuff.",
     "items": [
         {
+            "id": "https://romain-clement.net/articles/python-packages-development-pipenv",
+            "content_html": "I have been using Pipenv for Python applications since 2018 quite successfully. However, when developing Python packages, things can get trickier. This is a quick note on how I resolve this situation.",
+            "url": "https://romain-clement.net/articles/python-packages-development-pipenv",
+            "title": "Python packages development using Pipenv",
+            "summary": "I have been using Pipenv for Python applications since 2018 quite successfully. However, when developing Python packages, things can get trickier. This is a quick note on how I resolve this situation.",
+            "date_modified": "2021-05-05T00:00:00.000Z",
+            "date_published": "2021-05-05T00:00:00.000Z",
+            "author": {
+                "name": "Romain Clement",
+                "url": "https://romain-clement.net"
+            }
+        },
+        {
             "id": "https://romain-clement.net/articles/static-data-warehouse-sqlite-metabase",
             "content_html": "Does a data warehouse need to be costly? Maybe not. A quick note on using SQLite combined with Metabase to host and exploit a static SQL database easily and cheaply. This use-case is especially true for small data applications.",
             "url": "https://romain-clement.net/articles/static-data-warehouse-sqlite-metabase",
