@@ -8,12 +8,12 @@ author: romainclement
 tags: [programming, python]
 language: en
 published: 2021-05-05
-draft: true
+draft: false
 ---
 
-I have been using Pipenv for Python applications since 2018 quite successfully.
-However, when developing Python packages, things can get trickier. This is a
-quick note on how I resolve this situation.
+I have been using [Pipenv][pipenv] for Python applications since 2018 quite
+successfully. However, when developing Python packages, things can get trickier.
+This is a quick note on how I resolve this situation.
 
 When starting the development of a Python package, we can setup our Python
 environment using `pipenv`:
@@ -71,5 +71,6 @@ I have recently used this pattern when starting the development of
 [`datasette-dashboards`][datasette-dashboards], a plugin to generate data dashboards
 in [`datasette`][datasette].
 
+[pipenv]: https://pipenv.pypa.io 'Pipenv'
 [datasette-dashboards]: https://github.com/rclement/datasette-dashboards 'datasette-dashboards'
 [datasette]: https://datasette.io 'Datasette'
