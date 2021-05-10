@@ -11,17 +11,15 @@ faker.seed(1234)
 function mockAxios(success: boolean = true) {
   return {
     $axios: {
-      $post: jest.fn(
-        (_: string, data: object): Promise<any> => {
-          return new Promise((resolve, reject) => {
-            if (success) {
-              resolve(data)
-            } else {
-              reject(Error('failed post request'))
-            }
-          })
-        }
-      ),
+      $post: jest.fn((_: string, data: object): Promise<any> => {
+        return new Promise((resolve, reject) => {
+          if (success) {
+            resolve(data)
+          } else {
+            reject(Error('failed post request'))
+          }
+        })
+      }),
     },
   }
 }

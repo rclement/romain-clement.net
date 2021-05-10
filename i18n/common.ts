@@ -143,8 +143,7 @@ export default {
       name: '5 jours pour entreprendre',
       organization: 'CCI Formation Grenoble',
       year: 2018,
-      url:
-        'https://www.cciformation-grenoble.fr/formation/5-jours-pour-entreprendre',
+      url: 'https://www.cciformation-grenoble.fr/formation/5-jours-pour-entreprendre',
       img: '/media/cci-formation-grenoble.png',
       tags: ['business', 'entrepreneurship', 'communication', 'marketing'],
     },
@@ -273,22 +272,18 @@ export default {
       badges: [
         {
           name: 'Stars',
-          img:
-            'https://img.shields.io/github/stars/rclement/meeblip-controller',
+          img: 'https://img.shields.io/github/stars/rclement/meeblip-controller',
           url: 'https://github.com/rclement/meeblip-controller',
         },
         {
           name: 'Version',
-          img:
-            'https://img.shields.io/github/tag/rclement/meeblip-controller.svg',
+          img: 'https://img.shields.io/github/tag/rclement/meeblip-controller.svg',
           url: 'https://github.com/rclement/meeblip-controller/releases/latest',
         },
         {
           name: 'License',
-          img:
-            'https://img.shields.io/github/license/rclement/meeblip-controller',
-          url:
-            'https://github.com/rclement/meeblip-controller/blob/master/LICENSE',
+          img: 'https://img.shields.io/github/license/rclement/meeblip-controller',
+          url: 'https://github.com/rclement/meeblip-controller/blob/master/LICENSE',
         },
       ],
     },
@@ -298,8 +293,7 @@ export default {
       title: 'Small Data',
       subtitle: `Small data, big results for every company`,
       date: '2021-04-29',
-      url:
-        'https://app.livestorm.co/simplon-3/les-rdv-de-liaccessible-or-simplon-2904-a-18h',
+      url: 'https://app.livestorm.co/simplon-3/les-rdv-de-liaccessible-or-simplon-2904-a-18h',
       event: `Les RDV de l'IAccessible | Simplon.co`,
       event_url:
         'https://app.livestorm.co/simplon-3/les-rdv-de-liaccessible-or-simplon-2904-a-18h',
@@ -309,8 +303,7 @@ export default {
       subtitle:
         'Every company is concerned with data: discover how to get started',
       date: '2021-04-22',
-      url:
-        'https://app.livestorm.co/simplon-3/les-rdv-de-liaccessible-or-simplon-xxxx',
+      url: 'https://app.livestorm.co/simplon-3/les-rdv-de-liaccessible-or-simplon-xxxx',
       event: `Les RDV de l'IAccessible | Simplon.co`,
       event_url:
         'https://app.livestorm.co/simplon-3/les-rdv-de-liaccessible-or-simplon-xxxx',
@@ -401,8 +394,7 @@ export default {
     },
     infogreffe: {
       name: 'Infogreffe',
-      url:
-        'https://www.infogreffe.fr/entreprise-societe/841265655-clement-romain-84126565500016.html?afficherretour=true&tab=entrep',
+      url: 'https://www.infogreffe.fr/entreprise-societe/841265655-clement-romain-84126565500016.html?afficherretour=true&tab=entrep',
     },
     malt: {
       name: 'Malt',
