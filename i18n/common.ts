@@ -320,23 +320,13 @@ export default {
   ],
   keynotes: [
     {
-      title: 'Small Data',
-      subtitle: `Small data, big results for every company`,
-      date: '2021-04-29',
-      url: 'https://app.livestorm.co/simplon-3/les-rdv-de-liaccessible-or-simplon-2904-a-18h',
-      event: `Les RDV de l'IAccessible | Simplon.co`,
-      event_url:
-        'https://app.livestorm.co/simplon-3/les-rdv-de-liaccessible-or-simplon-2904-a-18h',
-    },
-    {
-      title: 'Data For All',
+      title: `Les RDV de l'IAccessible`,
       subtitle:
         'Every company is concerned with data: discover how to get started',
       date: '2021-04-22',
-      url: 'https://app.livestorm.co/simplon-3/les-rdv-de-liaccessible-or-simplon-xxxx',
-      event: `Les RDV de l'IAccessible | Simplon.co`,
-      event_url:
-        'https://app.livestorm.co/simplon-3/les-rdv-de-liaccessible-or-simplon-xxxx',
+      url: 'https://app.livestorm.co/simplon-3',
+      event: 'Simplon.co',
+      event_url: 'https://app.livestorm.co/simplon-3',
     },
     {
       title: 'Python + Celery',
