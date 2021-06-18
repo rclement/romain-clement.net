@@ -150,25 +150,32 @@ export default {
   ],
   projects: [
     {
-      name: 'Griffonnage',
-      tagline: 'Scribble careless drawings with friends, privately',
-      url: 'https://github.com/griffonnage/griffonnage',
-      tags: ['typescript', 'nuxt.js', 'socket.io', 'tweetnacl.js', 'e2ee'],
+      name: 'Datasette Dashboards',
+      tagline: 'Datasette plugin providing data dashboards from metadata',
+      url: 'https://github.com/rclement/datasette-dashboards',
+      tags: [
+        'python',
+        'sqlite',
+        'datasette',
+        'data',
+        'visualization',
+        'dashboards',
+      ],
       badges: [
         {
           name: 'Stars',
-          img: 'https://img.shields.io/github/stars/griffonnage/griffonnage',
-          url: 'https://github.com/griffonnage/griffonnage',
+          img: 'https://img.shields.io/github/stars/rclement/datasette-dashboards',
+          url: 'https://github.com/rclement/datasette-dashboards',
         },
         {
           name: 'Version',
-          img: 'https://img.shields.io/github/tag/griffonnage/griffonnage.svg',
-          url: 'https://github.com/griffonnage/griffonnage/releases/latest',
+          img: 'https://img.shields.io/github/tag/rclement/datasette-dashboards.svg',
+          url: 'https://github.com/rclement/datasette-dashboards/releases/latest',
         },
         {
           name: 'License',
-          img: 'https://img.shields.io/github/license/griffonnage/griffonnage',
-          url: 'https://github.com/griffonnage/griffonnage/blob/master/LICENSE',
+          img: 'https://img.shields.io/github/license/rclement/datasette-dashboards',
+          url: 'https://github.com/rclement/datasette-dashboards/blob/master/LICENSE',
         },
       ],
     },
@@ -192,6 +199,29 @@ export default {
           name: 'License',
           img: 'https://img.shields.io/github/license/rclement/mailer',
           url: 'https://github.com/rclement/mailer/blob/master/LICENSE',
+        },
+      ],
+    },
+    {
+      name: 'Griffonnage',
+      tagline: 'Scribble careless drawings with friends, privately',
+      url: 'https://github.com/griffonnage/griffonnage',
+      tags: ['typescript', 'nuxt.js', 'socket.io', 'tweetnacl.js', 'e2ee'],
+      badges: [
+        {
+          name: 'Stars',
+          img: 'https://img.shields.io/github/stars/griffonnage/griffonnage',
+          url: 'https://github.com/griffonnage/griffonnage',
+        },
+        {
+          name: 'Version',
+          img: 'https://img.shields.io/github/tag/griffonnage/griffonnage.svg',
+          url: 'https://github.com/griffonnage/griffonnage/releases/latest',
+        },
+        {
+          name: 'License',
+          img: 'https://img.shields.io/github/license/griffonnage/griffonnage',
+          url: 'https://github.com/griffonnage/griffonnage/blob/master/LICENSE',
         },
       ],
     },
