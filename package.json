@@ -28,7 +28,7 @@
     "@nuxtjs/robots": "^2.5.0",
     "@nuxtjs/sentry": "^5.1.0",
     "@nuxtjs/sitemap": "^2.4.0",
-    "nuxt": "^2.15.6",
+    "nuxt": "^2.15.7",
     "nuxt-buefy": "^0.4.8",
     "nuxt-chiffre": "^0.3.0",
     "nuxt-i18n": "^6.27.1",
@@ -36,7 +36,7 @@
     "vuelidate": "^0.7.6"
   },
   "devDependencies": {
-    "@nuxt/types": "^2.15.6",
+    "@nuxt/types": "^2.15.7",
     "@nuxt/typescript-build": "^2.1.0",
     "@nuxtjs/eslint-config-typescript": "^6.0.1",
     "@nuxtjs/eslint-module": "^3.0.2",
