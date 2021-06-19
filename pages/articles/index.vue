@@ -51,6 +51,7 @@
                   :open-on-focus="true"
                   :maxtags="5"
                   :placeholder="$t('articles.tags.placeholder')"
+                  :keep-first="true"
                   autocomplete
                   icon-pack="fas"
                   icon="tag"
