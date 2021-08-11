@@ -26,7 +26,7 @@
     "@nuxtjs/feed": "github:nuxt-community/feed-module#master",
     "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/robots": "^2.5.0",
-    "@nuxtjs/sentry": "^5.1.0",
+    "@nuxtjs/sentry": "^5.1.1",
     "@nuxtjs/sitemap": "^2.4.0",
     "nuxt": "^2.15.6",
     "nuxt-buefy": "^0.4.8",
