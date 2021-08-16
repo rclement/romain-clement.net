@@ -124,7 +124,7 @@ plugins:
       htmlmin_opts:
           remove_comments: true
       js_files:
-        - javascripts/mathjax.js
+        - assets/javascripts/mathjax.js
 
 markdown_extensions:
   - admonition
@@ -145,10 +145,10 @@ markdown_extensions:
       permalink: "#"
 
 extra_css:
-  - stylesheets/forms.css
+  - assets/stylesheets/forms.css
 
 extra_javascript:
   # https://squidfunk.github.io/mkdocs-material/reference/mathjax/#configuration
-  - javascripts/mathjax.js
+  - assets/javascripts/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
