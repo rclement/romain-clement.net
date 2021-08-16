@@ -6,4 +6,4 @@ title: Home
 
 > Freelance Software Engineer & Trainer
 
-<!-- [:fontawesome-solid-paper-plane: Contact](contact.md){ .md-button .md-button--primary } -->
+[:fontawesome-solid-paper-plane: Contact](contact){ .md-button .md-button--primary }

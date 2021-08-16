@@ -1,40 +1,48 @@
 {% set form = page.meta.form %}
 
-<form class="md-form" method="{{ form.method }}" action="{{ form.action }}">
+<form
+  class="mk-form"
+  method="{{ form.method }}"
+  action="{{ form.action }}"
+  enctype="multipart/form-data"
+>
   {% for field_name, field in form.fields.items() %}
     {% if field.label %}
-      <label for="{{ field_name }}">{{ field.label }}</label>
+      <label class="mk-form-label" for="{{ field_name }}">{{ field.label }}</label>
     {% endif %}
 
-    {% if field.type == 'hidden' %}
-      <input name="{{ field_name }}" type="hidden">
-    {% elif field.type == 'file' %}
-      <input name="{{ field_name }}" type="file">
-      <br />
-    {% elif field.type == 'textarea' %}
-      <textarea
-        class="md-input"
-        name="{{ field_name }}"
-        placeholder="{{ field.placeholder }}"
-        {% if field.required %}required{% endif %}
-      ></textarea>
-      <br />
-    {% else %}
-      <input
-        class="md-input"
-        name="{{ field_name }}"
-        type="{{ field.type }}"
-        placeholder="{{ field.placeholder }}"
-        autocomplete="{% if field.autocomplete %}on{% else %}off{% endif %}"
-        {% if field.required %}required{% endif %}
-      >
-      <br />
-    {% endif %}
+    <div class="mk-form-input-wrapper">
+      {% if field.type == 'hidden' %}
+        <input name="{{ field_name }}" type="hidden">
+      {% elif field.type == 'file' %}
+        <input class="mk-form-input-file" name="{{ field_name }}" type="file">
+      {% elif field.type == 'textarea' %}
+        <textarea
+          class="mk-form-input"
+          name="{{ field_name }}"
+          {% if field.placeholder %}placeholder="{{ field.placeholder }}"{% endif %}
+          {% if field.minlength %}minlength="{{ field.minlength }}"{% endif %}
+          {% if field.maxlength %}maxlength="{{ field.maxlength }}"{% endif %}
+          {% if field.required %}required{% endif %}
+        ></textarea>
+      {% else %}
+        <input
+          class="mk-form-input"
+          name="{{ field_name }}"
+          type="{{ field.type }}"
+          autocomplete="{% if field.autocomplete %}on{% else %}off{% endif %}"
+          {% if field.placeholder %}placeholder="{{ field.placeholder }}"{% endif %}
+          {% if field.minlength %}minlength="{{ field.minlength }}"{% endif %}
+          {% if field.maxlength %}maxlength="{{ field.maxlength }}"{% endif %}
+          {% if field.required %}required{% endif %}
+        >
+      {% endif %}
+    </div>
   {% endfor %}
 
   {% for button_name, button in form.buttons.items() %}
     <input
-      class="md-button"
+      class="mk-form-button"
       type="{{ button.type }}"
       value="{{ button.value }}"
     >
@@ -43,5 +51,5 @@
 </form>
 
 {% if form.notice %}
-<p><small>{{ form.notice }}</small></p>
+<p class="mk-form-notice"><small>{{ form.notice }}</small></p>
 {% endif %}

@@ -23,12 +23,16 @@ form:
       label: Subject
       placeholder: What do you want to talk about?
       type: text
+      minlength: 1
+      maxlength: 100
       required: true
 
     message:
       label: Message
       placeholder: Your message
       type: textarea
+      minlength: 1
+      maxlength: 1000
       required: true
 
     public_key:
@@ -55,8 +59,6 @@ Looking for a freelance engineer and/or trainer for your next project? Let's tal
 !!! tip
 
     This message will be encrypted using my [PGP][pgp-key] public key. If you'd like me to respond with end-to-end encryption, do not forget to attach your PGP public key!
-
-[FORM]
 
 <!--
 <form method="post" action="https://contact.romain-clement.net/api/mail">

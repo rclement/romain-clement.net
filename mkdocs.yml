@@ -42,6 +42,8 @@ nav:
     - articles/cloudflare-setup-cdn-paas.md
     - articles/sentry-url-fragments.md
     - articles/github-actions-cicd-workflows.md
+  - Contact:
+    - contact/index.md
 
 extra:
   version: 1.0.0
@@ -89,6 +91,7 @@ theme:
     - navigation.top
     - search.highlight
   logo: static/icon.png
+  favicon: static/icon.png
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -121,7 +124,7 @@ plugins:
       htmlmin_opts:
           remove_comments: true
       js_files:
-        - static/js/config.js
+        - javascripts/mathjax.js
 
 markdown_extensions:
   - admonition
@@ -141,8 +144,11 @@ markdown_extensions:
   - toc:
       permalink: "#"
 
+extra_css:
+  - stylesheets/forms.css
+
 extra_javascript:
   # https://squidfunk.github.io/mkdocs-material/reference/mathjax/#configuration
-  - static/js/config.js
+  - javascripts/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
