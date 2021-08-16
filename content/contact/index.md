@@ -1,8 +1,7 @@
 ---
 # Inspiration: https://learn.getgrav.org/17/forms/forms/example-form
 form:
-  method: POST
-  action: https://contact.romain-clement.net/api/mail
+  name: contact
 
   fields:
     name:
@@ -37,8 +36,9 @@ form:
 
     public_key:
       label: PGP Public Key
-      placeholder: Select PGP Public Key
-      type: file
+      placeholder: Attach your PGP Public Key
+      type: textarea
+      minlength: 1
 
     honeypot:
       type: hidden

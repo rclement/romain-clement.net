@@ -1,9 +1,11 @@
 {% set form = page.meta.form %}
+{% set config = config.extra.forms[form.name] %}
 
 <form
+  id="mk-form-id"
   class="mk-form"
-  method="{{ form.method }}"
-  action="{{ form.action }}"
+  method="{{ config.method }}"
+  action="{{ config.action }}"
   enctype="multipart/form-data"
 >
   {% for field_name, field in form.fields.items() %}
@@ -52,4 +54,56 @@
 
 {% if form.notice %}
 <p class="mk-form-notice"><small>{{ form.notice }}</small></p>
+{% endif %}
+
+{% if config.mode == 'json' %}
+<script>
+window.addEventListener("load", function () {
+  function handleError() {
+    window.location.href = "/contact/error/"
+  }
+
+  function handleSuccess() {
+    window.location.href = "/contact/success/"
+  }
+
+  async function sendMessage(sourceForm) {
+    const url = sourceForm.action
+    const method = sourceForm.method
+    const formData = new FormData(sourceForm)
+    const data = JSON.stringify(Object.fromEntries(formData.entries()))
+
+    console.log(url)
+    console.log(method)
+    console.log(data)
+    console.log(url)
+
+    try {
+      const response = await fetch(url, {
+        method: method,
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: data
+      })
+
+      if (response.ok) {
+        handleSuccess()
+      } else {
+        handleError()
+      }
+    } catch(error) {
+      handleError()
+    }
+  }
+
+  const formElement = document.getElementById("mk-form-id")
+  if (formElement) {
+    formElement.addEventListener("submit", function (event) {
+      event.preventDefault()
+      sendMessage(event.target)
+    })
+  }
+})
+</script>
 {% endif %}

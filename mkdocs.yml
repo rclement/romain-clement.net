@@ -51,6 +51,11 @@ extra:
     provider: chiffre
     public_key: !ENV CHIFFRE_PUBLIC_KEY
     project_id: !ENV CHIFFRE_PROJECT_ID
+  forms:
+    contact:
+      action: !ENV MAILER_URL
+      method: POST
+      mode: json
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/rclement
