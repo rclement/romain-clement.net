@@ -1,5 +1,5 @@
 ---
-title: GitOps CI/CD workflows with GitHub Actions
+# title: GitOps CI/CD workflows with GitHub Actions
 summary: >-
   The current state of GitHub Actions is promising but still has some rough edges,
   when it comes to configuring complete GitOps CI/CD workflows.
@@ -10,6 +10,8 @@ language: en
 published: 2020-04-18
 draft: false
 ---
+
+# GitOps CI/CD workflows with GitHub Actions
 
 The current state of [GitHub Actions][github-actions] is promising but still
 has some rough edges when it comes to configuring complete [GitOps][gitops]
@@ -235,7 +237,7 @@ While searching for the current best-practices, it seems I am clearly not alone
 facing those issues and hopefully the GitHub team will fix all those quirks in
 the next updates.
 
-[img-pipeline]: /media/articles/github-actions-cicd-workflows/pipeline.png 'GitOps CI/CD Pipeline'
+[img-pipeline]: ../static/articles/github-actions-cicd-workflows/pipeline.png 'GitOps CI/CD Pipeline'
 [github-actions]: https://github.com/features/actions 'GitHub Actions'
 [gitlab-ci]: https://docs.gitlab.com/ce/ci/ 'GitLab-CI'
 [gitops]: https://www.gitops.tech 'GitOps'

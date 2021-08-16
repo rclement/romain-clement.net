@@ -1,5 +1,5 @@
 ---
-title: Cloudflare setup for CDN and PaaS platforms
+# title: Cloudflare setup for CDN and PaaS platforms
 summary: >-
   When hosting applications using modern CDNs and PaaS platforms such as Vercel
   and Heroku, configuring Cloudflare as the protecting proxy in front of those
@@ -11,6 +11,8 @@ language: en
 published: 2020-06-08
 draft: false
 ---
+
+# Cloudflare setup for CDN and PaaS platforms
 
 When hosting applications using modern CDN and PaaS platforms such as [Vercel][vercel]
 and [Heroku][heroku], configuring [Cloudflare][cloudflare] as the protecting proxy
@@ -64,23 +66,18 @@ The general idea is:
 ### Configuration steps
 
 1. Enable "Full" or "Full (strict)" SSL/TLS encryption mode:
-
 ```
 SSL/TLS -> Overview -> Full / Full (strict)
 ```
-
 ![Cloudflare SSL/TLS][img-cloudflare-ssl]
 
 2. Disable "Always Use HTTPS" feature:
-
 ```
 SSL/TLS -> Edge Certificates -> Always Use HTTPS -> Off
 ```
-
 ![Cloudflare Edge Certificates][img-cloudflare-edge]
 
 3. Add a first "Page Rule" to allow Let's Encrypt certificate generation:
-
 ```
 Page Rules -> Create Page Rule
   - URL: *domain.com/.well-known/acme-challenge/*
@@ -88,7 +85,6 @@ Page Rules -> Create Page Rule
 ```
 
 4. Add a second "Page Rule" to enforce all traffic to HTTPS
-
 ```
 Page Rules -> Create Page Rule
   - URL: http://*domain.com/*
@@ -97,7 +93,6 @@ Page Rules -> Create Page Rule
 
 5. Order the "Page Rules" such that the "Always Use HTTPS" is the last one
    (this is very important!)
-
 ![Cloudflare Page Rules][img-cloudflare-pagerules]
 
 You should now be able to setup DNS entries as proxied one, even with application
@@ -122,7 +117,7 @@ best of both worlds: full-fledge network security with modern application deploy
 [vercel-docs-cloudflare]: https://vercel.com/docs/v2/custom-domains#cloudflare 'Vercel Documentation'
 [dom-talbot-cloudflare-zeit]: https://levelup.gitconnected.com/how-to-set-up-cloudflare-with-zeit-93daa7d45dd 'Dom Talbot: Cloudflare + Zeit'
 [github-vercel-issue]: https://github.com/vercel/docs/issues/489#issuecomment-587132197 'GitHub Vercel'
-[img-cloudflare-ssl]: /media/articles/cloudflare-setup-cdn-paas/cloudflare-ssl.png 'Cloudflare SSL/TLS'
-[img-cloudflare-edge]: /media/articles/cloudflare-setup-cdn-paas/cloudflare-edge.png 'Cloudflare Edge Certificates'
-[img-cloudflare-pagerules]: /media/articles/cloudflare-setup-cdn-paas/cloudflare-pagerules.png 'Cloudflare Page Rules'
-[img-cloudflare-dns]: /media/articles/cloudflare-setup-cdn-paas/cloudflare-dns.png 'Cloudflare DNS Entries'
+[img-cloudflare-ssl]: ../static/articles/cloudflare-setup-cdn-paas/cloudflare-ssl.png 'Cloudflare SSL/TLS'
+[img-cloudflare-edge]: ../static/articles/cloudflare-setup-cdn-paas/cloudflare-edge.png 'Cloudflare Edge Certificates'
+[img-cloudflare-pagerules]: ../static/articles/cloudflare-setup-cdn-paas/cloudflare-pagerules.png 'Cloudflare Page Rules'
+[img-cloudflare-dns]: ../static/articles/cloudflare-setup-cdn-paas/cloudflare-dns.png 'Cloudflare DNS Entries'

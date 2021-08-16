@@ -1,0 +1,47 @@
+{% set form = page.meta.form %}
+
+<form class="md-form" method="{{ form.method }}" action="{{ form.action }}">
+  {% for field_name, field in form.fields.items() %}
+    {% if field.label %}
+      <label for="{{ field_name }}">{{ field.label }}</label>
+    {% endif %}
+
+    {% if field.type == 'hidden' %}
+      <input name="{{ field_name }}" type="hidden">
+    {% elif field.type == 'file' %}
+      <input name="{{ field_name }}" type="file">
+      <br />
+    {% elif field.type == 'textarea' %}
+      <textarea
+        class="md-input"
+        name="{{ field_name }}"
+        placeholder="{{ field.placeholder }}"
+        {% if field.required %}required{% endif %}
+      ></textarea>
+      <br />
+    {% else %}
+      <input
+        class="md-input"
+        name="{{ field_name }}"
+        type="{{ field.type }}"
+        placeholder="{{ field.placeholder }}"
+        autocomplete="{% if field.autocomplete %}on{% else %}off{% endif %}"
+        {% if field.required %}required{% endif %}
+      >
+      <br />
+    {% endif %}
+  {% endfor %}
+
+  {% for button_name, button in form.buttons.items() %}
+    <input
+      class="md-button"
+      type="{{ button.type }}"
+      value="{{ button.value }}"
+    >
+    <br />
+  {% endfor %}
+</form>
+
+{% if form.notice %}
+<p><small>{{ form.notice }}</small></p>
+{% endif %}

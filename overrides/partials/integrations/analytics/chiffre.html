@@ -1,0 +1,26 @@
+{% set chiffre = config.extra.analytics %}
+
+{% if chiffre and chiffre.public_key and chiffre.project_id %}
+  <script id="chiffre:analytics-config" type="application/json">
+    {
+      "publicKey": "{{ chiffre.public_key }}",
+      "pushURL":   "https://push.chiffre.io/event/{{ chiffre.project_id }}"
+    }
+  </script>
+  <script
+    src="https://embed.chiffre.io/analytics.js"
+    crossorigin="anonymous"
+    async=""
+  >
+  </script>
+  <noscript>
+    <img
+      src="https://push.chiffre.io/noscript/{{ chiffre.project_id }}"
+      alt="Chiffre.io anonymous visit counting for clients without JavaScript"
+      crossorigin="anonymous"
+      width="1px"
+      height="1px"
+      style="display:none"
+    />
+  </noscript>
+{% endif %}

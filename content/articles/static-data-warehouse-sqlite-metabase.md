@@ -1,5 +1,5 @@
 ---
-title: Static Data Warehouse using SQLite and Metabase
+title: Data Warehouse with SQLite & Metabase
 summary: >-
   Does a data warehouse need to be costly? Maybe not. A quick note on using
   SQLite combined with Metabase to host and exploit a static SQL database
@@ -12,10 +12,14 @@ published: 2021-05-04
 draft: false
 ---
 
+# Static Data Warehouse using SQLite and Metabase
+
 Does a data warehouse need to be costly? Maybe not. A quick note on using
 [SQLite][sqlite] combined with [Metabase][metabase] to host and exploit a
 static SQL database easily and cheaply. This use-case is especially true
 for [small data][small-data] applications.
+
+## Technical Details
 
 Once an [ETL](etl) pipeline is done building an SQLite database `data.db`,
 let's say using [Git Scraping][git-scraping], one can start a small Docker

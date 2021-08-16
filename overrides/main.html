@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+  {% set title = config.site_name %}
+  {% if page and page.meta and page.meta.title %}
+    {% set title = title ~ " - " ~ page.meta.title %}
+  {% elif page and page.title and not page.is_homepage %}
+    {% set title = title ~ " - " ~ page.title | striptags %}
+  {% endif %}
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="{{ title }}" />
+  <meta property="og:description" content="{{ config.site_description }}" />
+  <meta property="og:url" content="{{ page.canonical_url }}" />
+  <meta property="og:image" content="{{ config.site_url }}static/preview.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1280" />
+  <meta property="og:image:height" content="640" />
+  <meta name="twitter:card" content="summary_large_image" />
+{% endblock %}
+
+<!-- from: https://github.com/squidfunk/mkdocs-material/blob/master/src/base.html -->
+{% block content %}
+  {{ super() }}
+
+  <!-- Render form if present in metadata -->
+  {% if page and page.meta and page.meta.form %}
+    {% include "partials/form.html" %}
+  {% endif %}
+{% endblock %}
