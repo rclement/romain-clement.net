@@ -12,7 +12,7 @@ jobs:
       APP_ENVIRONMENT: preview
       BASE_PROTOCOL: ${{ secrets.BASE_PROTOCOL }}
       BASE_URL: ${{ secrets.BASE_URL_PREVIEW }}
-      MAILER_URL: ${{ secrets.MAILER_URL }}
+      MAILER_URL: ${{ secrets.MAILER_URL_PREVIEW }}
       CHIFFRE_PUBLIC_KEY: ""
       CHIFFRE_PROJECT_ID: ""
       SENTRY_DSN: ""
