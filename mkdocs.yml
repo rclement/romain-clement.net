@@ -21,6 +21,11 @@ nav:
     - certifications/index.md
     - certifications/coursera-machine-learning.md
     - certifications/cci-grenoble-5-jours-entreprendre.md
+  - Open-Source:
+    - open-source/index.md
+    - open-source/datasette-dashboards.md
+    - open-source/mailer.md
+    - open-source/griffonnage.md
   - Talks:
     - talks/index.md
     - talks/python-celery.md

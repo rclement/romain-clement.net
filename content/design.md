@@ -1,8 +1,3 @@
----
-title: Design System
-status: hidden
----
-
 # Design System
 
 ## Typography
