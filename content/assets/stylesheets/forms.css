@@ -64,6 +64,14 @@ textarea.mk-form-input {
   border-width: 2px;
 }
 
+.mk-form-input:disabled {
+  background-color: #f5f5f5;
+  color: #7a7a7a;
+  border-color: #f5f5f5;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
 .mk-form-button {
   display: flex;
   width: 100%;
@@ -81,10 +89,15 @@ textarea.mk-form-input {
   -webkit-appearance: none;
 }
 
-.mk-form-button:focus, .mk-form-button:hover {
+.mk-form-button:focus:enabled, .mk-form-button:hover:enabled {
   background-color: var(--md-accent-fg-color);
   border-color: var(--md-accent-fg-color);
   color: var(--md-accent-bg-color);
+}
+
+.mk-form-button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
 }
 
 .mk-form-notice {
