@@ -77,6 +77,8 @@ textarea.mk-form-input {
   justify-content: center;
   text-align: center;
   cursor: pointer;
+  -moz-appearance: none;
+  -webkit-appearance: none;
 }
 
 .mk-form-button:focus, .mk-form-button:hover {
