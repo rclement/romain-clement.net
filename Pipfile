@@ -7,6 +7,7 @@ name = "pypi"
 mkdocs = "~=1.2.2"
 mkdocs-material = "~=7.2.4"
 mkdocs-minify-plugin = "~=0.4.0"
+mkdocs-rss-plugin = "~=0.17.0"
 mkdocs-section-index = "~=0.3.0"
 mknotebooks = "~=0.7.0"
 

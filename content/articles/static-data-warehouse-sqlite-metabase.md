@@ -1,14 +1,13 @@
 ---
-title: Data Warehouse with SQLite & Metabase
-summary: >-
+description: >-
   Does a data warehouse need to be costly? Maybe not. A quick note on using
   SQLite combined with Metabase to host and exploit a static SQL database
   easily and cheaply. This use-case is especially true for small data
   applications.
-author: romainclement
+authors: [Romain Clement]
+date: 2021-05-04
 tags: [data, warehouse, bi, metabase, sqlite, git]
 language: en
-published: 2021-05-04
 draft: false
 ---
 

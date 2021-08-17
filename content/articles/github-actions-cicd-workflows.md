@@ -1,13 +1,12 @@
 ---
-# title: GitOps CI/CD workflows with GitHub Actions
-summary: >-
+description: >-
   The current state of GitHub Actions is promising but still has some rough edges,
   when it comes to configuring complete GitOps CI/CD workflows.
   But I've managed to find some tricks to get the job done.
-author: romainclement
+authors: [Romain Clement]
+date: 2020-04-18
 tags: [devops, gitops, ci-cd, github, actions, yaml]
 language: en
-published: 2020-04-18
 draft: false
 ---
 

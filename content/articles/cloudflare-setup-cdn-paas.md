@@ -1,14 +1,13 @@
 ---
-# title: Cloudflare setup for CDN and PaaS platforms
-summary: >-
+description: >-
   When hosting applications using modern CDNs and PaaS platforms such as Vercel
   and Heroku, configuring Cloudflare as the protecting proxy in front of those
   services can be challenging. After some research, I managed to find a permanent
   solution.
-author: romainclement
+authors: [Romain Clement]
+date: 2020-06-08
 tags: [cloud, web, cdn, paas, cloudflare, vercel]
 language: en
-published: 2020-06-08
 draft: false
 ---
 
