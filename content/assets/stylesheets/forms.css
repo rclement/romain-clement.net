@@ -47,6 +47,7 @@
 }
 
 textarea.mk-form-input {
+  min-width: 100%;
   max-height: 40em;
   min-height: 8em;
   font-family: var(--md-text-font-family),-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif;
@@ -54,6 +55,13 @@ textarea.mk-form-input {
 
 .mk-form-input-file {
   font-size: 0.8rem;
+}
+
+.mk-form-input[type="text"]:valid,
+.mk-form-input[type="email"]:valid,
+.mk-form-input[type="password"]:valid {
+  border-color: #48c78e;
+  border-width: 2px;
 }
 
 .mk-form-button {
