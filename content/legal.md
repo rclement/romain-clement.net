@@ -1,5 +1,7 @@
 # Legal Mentions
 
+## Owner
+
 This website and all of its content are authored and owned by:
 
 [**Monsieur Romain Clement**][infogreffe]<br />
@@ -22,7 +24,7 @@ Vercel Inc.<br />
 Walnut, CA 91789<br />
 USA<br />
 
-Additional hosting protection is delivered using [Cloudflare][cloudflare]:
+Additional hosting protection is delivered by [Cloudflare][cloudflare]:
 
 Cloudflare, Inc.<br />
 101 Townsend St,<br />
