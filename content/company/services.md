@@ -1,6 +1,6 @@
 # Services
 
-Software is everywhere. Data is everywhere. Let's build exciting data applications!
+Software is everywhere. And so is Data. Let's build exciting data applications!
 
 ## Fare
 
@@ -12,7 +12,7 @@ Starting at 500€ (VAT excl.) per day.
 
 [![Python Logo](../static/company/python.svg "Python"){ style="width: 64px; margin: 1rem;" }](https://www.python.org)
 [![Flask Logo](../static/company/flask.svg "Flask"){ style="width: 128px; margin: 1rem;" }](https://palletsprojects.com/p/flask/)
-[![PostgreSQL Logo](../static/company/postgresql.svg "PostgreSQL"){ style="width: 64px; margin: 1rem;" }](https://postgresql.org)
+[![PostgreSQL Logo](../static/company/postgresql.svg "PostgreSQL"){ style="width: 64px; margin: 1rem;" }](https://www.postgresql.org)
 [![Docker Logo](../static/company/docker.svg "Docker"){ style="width: 256px; margin: 1rem;" }](https://www.docker.com)
 
 Software and data goes hand in hand, but insuring quality for automated data
@@ -68,3 +68,9 @@ Whether it is new-comers or experienced practitioners, there is always something
 new to be learned. I like to share my experience and knowledge with others by
 using active learning teaching methologies: learners are front and center and
 are building their skillset from top to bottom, applying the concepts right away.
+
+Currently offered training topics:
+
+- [x] Software Engineering
+- [x] Data Engineering / Science / Analysis
+- [x] Artificial Intelligence and Machine Learning
