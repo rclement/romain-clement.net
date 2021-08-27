@@ -10,8 +10,7 @@ jobs:
 
     env:
       APP_ENVIRONMENT: preview
-      BASE_PROTOCOL: ${{ secrets.BASE_PROTOCOL }}
-      BASE_URL: ${{ secrets.BASE_URL_PREVIEW }}
+      SITE_URL: ${{ secrets.SITE_URL_PREVIEW }}
       MAILER_URL: ${{ secrets.MAILER_URL_PREVIEW }}
       CHIFFRE_PUBLIC_KEY: ""
       CHIFFRE_PROJECT_ID: ""
@@ -40,6 +39,7 @@ jobs:
           pipenv run mkdocs build
           cp -R content/.well-known dist/.
           cp content/.vercelignore dist/.
+          echo $SITE_URL > dist/CNAME
       - name: Upload build artifacts
         uses: actions/upload-artifact@v2
         with:
@@ -53,8 +53,7 @@ jobs:
 
     env:
       APP_ENVIRONMENT: production
-      BASE_PROTOCOL: ${{ secrets.BASE_PROTOCOL }}
-      BASE_URL: ${{ secrets.BASE_URL }}
+      SITE_URL: ${{ secrets.SITE_URL }}
       MAILER_URL: ${{ secrets.MAILER_URL }}
       CHIFFRE_PUBLIC_KEY: ${{ secrets.CHIFFRE_PUBLIC_KEY }}
       CHIFFRE_PROJECT_ID: ${{ secrets.CHIFFRE_PROJECT_ID }}
@@ -83,6 +82,7 @@ jobs:
           pipenv run mkdocs build
           cp -R content/.well-known dist/.
           cp content/.vercelignore dist/.
+          echo $SITE_URL > dist/CNAME
       - name: Upload build artifacts
         uses: actions/upload-artifact@v2
         with:

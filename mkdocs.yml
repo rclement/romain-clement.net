@@ -2,11 +2,11 @@ site_name: Romain Clement
 site_description: Freelance Software Engineer & Trainer
 site_author: Romain Clement
 site_keywords: romain clement, freelance, software, engineer, developer, grenoble, web, data, data engineering, data science, cloud-native, devops, privacy, e2ee, artificial intelligence, machine learning, python, sql, scikit-learn, tensorflow, keras, pytorch, fastai
-site_url: https://romain-clement.net
+site_url: !ENV SITE_URL
 
 copyright: |
   <a href="/legal/" title="Legal Mentions">Legal Mentions</a>
-  <br />
+  <br>
   Copyright &copy; 2018 - 2021 Romain Clement
 
 repo_url: https://github.com/rclement/romain-clement.net
@@ -16,39 +16,41 @@ site_dir: dist
 
 nav:
   - index.md
-  - freelancing.md
-  - Certifications:
-    - certifications/index.md
-    - certifications/coursera-machine-learning.md
-    - certifications/cci-grenoble-5-jours-entreprendre.md
-  - Open-Source:
-    - open-source/index.md
-    - open-source/datasette-dashboards.md
-    - open-source/mailer.md
-    - open-source/griffonnage.md
+  - Company:
+      - company/index.md
+      - company/services.md
+      - company/clients.md
+      - company/certifications.md
+      - company/experience.md
+      - company/education.md
+  - Projects:
+      - projects/index.md
+      - projects/datasette-dashboards.md
+      - projects/mailer.md
+      - projects/griffonnage.md
   - Talks:
-    - talks/index.md
-    - talks/python-celery.md
-    - talks/modern-python-development.md
-    - talks/swarm-factor.md
-    - Les RDV de L'IAccessible:
-      - talks/rdv-iaccessible/index.md
-      - talks/rdv-iaccessible/low-ia-outils.md
-      - talks/rdv-iaccessible/low-ia-puissance-impact.md
-      - talks/rdv-iaccessible/small-data.md
-      - talks/rdv-iaccessible/data-for-all.md
+      - talks/index.md
+      - talks/python-celery.md
+      - talks/modern-python-development.md
+      - talks/swarm-factor.md
+      - Les RDV de L'IAccessible:
+          - talks/rdv-iaccessible/index.md
+          - talks/rdv-iaccessible/low-ia-outils.md
+          - talks/rdv-iaccessible/low-ia-puissance-impact.md
+          - talks/rdv-iaccessible/small-data.md
+          - talks/rdv-iaccessible/data-for-all.md
   - Music:
-    - music/index.md
-    - music/hambush.md
+      - music/index.md
+      - music/hambush.md
   - Articles:
-    - articles/index.md
-    - articles/python-packages-development-pipenv.md
-    - articles/static-data-warehouse-sqlite-metabase.md
-    - articles/cloudflare-setup-cdn-paas.md
-    - articles/sentry-url-fragments.md
-    - articles/github-actions-cicd-workflows.md
+      - articles/index.md
+      - articles/python-packages-development-pipenv.md
+      - articles/static-data-warehouse-sqlite-metabase.md
+      - articles/cloudflare-setup-cdn-paas.md
+      - articles/sentry-url-fragments.md
+      - articles/github-actions-cicd-workflows.md
   - Contact:
-    - contact/index.md
+      - contact/index.md
 
 extra:
   version: 1.0.0
@@ -135,7 +137,7 @@ plugins:
       minify_html: true
       minify_js: true
       htmlmin_opts:
-          remove_comments: true
+        remove_comments: true
       js_files:
         - assets/javascripts/mathjax.js
   - rss:

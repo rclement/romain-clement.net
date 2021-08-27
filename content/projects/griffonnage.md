@@ -10,6 +10,12 @@ Scribble careless drawings with friends, privately.
 
 [:fontawesome-solid-globe: Website][website]
 
+## Pitch
+
+Online collaborative drawings can benefit from state-of-the-art end-to-end encryption
+to protect the privacy of users: the only shame you'll get from drawing the most
+obscene stuff ever will be between you and your friends only.
+
 ## Technology
 
 - [x] Typescript

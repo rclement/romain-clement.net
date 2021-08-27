@@ -2,7 +2,7 @@
 
 Talk given on October 10, 2019 at the [Python Meetup Grenoble][meetup].
 
-[:fontawesome-brands-meetup: Event on Meetup][event] <br />
+[:fontawesome-brands-meetup: Event on Meetup][event] <br>
 [:fontawesome-brands-github: Demo on GitHub][repository]
 
 ## Summary

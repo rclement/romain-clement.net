@@ -10,6 +10,15 @@ Datasette plugin providing data dashboards from metadata.
 
 [:fontawesome-solid-globe: Live Demo][demo]
 
+## Pitch
+
+I like Datasette but there is no built-in dashboard feature.
+
+I like Metabase but it is heavy to deploy and users/dashboards/charts cannot be
+defined from a static configuration.
+
+Let's bringing beautiful Business Intelligence dashboards to Datasette!
+
 ## Technology
 
 - [x] Python

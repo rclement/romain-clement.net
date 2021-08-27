@@ -5,7 +5,7 @@
 Talk given on March 26, 2019 for Docker 6^th^ birthday, organized by the
 [Docker Meetup Grenoble][meetup].
 
-[:fontawesome-brands-meetup: Event on Meetup][event] <br />
+[:fontawesome-brands-meetup: Event on Meetup][event] <br>
 [:fontawesome-brands-github: Demo on GitHub][repository]
 
 ## Summary

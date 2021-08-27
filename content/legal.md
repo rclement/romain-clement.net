@@ -4,32 +4,32 @@
 
 This website and all of its content are authored and owned by:
 
-[**Monsieur Romain Clement**][infogreffe]<br />
+[**Monsieur Romain Clement**][infogreffe]<br>
 Micro-entreprise
 
-80 cours Liberation - Gen de Gaulle<br />
-38100 Grenoble<br />
-France<br />
+80 cours Liberation - Gen de Gaulle<br>
+38100 Grenoble<br>
+France<br>
 
-SIRET: 841 265 655 00016<br />
-NAF: 6201Z (Computer programming activities)<br />
-VAT: FR52841265655<br />
+SIRET: 841 265 655 00016<br>
+NAF: 6201Z (Computer programming activities)<br>
+VAT: FR52841265655<br>
 
 ## Hosting
 
 This website is hosted by [Vercel][vercel]:
 
-Vercel Inc.<br />
-340 S Lemon Ave #4133<br />
-Walnut, CA 91789<br />
-USA<br />
+Vercel Inc.<br>
+340 S Lemon Ave #4133<br>
+Walnut, CA 91789<br>
+USA<br>
 
 Additional hosting protection is delivered by [Cloudflare][cloudflare]:
 
-Cloudflare, Inc.<br />
-101 Townsend St,<br />
-San Francisco, CA 94107<br />
-USA<br />
+Cloudflare, Inc.<br>
+101 Townsend St,<br>
+San Francisco, CA 94107<br>
+USA<br>
 
 ## Privacy
 

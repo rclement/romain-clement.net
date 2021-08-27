@@ -15,6 +15,16 @@ Dead-simple mailer micro-service for static websites.
     The [contact form](../../contact) of this website uses Mailer to send e-mails
     behind the scenes!
 
+## Pitch
+
+A free and open-source software alternative to contact form services such as FormSpree,
+to integrate a contact form seamlessly within your next static website!
+
+When building static websites and JAMStack web applications, the need for a contact
+form arises pretty often but requires some server-side processing. Mailer provides
+a dead-simple micro-service (usable as a serverless function) for this purpose,
+enabling one to receive e-mails from a simple form using a single AJAX request.
+
 ## Technology
 
 - [x] Python
