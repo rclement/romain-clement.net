@@ -23,7 +23,6 @@ Software engineering · Computer graphics · Digital signal processing
 
 ---
 
-
 ## IUT2 Grenoble
 
 :fontawesome-solid-graduation-cap: Computer Science <br>
