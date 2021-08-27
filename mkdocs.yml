@@ -1,7 +1,7 @@
 site_name: Romain Clement
 site_description: Freelance Software Engineer & Trainer
 site_author: Romain Clement
-site_keywords: romain clement, freelance, software, engineer, developer, grenoble, web, data, data engineering, data science, cloud-native, devops, privacy, e2ee, artificial intelligence, machine learning, python, sql, scikit-learn, tensorflow, keras, pytorch, fastai
+site_keywords: romain clement, freelance, software, engineer, developer, grenoble, web, data, data engineering, data science, cloud-native, devops, privacy, e2ee, artificial intelligence, machine learning, python, pandas, jupyter, sql, scikit-learn, tensorflow, keras, pytorch, fastai
 site_url: !ENV SITE_URL
 
 copyright: |
