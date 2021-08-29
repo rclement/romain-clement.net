@@ -43,7 +43,8 @@ Technologies used on a regular basis:
 Artificial intelligence and data science has been all the rage for a few years now.
 However, lots of companies are still struggling to put their machine learning
 models in production. I can help getting started to automate learning pipelines
-and integrating models into applications.
+and integrating models into applications. When designing algorithms, I usually
+advocate for simpler models focusing on understanding and explainability of predictions.
 
 I can help your data science teams to implement best practices into their workflow
 to deliver reproducible data analysis and reporting.
