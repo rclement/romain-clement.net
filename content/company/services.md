@@ -6,7 +6,7 @@ Software is everywhere. And so is Data. Let's build exciting data applications!
 
 Starting at 500€ (VAT excl.) per day.
 
-[:fontawesome-solid-bullhorn: Ask for a quote](/contact){ .md-button .md-button--primary }
+[:fontawesome-solid-bullhorn: Ask for a quote](/contact/){ .md-button .md-button--primary }
 
 ## Software & Data Engineering
 
