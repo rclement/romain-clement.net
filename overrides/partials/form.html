@@ -9,16 +9,28 @@
   enctype="multipart/form-data"
 >
   {% for field_name, field in form.fields.items() %}
-    {% if field.label %}
-      <label class="mk-form-label" for="{{ field_name }}">{{ field.label }}</label>
-    {% endif %}
-
     <div class="mk-form-input-wrapper">
       {% if field.type == 'hidden' %}
         <input name="{{ field_name }}" type="hidden">
       {% elif field.type == 'file' %}
+        {% if field.label %}
+          <label class="mk-form-label" for="{{ field_name }}">{{ field.label }}</label>
+        {% endif %}
         <input class="mk-form-input-file" name="{{ field_name }}" type="file">
+      {% elif field.type == 'checkbox' %}
+        <input
+          class="mk-form-input-checkbox"
+          name="{{ field_name }}"
+          type="checkbox"
+          {% if field.required %}required{% endif %}
+        >
+        {% if field.label %}
+          <label class="mk-form-label" for="{{ field_name }}">{{ field.label }}</label>
+        {% endif %}
       {% elif field.type == 'textarea' %}
+        {% if field.label %}
+          <label class="mk-form-label" for="{{ field_name }}">{{ field.label }}</label>
+        {% endif %}
         <textarea
           class="mk-form-input"
           name="{{ field_name }}"
@@ -28,6 +40,9 @@
           {% if field.required %}required{% endif %}
         ></textarea>
       {% else %}
+        {% if field.label %}
+          <label class="mk-form-label" for="{{ field_name }}">{{ field.label }}</label>
+        {% endif %}
         <input
           class="mk-form-input"
           name="{{ field_name }}"

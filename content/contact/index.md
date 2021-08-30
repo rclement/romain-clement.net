@@ -43,6 +43,11 @@ form:
     honeypot:
       type: hidden
 
+    consent:
+      label: I consent to having this website store my submitted information in order to respond to my inquiry.
+      type: checkbox
+      required: true
+
   buttons:
     submit:
       type: submit

@@ -11,18 +11,15 @@
   }
 }
 
+.mk-form-input-wrapper {
+  margin-bottom: .75rem;
+}
+
 .mk-form-label {
   display: block;
   font-size: 0.8rem;
-  font-weight: 700;
-}
-
-.mk-form-label {
+  font-weight: bold;
   margin-bottom: .5em;
-}
-
-.mk-form-input-wrapper {
-  margin-bottom: .75rem;
 }
 
 .mk-form-input {
@@ -57,6 +54,13 @@ textarea.mk-form-input {
   font-size: 0.8rem;
 }
 
+.mk-form-input-checkbox + .mk-form-label {
+  display: inline;
+  font-size: 0.7rem;
+  font-weight: normal;
+  margin-bottom: .5em;
+}
+
 .mk-form-input[type="text"]:valid,
 .mk-form-input[type="email"]:valid,
 .mk-form-input[type="password"]:valid {
@@ -81,7 +85,7 @@ textarea.mk-form-input {
   color: var(--md-primary-bg-color, #363636);
   border-radius: 0.1rem;
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: bold;
   justify-content: center;
   text-align: center;
   cursor: pointer;
