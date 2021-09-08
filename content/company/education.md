@@ -4,7 +4,7 @@
 
 :fontawesome-solid-graduation-cap: Computer Science <br>
 :fontawesome-solid-history: September 2011 - April 2012 <br>
-:fontawesome-solid-building: Calgary, France <br>
+:fontawesome-solid-building: Calgary, AB, Canada <br>
 
 Refactoring · Digital signal processing · Computer animation · Computer graphics
 · Computer Vision · Mechatronic art · Electroacoustic Music
