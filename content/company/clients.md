@@ -6,7 +6,7 @@ Here are some of the companies I have been working with in the past.
 
     I am currently under contract with several companies.
     However, I am always open to new opportunities and challenges
-    so feel free to contact me!
+    so feel free to [contact me](/contact/)!
 
 ## Superprod
 
