@@ -1,3 +1,7 @@
+---
+robots: noindex, nofollow
+---
+
 # Experience
 
 ## Freelance Engineer & Trainer

@@ -21,8 +21,8 @@ nav:
       - company/services.md
       - company/clients.md
       - company/certifications.md
-      - company/experience.md
-      - company/education.md
+      # - company/experience.md
+      # - company/education.md
   - Projects:
       - projects/index.md
       - projects/datasette-dashboards.md

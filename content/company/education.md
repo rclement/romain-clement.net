@@ -1,3 +1,7 @@
+---
+robots: noindex, nofollow
+---
+
 # Education
 
 ## The University of Calgary
