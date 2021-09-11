@@ -44,7 +44,9 @@ text~with\ subscript~
 >
 > text
 
-Emojis: 💻 😼
+Emojis: 💻 😼 :cat:
+
+Icons: :fontawesome-solid-code: :fontawesome-brands-python:
 
 [This is a link](https://romain-clement.net)
 
