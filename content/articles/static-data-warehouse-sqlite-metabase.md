@@ -13,6 +13,12 @@ draft: false
 
 # Static Data Warehouse using SQLite and Metabase
 
+:fontawesome-solid-calendar: {{{ page.meta.date|localized_date }}}
+:fontawesome-solid-clock: {{{ page.markdown|readtime }}} minutes read
+{ .article-meta }
+
+---
+
 Does a data warehouse need to be costly? Maybe not. A quick note on using
 [SQLite][sqlite] combined with [Metabase][metabase] to host and exploit a
 static SQL database easily and cheaply. This use-case is especially true

@@ -13,6 +13,12 @@ draft: false
 
 # Scrubbing URL fragments from Sentry crash reports
 
+:fontawesome-solid-calendar: {{{ page.meta.date|localized_date }}}
+:fontawesome-solid-clock: {{{ page.markdown|readtime }}} minutes read
+{ .article-meta }
+
+---
+
 When activating [Sentry][sentry] crash reporting in JavaScript client-side code,
 the default mechanism captures and sends the current URL, including any URL
 fragments. This can pose a privacy issue when dealing with client-side end-to-end

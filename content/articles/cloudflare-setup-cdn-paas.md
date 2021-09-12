@@ -13,6 +13,12 @@ draft: false
 
 # Cloudflare setup for CDN and PaaS platforms
 
+:fontawesome-solid-calendar: {{{ page.meta.date|localized_date }}}
+:fontawesome-solid-clock: {{{ page.markdown|readtime }}} minutes read
+{ .article-meta }
+
+---
+
 When hosting applications using modern CDN and PaaS platforms such as [Vercel][vercel]
 and [Heroku][heroku], configuring [Cloudflare][cloudflare] as the protecting proxy
 in front of those services can be challenging. After some research, I managed to

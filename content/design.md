@@ -171,3 +171,15 @@ def bubble_sort(items):
             if items[j] > items[j + 1]:
                 items[j], items[j + 1] = items[j + 1], items[j]
 ```
+
+## Math
+
+### Inline
+
+This equation $\sum_{i=0}^{n} x_i$ does something useful.
+
+### Block
+
+$$
+\operatorname{ker} f=\{g\in G:f(g)=e_{H}\}{\mbox{.}}
+$$

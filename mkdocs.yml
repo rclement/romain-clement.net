@@ -127,6 +127,12 @@ plugins:
       lang:
         - en
   - section-index
+  - macros:
+      module_name: macros
+      j2_block_start_string: '{{%'
+      j2_block_end_string: '%}}'
+      j2_variable_start_string: '{{{'
+      j2_variable_end_string: '}}}'
   - mknotebooks:
       execute: false
       enable_default_jupyter_cell_styling: false
@@ -170,6 +176,7 @@ markdown_extensions:
       permalink: "#"
 
 extra_css:
+  - assets/stylesheets/extra.css
   - assets/stylesheets/forms.css
 
 extra_javascript:

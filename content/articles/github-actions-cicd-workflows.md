@@ -12,6 +12,12 @@ draft: false
 
 # GitOps CI/CD workflows with GitHub Actions
 
+:fontawesome-solid-calendar: {{{ page.meta.date|localized_date }}}
+:fontawesome-solid-clock: {{{ page.markdown|readtime }}} minutes read
+{ .article-meta }
+
+---
+
 The current state of [GitHub Actions][github-actions] is promising but still
 has some rough edges when it comes to configuring complete [GitOps][gitops]
 CI/CD workflows. Compared to other systems such as [GitLab-CI][gitlab-ci],
