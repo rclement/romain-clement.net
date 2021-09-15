@@ -1,4 +1,6 @@
 ---
+template: article.html
+title: Static Data Warehouse using SQLite and Metabase
 description: >-
   Does a data warehouse need to be costly? Maybe not. A quick note on using
   SQLite combined with Metabase to host and exploit a static SQL database
@@ -9,14 +11,6 @@ date: 2021-05-04
 tags: [data, warehouse, bi, metabase, sqlite, git]
 language: en
 draft: false
----
-
-# Static Data Warehouse using SQLite and Metabase
-
-:fontawesome-solid-calendar: {{{ page.meta.date|localized_date }}}
-:fontawesome-solid-clock: {{{ page.markdown|readtime }}} minutes read
-{ .article-meta }
-
 ---
 
 Does a data warehouse need to be costly? Maybe not. A quick note on using

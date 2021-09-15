@@ -1,7 +1,8 @@
 import readtime
 
+from typing import Any
 from babel.dates import format_date
-from mkdocs_macros.plugin import MacrosPlugin
+from jinja2 import Environment
 
 
 def readtime_minutes(content: str, wpm: int = 200) -> int:
@@ -15,6 +16,6 @@ def localized_date(date_str: str, format: str = "medium", locale: str = "en") ->
     return locale_date_str
 
 
-def define_env(env: MacrosPlugin) -> None:
+def on_env(env: Environment, **kwargs: Any) -> None:
     env.filters["readtime"] = readtime_minutes
     env.filters["localized_date"] = localized_date

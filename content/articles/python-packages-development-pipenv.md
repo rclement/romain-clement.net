@@ -1,4 +1,6 @@
 ---
+template: article.html
+title: Python packages development using Pipenv
 description: >-
   I have been using Pipenv for Python applications since 2018 quite successfully.
   However, when developing Python packages, things can get trickier. This is a
@@ -8,14 +10,6 @@ date: 2021-05-05
 tags: [programming, python]
 language: en
 draft: false
----
-
-# Python packages development using Pipenv
-
-:fontawesome-solid-calendar: {{{ page.meta.date|localized_date }}}
-:fontawesome-solid-clock: {{{ page.markdown|readtime }}} minutes read
-{ .article-meta }
-
 ---
 
 I have been using [Pipenv][pipenv] for Python applications since 2018 quite

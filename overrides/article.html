@@ -26,10 +26,43 @@
 
 <!-- from: https://github.com/squidfunk/mkdocs-material/blob/master/src/base.html -->
 {% block content %}
-  {{ super() }}
-
-  <!-- Render form if present in metadata -->
-  {% if page and page.meta and page.meta.form %}
-    {% include "partials/form.html" %}
+  <!-- Edit button -->
+  {% if page.edit_url %}
+    <a
+      href="{{ page.edit_url }}"
+      title="{{ lang.t('edit.link.title') }}"
+      class="md-content__button md-icon"
+    >
+      {% include ".icons/material/pencil.svg" %}
+    </a>
   {% endif %}
+
+  <!-- Article title -->
+  <h1>{{ page.title | d(config.site_name, true)}}</h1>
+
+  <!-- Article metadata -->
+  <div class="article-meta">
+    <span class="twemoji">{% include ".icons/fontawesome/solid/calendar.svg" %}</span>
+    {{ page.meta.date|localized_date }}
+    ·
+    <span class="twemoji">{% include ".icons/fontawesome/solid/clock.svg" %}</span>
+    {{ page.markdown|readtime }} minutes read
+  </div>
+
+  <hr>
+
+  <!-- Markdown content -->
+  {{ page.content }}
+{% endblock %}
+
+{% block disqus %}
+  <!-- Utterances comment system (https://utteranc.es) -->
+  <script src="https://utteranc.es/client.js"
+    repo="rclement/romain-clement.net"
+    issue-term="title"
+    label="comment"
+    theme="preferred-color-scheme"
+    crossorigin="anonymous"
+    async>
+  </script>
 {% endblock %}

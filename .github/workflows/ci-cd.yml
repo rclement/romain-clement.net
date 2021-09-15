@@ -28,9 +28,9 @@ jobs:
       - name: Run QA
         run: |
           pipenv run safety check
-          pipenv run black --check macros.py
-          pipenv run flake8 macros.py
-          pipenv run mypy --strict macros.py
+          pipenv run black --check utils
+          pipenv run flake8 utils
+          pipenv run mypy --strict utils
 
   build-preview:
     name: Build Preview

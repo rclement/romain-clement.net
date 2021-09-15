@@ -1,4 +1,6 @@
 ---
+template: article.html
+title: GitOps CI/CD workflows with GitHub Actions
 description: >-
   The current state of GitHub Actions is promising but still has some rough edges,
   when it comes to configuring complete GitOps CI/CD workflows.
@@ -10,13 +12,6 @@ language: en
 draft: false
 ---
 
-# GitOps CI/CD workflows with GitHub Actions
-
-:fontawesome-solid-calendar: {{{ page.meta.date|localized_date }}}
-:fontawesome-solid-clock: {{{ page.markdown|readtime }}} minutes read
-{ .article-meta }
-
----
 
 The current state of [GitHub Actions][github-actions] is promising but still
 has some rough edges when it comes to configuring complete [GitOps][gitops]
