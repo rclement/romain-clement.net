@@ -40,6 +40,15 @@
   <!-- Article title -->
   <h1>{{ page.title | d(config.site_name, true)}}</h1>
 
+  <!-- Article tags  -->
+  {% if page and page.meta and page.meta.tags %}
+    <div class="article-tags">
+      {% for tag in page.meta.tags %}
+        <span class="article-tag"><span>{{ tag }}</span></span>
+      {% endfor %}
+    </div>
+  {% endif %}
+
   <!-- Article metadata -->
   <div class="article-meta">
     <span class="twemoji">{% include ".icons/fontawesome/solid/calendar.svg" %}</span>
