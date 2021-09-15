@@ -62,7 +62,7 @@ extra:
     contact:
       action: !ENV MAILER_URL
       method: POST
-      mode: json
+      # mode: json
   social:
     - icon: fontawesome/solid/rss
       link: /feed_rss_created.xml
