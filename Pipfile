@@ -15,6 +15,10 @@ mknotebooks = "~=0.7.1"
 readtime = "~=1.1.1"
 
 [dev-packages]
+black = "==21.9b0"
+flake8 = "~=3.9.2"
+mypy = "~=0.910"
+safety = "~=1.10.3"
 
 [requires]
 python_version = "3.9"
