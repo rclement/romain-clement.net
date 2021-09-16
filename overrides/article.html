@@ -1,4 +1,10 @@
-{% extends "main.html" %}
+{% from 'macros/_meta_tags.html' import meta_tags %}
+
+{% extends "base.html" %}
+
+{% block extrahead %}
+  {{ meta_tags(config, page, True) }}
+{% endblock %}
 
 <!-- from: https://github.com/squidfunk/mkdocs-material/blob/master/src/base.html -->
 {% block content %}
