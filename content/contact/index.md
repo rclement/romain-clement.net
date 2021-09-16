@@ -53,6 +53,10 @@ form:
       type: submit
       value: Send
 
+  redirect:
+    success: /contact/success/
+    error: /contact/error/
+
   notice: |-
     Powered by <a href="https://mailer.romain-clement.net" title="Mailer">Mailer</a>
 ---

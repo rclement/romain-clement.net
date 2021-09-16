@@ -60,9 +60,11 @@ extra:
     project_id: !ENV CHIFFRE_PROJECT_ID
   forms:
     contact:
-      action: !ENV MAILER_URL
+      base_url: !ENV MAILER_URL
       method: POST
-      # mode: json
+      action_path: /api/mail/form
+      action_path_js: /api/mail
+      enable_js: true
   social:
     - icon: fontawesome/solid/rss
       link: /feed_rss_created.xml

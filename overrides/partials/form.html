@@ -1,11 +1,11 @@
 {% set form = page.meta.form %}
-{% set config = config.extra.forms[form.name] %}
+{% set form_config = config.extra.forms[form.name] %}
 
 <form
   id="mk-form-id"
   class="mk-form"
-  method="{{ config.method }}"
-  action="{{ config.action }}"
+  method="{{ form_config.method }}"
+  action="{{ form_config.base_url + form_config.action_path }}"
 >
   {% for field_name, field in form.fields.items() %}
     <div class="mk-form-input-wrapper">
@@ -70,19 +70,23 @@
 <p class="mk-form-notice"><small>{{ form.notice }}</small></p>
 {% endif %}
 
-{% if config.mode == 'json' %}
+{% if form_config.enable_js %}
 <script>
 window.addEventListener("load", function () {
   function handleError() {
-    window.location.href = "/contact/error/"
+    window.location.href = "{{ form.redirect.error }}"
   }
 
   function handleSuccess() {
-    window.location.href = "/contact/success/"
+    window.location.href = "{{ form.redirect.success }}"
   }
 
   async function sendMessage(sourceForm) {
+    {% if form_config.action_path_js %}
+    const url = '{{ form_config.base_url + form_config.action_path_js }}'
+    {% else %}
     const url = sourceForm.action
+    {% endif %}
     const method = sourceForm.method
     const formData = new FormData(sourceForm)
     const data = JSON.stringify(Object.fromEntries(formData.entries()))
