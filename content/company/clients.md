@@ -8,7 +8,7 @@ Here are some of the companies I have been working with in the past.
     However, I am always open to new opportunities and challenges
     so feel free to [contact me](/contact/)!
 
-[![Superprod Logo](../static/images/superprod.png){ align=left style="width: 20%" }](https://www.superprod.net "Superprod Website")
+[![Superprod Logo](../static/images/superprod.png){ align=left style="width: 128px;" }](https://www.superprod.net "Superprod Website")
 
 **Software & Data Engineering**
 
@@ -16,7 +16,7 @@ Data Management · Project Management · Tech Training · Python · Django · Do
 
 ---
 
-[![440Hz Logo](../static/images/440hz.png){ align=left style="width: 20%" }](https://weare440.com "440Hz Website")
+[![440Hz Logo](../static/images/440hz.png){ align=left style="width: 128px;" }](https://weare440.com "440Hz Website")
 
 **Software & Data Engineering**
 
@@ -24,7 +24,7 @@ Data Engineering · Python · ETL · Web-Scraping · Docker · Cloud · DevOps
 
 ---
 
-[![Simplon.co Logo](../static/images/simplon.png){ align=left style="width: 20%" }](https://simplon.co "Simplon.co Website")
+[![Simplon.co Logo](../static/images/simplon.png){ align=left style="width: 128px;" }](https://simplon.co "Simplon.co Website")
 
 **Data / AI Training**
 
@@ -32,7 +32,7 @@ Data Analysis / Engineering / Science · Agile Project Management · Python · S
 
 ---
 
-[![Wattamate Logo](../static/images/wattamate.png){ align=left style="width: 20%" }](https://wattamate.com "Wattamate Website")
+[![Wattamate Logo](../static/images/wattamate.png){ align=left style="width: 128px;" }](https://wattamate.com "Wattamate Website")
 
 **Backend Software Development**
 
@@ -40,7 +40,7 @@ Microservices · DevOps · CI/CD · Cloud · Security · Python · SQL / NoSQL �
 
 ---
 
-[![Pulsar Logo](../static/images/pulsar.png){ align=left style="width: 20%" }](https://pulsar.audio "Pulsar Website")
+[![Pulsar Logo](../static/images/pulsar.png){ align=left style="width: 128px;" }](https://pulsar.audio "Pulsar Website")
 
 **Audio Software Development**
 
