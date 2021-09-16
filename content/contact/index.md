@@ -69,4 +69,6 @@ Looking for a freelance engineer and/or trainer for your next project? Let's tal
 
     This message will be encrypted using my [PGP][pgp-key] public key. If you'd like me to respond with end-to-end encryption, do not forget to attach your PGP public key!
 
+{{ form }}
+
 [pgp-key]: /.well-known/openpgpkey/hu/dj3498u4hyyarh35rkjfnghbjxug6b19

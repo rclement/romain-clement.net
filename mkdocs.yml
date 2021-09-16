@@ -131,6 +131,7 @@ plugins:
   - mkdocs-simple-hooks:
       hooks:
         on_env: 'utils.hooks:on_env'
+        on_page_markdown: 'utils.hooks:on_page_markdown'
   - section-index
   - mknotebooks:
       execute: false

@@ -49,12 +49,3 @@
   <!-- Feeds -->
   <link rel="alternate" type="application/rss+xml" title="RSS feed of articles" href="{{ config.site_url }}feed_rss_created.xml">
 {% endblock %}
-
-{% block content %}
-  {{ super() }}
-
-  <!-- Render form if present in metadata -->
-  {% if page and page.meta and page.meta.form %}
-    {% include "partials/form.html" %}
-  {% endif %}
-{% endblock %}

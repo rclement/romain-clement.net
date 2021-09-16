@@ -1,13 +1,10 @@
-{% set form = page.meta.form %}
-{% set form_config = config.extra.forms[form.name] %}
-
 <form
   id="mk-form-id"
   class="mk-form"
   method="{{ form_config.method }}"
   action="{{ form_config.base_url + form_config.action_path }}"
 >
-  {% for field_name, field in form.fields.items() %}
+  {% for field_name, field in page_form.fields.items() %}
     <div class="mk-form-input-wrapper">
       {% if field.type == 'hidden' %}
         <input name="{{ field_name }}" type="hidden">
@@ -56,7 +53,7 @@
     </div>
   {% endfor %}
 
-  {% for button_name, button in form.buttons.items() %}
+  {% for button_name, button in page_form.buttons.items() %}
     <input
       class="mk-form-button"
       type="{{ button.type }}"
@@ -66,32 +63,32 @@
   {% endfor %}
 </form>
 
-{% if form.notice %}
-<p class="mk-form-notice"><small>{{ form.notice }}</small></p>
+{% if page_form.notice %}
+<p class="mk-form-notice"><small>{{ page_form.notice }}</small></p>
 {% endif %}
 
 {% if form_config.enable_js %}
 <script>
 window.addEventListener("load", function () {
   function handleError() {
-    window.location.href = "{{ form.redirect.error }}"
+    window.location.href = "{{ page_form.redirect.error }}"
   }
 
   function handleSuccess() {
-    window.location.href = "{{ form.redirect.success }}"
+    window.location.href = "{{ page_form.redirect.success }}"
   }
 
   async function sendMessage(sourceForm) {
     {% if form_config.action_path_js %}
     const url = '{{ form_config.base_url + form_config.action_path_js }}'
     {% else %}
-    const url = sourceForm.action
+    const url = sourcepage_form.action
     {% endif %}
-    const method = sourceForm.method
+    const method = sourcepage_form.method
     const formData = new FormData(sourceForm)
     const data = JSON.stringify(Object.fromEntries(formData.entries()))
 
-    Array.from(sourceForm.elements).forEach(formElement => formElement.disabled = true)
+    Array.from(sourcepage_form.elements).forEach(formElement => formElement.disabled = true)
 
     try {
       const response = await fetch(url, {
