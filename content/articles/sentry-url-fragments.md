@@ -6,7 +6,7 @@ description: >-
   the default mechanism captures and sends the current URL, including any URL
   fragments. This can pose a privacy issue when dealing with client-side end-to-end
   encrypted applications.
-authors: [Romain Clement]
+author: Romain Clement
 date: 2020-05-01
 tags: [e2ee, typescript, web, privacy, sentry]
 language: en

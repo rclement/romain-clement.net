@@ -5,7 +5,7 @@ description: >-
   I have been using Pipenv for Python applications since 2018 quite successfully.
   However, when developing Python packages, things can get trickier. This is a
   quick note on how I resolve this situation.
-authors: [Romain Clement]
+author: Romain Clement
 date: 2021-05-05
 tags: [programming, python]
 language: en

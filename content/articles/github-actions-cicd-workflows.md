@@ -5,7 +5,7 @@ description: >-
   The current state of GitHub Actions is promising but still has some rough edges,
   when it comes to configuring complete GitOps CI/CD workflows.
   But I've managed to find some tricks to get the job done.
-authors: [Romain Clement]
+author: Romain Clement
 date: 2020-04-18
 tags: [devops, gitops, ci-cd, github, actions, yaml]
 language: en

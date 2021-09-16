@@ -7,24 +7,49 @@
   {% elif page and page.title and not page.is_homepage %}
     {% set title = title ~ " - " ~ page.title | striptags %}
   {% endif %}
+
+  {% set description = config.site_description %}
+  {% if page and page.meta and page.meta.description %}
+    {% set description = page.meta.description %}
+  {% endif %}
+
+  {% set is_article = page and page.meta and page.meta.template == 'article.html' %}
+
+  <!-- Robots Meta Tags -->
   {% if page and page.meta and page.meta.robots %}
     <meta property="robots" content="{{ page.meta.robots }}" />
   {% else %}
     <meta property="robots" content="index, follow" />
   {% endif %}
-  <meta property="og:type" content="website" />
+
+  <!-- OpenGraph Meta Tags -->
+  <meta property="og:type" content="{% if is_article %}article{% else %}website{% endif %}" />
   <meta property="og:title" content="{{ title }}" />
-  <meta property="og:description" content="{{ config.site_description }}" />
+  <meta property="og:description" content="{{ description }}" />
   <meta property="og:url" content="{{ page.canonical_url }}" />
   <meta property="og:image" content="{{ config.site_url }}static/preview.png" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1280" />
   <meta property="og:image:height" content="640" />
+
+  <!-- Article Specific Meta Tags -->
+  {% if is_article %}
+    <meta property="article:published_time" content="{{ page.meta.date }}" />
+    <meta property="article:author" content="{{ page.meta.author }}" />
+    {% for tag in page.meta.tags %}
+      <meta property="article:tag" content="{{ tag }}" />
+    {% endfor %}
+  {% endif %}
+
+  <!-- Twitter Card -->
+  <meta name="twitter:title" content="{{ title }}" />
+  <meta name="twitter:description" content="{{ description }}" />
   <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Feeds -->
   <link rel="alternate" type="application/rss+xml" title="RSS feed of articles" href="{{ config.site_url }}feed_rss_created.xml">
 {% endblock %}
 
-<!-- from: https://github.com/squidfunk/mkdocs-material/blob/master/src/base.html -->
 {% block content %}
   {{ super() }}
 
