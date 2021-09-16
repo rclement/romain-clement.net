@@ -10,6 +10,8 @@ Datasette plugin providing data dashboards from metadata.
 
 [:fontawesome-solid-globe: Live Demo][demo]
 
+![Datasette Dashboards Demo](https://raw.githubusercontent.com/rclement/datasette-dashboards/master/demo/datasette-dashboards-demo.png)
+
 ## Pitch
 
 I like Datasette but there is no built-in dashboard feature.
@@ -25,10 +27,6 @@ Let's bringing beautiful Business Intelligence dashboards to Datasette!
 - [x] SQLite
 - [x] Datasette
 - [x] Vega-Lite
-
-## Screenshot
-
-![Datasette Dashboards Demo](https://raw.githubusercontent.com/rclement/datasette-dashboards/master/demo/datasette-dashboards-demo.png)
 
 [repository]: https://github.com/rclement/datasette-dashboards "GitHub Repository"
 [demo]: https://datasette-dashboards-demo.vercel.app "Live Demo"

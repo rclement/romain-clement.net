@@ -12,7 +12,7 @@ Dead-simple mailer micro-service for static websites.
 
 !!! tip
 
-    The [contact form](../../contact) of this website uses Mailer to send e-mails
+    The [contact form](/contact/) of this website uses Mailer to send e-mails
     behind the scenes!
 
 ## Pitch
