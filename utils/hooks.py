@@ -3,6 +3,7 @@ import jinja2
 import mkdocs.exceptions
 import readtime
 
+from datetime import date
 from pathlib import Path
 from typing import Any, Dict
 from babel.dates import format_date
@@ -15,7 +16,7 @@ def readtime_minutes(content: str, wpm: int = 200) -> int:
     return minutes
 
 
-def localized_date(date_str: str, format: str = "medium", locale: str = "en") -> str:
+def localized_date(date_str: date, format: str = "medium", locale: str = "en") -> str:
     locale_date_str: str = format_date(date_str, format=format, locale=locale)
     return locale_date_str
 
