@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "f0c398dabae59dd5b7c675bb100212dd07eb4e48bb14a02c534c537ae0a77901"
+            "sha256": "556930d0f4b16dbcd8e542964f3e160fef3935a512b2a8b6b1fbe8bd1eb6ddd4"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -132,10 +132,9 @@
             "version": "==2.11.3"
         },
         "jsmin": {
-            "hashes": [
-                "sha256:b6df99b2cd1c75d9d342e4335b535789b8da9107ec748212706ef7bbe5c2553b"
-            ],
-            "version": "==2.2.2"
+            "editable": true,
+            "git": "https://github.com/serenecloud/jsmin.git",
+            "ref": "646732092bdc36a8d6fe2f16a24747f88ba911be"
         },
         "jsonschema": {
             "hashes": [
@@ -234,7 +233,7 @@
                 "sha256:93a29c5cad95b00d82908590548479638251c9188df449561f614d2f9756e15a",
                 "sha256:ce9265cf179c4e07934e7b6a4b03f3edb7891e66e6d0f7017755f6064bbbe13f"
             ],
-            "markers": "python_version >= '3.5' and python_version < '4.0'",
+            "markers": "python_version >= '3.5' and python_version < '4'",
             "version": "==2.4.1"
         },
         "markupsafe": {
