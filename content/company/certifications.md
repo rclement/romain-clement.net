@@ -4,7 +4,7 @@ Always discovering and learning new skills.
 
 ## Machine Learning
 
-[![Coursera Logo](../static/images/coursera.png){ align=right style="width: 20%" }][coursera-ml-website]
+[![Coursera Logo](../static/company/coursera.png){ align=right style="width: 20%" }][coursera-ml-website]
 
 :fontawesome-solid-history: August - October 2020 <br>
 [:fontawesome-solid-globe: Course Website][coursera-ml-website] <br>
@@ -39,7 +39,7 @@ of the art models are discussed.
 
 ## 5 jours pour entreprendre
 
-[![CCI Formation Grenoble Logo](../static/images/cci-formation-grenoble.png){ align=right style="width: 20%" }][cci-entreprendre-website]
+[![CCI Formation Grenoble Logo](../static/company/cci-formation-grenoble.png){ align=right style="width: 20%" }][cci-entreprendre-website]
 
 :fontawesome-solid-history: February 2018 <br>
 [:fontawesome-solid-globe: Course Website][cci-entreprendre-website]

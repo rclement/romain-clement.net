@@ -1,6 +1,6 @@
 # The Swarm Factor
 
-[![Docker Meetup Grenoble Logo](../static/images/docker-meetup-grenoble.png){ align=right style="width: 20%" }][meetup]
+[![Docker Meetup Grenoble Logo](../static/talks/docker-meetup-grenoble.png){ align=right style="width: 20%" }][meetup]
 
 Talk given on March 26, 2019 for Docker 6^th^ birthday, organized by the
 [Docker Meetup Grenoble][meetup].

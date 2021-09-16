@@ -1,6 +1,6 @@
 # Les RDV de l'IAccessible
 
-[![RDV IAccessible Logo](../../static/images/rdv-iaccessible.png){ style="width: 50%" }][livestorm]
+[![RDV IAccessible Logo](../../static/talks/rdv-iaccessible.png){ style="width: 50%" }][livestorm]
 
 Every company is concerned with data: discover how to get started with this webinar series,
 organized in collaboration with [Simplon.co][simplon].

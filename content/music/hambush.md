@@ -1,6 +1,6 @@
 # Hambush
 
-[![Hambush Logo](../static/images/hambush.png){ align=right style="width: 20%" }][hambush-website]
+[![Hambush Logo](../static/music/hambush.png){ align=right style="width: 20%" }][hambush-website]
 
 Hambush is a Progressive Rock / Metal band from Grenoble, France.
 
