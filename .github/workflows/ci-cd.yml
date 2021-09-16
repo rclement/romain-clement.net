@@ -32,6 +32,12 @@ jobs:
           pipenv run flake8 utils
           pipenv run mypy --strict utils
           pipenv run pytest -v --cov=utils --cov=tests --cov-branch --cov-report=term-missing tests
+          pipenv run coverage xml
+      - name: Publish code coverage to Codecov
+        uses: codecov/codecov-action@v2
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: ./coverage.xml
 
   build-preview:
     name: Build Preview
