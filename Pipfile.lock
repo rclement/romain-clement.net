@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "1b3b725b97cdb5655f4f2e9243aed717e608f887e902af0aedbcb6e90ffacc03"
+            "sha256": "718f7fc5e2321d6a0d40105341aed2fdaf8334e0c6c8ab27c6072d00b1a7cf84"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -133,8 +133,8 @@
         },
         "jsmin": {
             "editable": true,
-            "git": "https://github.com/serenecloud/jsmin.git",
-            "ref": "646732092bdc36a8d6fe2f16a24747f88ba911be"
+            "git": "https://github.com/tikitu/jsmin.git",
+            "ref": "bb5410eff01296e067d5ab242b66f01ef300b018"
         },
         "jsonschema": {
             "hashes": [
