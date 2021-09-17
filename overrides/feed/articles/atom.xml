@@ -9,6 +9,7 @@
   <subtitle>{{ config.site_description|e }}</subtitle>
   {%- for file in pages|selectattr("page.meta.date")|sort(reverse=True, attribute="page.meta.date") if file.page.abs_url.startswith('/articles/') and file.page.abs_url != '/articles/' %}
   {% set page = file.page -%}
+  {% set author = config.extra.authors[page.meta.author] -%}
   <entry>
     <title>{{ page.meta.title|e }}</title>
     <id>{{ page.canonical_url }}</id>
@@ -17,8 +18,9 @@
     <summary>{{ page.meta.description|e }}</summary>
     <content>{{ page.meta.description|e }}</content>
     <author>
-      <name>{{ page.meta.author }}</name>
-      <uri>{{ config.site_url }}</uri>
+      <name>{{ author.name }}</name>
+      <email>{{ author.email }}</email>
+      <uri>{{ author.url }}</uri>
     </author>
     <published>{{ page.meta.date|to_iso8601 }}</published>
   </entry>

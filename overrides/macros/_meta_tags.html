@@ -30,8 +30,9 @@
 
   <!-- Article Specific -->
   {% if is_article %}
+    {% set author = config.extra.authors[page.meta.author] %}
     <meta property="article:published_time" content="{{ page.meta.date }}" />
-    <meta property="article:author" content="{{ page.meta.author }}" />
+    <meta property="article:author" content="{{ author.name }}" />
     {% for tag in page.meta.tags %}
       <meta property="article:tag" content="{{ tag }}" />
     {% endfor %}

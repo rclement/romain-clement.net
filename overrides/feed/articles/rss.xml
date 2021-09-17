@@ -10,9 +10,10 @@
     <atom:link href="{{ config.site_url }}feed/articles/rss.xml" rel="self" type="application/rss+xml"/>
     {%- for file in pages|selectattr("page.meta.date")|sort(reverse=True, attribute="page.meta.date") if file.page.abs_url.startswith('/articles/') and file.page.abs_url != '/articles/' %}
     {% set page = file.page -%}
+    {% set author = config.extra.authors[page.meta.author] -%}
     <item>
       <title>{{ page.meta.title|e }}</title>
-      <author>{{ page.meta.author }}</author>
+      <author>{{ author.email }} ({{ author.name }})</author>
       <description>{{ page.meta.description|e }}</description>
       <link>{{ page.canonical_url }}?utm_source=website&amp;utm_medium=rss&amp;utm_campaign=feed-syndication</link>
       <pubDate>{{ page.meta.date|to_rfc822 }}</pubDate>

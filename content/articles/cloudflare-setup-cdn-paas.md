@@ -6,7 +6,7 @@ description: >-
   and Heroku, configuring Cloudflare as the protecting proxy in front of those
   services can be challenging. After some research, I managed to find a permanent
   solution.
-author: Romain Clement
+author: romainclement
 date: 2020-06-08
 tags: [cloud, web, cdn, paas, cloudflare, vercel]
 language: en

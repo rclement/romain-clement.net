@@ -7,6 +7,7 @@
   "items": [
     {%- for file in pages|selectattr("page.meta.date")|sort(reverse=True, attribute="page.meta.date") if file.page.abs_url.startswith('/articles/') and file.page.abs_url != '/articles/' %}
     {% set page = file.page -%}
+    {% set author = config.extra.authors[page.meta.author] -%}
     {
       "id": "{{ page.canonical_url }}",
       "content_html": "{{ page.meta.description|e }}",
@@ -15,10 +16,13 @@
       "summary": "{{ page.meta.description|e }}",
       "date_modified": "{{ page.meta.date|to_iso8601 }}",
       "date_published": "{{ page.meta.date|to_iso8601 }}",
-      "author": {
-        "name": "{{ page.meta.author }}",
-        "url": "{{ config.site_url }}"
-      }
+      "authors": [
+        {
+          "name": "{{ author.name }}",
+          "email": "{{ author.email }}",
+          "url": "{{ author.url }}"
+        }
+      ]
     }{% if not loop.last %},{% endif %}
     {%- endfor %}
   ]
