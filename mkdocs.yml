@@ -103,6 +103,7 @@ theme:
   static_templates:
     - feed/articles/atom.xml
     - feed/articles/rss.xml
+    - feed/articles/feed.json
   language: en
   font: false
   features:

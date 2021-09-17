@@ -8,9 +8,8 @@
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <generator>MkDocs {{ mkdocs_version }}</generator>
     <atom:link href="{{ config.site_url }}articles/" rel="self" type="application/rss+xml"/>
-    {% for file in pages -%}
+    {%- for file in pages if file.page.abs_url.startswith('/articles/') and file.page.abs_url != '/articles/' %}
     {% set page = file.page -%}
-    {% if page.abs_url.startswith('/articles/') and page.abs_url != '/articles/' -%}
     <item>
       <title>{{ page.meta.title|e }}</title>
       <author>{{ page.meta.author }}</author>
@@ -20,7 +19,6 @@
       <source url="{{ config.site_url }}articles/">Romain Clement</source>
       <guid>{{ page.canonical_url }}</guid>
     </item>
-    {% endif -%}
-    {% endfor -%}
+    {%- endfor %}
   </channel>
 </rss>

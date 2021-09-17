@@ -7,9 +7,8 @@
   <link rel="alternate" href="{{ config.site_url }}articles/"/>
   <link rel="self" href="{{ config.site_url }}feed/articles/atom.xml"/>
   <subtitle>{{ config.site_description|e }}</subtitle>
-  {% for file in pages -%}
+  {%- for file in pages if file.page.abs_url.startswith('/articles/') and file.page.abs_url != '/articles/' %}
   {% set page = file.page -%}
-  {% if page.abs_url.startswith('/articles/') and page.abs_url != '/articles/' -%}
   <entry>
     <title>{{ page.meta.title|e }}</title>
     <id>{{ page.canonical_url }}</id>
@@ -23,6 +22,5 @@
     </author>
     <published>{{ page.meta.date|to_iso8601 }}</published>
   </entry>
-  {% endif -%}
-  {% endfor -%}
+  {%- endfor %}
 </feed>
