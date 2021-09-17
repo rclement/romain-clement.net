@@ -7,7 +7,7 @@
     <lastBuildDate>{{ build_date_utc|to_rfc822 }}</lastBuildDate>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <generator>MkDocs {{ mkdocs_version }}</generator>
-    <atom:link href="{{ config.site_url }}articles/" rel="self" type="application/rss+xml"/>
+    <atom:link href="{{ config.site_url }}feed/articles/rss.xml" rel="self" type="application/rss+xml"/>
     {%- for file in pages|selectattr("page.meta.date")|sort(reverse=True, attribute="page.meta.date") if file.page.abs_url.startswith('/articles/') and file.page.abs_url != '/articles/' %}
     {% set page = file.page -%}
     <item>
