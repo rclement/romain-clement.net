@@ -178,6 +178,21 @@ def test_render_form_no_form(
 @pytest.mark.parametrize(
     ("dt", "expected"),
     (
+        (date(2021, 1, 2), "2021-01-02T00:00:00+00:00"),
+        (datetime(2021, 1, 2), "2021-01-02T00:00:00+00:00"),
+    ),
+)
+def test_to_iso8601(dt: Union[date, datetime], expected: str) -> None:
+    result = hooks.to_iso8601(dt)
+    assert result == expected
+
+
+# ------------------------------------------------------------------------------
+
+
+@pytest.mark.parametrize(
+    ("dt", "expected"),
+    (
         (date(2021, 1, 2), "Sat, 02 Jan 2021 00:00:00 +0000"),
         (datetime(2021, 1, 2), "Sat, 02 Jan 2021 00:00:00 +0000"),
     ),

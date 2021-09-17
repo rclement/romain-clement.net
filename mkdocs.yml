@@ -101,6 +101,7 @@ theme:
   name: material
   custom_dir: overrides
   static_templates:
+    - feed/articles/atom.xml
     - feed/articles/rss.xml
   language: en
   font: false

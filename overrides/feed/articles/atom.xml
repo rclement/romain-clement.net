@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>{{ config.site_url }}articles/</id>
+  <title>Articles | {{ config.site_name }}</title>
+  <updated>{{ build_date_utc|to_iso8601 }}</updated>
+  <generator>MkDocs {{ mkdocs_version }}</generator>
+  <link rel="alternate" href="{{ config.site_url }}articles/"/>
+  <link rel="self" href="{{ config.site_url }}feed/articles/atom.xml"/>
+  <subtitle>{{ config.site_description|e }}</subtitle>
+  {% for file in pages -%}
+  {% set page = file.page -%}
+  {% if page.abs_url.startswith('/articles/') and page.abs_url != '/articles/' -%}
+  <entry>
+    <title>{{ page.meta.title|e }}</title>
+    <id>{{ page.canonical_url }}</id>
+    <link href="{{ page.canonical_url }}?utm_source=website&amp;utm_medium=atom&amp;utm_campaign=feed-syndication"/>
+    <updated>{{ page.meta.date|to_iso8601 }}</updated>
+    <summary>{{ page.meta.description|e }}</summary>
+    <content>{{ page.meta.description|e }}</content>
+    <author>
+      <name>{{ page.meta.author }}</name>
+      <uri>{{ config.site_url }}</uri>
+    </author>
+    <published>{{ page.meta.date|to_iso8601 }}</published>
+  </entry>
+  {% endif -%}
+  {% endfor -%}
+</feed>

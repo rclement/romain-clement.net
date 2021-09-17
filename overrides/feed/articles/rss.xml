@@ -3,9 +3,7 @@
   <channel>
     <title>Articles | {{ config.site_name }}</title>
     <link>{{ config.site_url }}articles/</link>
-    <description>
-    {{ config.site_description|e }}
-    </description>
+    <description>{{ config.site_description|e }}</description>
     <lastBuildDate>{{ build_date_utc|to_rfc822 }}</lastBuildDate>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <generator>MkDocs {{ mkdocs_version }}</generator>

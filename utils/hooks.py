@@ -51,6 +51,11 @@ def render_form(
     return source
 
 
+def to_iso8601(dt: Union[date, datetime]) -> str:
+    dt = datetime.combine(dt, datetime.min.time(), tzinfo=timezone.utc)
+    return dt.isoformat()
+
+
 def to_rfc822(dt: Union[date, datetime]) -> str:
     dt = datetime.combine(dt, datetime.min.time(), tzinfo=timezone.utc)
     return email.utils.format_datetime(dt, usegmt=False)
@@ -59,6 +64,7 @@ def to_rfc822(dt: Union[date, datetime]) -> str:
 def on_env(env: jinja2.Environment, **kwargs: Any) -> None:
     env.filters["localized_date"] = localized_date
     env.filters["readtime"] = readtime_minutes
+    env.filters["to_iso8601"] = to_iso8601
     env.filters["to_rfc822"] = to_rfc822
 
 
