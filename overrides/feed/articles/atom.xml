@@ -7,7 +7,7 @@
   <link rel="alternate" href="{{ config.site_url }}articles/"/>
   <link rel="self" href="{{ config.site_url }}feed/articles/atom.xml"/>
   <subtitle>{{ config.site_description|e }}</subtitle>
-  {%- for file in pages if file.page.abs_url.startswith('/articles/') and file.page.abs_url != '/articles/' %}
+  {%- for file in pages|selectattr("page.meta.date")|sort(reverse=True, attribute="page.meta.date") if file.page.abs_url.startswith('/articles/') and file.page.abs_url != '/articles/' %}
   {% set page = file.page -%}
   <entry>
     <title>{{ page.meta.title|e }}</title>
