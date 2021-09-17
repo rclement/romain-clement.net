@@ -1,11 +1,12 @@
+import email.utils
 import re
 import jinja2
 import mkdocs.exceptions
 import readtime
 
-from datetime import date
+from datetime import date, datetime, timezone
 from pathlib import Path
-from typing import Any, Dict
+from typing import Any, Dict, Union
 from babel.dates import format_date
 from mkdocs.structure.pages import Page
 
@@ -50,9 +51,15 @@ def render_form(
     return source
 
 
+def to_rfc822(dt: Union[date, datetime]) -> str:
+    dt = datetime.combine(dt, datetime.min.time(), tzinfo=timezone.utc)
+    return email.utils.format_datetime(dt, usegmt=False)
+
+
 def on_env(env: jinja2.Environment, **kwargs: Any) -> None:
-    env.filters["readtime"] = readtime_minutes
     env.filters["localized_date"] = localized_date
+    env.filters["readtime"] = readtime_minutes
+    env.filters["to_rfc822"] = to_rfc822
 
 
 def on_page_markdown(

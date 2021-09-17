@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Articles | {{ config.site_name }}</title>
+    <link>{{ config.site_url }}articles/</link>
+    <description>
+    {{ config.site_description|e }}
+    </description>
+    <lastBuildDate>{{ build_date_utc|to_rfc822 }}</lastBuildDate>
+    <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+    <generator>MkDocs {{ mkdocs_version }}</generator>
+    <atom:link href="{{ config.site_url }}articles/" rel="self" type="application/rss+xml"/>
+    {% for file in pages -%}
+    {% set page = file.page -%}
+    {% if page.abs_url.startswith('/articles/') and page.abs_url != '/articles/' -%}
+    <item>
+      <title>{{ page.meta.title|e }}</title>
+      <author>{{ page.meta.author }}</author>
+      <description>{{ page.meta.description|e }}</description>
+      <link>{{ page.canonical_url }}?utm_source=website&amp;utm_medium=rss&amp;utm_campaign=feed-syndication</link>
+      <pubDate>{{ page.meta.date|to_rfc822 }}</pubDate>
+      <source url="{{ config.site_url }}articles/">Romain Clement</source>
+      <guid>{{ page.canonical_url }}</guid>
+    </item>
+    {% endif -%}
+    {% endfor -%}
+  </channel>
+</rss>

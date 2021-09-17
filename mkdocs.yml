@@ -67,7 +67,7 @@ extra:
       enable_js: true
   social:
     - icon: fontawesome/solid/rss
-      link: /feed_rss_created.xml
+      link: /feed/articles/rss.xml
       name: RSS Feed
     - icon: fontawesome/brands/github
       link: https://github.com/rclement
@@ -100,6 +100,8 @@ extra:
 theme:
   name: material
   custom_dir: overrides
+  static_templates:
+    - feed/articles/rss.xml
   language: en
   font: false
   features:
@@ -146,16 +148,6 @@ plugins:
         remove_comments: true
       js_files:
         - assets/javascripts/mathjax.js
-  - rss:
-      date_from_meta:
-        as_creation: date
-        as_update: false
-        datetime_format: "%Y-%m-%d"
-      match_path: "articles/(?!index).*"
-      url_parameters:
-        utm_source: website
-        utm_medium: rss
-        utm_campaign: feed-syndication
 
 markdown_extensions:
   - admonition

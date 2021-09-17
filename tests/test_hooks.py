@@ -3,9 +3,9 @@ import jinja2
 import mkdocs.exceptions
 import pytest
 
-from datetime import date
+from datetime import date, datetime
 from unittest.mock import MagicMock
-from typing import Any, Dict
+from typing import Any, Dict, Union
 from faker import Faker
 from mkdocs.structure.pages import Page
 
@@ -175,11 +175,27 @@ def test_render_form_no_form(
 # ------------------------------------------------------------------------------
 
 
+@pytest.mark.parametrize(
+    ("dt", "expected"),
+    (
+        (date(2021, 1, 2), "Sat, 02 Jan 2021 00:00:00 +0000"),
+        (datetime(2021, 1, 2), "Sat, 02 Jan 2021 00:00:00 +0000"),
+    ),
+)
+def test_to_rfc822(dt: Union[date, datetime], expected: str) -> None:
+    result = hooks.to_rfc822(dt)
+    assert result == expected
+
+
+# ------------------------------------------------------------------------------
+
+
 def test_on_env_success() -> None:
     jinja_env = jinja2.Environment()
     hooks.on_env(jinja_env)
     assert "readtime" in jinja_env.filters
     assert "localized_date" in jinja_env.filters
+    assert "to_rfc822" in jinja_env.filters
 
 
 # ------------------------------------------------------------------------------
