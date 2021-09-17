@@ -51,7 +51,6 @@ jobs:
       MAILER_URL: ${{ secrets.MAILER_URL_PREVIEW }}
       CHIFFRE_PUBLIC_KEY: ""
       CHIFFRE_PROJECT_ID: ""
-      SENTRY_DSN: ""
 
     steps:
       - uses: actions/checkout@v2
@@ -95,7 +94,6 @@ jobs:
       MAILER_URL: ${{ secrets.MAILER_URL }}
       CHIFFRE_PUBLIC_KEY: ${{ secrets.CHIFFRE_PUBLIC_KEY }}
       CHIFFRE_PROJECT_ID: ${{ secrets.CHIFFRE_PROJECT_ID }}
-      SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
 
     steps:
       - uses: actions/checkout@v2
