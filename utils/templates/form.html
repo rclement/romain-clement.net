@@ -82,13 +82,13 @@ window.addEventListener("load", function () {
     {% if form_config.action_path_js %}
     const url = '{{ form_config.base_url + form_config.action_path_js }}'
     {% else %}
-    const url = sourcepage_form.action
+    const url = sourceForm.action
     {% endif %}
-    const method = sourcepage_form.method
+    const method = sourceForm.method
     const formData = new FormData(sourceForm)
     const data = JSON.stringify(Object.fromEntries(formData.entries()))
 
-    Array.from(sourcepage_form.elements).forEach(formElement => formElement.disabled = true)
+    Array.from(sourceForm.elements).forEach(formElement => formElement.disabled = true)
 
     try {
       const response = await fetch(url, {
