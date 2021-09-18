@@ -29,7 +29,7 @@
     "@nuxtjs/sentry": "^5.1.1",
     "@nuxtjs/sitemap": "^2.4.0",
     "nuxt": "^2.15.6",
-    "nuxt-buefy": "^0.4.8",
+    "nuxt-buefy": "^0.4.10",
     "nuxt-chiffre": "^0.3.0",
     "nuxt-i18n": "^6.28.1",
     "vue-scrollactive": "^0.9.3",
