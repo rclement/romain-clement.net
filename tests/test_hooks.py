@@ -210,6 +210,7 @@ def test_on_env_success() -> None:
     hooks.on_env(jinja_env)
     assert "readtime" in jinja_env.filters
     assert "localized_date" in jinja_env.filters
+    assert "to_iso8601" in jinja_env.filters
     assert "to_rfc822" in jinja_env.filters
 
 
