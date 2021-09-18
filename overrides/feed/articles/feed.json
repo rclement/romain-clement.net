@@ -1,0 +1,28 @@
+{
+  "version": "https://jsonfeed.org/version/1",
+  "title": "Articles | {{ config.site_name }}",
+  "home_page_url": "{{ config.site_url }}articles/",
+  "feed_url": "{{ config.site_url }}feed/articles/feed.json",
+  "description": "{{ config.site_description|e }}",
+  "items": [
+    {%- for file in pages|selectattr("page.meta.date")|sort(reverse=True, attribute="page.meta.date") if file.page.abs_url.startswith('/articles/') and file.page.abs_url != '/articles/' %}
+    {% set page = file.page -%}
+    {% set author = config.extra.authors[page.meta.author] -%}
+    {
+      "id": "{{ page.canonical_url }}",
+      "content_html": "{{ page.meta.description|e }}",
+      "url": "{{ page.canonical_url }}",
+      "title": "{{ page.meta.title|e }}",
+      "summary": "{{ page.meta.description|e }}",
+      "date_modified": "{{ page.meta.date|to_iso8601 }}",
+      "date_published": "{{ page.meta.date|to_iso8601 }}",
+      "authors": [
+        {
+          "name": "{{ author.name }}",
+          "url": "{{ author.url }}"
+        }
+      ]
+    }{% if not loop.last %},{% endif %}
+    {%- endfor %}
+  ]
+}

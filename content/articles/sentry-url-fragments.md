@@ -1,14 +1,15 @@
 ---
+template: article.html
 title: Scrubbing URL fragments from Sentry crash reports
-summary: >-
+description: >-
   When activating Sentry crash reporting in JavaScript client-side code,
   the default mechanism captures and sends the current URL, including any URL
   fragments. This can pose a privacy issue when dealing with client-side end-to-end
   encrypted applications.
 author: romainclement
+date: 2020-05-01
 tags: [e2ee, typescript, web, privacy, sentry]
 language: en
-published: 2020-05-01
 draft: false
 ---
 
@@ -20,7 +21,7 @@ encrypted applications.
 I faced this issue as I started developing [Griffonnage][griffonnage], a real-time
 end-to-end encrypted collaborative drawing application.
 
-## ⚓ URL fragments
+## URL fragments
 
 First things first. What is an _URL fragment_? It is the optional ending part
 of an URL materialized after the `#` character. The part right after the `#` is
@@ -41,7 +42,7 @@ The nice thing with URL fragments is that [**their value is never sent during a
 request to a server and only processed by the browser**][html-fragment].
 This property opens up new possibilities for privacy-first applications.
 
-## 🔐 End-to-end encryption
+## End-to-end encryption
 
 Some services such as [Firefox Send][firefox-send] and [Excalidraw][excalidraw]
 (check out those services, there are great!) are using URL fragments extensively
@@ -61,7 +62,7 @@ As the encryption key contained in the fragment identifier is only available on
 client-side, the application can load it at startup and use it directly in the
 client-side JavaScript code.
 
-## 🚀 Sentry
+## Sentry
 
 I have been using the [Sentry][sentry] service for both hobby and professionnal
 software for the last two years. Crash reports are working great accross all

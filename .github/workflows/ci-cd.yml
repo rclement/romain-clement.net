@@ -2,9 +2,6 @@ name: CI/CD
 
 on: [push]
 
-env:
-  NODE_VERSION: '14.17.5'
-
 jobs:
   test:
     name: Test
@@ -12,29 +9,35 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js
-        uses: actions/setup-node@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
         with:
-          node-version: ${{ env.NODE_VERSION }}
-      - name: Cache Node.js modules
+          python-version: '3.9'
+      - name: Cache Python modules
         uses: actions/cache@v2
         with:
-          path: ~/.npm
-          key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/Pipfile.lock') }}
           restore-keys: |
-            ${{ runner.OS }}-node-
+            ${{ runner.os }}-pip-
       - name: Install dependencies
-        run: npm install
-      - name: Check dependencies
-        run: npm audit --production || true
-      - name: Check code lint
-        run: npm run lint
-      - name: Run tests
-        run: npm run test:ci
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install --upgrade pipenv
+          pipenv install --dev --deploy
+      - name: Run QA
+        run: |
+          pipenv run safety check
+          pipenv run black --check utils
+          pipenv run flake8 utils
+          pipenv run mypy --strict utils
+          pipenv run pytest -v --cov=utils --cov=tests --cov-branch --cov-report=term-missing tests
+          pipenv run coverage xml
       - name: Publish code coverage to Codecov
-        uses: codecov/codecov-action@v1
+        uses: codecov/codecov-action@v2
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
+          file: ./coverage.xml
 
   build-preview:
     name: Build Preview
@@ -44,28 +47,35 @@ jobs:
 
     env:
       APP_ENVIRONMENT: preview
-      BASE_PROTOCOL: ${{ secrets.BASE_PROTOCOL }}
-      BASE_URL: ${{ secrets.BASE_URL_PREVIEW }}
-      MAILER_URL: ${{ secrets.MAILER_URL }}
+      SITE_URL: ${{ secrets.SITE_URL_PREVIEW }}
+      MAILER_URL: ${{ secrets.MAILER_URL_PREVIEW }}
       CHIFFRE_PUBLIC_KEY: ""
       CHIFFRE_PROJECT_ID: ""
-      SENTRY_DSN: ""
 
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js
-        uses: actions/setup-node@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
         with:
-          node-version: ${{ env.NODE_VERSION }}
-      - name: Cache Node.js modules
+          python-version: '3.9'
+      - name: Cache Python modules
         uses: actions/cache@v2
         with:
-          path: ~/.npm
-          key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
-      - name: Install Dependencies
-        run: npm install
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/Pipfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install --upgrade pipenv
+          pipenv install --deploy
       - name: Build package
-        run: npm run generate
+        run: |
+          pipenv run mkdocs build
+          cp -R content/.well-known dist/.
+          cp content/.vercelignore dist/.
+          echo $SITE_URL > dist/CNAME
       - name: Upload build artifacts
         uses: actions/upload-artifact@v2
         with:
@@ -80,28 +90,35 @@ jobs:
 
     env:
       APP_ENVIRONMENT: production
-      BASE_PROTOCOL: ${{ secrets.BASE_PROTOCOL }}
-      BASE_URL: ${{ secrets.BASE_URL }}
-      MAILER_URL: ${{ secrets.MAILER_URL }}
+      SITE_URL: ${{ secrets.SITE_URL }}
+      MAILER_URL: ${{ secrets.MAILER_URL }}
       CHIFFRE_PUBLIC_KEY: ${{ secrets.CHIFFRE_PUBLIC_KEY }}
       CHIFFRE_PROJECT_ID: ${{ secrets.CHIFFRE_PROJECT_ID }}
-      SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
 
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js
-        uses: actions/setup-node@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
         with:
-          node-version: ${{ env.NODE_VERSION }}
-      - name: Cache Node.js modules
+          python-version: '3.9'
+      - name: Cache Python modules
         uses: actions/cache@v2
         with:
-          path: ~/.npm
-          key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
-      - name: Install Dependencies
-        run: npm install
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/Pipfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install --upgrade pipenv
+          pipenv install --deploy
       - name: Build package
-        run: npm run generate
+        run: |
+          pipenv run mkdocs build
+          cp -R content/.well-known dist/.
+          cp content/.vercelignore dist/.
+          echo $SITE_URL > dist/CNAME
       - name: Upload build artifacts
         uses: actions/upload-artifact@v2
         with:

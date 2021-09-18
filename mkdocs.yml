@@ -1,0 +1,172 @@
+site_name: Romain Clement
+site_description: Freelance Software Engineer & Trainer
+site_author: Romain Clement
+site_keywords: romain clement, freelance, software, engineer, developer, grenoble, web, data, data engineering, data science, cloud-native, devops, privacy, e2ee, artificial intelligence, machine learning, python, pandas, jupyter, sql, scikit-learn, tensorflow, keras, pytorch, fastai
+site_url: !ENV SITE_URL
+
+repo_url: https://github.com/rclement/romain-clement.net
+edit_uri: edit/master/content/
+docs_dir: content
+site_dir: dist
+
+nav:
+  - index.md
+  - Company:
+      - company/index.md
+      - company/services.md
+      - company/clients.md
+      - company/certifications.md
+  - Projects:
+      - projects/index.md
+      - projects/datasette-dashboards.md
+      - projects/mailer.md
+      - projects/griffonnage.md
+  - Talks:
+      - talks/index.md
+      - talks/python-celery.md
+      - talks/modern-python-development.md
+      - talks/swarm-factor.md
+      - Les RDV de L'IAccessible:
+          - talks/rdv-iaccessible/index.md
+          - talks/rdv-iaccessible/low-ia-outils.md
+          - talks/rdv-iaccessible/low-ia-puissance-impact.md
+          - talks/rdv-iaccessible/small-data.md
+          - talks/rdv-iaccessible/data-for-all.md
+  - Music:
+      - music/index.md
+      - music/hambush.md
+  - Articles:
+      - articles/index.md
+      - articles/python-packages-development-pipenv.md
+      - articles/static-data-warehouse-sqlite-metabase.md
+      - articles/cloudflare-setup-cdn-paas.md
+      - articles/sentry-url-fragments.md
+      - articles/github-actions-cicd-workflows.md
+  - Contact:
+      - contact/index.md
+
+extra:
+  version: 1.0.0
+  authors:
+    romainclement:
+      name: Romain Clement
+      email: contact@romain-clement.net
+      url: https://romain-clement.net
+  analytics:
+    provider: chiffre
+    public_key: !ENV CHIFFRE_PUBLIC_KEY
+    project_id: !ENV CHIFFRE_PROJECT_ID
+  forms:
+    contact:
+      base_url: !ENV MAILER_URL
+      method: POST
+      action_path: /api/mail/form
+      action_path_js: /api/mail
+      enable_js: true
+  social:
+    - icon: fontawesome/solid/rss
+      link: /feed/articles/rss.xml
+      name: RSS Feed
+    - icon: fontawesome/brands/github
+      link: https://github.com/rclement
+      name: GitHub
+    - icon: fontawesome/brands/gitlab
+      link: https://gitlab.com/rclement
+      name: GitLab
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/romainclement
+      name: LinkedIn
+    - icon: fontawesome/brands/connectdevelop
+      link: https://www.malt.fr/profile/romainclement
+      name: Malt
+    - icon: fontawesome/solid/rocket
+      link: https://app.comet.co/freelancer/profile/1Lk2D8V5jB
+      name: Comet
+    - icon: fontawesome/brands/keybase
+      link: https://keybase.io/rmnclmnt
+      name: Keybase
+    - icon: fontawesome/solid/key
+      link: /.well-known/openpgpkey/hu/dj3498u4hyyarh35rkjfnghbjxug6b19
+      name: PGP
+
+theme:
+  name: material
+  custom_dir: overrides
+  static_templates:
+    - feed/articles/atom.xml
+    - feed/articles/rss.xml
+    - feed/articles/feed.json
+  language: en
+  font: false
+  features:
+    - navigation.sections
+    - navigation.tabs
+    - navigation.top
+    - search.highlight
+  logo: static/icon.png
+  favicon: static/icon.png
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: black
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to Dark Mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: amber
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: Switch to Light Mode
+
+plugins:
+  - search:
+      lang:
+        - en
+  - mkdocs-simple-hooks:
+      hooks:
+        on_env: 'utils.hooks:on_env'
+        on_page_markdown: 'utils.hooks:on_page_markdown'
+  - section-index
+  - mknotebooks:
+      execute: false
+      enable_default_jupyter_cell_styling: false
+      enable_default_pandas_dataframe_styling: true
+      exporter_kwargs:
+        exclude_input: true
+  - minify:
+      minify_html: true
+      minify_js: true
+      htmlmin_opts:
+        remove_comments: true
+      js_files:
+        - assets/javascripts/mathjax.js
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.caret
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight
+  - pymdownx.mark
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - toc:
+      permalink: "#"
+
+extra_css:
+  - assets/stylesheets/extra.css
+  - assets/stylesheets/forms.css
+
+extra_javascript:
+  # https://squidfunk.github.io/mkdocs-material/reference/mathjax/#configuration
+  - assets/javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js

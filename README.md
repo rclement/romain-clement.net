@@ -1,6 +1,6 @@
 # romain-clement.net
 
-> Romain Clement - Freelance Software Engineer
+> Romain Clement - Freelance Software Engineer & Trainer
 
 [![GitHub Action CI/CD](https://github.com/rclement/romain-clement.net/workflows/CI/CD/badge.svg)](https://github.com/rclement/romain-clement.net/actions?query=workflow%3A%22CI%2FCD%22)
 [![Coverage Status](https://img.shields.io/codecov/c/github/rclement/romain-clement.net)](https://codecov.io/gh/rclement/romain-clement.net)
@@ -10,17 +10,19 @@
 
 ``` bash
 # install dependencies
-$ npm install
+$ pipenv install -d
 
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm start
+# serve with hot reload at http://localhost:8000
+$ mkdocs serve
 
 # generate static project
-$ npm run generate
+$ mkdocs build
 ```
 
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
+For detailed explanation on how things work, checkout [MkDocs docs](https://mkdocs.org).
+
+## License
+
+Licensed under GNU Affero General Public License v3.0 (AGPLv3)
+
+Copyright (c) 2018 - present  Romain CLement

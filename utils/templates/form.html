@@ -1,0 +1,121 @@
+<form
+  id="mk-form-id"
+  class="mk-form"
+  method="{{ form_config.method }}"
+  action="{{ form_config.base_url + form_config.action_path }}"
+>
+  {% for field_name, field in page_form.fields.items() %}
+    <div class="mk-form-input-wrapper">
+      {% if field.type == 'hidden' %}
+        <input name="{{ field_name }}" type="hidden">
+      {% elif field.type == 'file' %}
+        {% if field.label %}
+          <label class="mk-form-label" for="{{ field_name }}">{{ field.label }}</label>
+        {% endif %}
+        <input class="mk-form-input-file" name="{{ field_name }}" type="file">
+      {% elif field.type == 'checkbox' %}
+        <input
+          class="mk-form-input-checkbox"
+          name="{{ field_name }}"
+          type="checkbox"
+          {% if field.required %}required{% endif %}
+        >
+        {% if field.label %}
+          <label class="mk-form-label" for="{{ field_name }}">{{ field.label }}</label>
+        {% endif %}
+      {% elif field.type == 'textarea' %}
+        {% if field.label %}
+          <label class="mk-form-label" for="{{ field_name }}">{{ field.label }}</label>
+        {% endif %}
+        <textarea
+          class="mk-form-input"
+          name="{{ field_name }}"
+          {% if field.placeholder %}placeholder="{{ field.placeholder }}"{% endif %}
+          {% if field.minlength %}minlength="{{ field.minlength }}"{% endif %}
+          {% if field.maxlength %}maxlength="{{ field.maxlength }}"{% endif %}
+          {% if field.required %}required{% endif %}
+        ></textarea>
+      {% else %}
+        {% if field.label %}
+          <label class="mk-form-label" for="{{ field_name }}">{{ field.label }}</label>
+        {% endif %}
+        <input
+          class="mk-form-input"
+          name="{{ field_name }}"
+          type="{{ field.type }}"
+          autocomplete="{% if field.autocomplete %}on{% else %}off{% endif %}"
+          {% if field.placeholder %}placeholder="{{ field.placeholder }}"{% endif %}
+          {% if field.minlength %}minlength="{{ field.minlength }}"{% endif %}
+          {% if field.maxlength %}maxlength="{{ field.maxlength }}"{% endif %}
+          {% if field.required %}required{% endif %}
+        >
+      {% endif %}
+    </div>
+  {% endfor %}
+
+  {% for button_name, button in page_form.buttons.items() %}
+    <input
+      class="mk-form-button"
+      type="{{ button.type }}"
+      value="{{ button.value }}"
+    >
+    <br>
+  {% endfor %}
+</form>
+
+{% if page_form.notice %}
+<p class="mk-form-notice"><small>{{ page_form.notice }}</small></p>
+{% endif %}
+
+{% if form_config.enable_js %}
+<script>
+window.addEventListener("load", function () {
+  function handleError() {
+    window.location.href = "{{ page_form.redirect.error }}"
+  }
+
+  function handleSuccess() {
+    window.location.href = "{{ page_form.redirect.success }}"
+  }
+
+  async function sendMessage(sourceForm) {
+    {% if form_config.action_path_js %}
+    const url = '{{ form_config.base_url + form_config.action_path_js }}'
+    {% else %}
+    const url = sourcepage_form.action
+    {% endif %}
+    const method = sourcepage_form.method
+    const formData = new FormData(sourceForm)
+    const data = JSON.stringify(Object.fromEntries(formData.entries()))
+
+    Array.from(sourcepage_form.elements).forEach(formElement => formElement.disabled = true)
+
+    try {
+      const response = await fetch(url, {
+        method: method,
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: data
+      })
+
+      if (response.ok) {
+        handleSuccess()
+      } else {
+        handleError()
+      }
+    } catch(error) {
+      handleError()
+    }
+  }
+
+  const formElement = document.getElementById("mk-form-id")
+  if (formElement) {
+    formElement.addEventListener("submit", function (event) {
+      event.preventDefault()
+      sendMessage(event.target)
+    })
+  }
+})
+</script>
+{% endif %}

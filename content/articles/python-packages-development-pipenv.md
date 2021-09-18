@@ -1,19 +1,22 @@
 ---
+template: article.html
 title: Python packages development using Pipenv
-summary: >-
+description: >-
   I have been using Pipenv for Python applications since 2018 quite successfully.
   However, when developing Python packages, things can get trickier. This is a
   quick note on how I resolve this situation.
 author: romainclement
+date: 2021-05-05
 tags: [programming, python]
 language: en
-published: 2021-05-05
 draft: false
 ---
 
 I have been using [Pipenv][pipenv] for Python applications since 2018 quite
 successfully. However, when developing Python packages, things can get trickier.
 This is a quick note on how I resolve this situation.
+
+## Technical Details
 
 When starting the development of a Python package, we can setup our Python
 environment using `pipenv`:
