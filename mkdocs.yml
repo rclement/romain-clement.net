@@ -21,8 +21,6 @@ nav:
       - company/services.md
       - company/clients.md
       - company/certifications.md
-      # - company/experience.md
-      # - company/education.md
   - Projects:
       - projects/index.md
       - projects/datasette-dashboards.md
@@ -83,12 +81,6 @@ extra:
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/romainclement
       name: LinkedIn
-    # - icon: fontawesome/brands/viadeo
-    #   link: https://www.viadeo.com/p/002qw6xj8rnwk5v
-    #   name: Viadeo
-    # - icon: fontawesome/brands/xing
-    #   link: https://www.xing.com/profile/Romain_Clement2
-    #   name: Xing
     - icon: fontawesome/brands/connectdevelop
       link: https://www.malt.fr/profile/romainclement
       name: Malt
