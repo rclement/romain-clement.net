@@ -62,8 +62,10 @@ Technologies used on a regular basis:
 
 ## Technical Training
 
-!!! quote "Frank Oppenheimer"
+!!! quote
     The best way to learn is to teach.
+
+    -- <cite>Frank Oppenheimer</cite>
 
 Whether it is new-comers or experienced practitioners, there is always something
 new to be learned. I like to share my experience and knowledge with others by
