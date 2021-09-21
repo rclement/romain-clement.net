@@ -43,12 +43,14 @@ text~with\ subscript~
 > block-quoted
 >
 > text
+>
+> -- <cite>Me, myself and I</cite>
 
 Emojis: 💻 😼 :cat:
 
 Icons: :fontawesome-solid-code: :fontawesome-brands-python:
 
-[This is a link](https://romain-clement.net)
+[This is a link](https://romain-clement.net "Some link")
 
 ## Lists
 
@@ -135,6 +137,8 @@ Baz
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
     nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
     massa, nec semper lorem quam in massa.
+
+    -- <cite>Me, myself and I</cite>
 
 ## Code Blocks
 
