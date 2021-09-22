@@ -10,10 +10,10 @@ Starting at 500€ (VAT excl.) per day.
 
 ## Software & Data Engineering
 
-[![Python Logo](../static/company/python.svg "Python"){ style="width: 64px; margin: 1rem;" }](https://www.python.org)
-[![Flask Logo](../static/company/flask.svg "Flask"){ style="width: 128px; margin: 1rem;" }](https://palletsprojects.com/p/flask/)
-[![PostgreSQL Logo](../static/company/postgresql.svg "PostgreSQL"){ style="width: 64px; margin: 1rem;" }](https://www.postgresql.org)
-[![Docker Logo](../static/company/docker.svg "Docker"){ style="width: 256px; margin: 1rem;" }](https://www.docker.com)
+[![Python Logo](../static/company/python.svg "Python"){ .service-icon }](https://www.python.org)
+[![Flask Logo](../static/company/flask.svg "Flask"){ .service-icon }](https://palletsprojects.com/p/flask/)
+[![PostgreSQL Logo](../static/company/postgresql.svg "PostgreSQL"){ .service-icon }](https://www.postgresql.org)
+[![Docker Logo](../static/company/docker.svg "Docker"){ .service-icon }](https://www.docker.com)
 
 Software and data goes hand in hand, but insuring quality for automated data
 processes is key. I usually advocate for simple and lean processes whenever
@@ -35,10 +35,10 @@ Technologies used on a regular basis:
 
 ## Machine Learning Engineering
 
-[![Scikit-Learn Logo](../static/company/scikit-learn.svg "Scikit-Learn"){ style="width: 128px; margin: 1rem;" }](https://scikit-learn.org)
-[![Keras Logo](../static/company/keras.svg "Keras"){ style="width: 64px; margin: 1rem;" }](https://keras.io)
-[![Jupyter Logo](../static/company/jupyter.svg "Jupyter"){ style="width: 64px; margin: 1rem;" }](https://jupyter.org)
-[![Metabase Logo](../static/company/metabase.svg "Metabase"){ style="width: 64px; margin: 1rem;" }](https://www.metabase.com)
+[![Scikit-Learn Logo](../static/company/scikit-learn.svg "Scikit-Learn"){ .service-icon }](https://scikit-learn.org)
+[![Keras Logo](../static/company/keras.svg "Keras"){ .service-icon }](https://keras.io)
+[![Jupyter Logo](../static/company/jupyter.svg "Jupyter"){ .service-icon }](https://jupyter.org)
+[![Metabase Logo](../static/company/metabase.svg "Metabase"){ .service-icon }](https://www.metabase.com)
 
 Artificial intelligence and data science has been all the rage for a few years now.
 However, lots of companies are still struggling to put their machine learning
