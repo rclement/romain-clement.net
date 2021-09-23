@@ -72,7 +72,7 @@ jobs:
           pipenv install --deploy
       - name: Build package
         run: |
-          pipenv run mkdocs build
+          pipenv run mkdocs build --strict
           cp -R content/.well-known dist/.
           cp content/.vercelignore dist/.
           echo $SITE_URL > dist/CNAME
