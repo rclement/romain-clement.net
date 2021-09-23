@@ -95,6 +95,7 @@ theme:
     - feed/articles/atom.xml
     - feed/articles/rss.xml
     - feed/articles/feed.json
+    - robots.txt
   language: en
   font: false
   features:
