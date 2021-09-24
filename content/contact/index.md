@@ -58,7 +58,7 @@ form:
     error: /contact/error/
 
   notice: |-
-    Powered by <a href="https://mailer.romain-clement.net" title="Mailer">Mailer</a>
+    Powered by <a href="https://rclement.github.io/mailer/" title="Mailer">Mailer</a>
 ---
 
 # Contact

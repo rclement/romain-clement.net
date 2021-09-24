@@ -34,4 +34,4 @@ enabling one to receive e-mails from a simple form using a single AJAX request.
 - [x] Docker
 
 [repository]: https://github.com/rclement/mailer "GitHub Repository"
-[documentation]: https://mailer.romain-clement.net "Documentation"
+[documentation]: https://rclement.github.io/mailer/ "Documentation"
