@@ -1,4 +1,4 @@
 User-agent: *
-Disallow:
+Disallow: /design/
 
 Sitemap: {{ config.site_url }}sitemap.xml

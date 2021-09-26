@@ -131,10 +131,18 @@ plugins:
   - section-index
   - mknotebooks:
       execute: false
+      write_markdown: false
       enable_default_jupyter_cell_styling: false
       enable_default_pandas_dataframe_styling: true
-      exporter_kwargs:
-        exclude_input: true
+      tag_remove_configs:
+        remove_cell_tags:
+          - remove-cell
+        remove_all_outputs_tags:
+          - remove-output
+        remove_single_output_tags:
+          - remove-single-output
+        remove_input_tags:
+          - remove-input
   - minify:
       minify_html: true
       minify_js: true
