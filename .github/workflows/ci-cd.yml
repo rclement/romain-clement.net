@@ -28,9 +28,9 @@ jobs:
       - name: Run QA
         run: |
           pipenv run safety check
-          pipenv run black --check utils
-          pipenv run flake8 utils
-          pipenv run mypy --strict utils
+          pipenv run black --check utils tests
+          pipenv run flake8 utils tests
+          pipenv run mypy --strict utils tests
           pipenv run pytest -v --cov=utils --cov=tests --cov-branch --cov-report=term-missing tests
           pipenv run coverage xml
       - name: Publish code coverage to Codecov
