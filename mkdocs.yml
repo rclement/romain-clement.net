@@ -99,7 +99,7 @@ theme:
   language: en
   font: false
   features:
-    - navigation.indexes
+    # - navigation.indexes
     - navigation.sections
     - navigation.tabs
     - navigation.top
@@ -129,6 +129,7 @@ plugins:
       hooks:
         on_env: 'utils.hooks:on_env'
         on_page_markdown: 'utils.hooks:on_page_markdown'
+  - section-index
   - mknotebooks:
       execute: false
       write_markdown: false
