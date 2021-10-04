@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "cf11d0820fef3c1d147be53b4c72d8fc870e0309b99b49a386f5ef45b89fcb69"
+            "sha256": "20f86f69d36be7d71020e75b1a0b1d8e74c48d01f92b997b2a424a7e2ac9c50e"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -236,7 +236,7 @@
                 "sha256:93a29c5cad95b00d82908590548479638251c9188df449561f614d2f9756e15a",
                 "sha256:ce9265cf179c4e07934e7b6a4b03f3edb7891e66e6d0f7017755f6064bbbe13f"
             ],
-            "markers": "python_version >= '3.5' and python_version < '4.0'",
+            "markers": "python_version >= '3.5' and python_version < '4'",
             "version": "==2.4.1"
         },
         "markupsafe": {
@@ -345,14 +345,6 @@
             ],
             "index": "pypi",
             "version": "==0.4.1"
-        },
-        "mkdocs-section-index": {
-            "hashes": [
-                "sha256:6143b2abbeca8941dcdc3dd999539d12936e6677f578159debcd23fa1534ad03",
-                "sha256:be4662d7a0cdac160ca94af36c430e1d3541efead8a55bf5ec1042bbe1024391"
-            ],
-            "index": "pypi",
-            "version": "==0.3.2"
         },
         "mkdocs-simple-hooks": {
             "hashes": [
@@ -725,6 +717,14 @@
         }
     },
     "develop": {
+        "appnope": {
+            "hashes": [
+                "sha256:93aa393e9d6c54c5cd570ccadd8edad61ea0c4b9ea7a01409020c9aa019eb442",
+                "sha256:dd83cd4b5b460958838f6eb3000c660b1f9caf2a5b1de4264e941512f603258a"
+            ],
+            "markers": "sys_platform == 'darwin' and platform_system == 'Darwin'",
+            "version": "==0.1.2"
+        },
         "argon2-cffi": {
             "hashes": [
                 "sha256:165cadae5ac1e26644f5ade3bd9c18d89963be51d9ea8817bd671006d7909057",
