@@ -2,6 +2,9 @@ name: CI/CD
 
 on: [push]
 
+env:
+  BASE_URL_PREVIEW: website-romainclement.vercel.app
+
 jobs:
   test:
     name: Test
@@ -43,17 +46,22 @@ jobs:
     name: Build Preview
     needs: test
     runs-on: ubuntu-latest
-    if: ${{ !contains(github.ref, 'master') }}
+    if: ${{ !contains(github.ref, 'master') && !contains(github.ref, 'tags')}}
 
     env:
       APP_ENVIRONMENT: preview
-      SITE_URL: ${{ secrets.SITE_URL_PREVIEW }}
       MAILER_URL: ${{ secrets.MAILER_URL_PREVIEW }}
       CHIFFRE_PUBLIC_KEY: ""
       CHIFFRE_PROJECT_ID: ""
 
+    outputs:
+      github_ref_slug: ${{ steps.output_step.outputs.github_ref_slug }}
+      site_url: ${{ steps.output_step.outputs.site_url }}
+
     steps:
       - uses: actions/checkout@v2
+      - name: Inject slug/short variables
+        uses: rlespinasse/github-slug-action@v3.x
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
@@ -70,17 +78,23 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install --upgrade pipenv
           pipenv install --deploy
+      - name: Set preview site URL using branch slug
+        run: echo "SITE_URL=https://${GITHUB_REF_SLUG}-${BASE_URL_PREVIEW}" >> $GITHUB_ENV
       - name: Build package
         run: |
           pipenv run mkdocs build --strict
           cp -R content/.well-known dist/.
           cp content/.vercelignore dist/.
-          echo $SITE_URL > dist/CNAME
+          echo "${SITE_URL}" > dist/CNAME
       - name: Upload build artifacts
         uses: actions/upload-artifact@v2
         with:
           name: build-preview
           path: dist
+      - id: output_step
+        run: |
+          echo "::set-output name=github_ref_slug::${GITHUB_REF_SLUG}"
+          echo "::set-output name=site_url::${SITE_URL}"
 
   build-production:
     name: Build Production
@@ -94,6 +108,9 @@ jobs:
       MAILER_URL: ${{ secrets.MAILER_URL }}
       CHIFFRE_PUBLIC_KEY: ${{ secrets.CHIFFRE_PUBLIC_KEY }}
       CHIFFRE_PROJECT_ID: ${{ secrets.CHIFFRE_PROJECT_ID }}
+
+    outputs:
+      site_url: ${{ steps.output_step.outputs.site_url }}
 
     steps:
       - uses: actions/checkout@v2
@@ -118,18 +135,23 @@ jobs:
           pipenv run mkdocs build
           cp -R content/.well-known dist/.
           cp content/.vercelignore dist/.
-          echo $SITE_URL > dist/CNAME
+          echo "${SITE_URL}" > dist/CNAME
       - name: Upload build artifacts
         uses: actions/upload-artifact@v2
         with:
           name: build-production
           path: dist
+      - id: output_step
+        run: echo "::set-output name=site_url::${SITE_URL}"
 
   deploy-preview:
     name: Deploy Preview
     needs: build-preview
     runs-on: ubuntu-latest
-    if: ${{ !contains(github.ref, 'master') }}
+    environment:
+      name: preview/${{ needs.build-preview.outputs.github_ref_slug }}
+      url: ${{ needs.build-preview.outputs.site_url }}
+    if: ${{ !contains(github.ref, 'master') && !contains(github.ref, 'tags')}}
 
     env:
       VERCEL_ORG_ID: ${{ secrets.NOW_ORG_ID }}
@@ -138,18 +160,28 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - name: Inject slug/short variables
+        uses: rlespinasse/github-slug-action@v3.x
       - name: Download build artifacts
         uses: actions/download-artifact@v2
         with:
           name: build-preview
           path: dist
+      - name: Set vercel alias using branch slug
+        run: echo "VERCEL_ALIAS=${GITHUB_REF_SLUG}-${BASE_URL_PREVIEW}" >> $GITHUB_ENV
       - name: Deploy to Vercel
-        run: cd dist && vercel --confirm --token $VERCEL_TOKEN
+        run: |
+          cd dist
+          DEPLOYMENT_URL=$(vercel --confirm --token $VERCEL_TOKEN)
+          vercel alias --token $VERCEL_TOKEN set $DEPLOYMENT_URL $VERCEL_ALIAS
 
   deploy-production:
     name: Deploy Production
     needs: build-production
     runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: ${{ needs.build-production.outputs.site_url }}
     if: contains(github.ref, 'master')
 
     env:
