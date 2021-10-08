@@ -52,6 +52,9 @@ jobs:
       CHIFFRE_PUBLIC_KEY: ""
       CHIFFRE_PROJECT_ID: ""
 
+    outputs:
+      site_url: ${{ steps.output_step.outputs.site_url }}
+
     steps:
       - uses: actions/checkout@v2
       - name: Inject slug/short variables
@@ -85,6 +88,8 @@ jobs:
         with:
           name: build-preview
           path: dist
+      - id: output_step
+        run: echo "::set-output name=site_url::${SITE_URL}"
 
   build-production:
     name: Build Production
@@ -98,6 +103,9 @@ jobs:
       MAILER_URL: ${{ secrets.MAILER_URL }}
       CHIFFRE_PUBLIC_KEY: ${{ secrets.CHIFFRE_PUBLIC_KEY }}
       CHIFFRE_PROJECT_ID: ${{ secrets.CHIFFRE_PROJECT_ID }}
+
+    outputs:
+      site_url: ${{ steps.output_step.outputs.site_url }}
 
     steps:
       - uses: actions/checkout@v2
@@ -128,11 +136,16 @@ jobs:
         with:
           name: build-production
           path: dist
+      - id: output_step
+        run: echo "::set-output name=site_url::${SITE_URL}"
 
   deploy-preview:
     name: Deploy Preview
     needs: build-preview
     runs-on: ubuntu-latest
+    environment:
+      name: preview
+      url: ${{ steps.build-preview.outputs.site_url }}
     if: ${{ !contains(github.ref, 'master') && !contains(github.ref, 'tags')}}
 
     env:
@@ -162,6 +175,9 @@ jobs:
     name: Deploy Production
     needs: build-production
     runs-on: ubuntu-latest
+    environment:
+      name: preview
+      url: ${{ steps.build-production.outputs.site_url }}
     if: contains(github.ref, 'master')
 
     env:
