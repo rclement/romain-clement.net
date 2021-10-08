@@ -2,6 +2,9 @@ name: CI/CD
 
 on: [push]
 
+env:
+  BASE_URL_PREVIEW: website-romainclement.vercel.app
+
 jobs:
   test:
     name: Test
@@ -47,12 +50,12 @@ jobs:
 
     env:
       APP_ENVIRONMENT: preview
-      BASE_URL_PREVIEW: ${{ secrets.BASE_URL_PREVIEW }}
       MAILER_URL: ${{ secrets.MAILER_URL_PREVIEW }}
       CHIFFRE_PUBLIC_KEY: ""
       CHIFFRE_PROJECT_ID: ""
 
     outputs:
+      github_ref_slug: ${{ steps.output_step.outputs.github_ref_slug }}
       site_url: ${{ steps.output_step.outputs.site_url }}
 
     steps:
@@ -89,7 +92,9 @@ jobs:
           name: build-preview
           path: dist
       - id: output_step
-        run: echo "::set-output name=site_url::${SITE_URL}"
+        run: |
+          echo "::set-output name=github_ref_slug::${GITHUB_REF_SLUG}"
+          echo "::set-output name=site_url::${SITE_URL}"
 
   build-production:
     name: Build Production
@@ -144,7 +149,7 @@ jobs:
     needs: build-preview
     runs-on: ubuntu-latest
     environment:
-      name: preview
+      name: preview/${{ steps.build-preview.outputs.github_ref_slug }}
       url: ${{ steps.build-preview.outputs.site_url }}
     if: ${{ !contains(github.ref, 'master') && !contains(github.ref, 'tags')}}
 
@@ -152,7 +157,6 @@ jobs:
       VERCEL_ORG_ID: ${{ secrets.NOW_ORG_ID }}
       VERCEL_PROJECT_ID: ${{ secrets.NOW_PROJECT_ID }}
       VERCEL_TOKEN: ${{ secrets.NOW_TOKEN }}
-      BASE_URL_PREVIEW: ${{ secrets.BASE_URL_PREVIEW }}
 
     steps:
       - uses: actions/checkout@v2
@@ -176,7 +180,7 @@ jobs:
     needs: build-production
     runs-on: ubuntu-latest
     environment:
-      name: preview
+      name: production
       url: ${{ steps.build-production.outputs.site_url }}
     if: contains(github.ref, 'master')
 
