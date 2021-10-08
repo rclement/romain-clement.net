@@ -1,0 +1,24 @@
+name: Cleanup
+
+on: [delete]
+
+env:
+  BASE_URL_PREVIEW: website-romainclement.vercel.app
+
+jobs:
+  cleanup-preview-deployment:
+    name: Cleanup Preview Deployment
+    runs-on: ubuntu-latest
+
+    env:
+      VERCEL_ORG_ID: ${{ secrets.NOW_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.NOW_PROJECT_ID }}
+      VERCEL_TOKEN: ${{ secrets.NOW_TOKEN }}
+
+    steps:
+      - name: Inject slug/short variables
+        uses: rlespinasse/github-slug-action@v3.x
+      - name: Set vercel alias using event ref slug
+        run: echo "VERCEL_ALIAS=${GITHUB_EVENT_REF_SLUG}-${BASE_URL_PREVIEW}" >> $GITHUB_ENV
+      - name: Deploy to Vercel
+        run: vercel alias --token $VERCEL_TOKEN rm $VERCEL_ALIAS -y
