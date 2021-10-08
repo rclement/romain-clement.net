@@ -18,7 +18,7 @@ jobs:
     steps:
       - name: Inject slug/short variables
         uses: rlespinasse/github-slug-action@v3.x
-      - name: Set vercel alias using event ref slug
+      - name: Set Vercel alias using event ref slug
         run: echo "VERCEL_ALIAS=${GITHUB_EVENT_REF_SLUG}-${BASE_URL_PREVIEW}" >> $GITHUB_ENV
-      - name: Deploy to Vercel
+      - name: Remove Vercel alias
         run: vercel alias --token $VERCEL_TOKEN rm $VERCEL_ALIAS -y
