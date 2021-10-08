@@ -149,8 +149,8 @@ jobs:
     needs: build-preview
     runs-on: ubuntu-latest
     environment:
-      name: preview/${{ steps.build-preview.outputs.github_ref_slug }}
-      url: ${{ steps.build-preview.outputs.site_url }}
+      name: preview/${{ needs.build-preview.outputs.github_ref_slug }}
+      url: ${{ needs.build-preview.outputs.site_url }}
     if: ${{ !contains(github.ref, 'master') && !contains(github.ref, 'tags')}}
 
     env:
@@ -181,7 +181,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: production
-      url: ${{ steps.build-production.outputs.site_url }}
+      url: ${{ needs.build-production.outputs.site_url }}
     if: contains(github.ref, 'master')
 
     env:
