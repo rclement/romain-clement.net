@@ -25,9 +25,8 @@ services (REST APIs).
 Technologies used on a regular basis:
 
 - [x] Python
-- [x] Flask
-- [x] FastAPI
-- [x] Pytest
+- [x] Flask / FastAPI / Django
+- [x] Pytest / MyPy / Black / Flake8
 - [x] SQL / PostgreSQL / SQLite
 - [x] Docker
 - [x] Git / GitHub / GitLab
