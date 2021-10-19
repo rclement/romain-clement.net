@@ -146,9 +146,13 @@ plugins:
           - remove-input
   - minify:
       minify_html: true
+      minify_css: true
       minify_js: true
       htmlmin_opts:
         remove_comments: true
+      css_files:
+        - assets/stylesheets/extra.css
+        - assets/stylesheets/forms.css
       js_files:
         - assets/javascripts/mathjax.js
 
