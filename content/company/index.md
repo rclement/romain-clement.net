@@ -14,7 +14,7 @@ My current domains of expertise and interest include:
 When collaborating with companies, I strive to deliver lean and pragmatic solutions
 in iterative cycles, in order to develop products with strong added value.
 
-Interested to work together? [Let's talk!](/contact/)
+Interested to work together? [Let's talk!](../contact.md)
 
 [data-science]: https://en.wikipedia.org/wiki/Data_science "Wikipedia - Data Science"
 [machine-learning]: https://en.wikipedia.org/wiki/Machine_learning "Wikipedia - Machine Learning"

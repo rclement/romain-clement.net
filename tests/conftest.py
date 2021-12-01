@@ -1,3 +1,4 @@
+import os
 import pytest
 
 from pathlib import Path
@@ -7,12 +8,16 @@ from mkdocs import config
 from mkdocs.commands import build
 
 
+os.environ["SITE_URL"] = "http://localhost"
+os.environ["MAILER_URL"] = "http://mailer.local"
+os.environ["CHIFFRE_PUBLIC_KEY"] = "chiffre-public-key"
+os.environ["CHIFFRE_PROJECT_ID"] = "chiffre-project-id"
+
+
 @pytest.fixture(scope="session", autouse=True)
 def mkdocs_config() -> config.Config:
     cfg = config.load_config()
     cfg["site_dir"] = str((Path(__file__).parent / "site").absolute())
-    cfg["site_url"] = "http://localhost"
-    cfg["extra"]["forms"]["contact"]["base_url"] = "http://mailer.local"
     return cfg
 
 

@@ -1,6 +1,6 @@
 {% from 'macros/_meta_tags.html' import meta_tags %}
 
-{% extends "common.html" %}
+{% extends "base.html" %}
 
 {% block extrahead %}
   {{ meta_tags(config, page, True) }}
@@ -44,9 +44,7 @@
 
   <!-- Markdown content -->
   {{ page.content }}
-{% endblock %}
 
-{% block disqus %}
   <!-- Utterances comment system (https://utteranc.es) -->
   <script src="https://utteranc.es/client.js"
     repo="rclement/romain-clement.net"

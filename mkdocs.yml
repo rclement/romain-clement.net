@@ -42,8 +42,7 @@ nav:
       - articles/cloudflare-setup-cdn-paas.md
       - articles/sentry-url-fragments.md
       - articles/github-actions-cicd-workflows.md
-  - Contact:
-      - contact/index.md
+  - Contact: contact.md
 
 extra:
   version: 1.0.0
