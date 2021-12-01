@@ -1,6 +1,4 @@
-{% extends "base.html" %}
-
-{% set extracopyright %}
+<div class="md-copyright">
   <p>
     <a href="/legal/" title="Legal Mentions">Legal Mentions</a>
     <br>
@@ -8,4 +6,12 @@
     <br>
     Last update on {{ build_date_utc|localized_date }}
   </p>
-{% endset %}
+
+  Made with
+    <a
+      href="https://squidfunk.github.io/mkdocs-material/"
+      target="_blank" rel="noopener"
+    >
+      Material for MkDocs
+    </a>
+</div>

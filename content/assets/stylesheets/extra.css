@@ -48,3 +48,13 @@ img.client-icon {
 .article-tag:not(:last-child) {
   margin-right: 0.5rem;
 }
+
+/*
+  Workaround for index pages without sub-pages issue with mkdocs-material > 7.3.0
+  Inspiration: https://github.com/docker-mailserver/docker-mailserver/blob/889ace8a64465aabc9493aef39d88086e26f70b7/docs/content/assets/css/customizations.css#L51
+ */
+@media screen and (min-width: 76.25em) {
+  .md-nav--lifted > .md-nav__list > .md-nav__item--active > .md-nav__link:last-child {
+    display: none;
+  }
+}
