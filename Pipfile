@@ -14,7 +14,7 @@ mknotebooks = "==0.7.1"
 readtime = "==1.1.1"
 
 [dev-packages]
-black = "==21.9b0"
+black = "==22.1.0"
 faker = "==11.3.0"
 feedparser = "==6.0.8"
 flake8 = "==4.0.1"
