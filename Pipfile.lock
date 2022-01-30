@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "5f900ff4433a8f0b750e632d6dfa80fe73fa114ea19465d89d968788ee75a36b"
+            "sha256": "7916d3f3f2bd6dd8a92c7e771c8d0bfbb489811c9218b1e48bb4e2885c451a99"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -357,11 +357,11 @@
         },
         "mkdocs-material": {
             "hashes": [
-                "sha256:7698b59e09640fb0ae47f4ec426f327f7cbe729386b1cdbbb65ac77bc2a95b45",
-                "sha256:e8adc408c620e5fa23286e7fbfde3ccd37187fbda907a64594c36dbcd119a9ce"
+                "sha256:6feb433f29227b862418bd1009edeec2e52870770c476bf02840fc094b8823f2",
+                "sha256:a15873a5e116bf4615af4fcedc85a0537492464365286cba50310d96fb066958"
             ],
             "index": "pypi",
-            "version": "==8.1.8"
+            "version": "==8.1.9"
         },
         "mkdocs-material-extensions": {
             "hashes": [
@@ -1497,7 +1497,7 @@
                 "sha256:e60ef82c358ded965fdd3132b5738eade055f48067ac8a5a8ac75acc00cad31f",
                 "sha256:f8ad59e6e341f38266f1549c7c2ec70ea0e3d1effb62a44e5c3dba41c55f0187"
             ],
-            "markers": "python_version < '3.10' and platform_machine != 'aarch64' and platform_machine != 'arm64'",
+            "markers": "python_version >= '3.8'",
             "version": "==1.22.1"
         },
         "packaging": {
