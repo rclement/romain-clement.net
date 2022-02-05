@@ -30,7 +30,7 @@ jobs:
           pipenv install --dev --deploy
       - name: Run QA
         run: |
-          pipenv run safety check
+          pipenv run safety check --full-report --ignore 44715
           pipenv run black --check utils tests
           pipenv run flake8 utils tests
           pipenv run mypy --strict utils tests
