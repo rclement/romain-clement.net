@@ -163,7 +163,7 @@ jobs:
       - name: Inject slug/short variables
         uses: rlespinasse/github-slug-action@v4
       - name: Download build artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: build-preview
           path: dist
@@ -192,7 +192,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Download build artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: build-production
           path: dist
