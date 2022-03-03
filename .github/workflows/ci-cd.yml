@@ -87,7 +87,7 @@ jobs:
           cp content/.vercelignore dist/.
           echo "${SITE_URL}" > dist/CNAME
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: build-preview
           path: dist
@@ -137,7 +137,7 @@ jobs:
           cp content/.vercelignore dist/.
           echo "${SITE_URL}" > dist/CNAME
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: build-production
           path: dist
