@@ -28,5 +28,12 @@ Let's bringing beautiful Business Intelligence dashboards to Datasette!
 - [x] Datasette
 - [x] Vega-Lite
 
+## Accolades
+
+!!! quote
+    Romain Clement’s datasette-dashboards plugin lets you configure dashboards for Datasette using YAML, combining markdown blocks, Vega graphs and single number metrics using a layout powered by CSS grids. This is a beautiful piece of software design, with a very compelling live demo.
+
+    -- <cite>Simon Willison - Creator of Datasette ([source](https://simonwillison.net/2022/Apr/7/datasette-dashboards/))</cite>
+
 [repository]: https://github.com/rclement/datasette-dashboards "GitHub Repository"
 [demo]: https://datasette-dashboards-demo.vercel.app "Live Demo"
