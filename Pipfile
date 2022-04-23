@@ -23,7 +23,7 @@ mypy = "==0.942"
 jupyter = "==1.0.0"
 matplotlib ="==3.5.1"
 pandas = "==1.4.2"
-pytest = "==7.1.1"
+pytest = "==7.1.2"
 pytest-cov = "==3.0.0"
 safety = "==1.10.3"
 
