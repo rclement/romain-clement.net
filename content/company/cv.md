@@ -11,6 +11,7 @@ Idea:
 - samples:
     - https://www.arp242.net/cv/cv-martintournoij
     - https://serhii.vasylenko.info/cv/
+    - https://ano.ee/cv
  -->
 
 # Romain Clement
