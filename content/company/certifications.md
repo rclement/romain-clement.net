@@ -6,7 +6,7 @@ Always discovering and learning new skills.
 
 [![Coursera Logo](../static/company/coursera.png){ align=right style="width: 20%" }][coursera-ml-website]
 
-:fontawesome-solid-history: August - October 2020 <br>
+:fontawesome-solid-clock-rotate-left: August - October 2020 <br>
 [:fontawesome-solid-globe: Course Website][coursera-ml-website] <br>
 [:fontawesome-solid-graduation-cap: Course Certification][coursera-ml-certificate]
 
@@ -41,7 +41,7 @@ of the art models are discussed.
 
 [![CCI Formation Grenoble Logo](../static/company/cci-formation-grenoble.png){ align=right style="width: 20%" }][cci-entreprendre-website]
 
-:fontawesome-solid-history: February 2018 <br>
+:fontawesome-solid-clock-rotate-left: February 2018 <br>
 [:fontawesome-solid-globe: Course Website][cci-entreprendre-website]
 
 ### Summary
