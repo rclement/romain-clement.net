@@ -28,7 +28,7 @@ Data Engineering · Python · ETL · Web-Scraping · Docker · Cloud · DevOps
 
 **Data / AI Training**
 
-Data Analysis / Engineering / Science · Agile Project Management · Python · SQL / NoSQL · ETL · Cloud · Active Learning
+Data Analysis / Engineering / Science · Machine Learning · Deep Learning · Python · SQL / NoSQL · ETL · Azure · Agile Project Management
 
 ---
 
