@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "16112b8d2e5fbe070beceee2a5d3ead83347a20b81ec039b42758ff48befef03"
+            "sha256": "47110b5af2a55f91f1e8c2545f54a1cb46dfc36956117904f3b4b48faf2b3dd9"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -154,11 +154,11 @@
         },
         "jupyter-client": {
             "hashes": [
-                "sha256:8f92691bf2d8c670e108813a0290d93a3dc84f74fb844e915b7e587ef2fcbf44",
-                "sha256:be7dff1c6792a951169b514b9b66e9d7ffaba811575cf49d24b73a1ca28f014a"
+                "sha256:5b4f5bb9f9c3b5466ba84761312ed75f487bf3b8b0e1eeeec4bb2d0f9d855c70",
+                "sha256:9e80defc0058712bf2b30327bad582f9734668aa85e90256dcba116325ce3060"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==7.3.2"
+            "version": "==7.3.3"
         },
         "jupyter-core": {
             "hashes": [
@@ -258,7 +258,7 @@
                 "sha256:412520c7b6bba540c2c2067d6be3a523ab885703bf6a81d93963f848b55dfb9a",
                 "sha256:f344d4adfba5d1de821f7850b36e3507f583468a7eb47e6fa191765ed0b9c66b"
             ],
-            "markers": "python_version >= '3.5' and python_version < '4.0'",
+            "markers": "python_version >= '3.5' and python_version < '4'",
             "version": "==2.4.3"
         },
         "markupsafe": {
@@ -332,11 +332,11 @@
         },
         "mkdocs-material": {
             "hashes": [
-                "sha256:57d910ccb6d98d0d1281cbb34a9c8ae6d820b2f5caad1d1246d8ed49eec10a50",
-                "sha256:d203ba166063ccd0ff83893a54f46d98e2fb3961babd7c0176cb3f95ac62df20"
+                "sha256:3dd30af894f6d5da3d8a2f8ffc04c90c4d0f1be013e654ec45f608373c131542",
+                "sha256:4f9564af58f9c96f25c263cb705a40a82c833cb10c2626d6db6ddadedaa5b6c3"
             ],
             "index": "pypi",
-            "version": "==8.3.2"
+            "version": "==8.3.3"
         },
         "mkdocs-material-extensions": {
             "hashes": [
@@ -1109,11 +1109,11 @@
         },
         "ipykernel": {
             "hashes": [
-                "sha256:0e28273e290858393e86e152b104e5506a79c13d25b951ac6eca220051b4be60",
-                "sha256:2b0987af43c0d4b62cecb13c592755f599f96f29aafe36c01731aaa96df30d39"
+                "sha256:6f42070a5d87ecbf4a2fc27a7faae8d690fd3794825a090ddf6b00b9678a5b69",
+                "sha256:fedc79bebd8a438162d056e0c7662d5ac8a47d1f6ef33a702e8460248dc4517f"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==6.13.0"
+            "version": "==6.13.1"
         },
         "ipython": {
             "hashes": [
@@ -1172,11 +1172,11 @@
         },
         "jupyter-client": {
             "hashes": [
-                "sha256:8f92691bf2d8c670e108813a0290d93a3dc84f74fb844e915b7e587ef2fcbf44",
-                "sha256:be7dff1c6792a951169b514b9b66e9d7ffaba811575cf49d24b73a1ca28f014a"
+                "sha256:5b4f5bb9f9c3b5466ba84761312ed75f487bf3b8b0e1eeeec4bb2d0f9d855c70",
+                "sha256:9e80defc0058712bf2b30327bad582f9734668aa85e90256dcba116325ce3060"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==7.3.2"
+            "version": "==7.3.3"
         },
         "jupyter-console": {
             "hashes": [
@@ -1469,7 +1469,7 @@
                 "sha256:f3eb268dbd5cfaffd9448113539e44e2dd1c5ca9ce25576f7c04a5453edc26fa",
                 "sha256:fb7a980c81dd932381f8228a426df8aeb70d59bbcda2af075b627bbc50207cba"
             ],
-            "markers": "python_version >= '3.8'",
+            "markers": "python_version < '3.10' and platform_machine != 'aarch64' and platform_machine != 'arm64'",
             "version": "==1.22.4"
         },
         "packaging": {
@@ -1987,7 +1987,7 @@
                 "sha256:939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc",
                 "sha256:de526c12914f0c550d15924c62d72abc48d6fe7364aa87328337a31007fe8a4f"
             ],
-            "markers": "python_version >= '3.7'",
+            "markers": "python_version < '3.11'",
             "version": "==2.0.1"
         },
         "tornado": {
