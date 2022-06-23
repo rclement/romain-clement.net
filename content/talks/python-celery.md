@@ -11,12 +11,6 @@ Manage your asynchronous tasks with Celery.
 
 ## Slides
 
-## [Les RDV de l'IAccessible](https://app.livestorm.co/simplon-3) (2021)
-
-> Simplon.co
-
-Every company is concerned with data: discover how to get started with this webinar series.
-
 <iframe
     src="https://talks.romain-clement.net/talk_python_celery.html"
     width="600"
