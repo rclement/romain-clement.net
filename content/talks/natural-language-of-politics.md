@@ -2,7 +2,7 @@
 
 Talk given on April 14, 2022 at the [Simplon.co Grenoble Data/AI Meetup][meetup].
 
-[:fontawesome-brands-linkedin: Event on LinkedIn][event]
+[:fontawesome-brands-linkedin: Event on LinkedIn][event] <br>
 [:fontawesome-brands-github: Repository on GitHub][repository]
 
 ## Summary
