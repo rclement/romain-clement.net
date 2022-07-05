@@ -1,7 +1,7 @@
 # Company
 
 I started my own freelancing company in 2018 with a strong focus on bringing
-software engineering skills for data and artifical intelligence applications,
+software engineering skills for data and artificial intelligence applications,
 as well as teaching others.
 
 My current domains of expertise and interest include:
