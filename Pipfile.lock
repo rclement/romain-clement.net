@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "713c716bab243b1575eb1bdfee8c57b5688636ddf8723530019be110514925d9"
+            "sha256": "2ab154955f4ecff5b1810b5ce9eab13198a6d39fbf54fad09726f3383f27ef2f"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -266,7 +266,7 @@
                 "sha256:412520c7b6bba540c2c2067d6be3a523ab885703bf6a81d93963f848b55dfb9a",
                 "sha256:f344d4adfba5d1de821f7850b36e3507f583468a7eb47e6fa191765ed0b9c66b"
             ],
-            "markers": "python_version >= '3.5' and python_version < '4'",
+            "markers": "python_version >= '3.5' and python_version < '4.0'",
             "version": "==2.4.3"
         },
         "markupsafe": {
@@ -1072,11 +1072,11 @@
         },
         "faker": {
             "hashes": [
-                "sha256:0c7d283a96c49af64fe319f70d2b68927873c9173e922f8eda6001e7757cb63b",
-                "sha256:f1558ecb1770d8c871ea01cc2edc7b5e86148b0fa0466731f0e1e8953165d179"
+                "sha256:067a03f64e555261610e69277536072997b4576dbf84b113faef3c06d85b466b",
+                "sha256:0e00bfa1eadf1493f15662edb181222fea4847764cf3f9ff3e66ee0f95c9a644"
             ],
             "index": "pypi",
-            "version": "==14.0.0"
+            "version": "==14.1.0"
         },
         "fastjsonschema": {
             "hashes": [
@@ -2154,7 +2154,7 @@
                 "sha256:939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc",
                 "sha256:de526c12914f0c550d15924c62d72abc48d6fe7364aa87328337a31007fe8a4f"
             ],
-            "markers": "python_full_version < '3.11.0a7'",
+            "markers": "python_version >= '3.7'",
             "version": "==2.0.1"
         },
         "tornado": {
@@ -2187,7 +2187,7 @@
                 "sha256:25642c956049920a5aa49edcdd6ab1e06d7e5d467fc00e0506c44ac86fbfca02",
                 "sha256:e6d2677a32f47fc7eb2795db1dd15c1f34eff616bcaf2cfb5e997f854fa1c4a6"
             ],
-            "markers": "python_version < '3.10'",
+            "markers": "python_version >= '3.7'",
             "version": "==4.3.0"
         },
         "urllib3": {
