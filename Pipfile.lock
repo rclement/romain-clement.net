@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "41af692a87f91ae9a96cedc7d24bc94b06fa6b7cb5406197245e605cec8d2f84"
+            "sha256": "2f01b4c09cf7e66e1d9bb797e552f438e9a767f03709203106f59f29e0d5fd70"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -146,11 +146,11 @@
         },
         "jsonschema": {
             "hashes": [
-                "sha256:2ac503b91b4a9dcf9c93764b26e926e386ec1065fec4f685c0e458a375dadedf",
-                "sha256:706bbcafb49b1350fbcea40b209bdce8aed07c3288f7a77e9539bd5b3ddead3d"
+                "sha256:05f975aee3f1244a1ea0e018e8ad2672f6ca5fd1a28bc46ffc7d4b3e9896cac4",
+                "sha256:c7dd96a88c4ea60bdc8478589ee2d4ea5d73ab235e24d17641ad733dde4e3eb1"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==4.11.0"
+            "version": "==4.12.1"
         },
         "jupyter-client": {
             "hashes": [
@@ -266,7 +266,7 @@
                 "sha256:412520c7b6bba540c2c2067d6be3a523ab885703bf6a81d93963f848b55dfb9a",
                 "sha256:f344d4adfba5d1de821f7850b36e3507f583468a7eb47e6fa191765ed0b9c66b"
             ],
-            "markers": "python_version >= '3.5' and python_version < '4'",
+            "markers": "python_version >= '3.5' and python_version < '4.0'",
             "version": "==2.4.3"
         },
         "markupsafe": {
@@ -1173,11 +1173,11 @@
         },
         "jsonschema": {
             "hashes": [
-                "sha256:2ac503b91b4a9dcf9c93764b26e926e386ec1065fec4f685c0e458a375dadedf",
-                "sha256:706bbcafb49b1350fbcea40b209bdce8aed07c3288f7a77e9539bd5b3ddead3d"
+                "sha256:05f975aee3f1244a1ea0e018e8ad2672f6ca5fd1a28bc46ffc7d4b3e9896cac4",
+                "sha256:c7dd96a88c4ea60bdc8478589ee2d4ea5d73ab235e24d17641ad733dde4e3eb1"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==4.11.0"
+            "version": "==4.12.1"
         },
         "jupyter": {
             "hashes": [
@@ -2155,7 +2155,7 @@
                 "sha256:939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc",
                 "sha256:de526c12914f0c550d15924c62d72abc48d6fe7364aa87328337a31007fe8a4f"
             ],
-            "markers": "python_version >= '3.7'",
+            "markers": "python_full_version < '3.11.0a7'",
             "version": "==2.0.1"
         },
         "tornado": {
@@ -2188,7 +2188,7 @@
                 "sha256:25642c956049920a5aa49edcdd6ab1e06d7e5d467fc00e0506c44ac86fbfca02",
                 "sha256:e6d2677a32f47fc7eb2795db1dd15c1f34eff616bcaf2cfb5e997f854fa1c4a6"
             ],
-            "markers": "python_version >= '3.7'",
+            "markers": "python_version < '3.10'",
             "version": "==4.3.0"
         },
         "urllib3": {
