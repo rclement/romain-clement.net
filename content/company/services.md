@@ -4,7 +4,7 @@ Software is everywhere. And so is Data. Let's build exciting data applications!
 
 ## Fare
 
-Starting at 500€ (VAT excl.) per day.
+Starting at 750€ (VAT excl.) per day.
 
 [:fontawesome-solid-bullhorn: Ask for a quote](../contact.md){ .md-button .md-button--primary }
 
@@ -19,8 +19,9 @@ Software and data goes hand in hand, but insuring quality for automated data
 processes is key. I usually advocate for simple and lean processes whenever
 possible, encouraging the use of quality small data instead of big data.
 
-I can help your team grow by building data pipelines (ETL, ELT) and backend
-services (REST APIs).
+I can help your team grow by building data pipelines (ETL, ELT), backend
+services (REST APIs), and orchestrating everything using DevOps methodologies
+(CI/CD, IaC, Agile project management).
 
 Technologies used on a regular basis:
 
@@ -28,7 +29,8 @@ Technologies used on a regular basis:
 - [x] Flask / FastAPI / Django
 - [x] Pytest / MyPy / Black / Flake8
 - [x] SQL / PostgreSQL / SQLite
-- [x] Docker
+- [x] Docker / Kubernetes / Terraform
+- [x] Heroku / GCP / Azure / Scaleway 
 - [x] Git / GitHub / GitLab
 - [x] GitHub Actions / GitLab-CI
 
@@ -73,6 +75,6 @@ are building their skillset from top to bottom, applying the concepts right away
 
 Currently offered training topics:
 
-- [x] Software Engineering
+- [x] Software Engineering & DevOps
 - [x] Data Engineering / Science / Analysis
 - [x] Artificial Intelligence and Machine Learning
