@@ -4,7 +4,7 @@ import jsonschema
 import pytest
 
 from pathlib import Path
-from mkdocs.config import Config
+from mkdocs.config.defaults import MkDocsConfig
 
 
 @pytest.mark.parametrize(
@@ -15,7 +15,7 @@ from mkdocs.config import Config
     ),
     ids=str,
 )
-def test_valid_rss_atom_feed(mkdocs_config: Config, feed_file: Path) -> None:
+def test_valid_rss_atom_feed(mkdocs_config: MkDocsConfig, feed_file: Path) -> None:
     feed_path = Path(mkdocs_config["site_dir"]) / feed_file
     feed = feedparser.parse(feed_path)
 
@@ -34,7 +34,7 @@ def test_valid_rss_atom_feed(mkdocs_config: Config, feed_file: Path) -> None:
     (Path("feed") / "articles" / "feed.json",),
     ids=str,
 )
-def test_valid_json_feed(mkdocs_config: Config, feed_file: Path) -> None:
+def test_valid_json_feed(mkdocs_config: MkDocsConfig, feed_file: Path) -> None:
     json_feed_schema_path = Path(__file__).parent / "json-feed-schema-v1.1.json"
     json_feed_schema = json.loads(json_feed_schema_path.read_text())
     json_feed_path = Path(mkdocs_config["site_dir"]) / feed_file

@@ -1,8 +1,8 @@
 from pathlib import Path
-from mkdocs.config import Config
+from mkdocs.config.defaults import MkDocsConfig
 
 
-def test_valid_chiffre_analytics_in_page(mkdocs_config: Config) -> None:
+def test_valid_chiffre_analytics_in_page(mkdocs_config: MkDocsConfig) -> None:
     analytics_config = mkdocs_config["extra"]["analytics"]
 
     page_path = Path(mkdocs_config["site_dir"]) / "index.html"
