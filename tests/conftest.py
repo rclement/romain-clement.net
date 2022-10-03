@@ -4,7 +4,8 @@ import pytest
 from pathlib import Path
 from shutil import rmtree
 from typing import Generator
-from mkdocs import config
+from mkdocs.config.base import load_config
+from mkdocs.config.defaults import MkDocsConfig
 from mkdocs.commands import build
 
 
@@ -15,14 +16,14 @@ os.environ["CHIFFRE_PROJECT_ID"] = "chiffre-project-id"
 
 
 @pytest.fixture(scope="session", autouse=True)
-def mkdocs_config() -> config.Config:
-    cfg = config.load_config()
+def mkdocs_config() -> MkDocsConfig:
+    cfg = load_config()
     cfg["site_dir"] = str((Path(__file__).parent / "site").absolute())
     return cfg
 
 
 @pytest.fixture(scope="session", autouse=True)
-def mkdocs_build(mkdocs_config: config.Config) -> Generator[None, None, None]:
+def mkdocs_build(mkdocs_config: MkDocsConfig) -> Generator[None, None, None]:
     build.build(mkdocs_config)
     yield
     rmtree(mkdocs_config["site_dir"])

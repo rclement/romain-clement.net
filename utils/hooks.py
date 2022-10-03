@@ -6,7 +6,7 @@ import readtime
 
 from datetime import date, datetime, timezone
 from pathlib import Path
-from typing import Any, Dict, Union
+from typing import Any, Dict, MutableMapping, Union
 from babel.dates import format_date
 from mkdocs.structure.pages import Page
 
@@ -26,7 +26,7 @@ form_regex = re.compile(r"\{\{ form \}\}")
 
 
 def render_form(
-    source: str, metadata: Dict[str, Any], forms_config: Dict[str, Any]
+    source: str, metadata: MutableMapping[str, Any], forms_config: Dict[str, Any]
 ) -> str:
     page_form = metadata.get("form")
     if page_form is not None:
