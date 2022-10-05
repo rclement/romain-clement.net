@@ -4,8 +4,8 @@
 
 This website and all of its content are authored and owned by:
 
-[**Monsieur Romain Clement**][infogreffe]<br>
-Micro-entreprise
+[**Monsieur Romain Clement EI**][infogreffe]<br>
+Entrepreneur Individuel / Micro-entreprise
 
 80 cours Liberation - Gen de Gaulle<br>
 38100 Grenoble<br>
