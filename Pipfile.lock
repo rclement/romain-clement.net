@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "c43656a39676983f36f0c69595c4f93b7763948699b1d108054161eae7750516"
+            "sha256": "c3dda5112825ba67f958e27207e679a7f6c9c9c201b622ff9dc186fc13368c1b"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -1190,11 +1190,11 @@
         },
         "faker": {
             "hashes": [
-                "sha256:37c8bfcbd9e0e99cebcd22e70dcf895ff92fb46aa8a32c7772df0c1f1f32ea48",
-                "sha256:39c4e7915813923829675488cafef07ddf11cf59ecbaac518f53dd8e7b0df5cf"
+                "sha256:1bfb1b447cd45169a74a09f821cee47f51548508b62a29f6dfdab1d001d448a4",
+                "sha256:bd922a6ad210bb96a5b31987e10918851131c9670429172d5bfb3a5ede238a79"
             ],
             "index": "pypi",
-            "version": "==15.1.2"
+            "version": "==15.1.3"
         },
         "fastjsonschema": {
             "hashes": [
