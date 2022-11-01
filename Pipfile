@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-babel = "==2.10.3"
+babel = "==2.11.0"
 mkdocs = "==1.4.1"
 mkdocs-material = "==8.5.7"
 mkdocs-minify-plugin = "==0.6.1"
