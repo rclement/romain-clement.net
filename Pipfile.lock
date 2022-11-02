@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "c3dda5112825ba67f958e27207e679a7f6c9c9c201b622ff9dc186fc13368c1b"
+            "sha256": "701a7cc05e663846a2a173ec9cfba1a00945405d0f46473e14af38f1aeddc1ab"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -162,11 +162,11 @@
         },
         "jsonschema": {
             "hashes": [
-                "sha256:165059f076eff6971bae5b742fc029a7b4ef3f9bcf04c14e4776a7605de14b23",
-                "sha256:9e74b8f9738d6a946d70705dc692b74b5429cd0960d58e79ffecfc43b2221eb9"
+                "sha256:5bfcf2bca16a087ade17e02b282d34af7ccd749ef76241e7f9bd7c0cb8a9424d",
+                "sha256:f660066c3966db7d6daeaea8a75e0b68237a48e51cf49882087757bb59916248"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==4.16.0"
+            "version": "==4.17.0"
         },
         "jupyter-client": {
             "hashes": [
@@ -1291,11 +1291,11 @@
         },
         "jsonschema": {
             "hashes": [
-                "sha256:165059f076eff6971bae5b742fc029a7b4ef3f9bcf04c14e4776a7605de14b23",
-                "sha256:9e74b8f9738d6a946d70705dc692b74b5429cd0960d58e79ffecfc43b2221eb9"
+                "sha256:5bfcf2bca16a087ade17e02b282d34af7ccd749ef76241e7f9bd7c0cb8a9424d",
+                "sha256:f660066c3966db7d6daeaea8a75e0b68237a48e51cf49882087757bb59916248"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==4.16.0"
+            "version": "==4.17.0"
         },
         "jupyter": {
             "hashes": [
@@ -2093,11 +2093,11 @@
         },
         "qtconsole": {
             "hashes": [
-                "sha256:8eadf012e83ab018295803c247c6ab7eacd3d5ab1e1d88a0f37fdcfdab9295a3",
-                "sha256:c29d24464f57cdbaa17d6f6060be6e6d5e29126e7feb57eebc1747433382b3d1"
+                "sha256:57748ea2fd26320a0b77adba20131cfbb13818c7c96d83fafcb110ff55f58b35",
+                "sha256:be13560c19bdb3b54ed9741a915aa701a68d424519e8341ac479a91209e694b2"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==5.3.2"
+            "version": "==5.4.0"
         },
         "qtpy": {
             "hashes": [
