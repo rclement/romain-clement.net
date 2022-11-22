@@ -67,6 +67,9 @@ extra:
     - icon: fontawesome/solid/rss
       link: /feed/articles/rss.xml
       name: RSS Feed
+    - icon: fontawesome/solid/video
+      link: https://cal.com/romainclement
+      name: Schedule a call
     - icon: fontawesome/brands/github
       link: https://github.com/rclement
       name: GitHub
