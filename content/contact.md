@@ -65,6 +65,15 @@ form:
 
 Looking for a freelance engineer and/or trainer for your next project? Let's talk!
 
+---
+
+You can either fill the contact form below or book a 30 minutes call with me.
+Be sure to include every detail I should know in advance to make it effective!
+
+[:fontawesome-solid-video: Schedule a call](https://cal.com/romainclement/){ .md-button .md-button--primary }
+
+---
+
 !!! tip
 
     This message will be encrypted using my [PGP][pgp-key] public key. If you'd like me to respond with end-to-end encryption, do not forget to attach your PGP public key!
