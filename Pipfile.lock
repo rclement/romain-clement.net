@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "1734f9ffa7ebdd375e7289e664ef721671ee9870f01d495862e0a85ca89b202c"
+            "sha256": "55d1c4f3f1116a79c4c152a12cc02ae2053de02fd0ed8437dd294ff11ff8791a"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -364,11 +364,11 @@
         },
         "mkdocs-material-extensions": {
             "hashes": [
-                "sha256:96ca979dae66d65c2099eefe189b49d5ac62f76afb59c38e069ffc7cf3c131ec",
-                "sha256:bcc2e5fc70c0ec50e59703ee6e639d87c7e664c0c441c014ea84461a90f1e902"
+                "sha256:9c003da71e2cc2493d910237448c672e00cefc800d3d6ae93d2fc69979e3bd93",
+                "sha256:e41d9f38e4798b6617ad98ca8f7f1157b1e4385ac1459ca1e4ea219b556df945"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==1.1"
+            "version": "==1.1.1"
         },
         "mkdocs-minify-plugin": {
             "hashes": [
@@ -1198,11 +1198,11 @@
         },
         "faker": {
             "hashes": [
-                "sha256:0094fe3340ad73c490d3ffccc59cc171b161acfccccd52925c70970ba23e6d6b",
-                "sha256:43da04aae745018e8bded768e74c84423d9dc38e4c498a53439e749d90e20bc0"
+                "sha256:20d090e661bbe88a5d801ea5eb3d853564940352120c84c9a14968847aca2893",
+                "sha256:b95b2423ef18d17dcd5977732a0bf0fbbde4937f10dce24ff804581f7f3ca4e9"
             ],
             "index": "pypi",
-            "version": "==15.3.2"
+            "version": "==15.3.3"
         },
         "fastjsonschema": {
             "hashes": [
