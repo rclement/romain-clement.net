@@ -184,6 +184,10 @@ jobs:
       url: ${{ needs.build-production.outputs.site_url }}
     if: contains(github.ref, 'master')
 
+    permissions:
+      pages: write
+      id-token: write
+
     env:
       VERCEL_ORG_ID: ${{ secrets.NOW_ORG_ID }}
       VERCEL_PROJECT_ID: ${{ secrets.NOW_PROJECT_ID }}
@@ -198,9 +202,12 @@ jobs:
           path: dist
       - name: Deploy to Vercel
         run: cd dist && vercel --confirm --token $VERCEL_TOKEN --prod
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Setup Pages
+        uses: actions/configure-pages@v2
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
         with:
-          personal_token: ${{ secrets.GH_PERSONAL_TOKEN }}
-          publish_dir: ./dist
-          publish_branch: gh-pages
+          path: dist
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
