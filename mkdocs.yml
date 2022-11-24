@@ -38,6 +38,7 @@ nav:
       - music/hambush.md
   - Articles:
       - articles/index.md
+      - articles/vanilla-html-templates.md
       - articles/diataxis.md
       - articles/python-packages-development-pipenv.md
       - articles/static-data-warehouse-sqlite-metabase.md
