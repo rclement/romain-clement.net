@@ -10,8 +10,8 @@ language: en
 draft: false
 ---
 
-[Diataxis](https://diataxis.fr) is a framework to write documentation by using
-a 4 layers approach:
+Today I learn of [Diátaxis](https://diataxis.fr), a framework to write
+documentation by using a 4 layers approach:
 
 - Tutorials
 - How-to guides
