@@ -23,6 +23,8 @@ nav:
       - projects/griffonnage.md
   - Talks:
       - talks/index.md
+      - talks/python-horror-show.md
+      - talks/back-from-europython-2022.md
       - talks/natural-language-of-politics.md
       - talks/python-celery.md
       - talks/modern-python-development.md
