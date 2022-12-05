@@ -43,15 +43,15 @@ small script to insert all the issues by cloning the template and filling the da
     const issueTemplate = document.querySelector('#gh-issue-template')
     const issueItem = submissionTemplate.content.cloneNode(true)
 
-    const link = submissionItem.querySelector('.gh-issue-url')
+    const link = issueItem.querySelector('.gh-issue-url')
     link.setAttribute('href', issue.html_url)
     link.text = issue.title
 
-    const author = submissionItem.querySelector('.gh-issue-author')
+    const author = issueItem.querySelector('.gh-issue-author')
     author.setAttribute('href', issue.user.html_url)
     author.text = issue.user.login
 
-    submissionList.appendChild(submissionItem)
+    issueList.appendChild(issueItem)
   }
 
   async function getLatestIssues(repository) {
