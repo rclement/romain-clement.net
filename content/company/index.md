@@ -1,3 +1,8 @@
+---
+hide:
+  - footer
+---
+
 # Company
 
 I started my own freelancing company in 2018 with a strong focus on bringing

@@ -1,3 +1,8 @@
+---
+hide:
+  - footer
+---
+
 # Services
 
 Software is everywhere. And so is Data. Let's build exciting data applications!
@@ -30,7 +35,7 @@ Technologies used on a regular basis:
 - [x] Pytest / MyPy / Black / Flake8
 - [x] SQL / PostgreSQL / SQLite
 - [x] Docker / Kubernetes / Terraform
-- [x] Heroku / GCP / Azure / Scaleway 
+- [x] Heroku / GCP / Azure / Scaleway
 - [x] Git / GitHub / GitLab
 - [x] GitHub Actions / GitLab-CI
 

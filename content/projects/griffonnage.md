@@ -1,3 +1,8 @@
+---
+hide:
+  - footer
+---
+
 # Griffonnage
 
 [![Stars](https://img.shields.io/github/stars/griffonnage/griffonnage)](https://github.com/griffonnage/griffonnage "Stars")

@@ -1,3 +1,8 @@
+---
+hide:
+  - footer
+---
+
 # Hambush
 
 [![Hambush Logo](../static/music/hambush.png){ align=right style="width: 20%" }][hambush-website]

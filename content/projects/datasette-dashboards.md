@@ -1,3 +1,8 @@
+---
+hide:
+  - footer
+---
+
 # Datasette Dashboards
 
 [![Stars](https://img.shields.io/github/stars/rclement/datasette-dashboards)](https://github.com/rclement/datasette-dashboards "Stars")

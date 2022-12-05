@@ -1,4 +1,6 @@
 ---
+hide:
+  - footer
 robots: noindex, nofollow
 ---
 

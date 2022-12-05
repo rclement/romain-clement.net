@@ -1,3 +1,8 @@
+---
+hide:
+  - footer
+---
+
 # Projects
 
 I truly believe free and open-source software is key in building innovative,

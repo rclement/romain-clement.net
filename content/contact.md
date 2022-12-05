@@ -1,4 +1,6 @@
 ---
+hide:
+  - footer
 # Inspiration: https://learn.getgrav.org/17/forms/forms/example-form
 form:
   name: contact

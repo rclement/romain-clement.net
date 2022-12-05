@@ -1,3 +1,8 @@
+---
+hide:
+  - footer
+---
+
 # Articles
 
 :fontawesome-solid-rss: [RSS](/feed/articles/rss.xml) · [Atom](/feed/articles/atom.xml) · [JSON](/feed/articles/feed.json)

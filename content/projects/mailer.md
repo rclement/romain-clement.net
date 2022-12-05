@@ -1,3 +1,8 @@
+---
+hide:
+  - footer
+---
+
 # Mailer
 
 [![Stars](https://img.shields.io/github/stars/rclement/mailer)](https://github.com/rclement/mailer "Stars")

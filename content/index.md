@@ -1,5 +1,7 @@
 ---
 title: Home
+hide:
+  - footer
 ---
 
 # Hi, I'm Romain

@@ -1,3 +1,8 @@
+---
+hide:
+  - footer
+---
+
 # Clients
 
 Here are some of the companies I have been working with in the past.

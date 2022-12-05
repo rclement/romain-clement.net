@@ -1,3 +1,8 @@
+---
+hide:
+  - footer
+---
+
 # Talks
 
 I enjoy attending and hosting tech meetups (co-organizer of the
