@@ -24,6 +24,10 @@ def mkdocs_config() -> MkDocsConfig:
 
 @pytest.fixture(scope="session", autouse=True)
 def mkdocs_build(mkdocs_config: MkDocsConfig) -> Generator[None, None, None]:
+    mkdocs_config["plugins"].run_event("startup", command="build", dirty=False)
     build.build(mkdocs_config)
+    mkdocs_config["plugins"].run_event("shutdown")
+
     yield
+
     rmtree(mkdocs_config["site_dir"])
