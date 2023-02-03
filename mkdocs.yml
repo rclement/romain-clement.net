@@ -23,6 +23,7 @@ nav:
       - projects/griffonnage.md
   - Talks:
       - talks/index.md
+      - talks/playful-lookback-pythonic-year-2022.md
       - talks/jupyter-without-server.md
       - talks/python-horror-show.md
       - talks/back-from-europython-2022.md
