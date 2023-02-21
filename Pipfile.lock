@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "8d831c5c0a49418cea1416af0411af2096ca290c31ceccfb06738a4f23ffa509"
+            "sha256": "1656150f91ce863676f3c98882979a5de2ed741a1a177a81df623453917289d5"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -458,11 +458,11 @@
         },
         "mkdocs-material": {
             "hashes": [
-                "sha256:4da07b1390c6b78844f1566d723dd045572e645f31b108a1b5062fa7d11aa241",
-                "sha256:ff4233e4f4da0c879db0dbcb532a690a3f86f5a66a0cfcce99a124e82a462afb"
+                "sha256:06e51eba6a090de070a3489890cf1e491d52c04c6ff2b06dd4586c6cdd974a3f",
+                "sha256:a62696610899d01df091b4d5ad23f9811f878a1f34307d7cea677baf4854c84f"
             ],
             "index": "pypi",
-            "version": "==9.0.12"
+            "version": "==9.0.13"
         },
         "mkdocs-material-extensions": {
             "hashes": [
@@ -1605,11 +1605,11 @@
         },
         "jupyter-console": {
             "hashes": [
-                "sha256:6b91b7b6e8a715053b536db209a2f4b02429d7b28db27373a56a26b0bebd620b",
-                "sha256:c575bb6ed56ca78189594176341e7b31426ff30fafcd22bf3dad7be309595b5e"
+                "sha256:0ce8b5596df6b2453d56d1127aaa3e7b0e3c8fb73d48dcc77162753019b78215",
+                "sha256:545ba4f0b3c8aa64108cb9d35532253b814c7d4f25e2bffb3f0aec56b183a371"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==6.5.1"
+            "version": "==6.6.0"
         },
         "jupyter-core": {
             "hashes": [
@@ -1901,11 +1901,11 @@
         },
         "nbclassic": {
             "hashes": [
-                "sha256:32c235e1f22f4048f3b877d354c198202898797cf9c2085856827598cead001b",
-                "sha256:8e8ffce7582bb7a4baf11fa86a3d88b184e8e7df78eed4ead69f15aa4fc0e323"
+                "sha256:40f11bbcc59e8956c3d5ef132dec8e5a853e893ecf831e791d54da0d8a50d79d",
+                "sha256:6403a996562dadefa7fee9c49e17b663b5fd508241de5df655b90011cf3342d9"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==0.5.1"
+            "version": "==0.5.2"
         },
         "nbclient": {
             "hashes": [
@@ -2564,11 +2564,11 @@
         },
         "setuptools": {
             "hashes": [
-                "sha256:95f00380ef2ffa41d9bba85d95b27689d923c93dfbafed4aecd7cf988a25e012",
-                "sha256:bb6d8e508de562768f2027902929f8523932fcd1fb784e6d573d2cafac995a48"
+                "sha256:9d3de8591bd6f6522594406fa46a6418eabd0562dacb267f8556675762801514",
+                "sha256:ed4e75fafe103c79b692f217158ba87edf38d31004b9dbc1913debb48793c828"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==67.3.2"
+            "version": "==67.3.3"
         },
         "sgmllib3k": {
             "hashes": [

@@ -6,7 +6,7 @@ name = "pypi"
 [packages]
 babel = "==2.11.0"
 mkdocs = "==1.4.2"
-mkdocs-material = "==9.0.12"
+mkdocs-material = "==9.0.13"
 mkdocs-minify-plugin = "==0.6.2"
 mkdocs-section-index = "==0.3.5"
 mknotebooks = "==0.7.1"
