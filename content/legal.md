@@ -9,14 +9,14 @@ hide:
 
 This website and all of its content are authored and owned by:
 
-[**Monsieur Romain Clement EI**][infogreffe]<br>
+**Monsieur Romain Clement EI**<br>
 Entrepreneur Individuel / Micro-entreprise
 
-80 cours Liberation - Gen de Gaulle<br>
-38100 Grenoble<br>
+14 rte de la Ratz<br>
+38580 Allevard<br>
 France<br>
 
-SIRET: 841 265 655 00016<br>
+SIRET: 841 265 655 00024<br>
 NAF: 6201Z (Computer programming activities)<br>
 VAT: FR52841265655<br>
 
@@ -52,7 +52,6 @@ We do not set cookies.
 This website and all of its content is [free and open-source software][repository],
 under the [AGPL-3 license][license].
 
-[infogreffe]: https://www.infogreffe.fr/entreprise-societe/841265655-clement-romain-84126565500016.html "Company on Infogreffe"
 [vercel]: https://vercel.com "Vercel Website"
 [cloudflare]: https://www.cloudflare.com "Cloudflare Website"
 [chiffre]: https://chiffre.io "Chiffre Website"
