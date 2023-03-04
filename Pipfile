@@ -22,7 +22,7 @@ mypy = "==1.0.1"
 jupyter = "==1.0.0"
 matplotlib ="==3.7.0"
 pandas = "==1.5.3"
-pytest = "==7.2.1"
+pytest = "==7.2.2"
 pytest-cov = "==4.0.0"
 safety = "==2.3.5"
 
