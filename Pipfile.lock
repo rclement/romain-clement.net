@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "b1f6a55fc9d85ac985a44ca6c6a898af6625025e8cf97424ed2c4a6661cd25ea"
+            "sha256": "e8ff4f5e8e4fbcfa8d672705e9a33560b697d996f702921a2694a076c6e16f2f"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -1423,11 +1423,11 @@
         },
         "faker": {
             "hashes": [
-                "sha256:20272ff42eaa3fd0a83d1c4ad27a6c0a58ebded4e48411a635b31643087d4bd6",
-                "sha256:daf4fc907cdc009bfde011db845d9847e0293baa701c49607bac1184f11e5d95"
+                "sha256:2deeee8fed3d1b8ae5f87d172d4569ddc859aab8693f7cd68eddc5d20400563a",
+                "sha256:e7c058e1f360f245f265625b32d3189d7229398ad80a8b6bac459891745de052"
             ],
             "index": "pypi",
-            "version": "==18.2.0"
+            "version": "==18.3.0"
         },
         "fastjsonschema": {
             "hashes": [
@@ -1508,11 +1508,11 @@
         },
         "ipywidgets": {
             "hashes": [
-                "sha256:c0005a77a47d77889cafed892b58e33b4a2a96712154404c6548ec22272811ea",
-                "sha256:ebb195e743b16c3947fe8827190fb87b4d00979c0fbf685afe4d2c4927059fa1"
+                "sha256:89a1930b9ef255838571a2415cc4a15e824e4316b8f067805d1d03b98b6a8c5f",
+                "sha256:a6e5c0392f86207fae304688a670afb26b2fd819592cfc0812777c2fdf22dbad"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==8.0.4"
+            "version": "==8.0.5"
         },
         "isoduration": {
             "hashes": [
@@ -1619,11 +1619,11 @@
         },
         "jupyterlab-widgets": {
             "hashes": [
-                "sha256:a04a42e50231b355b7087e16a818f541e53589f7647144ea0344c4bf16f300e5",
-                "sha256:eeaecdeaf6c03afc960ddae201ced88d5979b4ca9c3891bcb8f6631af705f5ef"
+                "sha256:a464d68a7b9ebabdc135196389381412a39503d89302be0867d0ff3b2428ebb8",
+                "sha256:e95d08adf4f9c37a57da5fff8a65d00480199885fd2ecd2583fd9560b594b4e9"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==3.0.5"
+            "version": "==3.0.6"
         },
         "kiwisolver": {
             "hashes": [
@@ -2686,11 +2686,11 @@
         },
         "widgetsnbextension": {
             "hashes": [
-                "sha256:003f716d930d385be3fd9de42dd9bf008e30053f73bddde235d14fbeaeff19af",
-                "sha256:eaaaf434fb9b08bd197b2a14ffe45ddb5ac3897593d43c69287091e5f3147bf7"
+                "sha256:1a07d06c881a7c16ca7ab4541b476edbe2e404f5c5f0cf524ffa2406a8bd7c80",
+                "sha256:7df2bffa274b0b416c1fa0789e321451858a9e276e1220b40a16cc994192e2b7"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==4.0.5"
+            "version": "==4.0.6"
         }
     }
 }
