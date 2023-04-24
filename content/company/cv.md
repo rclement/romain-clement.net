@@ -18,7 +18,13 @@ Idea:
 
 # Romain Clement
 
-> Freelance Engineer & Trainer
+> Freelance Engineer | MLOps | Data | AI | Training
+
+[:fontawesome-solid-globe:](https://romain-clement.net "Website")
+<span style="margin-right: 0.5rem;"></span>
+[:fontawesome-brands-linkedin:](https://www.linkedin.com/in/romainclement "LinkedIn")
+<span style="margin-right: 0.5rem;"></span>
+[:fontawesome-brands-github:](https://github.com/rclement "GitHub")
 
 ## About
 
@@ -34,6 +40,16 @@ My current domains of expertise and interest include:
 When collaborating with companies, I strive to deliver lean and pragmatic solutions in iterative cycles, in order to develop products with strong added value.
 
 Interested to work together? Let's talk!
+
+## Skills
+
+Technologies used on a regular basis (non-exhaustive list):
+
+- Software engineering: Git, Python, Pytest, Mypy, Black, Flake8, Flask, Django, FastAPI
+- Data Science: Scikit-Learn, Keras, Tensorflow, Pandas, Numpy, Matplotlib, Jupyter
+- Data: PostgreSQL, SQLite, Datasette, Metabase
+- Infrastructure: Docker, Kubernetes, Terraform, Azure, GCP, Scaleway
+- Automation: GitLab-CI, GitHub Actions
 
 ## Work Experience
 
@@ -77,21 +93,21 @@ Interested to work together? Let's talk!
 
 ## Education
 
-**September 2011 - April 2012: The University of Calgary**
-:   Computer Science and Applied Mathematics
+**September 2011 - April 2012: The University of Calgary (Canada)**
+:   Exchange Student (Computer Science and Applied Mathematics)
 
     Refactoring · Digital signal processing · Computer animation · Computer graphics
     · Computer Vision · Mechatronic art · Electroacoustic Music
 
-**September 2009 - September 2012: Polytech Grenoble**
-:   Software Engineering and Applied Mathematics
+**September 2009 - September 2012: Polytech Grenoble (France)**
+:   MSc Software Engineering and Applied Mathematics
 
     Software engineering · Computer graphics · Digital signal processing
     · Numerical analysis · Distributed systems · Project management
     · Human computer interaction
 
-**September 2007 - June 2009: IUT2 Grenoble**
-:   Computer Science
+**September 2007 - June 2009: IUT2 Grenoble (France)**
+:   BSc Computer Science
 
     Programming languages · Algorithms · Software design & development
     · Databases · Project management

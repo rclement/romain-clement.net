@@ -58,3 +58,9 @@ img.client-icon {
     display: none;
   }
 }
+
+@media print {
+  .md-main__inner {
+    margin-top: 0;
+  }
+}
