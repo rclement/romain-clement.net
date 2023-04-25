@@ -23,6 +23,7 @@ nav:
       - projects/griffonnage.md
   - Talks:
       - talks/index.md
+      - talks/meetup-python-grenoble-is-back.md
       - talks/django-admin-framework.md
       - talks/playful-lookback-pythonic-year-2022.md
       - talks/jupyter-without-server.md
