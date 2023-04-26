@@ -2,6 +2,7 @@
 
 Talk given on February 18, 2023 at the [PyConFR 2023][pyconfr] in Bordeaux, France.
 
+[:fontawesome-solid-video: Watch on IndyMotion][indymotion] <br>
 [:fontawesome-solid-globe: Talk on PyConFR][talk] <br>
 [:fontawesome-brands-github: Repository on GitHub][repository]
 
@@ -14,6 +15,18 @@ Django Admin possède des secrets bien gardés mais une fois découverts, beauco
 Dans cette présentation, je vous partagerez mon retour d'expérience sur l'utilisation de Django Admin comme framework à part entière dans le cadre de développement d'applications internes centrées sur les données.
 
 Les applications "no-code" n'ont qu'à bien se tenir !
+
+## Video
+
+<iframe
+    width="600"
+    height="340"
+    title="Romain Clément - Django Admin comme framework pour développer des outils internes  - PyConFr 2023"
+    src="https://indymotion.fr/videos/embed/1608d4cc-01f8-4d9b-a464-d7dbcf1d8573"
+    sandbox="allow-same-origin allow-scripts allow-popups"
+    frameborder="0"
+    allowfullscreen
+></iframe>
 
 ## Slides
 
@@ -31,5 +44,6 @@ Les applications "no-code" n'ont qu'à bien se tenir !
 (Only available in French :fr:)
 
 [pyconfr]: https://www.pycon.fr/2023/ "PyConFR 2023 Website"
+[indymotion]: https://indymotion.fr/w/3HP9UdwPybvC8CLaJXLE2i "Romain Clément - Django Admin comme framework pour développer des outils internes - PyConFr 2023"
 [talk]: https://www.pycon.fr/2023/fr/talks/30m.html#django-admin-comme-framework-p "PyConFR 2023 Program"
 [repository]: https://github.com/rclement/pyconfr2023-djangoadmin "GitHub Repository"
