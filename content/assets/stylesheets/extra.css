@@ -59,8 +59,20 @@ img.client-icon {
   }
 }
 
+/*
+  Workaround for printing purposes (especially to render resumes)
+ */
 @media print {
+  body {
+    zoom: 77%;
+  }
+
   .md-main__inner {
     margin-top: 0;
+  }
+
+  .md-typeset small {
+    opacity: 100%;
+    color: gray;
   }
 }

@@ -1,6 +1,6 @@
 # romain-clement.net
 
-> Romain Clement - Freelance Software Engineer & Trainer
+> Romain Clement - Freelance Data / Machine Learning Engineer & Trainer
 
 [![CI/CD](https://github.com/rclement/romain-clement.net/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/rclement/romain-clement.net/actions/workflows/ci-cd.yml)
 [![Coverage Status](https://img.shields.io/codecov/c/github/rclement/romain-clement.net)](https://codecov.io/gh/rclement/romain-clement.net)

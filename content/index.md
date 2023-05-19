@@ -6,7 +6,7 @@ hide:
 
 # Hi, I'm Romain
 
-I am a professional software engineer & trainer from France.
+I am a freelance Data / Machine Learning Engineer & Trainer from France.
 
 On this website you will find:
 
