@@ -73,6 +73,49 @@ Technologies utilisées de manière régulière (liste non-exhaustive):
     Data Engineering · Data Science · Machine Learning · Deep Learning · DevOps · MLOps · Python · SQL · Docker · Kubernetes · Terraform · CI/CD
     </small>
 
+    <details>
+    <summary>Details</summary>
+    **Interne**<br>
+    Développement de connecteurs de données d'entreprise, automatisation de processus de traitements données, de génération de tableaux de bords, prédiction d'indicateurs par apprentissage automatique. Contribution et maintenance de projets open-source<br>
+    <small>Python · SQLite · Pandas · Scikit-Learn · Datasette · Docker · Terraform · Scaleway · Vercel · ETL · Web-Scraping · GitLab-CI · GitHub Actions</small>
+
+    **04/2020 - Aujourd'hui | 440Hz : Tech Lead Software et Data**<br>
+    Découverte des besoins, planification projet et mise en place de la stack technique afin d'automatiser progressivement l'activité orientée analyse et traitement de données. Gestion de l'infrastructure sur les plateformes Scaleway et Heroku<br>
+    <small>Python · SQL · FastAPI · Django · Scrapy · Dagster · PostgreSQL · Metabase · Docker · Terraform · Scaleway · API REST · ETL · Data Warehouse · DevOps · GitLab · Gestion de projet</small>
+
+    **11/2021 - 05/2023 | Simplon.co : Formateur "Développeur.se IA - Microsoft Ecole IA"**<br>
+    Formation intensive d'apprenants en reconversion professionnelle dans les métiers de l'intelligence artificielle : ingénierie et science des données, machine learning, deep learning, applications IA. Conception et automatisation d'activités pédagogiques sur la plateforme cloud Azure<br>
+    <small>Python · SQL · Jupyter · Pandas · Scikit-Learn · Keras · Spark · EDA · NLP · Vision · Audio · FastAPI · Docker · Terraform · Azure · Databricks · MLFlow · GitLab · DevOps · MLOps · Gestion de projet</small>
+
+    **10/2022 - 01/2023 | Human Booster : Formateur DevOps**<br>
+    Formation d'apprenants en reconversion professionnelle à la philosophie et aux pratiques DevOps, illustré avec la plateforme cloud Azure.<br>
+    <small>Docker · Terraform · Azure · GitLab-CI · Gestion de projet</small>
+
+    **06/2020 - 09/2022 | Superprod : Tech Lead Corporate Tools**<br>
+    Conception, planification, développement et déploiement d'applications d'entreprise internes pour l'automatisation de processus orientés données, sur infrastructure hybride (on-premises, plateforme cloud GCP). Mentorat et formation de développeurs juniors. Organisation de workshops techniques<br>
+    <small>Python · SQL · Django · Flask · MariaDB · PostgreSQL · ElasticSearch · Docker · Kubernetes · GCP · API REST · ETL · DevOps · GitLab · Gestion de projet</small>
+
+    **11/2020 - 08/2021 | Simplon.co : Formateur "Développeur.se Data"**<br>
+    Formation intensive d'apprenants en reconversion professionnelle dans les métiers de la donnée (analyse, traitement, exploitation)<br>
+    <small>Python · SQL · PostgreSQL · Jupyter · Pandas · Matplotlib · Flask · Django · Docker · Metabase · PowerBI · ETL · Web-Scraping · Data Warehouse · BI · OLAP · OLTP · GitLab · Gestion de projet</small>
+
+    **10/2020 - 01/2021 | EasyInvest : Accompagnement Infrastructure Data**<br>
+    Mentorat d'un créateur de projet pour la conception et le développement de la stack Data de l'entreprise. Développement de preuves de concept<br>
+    <small>Python · SQL · Django · PostgreSQL · Docker · ETL · DevOps · GitLab</small>
+
+    **11/2019 - 06/2020 | Simplon.co : Formateur "Développeur.se Data"**<br>
+    Formation intensive d'apprenants en reconversion professionnelle dans les métiers de la donnée (analyse, traitement, exploitation)<br>
+    <small>Python · SQL · PostgreSQL · Jupyter · Pandas · Matplotlib · Flask · Django · Docker · Metabase · PowerBI · ETL · Web-Scraping · Data Warehouse · BI · OLAP · OLTP · GitLab · Gestion de projet</small>
+
+    **10/2019 - 03/2020 | Wattamate : Ingénieur Logiciel Back-end**<br>
+    Développement et déploiement de microservices en Python, avec pratiques Agiles (TDD, code-reviews) et philosophie DevOps<br>
+    <small>Python · FastAPI · PostgreSQL · Celery · OpenTSDB · Docker · Kubernetes · GitLab-CI · OAuth · 2FA · API REST</small>
+
+    **08/2018 - 10/2018 | Pulsar Audio : Ingénieur Logiciel Audio**<br>
+    Développement d'un plugin audio d'analyse de signal audio temps-réel<br>
+    <small>C++ · Python · JUCE · CMake</small>
+    </details>
+
 **Septembre 2017 - Janvier 2020: Directeur Technique Associé chez Sylha**
 :   Directeur technique associé pour la conception et le développement d'un réseau monétique social et solidaire.
     Gestion des partenariat technique avec les services tiers (services cloud, plate-forme de marketplace).
