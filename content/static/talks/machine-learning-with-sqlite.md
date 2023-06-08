@@ -34,6 +34,7 @@ paginate: true
 - Intégration de `scikit-learn`
 - Approche MLOps
 
+<!--
 ---
 
 ## 💡 Fonctionnalités
@@ -43,13 +44,15 @@ paginate: true
 - Entraînement supervisé (classification, régression)
 - Prédiction unique et _batch_
 - Sélection automatique de modèle
+-->
 
 ---
 
 ## 💻 Démo
 
-Jouons avec les 4 nouvelles fonctions SQL !
+Jouons avec les nouvelles fonctions SQL !
 
+<!--
 ---
 
 ## 💻 Démo
@@ -59,12 +62,13 @@ Jouons avec les 4 nouvelles fonctions SQL !
 ```sql
 SELECT sqml_load_dataset(name, table);
 ```
+-->
 
 ---
 
 ## 💻 Démo
 
-2. Entrainement d'un modèle :
+1. Entrainement d'un modèle :
 
 ```sql
 SELECT sqml_train(
@@ -82,7 +86,7 @@ SELECT sqml_train(
 
 ## 💻 Démo
 
-3. Prédictions avec le modèle
+2. Prédictions avec le modèle
 
 ```sql
 SELECT sqml_predict(experiment_name, features);
@@ -117,3 +121,18 @@ SELECT sqml_predict_batch(experiment_name, features);
 - [`sqlite-ml`](https://github.com/rclement/sqlite-ml)
 - [PostgresML](https://postgresml.org)
 - [MLFlow](https://mlflow.org)
+
+---
+
+## Romain CLEMENT
+
+![bg right width:80%](face.png)
+
+Entrepreneur individuel
+Ingénieur et formateur
+Data / Machine Learning
+
+Organisateur du Meetup Python Grenoble
+
+🌐 [romain-clement.net](https://romain-clement.net)
+🔗 [linkedin.com/in/romainclement](https://www.linkedin.com/in/romainclement)
