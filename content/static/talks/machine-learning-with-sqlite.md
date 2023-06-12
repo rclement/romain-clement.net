@@ -82,6 +82,20 @@ SELECT sqml_train(
 );
 ```
 
+<!--
+Vue SQL `appartements_grenoble_2021` pour vente appartement à Grenoble en 2021
+
+```sql
+SELECT sqml_train(
+  'Prediction appartements Grenoble',
+  'regression',
+  'linear_regression',
+  'appartements_grenoble_2021',
+  'valeur'
+) AS training;
+```
+-->
+
 ---
 
 ## 💻 Démo
@@ -95,6 +109,40 @@ SELECT sqml_predict(experiment_name, features);
 ```sql
 SELECT sqml_predict_batch(experiment_name, features);
 ```
+
+<!--
+Par exemple, pour prédire la valeur foncière d'un T3 de 50m2 place Victor Hugo :
+
+```sql
+SELECT round(
+  sqml_predict(
+    'Prediction appartements Grenoble',
+    json_object(
+      'surface', 50,
+      'pieces', 3,
+      'latitude', 45.1893525,
+      'longitude', 5.7216074
+    )
+  )
+) AS prediction
+```
+
+Par exemple, pour prédire la valeur foncière d'un T4 100m2 place Victor Hugo :
+
+```sql
+SELECT round(
+  sqml_predict(
+    'Prediction appartements Grenoble',
+    json_object(
+      'surface', 100,
+      'pieces', 4,
+      'latitude', 45.1893525,
+      'longitude', 5.7216074
+    )
+  )
+) AS prediction
+```
+-->
 
 ---
 
