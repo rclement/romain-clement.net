@@ -13,7 +13,9 @@ paginate: true
 
 ---
 
-## Faire de l'apprentissage automatique en SQL, directement depuis SQLite, une folie ?
+## 🙋 Question
+
+Faire de l'apprentissage automatique en SQL, directement depuis SQLite, une folie ?
 
 ---
 
