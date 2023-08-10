@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "5b74f7284b4b78a5a3fa23fa1cde687afb8b67669bdddf884e2baac3bdc0b206"
+            "sha256": "4d15ab3895ee7d9c16b82c550134045885d60b5bf4ca2cf1f54968f651b358b5"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -501,10 +501,10 @@
         },
         "mknotebooks": {
             "hashes": [
-                "sha256:e2fa000b706683fc56b93adada7190a0da22ad85c4f1bfd5c4468cc3552b78e5"
+                "sha256:4a9b998260c09bcc311455a19a44cc395a30ee82dc1e86e3316dd09f2445ebd3"
             ],
             "index": "pypi",
-            "version": "==0.7.1"
+            "version": "==0.8.0"
         },
         "nbclient": {
             "hashes": [
@@ -1080,6 +1080,14 @@
             ],
             "markers": "python_version >= '3.7'",
             "version": "==3.7.1"
+        },
+        "appnope": {
+            "hashes": [
+                "sha256:02bd91c4de869fbb1e1c50aafc4098827a7a54ab2f39d9dcba6c9547ed920e24",
+                "sha256:265a455292d0bd8a72453494fa24df5a11eb18373a60c7c0430889f22548605e"
+            ],
+            "markers": "platform_system == 'Darwin'",
+            "version": "==0.1.3"
         },
         "argon2-cffi": {
             "hashes": [

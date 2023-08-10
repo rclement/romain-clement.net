@@ -7,6 +7,7 @@ from datetime import date, datetime
 from unittest.mock import MagicMock
 from typing import Any, Dict, Union
 from faker import Faker
+from mkdocs.config.defaults import MkDocsConfig
 from mkdocs.structure.pages import Page
 
 from utils import hooks
@@ -220,7 +221,8 @@ def test_on_env_success() -> None:
 def test_on_page_markdown_success(
     markdown_form: str, page_meta_form: Dict[str, Any], config_forms: Dict[str, Any]
 ) -> None:
-    config = dict(extra=dict(forms=config_forms))
+    config = MkDocsConfig()
+    config["extra"] = dict(forms=config_forms)
     page = Page("Test Page", MagicMock(), config)
     page.meta = page_meta_form
 
