@@ -8,6 +8,7 @@ from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, MutableMapping, Union
 from babel.dates import format_date
+from mkdocs.config.defaults import MkDocsConfig
 from mkdocs.structure.pages import Page
 
 
@@ -69,7 +70,7 @@ def on_env(env: jinja2.Environment, **kwargs: Any) -> None:
 
 
 def on_page_markdown(
-    markdown: str, page: Page, config: Dict[str, Any], **kwargs: Any
+    markdown: str, page: Page, config: MkDocsConfig, **kwargs: Any
 ) -> str:
     markdown = render_form(markdown, page.meta, config["extra"].get("forms"))
     return markdown
