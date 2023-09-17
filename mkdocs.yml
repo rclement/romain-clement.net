@@ -47,6 +47,7 @@ nav:
       - music/hambush.md
   - Articles:
       - articles/index.md
+      - articles/python-pathlib-glob-patterns.md
       - articles/vanilla-html-templates.md
       - articles/diataxis.md
       - articles/python-packages-development-pipenv.md
@@ -114,6 +115,7 @@ theme:
   language: en
   font: false
   features:
+    - content.code.copy
     # - navigation.indexes
     - navigation.sections
     - navigation.tabs
@@ -175,6 +177,7 @@ markdown_extensions:
   - admonition
   - attr_list
   - def_list
+  - footnotes
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.caret
