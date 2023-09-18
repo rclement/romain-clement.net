@@ -4,7 +4,7 @@ title: Python Pathlib complex glob patterns
 description: >-
   Combining multiple glob patterns using Python Pathlib, with functional programming style
 author: romainclement
-date: 2023-09-17
+date: 2023-09-18
 tags: [python, functional-programming]
 language: en
 draft: true
