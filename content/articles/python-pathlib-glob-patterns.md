@@ -1,6 +1,6 @@
 ---
 template: article.html
-title: Python Pathlib glob patterns
+title: Python Pathlib complex glob patterns
 description: >-
   Combining multiple glob patterns using Python Pathlib, with functional programming style
 author: romainclement
