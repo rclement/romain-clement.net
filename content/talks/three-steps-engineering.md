@@ -47,4 +47,4 @@ Formal definition:
 
 ## References
 
-- ["under-engineering, over-engineering, right-engineering", Martijn Faassen](https://blog.startifact.com/posts/older/under-engineering-over-engineering-right-engineering.html)
+- ["under-engineering, over-engineering, right-engineering", Martijn Faassen](https://blog.startifact.com/posts/older/under-engineering-over-engineering-right-engineering/)
