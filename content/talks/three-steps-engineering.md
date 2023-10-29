@@ -10,10 +10,15 @@ In this talk, we will first illustrate those stages from common experiences with
 
 Examples:
 
-- Application development:
+- Software architecture:
     1. Build a rapid prototype / POC / MVP using on-the-shelf components combined into a monolith, without thinking about architecture, domain boundaries and responsibility
     2. Re-build the prototype to a full-fledge production ready version, using state-of-the-art methodologies (microservices, all database types, serverless, kubernetes, etc.)
     3. Re-build the production version to a leaner one, using a monolithic but modular approach, combining best of both worlds
+
+- Web app development:
+    1. Initial version (spaghetti)
+    2. Rewrite as a single page application (JS only)
+    3. Rewrite as a multiple page application with progressive enhancements (JS as interactive additions)
 
 - Data engineering:
     1. Put everything into a single database, no thoughful schema, do not understand SQL, change everything every 2 weeks
