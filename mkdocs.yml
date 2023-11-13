@@ -23,6 +23,7 @@ nav:
       - projects/griffonnage.md
   - Talks:
       - talks/index.md
+      - talks/three-steps-engineering.md
       - talks/machine-learning-with-sqlite.md
       - talks/datasette-workshop.md
       - talks/sqlite-udf-python.md
