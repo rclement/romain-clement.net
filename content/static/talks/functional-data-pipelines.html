@@ -7463,7 +7463,19 @@ main {
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div><aside class="notes">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=dcbf0f79-0653-4aef-9dc1-c709d256daa9">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Pourquoi parler de pipelines de données fonctionnels en Python ?</p>
+</div>
+</div>
+</div>
+</div>
+</aside></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a3911bcd-711c-45aa-9f46-2ddaba8e56bb">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7478,7 +7490,22 @@ main {
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div><aside class="notes">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4a35d077-7b77-4d7e-b483-b5c7a3ded39f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Quelques remarques avant de commencer :</p>
+<p>Ce que je vais vous monter est simplement une proposition de patterns que je trouve intéressants et applicables dans divers contextes.</p>
+<p>Ces patterns étant sur le calcul en mémoire, il s'appliquent principalement sur du volume de données petit ou moyen, mais pas au big data (bien que certains concepts se recoupent).</p>
+<p>Enfin, nous allons parler de programmation fonctionnelle mais à un niveau relativement haut, donc pas d'inquiétude si vous n'êtes pas expert !</p>
+</div>
+</div>
+</div>
+</div>
+</aside></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=829abbbf-37f5-4a21-b580-e0c33c66aec0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7494,7 +7521,19 @@ main {
 </div>
 </div>
 </div>
-</div></section><section>
+</div><aside class="notes">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8bc7455e-ccfd-4274-8c33-86980fa6d0ce">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Qu'est-ce qu'un DAG ou graphe orienté acyclique ?</p>
+</div>
+</div>
+</div>
+</div>
+</aside></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ea9a42f1-3a99-4593-a3eb-f47ff4eccd2b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7511,7 +7550,24 @@ graph LR;
 </div>
 </div>
 </div>
-</div></section><section>
+</div><aside class="notes">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=451410b6-7018-4861-b774-2903f8dcf553">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Voici un exemple de représentation de DAG. On remarque les propriétés énoncées précédemment :</p>
+<ul>
+<li>Des tâches à effectuer représentées par des <em>noeuds</em></li>
+<li>Les dépendances d'exécution entre les tâches sont matérialisées par des arcs</li>
+<li>Il n'y a pas de dépendances cycliques entre les tâches</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</aside></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=402f5023-9814-4803-96c3-e0062de6e19d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7526,7 +7582,19 @@ graph LR;
 </div>
 </div>
 </div>
-</div></section><section>
+</div><aside class="notes">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d071e843-a6a6-4359-a474-33d87cc898d3">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Alors pourquoi s'embêter à exprimer un problème en le représentant sous la forme de graphe orienté acyclique ?</p>
+</div>
+</div>
+</div>
+</div>
+</aside></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3630ee37-a035-4651-aa45-050f7d371fbc">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7540,7 +7608,20 @@ graph LR;
 </div>
 </div>
 </div>
-</div></section><section>
+</div><aside class="notes">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=88c4f2c6-1de1-40f3-9605-73c7f60060b3">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Le DAG le plus simple que l'on puisse représenter !</p>
+<p>Une seule tâche à effectuer, sans dépendances. C'est un cas particulier mais il est quand même bon de le noter.</p>
+</div>
+</div>
+</div>
+</div>
+</aside></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=259f9f45-cfaf-423c-babf-ccd2c56e40b9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7555,14 +7636,32 @@ graph LR;
 </div>
 </div>
 </div>
-</div></section><section>
+</div><aside class="notes">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=87cc94a4-4731-4a76-9d12-6ea07e22d40d">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Un second exemple un peu plus représentatif :</p>
+<ul>
+<li>Une première tâche permet de charger un fichier CSV dans un Dataframe (Pandas)</li>
+<li>Puis une seconde tâche nettoie ce Dataframe (ex : formatage des dates)</li>
+<li>Enfin une troisième tâche sauvegarde ce Dataframe dans un nouveau fichier CSV</li>
+</ul>
+<p>Pour les personnes dans le domaine de la Data, c'est le schéma typique de ce que l'on appelle un processus ETL (Extract Transform and Load).</p>
+</div>
+</div>
+</div>
+</div>
+</aside></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1efedb30-9ef2-4cea-9be0-d47b8fc74948">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="%E2%9A%99%EF%B8%8F-DAG---Exemple-2---Nettoyer-un-fichier-CSV">⚙️ DAG - Exemple 2 - Nettoyer un fichier CSV<a class="anchor-link" href="#%E2%9A%99%EF%B8%8F-DAG---Exemple-2---Nettoyer-un-fichier-CSV">¶</a></h3><div class="jp-Mermaid"><pre class="mermaid">
+<h3 id="%E2%9A%99%EF%B8%8F-DAG---Exemple-2bis---Nettoyer-un-fichier-CSV">⚙️ DAG - Exemple 2bis - Nettoyer un fichier CSV<a class="anchor-link" href="#%E2%9A%99%EF%B8%8F-DAG---Exemple-2bis---Nettoyer-un-fichier-CSV">¶</a></h3><div class="jp-Mermaid"><pre class="mermaid">
 graph LR;
     subgraph F[Process]
         direction LR
@@ -7577,7 +7676,26 @@ graph LR;
 </div>
 </div>
 </div>
-</div></section><section>
+</div><aside class="notes">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c04fbeba-deaa-4a2d-9dd5-85d170491540">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Même exemple que précédemment mais avec une petite subtilité : le graphe devient paramétrable et devient par la même occasion intégrable comme une sous-tâche d'un plus grand système !</p>
+<p>Cet exemple vous montre que la représentation en graphe peut s'appliquer à différents niveaux d'une architecture logicielle :</p>
+<ul>
+<li>Algorithmique</li>
+<li>Applicatif</li>
+<li>Système</li>
+<li>etc.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</aside></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1ac990ef-3c6b-49e8-8b1d-d43df1ec4a15">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7594,7 +7712,20 @@ graph LR;
 </div>
 </div>
 </div>
-</div></section><section>
+</div><aside class="notes">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=164ff306-de7a-40f9-87c3-9e7328f98ccf">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Dans cet exemple, on modélisation un processus de web-scraping.</p>
+<p>Assez semblable au précédent, on remarque des chemins parallèles cette fois-ci : la sortie d'une tâche peut être utilisée par plusieurs tâches. Gardez bien ce concept en tête pour la suite !</p>
+</div>
+</div>
+</div>
+</div>
+</aside></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2a4ddb5d-868f-4aa3-b596-6ab4e7ae53b7">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7612,7 +7743,21 @@ graph LR;
 </div>
 </div>
 </div>
-</div></section><section>
+</div><aside class="notes">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=830bde64-5864-4171-ab1a-ae2472c85dc5">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Autre exemple un peu plus complexe : certains traitements nécessite un flux en streaming, c'est à dire que l'on traite des données au fur et à mesure, au lieu de charger toutes les données en mémoire puis de tout traiter d'un bloc.</p>
+<p>C'est généralement utile lorsque les données sont volumineuses ou bien qu'une source de données est <em>IO bound</em>.</p>
+<p>Avec ce type de modélisation en streaming, notre pipeline devient potentiellement compatible avec la mise en concurrence de tâches (ex : asyncio ou Python Threads).</p>
+</div>
+</div>
+</div>
+</div>
+</aside></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a50f3c57-467b-4f20-b3a2-259fa8d090a7">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7630,7 +7775,20 @@ graph LR;
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div><aside class="notes">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3a9e3270-884a-4373-99c1-36837ca07503">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Terminons avec un dernier exemple avec lequel les Data Scientists seront déjà familiers : un entrainement de modèle par apprentissage automatique (machine learning).</p>
+<p>On retrouve les structures énoncées précédemment dans un exemple complet.</p>
+</div>
+</div>
+</div>
+</div>
+</aside></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cd573dbc-be1a-4d90-857a-e939f47a25a7">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7648,7 +7806,19 @@ graph LR;
 </div>
 </div>
 </div>
-</div></section><section>
+</div><aside class="notes">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=dc270e1a-ee7e-4e4e-8aee-be5c9d6ea028">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Passons rapidement en revue quelques concepts utiles de programmation fonctionnelle qui nous serons utiles pour la suite. Bien évidemment, le monde de la PF est bien plus important.</p>
+</div>
+</div>
+</div>
+</div>
+</aside></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0871233e-6620-453a-ad14-ad2404991692">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7666,7 +7836,22 @@ graph LR;
 </div>
 </div>
 </div>
-</div></section><section>
+</div><aside class="notes">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cf85707a-7f16-4236-8456-80d2821d7be0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Le langage Python est multi-paradigme : impérative, orienté-objet mais aussi fonctionnel !</p>
+<p>D'ailleurs, il suffit de voir ce que le langage et la bibliothèque standard inclus nativement.</p>
+<p>Egalement, contrairement aux croyances, le langage est typé ! Le typage dynamique bien connu est un effet de bord des références nommées mais derrière le rideau, les objets sont bel et bien fortement typés !</p>
+<p>Remarque pour le typage faible : les annotation de type en Python ne sont pas évaluées à l'exécution ! La vérification de types doit s'effecteur en amont grâce à un validateur tel que <code>mypy</code>. Le typage reste faible car non appliqué à l'exécution mais</p>
+</div>
+</div>
+</div>
+</div>
+</aside></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c6185bde-9fc4-4fb4-84e8-d71ae8013d9d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7682,7 +7867,20 @@ graph LR;
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div><aside class="notes">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=dbd5785e-e42b-4154-92d8-1881a9722241">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Néanmoins, certains concepts qui pourraient nous être utiles ne sont pas inclus nativement et c'est bien dommage !</p>
+<p>Immutabilité : couplé avec des annotations de type (Sequence, Mapping, frozenset, frozen dataclasses) on peut s'en rapprocher au moment de la validation !</p>
+</div>
+</div>
+</div>
+</div>
+</aside></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3a5e07a4-b832-464f-bea9-16a281921431">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7690,32 +7888,36 @@ graph LR;
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="%F0%9F%91%A8%E2%80%8D%F0%9F%92%BB-Mise-en-pratique">👨‍💻 Mise en pratique<a class="anchor-link" href="#%F0%9F%91%A8%E2%80%8D%F0%9F%92%BB-Mise-en-pratique">¶</a></h2><p>Essayons de fusionner les concepts de DAGs et programmation fonctionnelle !</p>
-<!--
-Examples and Code Walkthrough (5 minutes)
-
-    Provide practical examples of writing DAGs using functional programming concepts.
-    Walk through code snippets to illustrate the application of map, filter, reduce, functools.partial, generators, iterators, and lazy evaluation in building data pipelines.
-
-Advantages and Drawbacks (2 minutes)
-
-    Summarize the advantages of using functional data pipelines in Python:
-        Readability and maintainability of code.
-        Improved composability and reusability of functions.
-        Efficient handling of large datasets through lazy evaluation.
-    Discuss potential drawbacks or challenges:
-        Learning curve for those unfamiliar with functional programming.
-        Potential performance trade-offs in certain scenarios.
-
-Conclusion (2 minutes)
-
-    Recap the key points discussed in the talk.
-    Emphasize the power and flexibility of functional programming in designing data pipelines.
-    Encourage attendees to explore and experiment with functional programming concepts in their own data processing workflows.
--->
 </div>
 </div>
 </div>
-</div></section><section>
+</div><aside class="notes">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c22ae016-250b-498d-b790-1070a7637576">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Examples and Code Walkthrough (5 minutes)</p>
+<pre><code>Provide practical examples of writing DAGs using functional programming concepts.
+Walk through code snippets to illustrate the application of map, filter, reduce, functools.partial, generators, iterators, and lazy evaluation in building data pipelines.</code></pre>
+<p>Advantages and Drawbacks (2 minutes)</p>
+<pre><code>Summarize the advantages of using functional data pipelines in Python:
+    Readability and maintainability of code.
+    Improved composability and reusability of functions.
+    Efficient handling of large datasets through lazy evaluation.
+Discuss potential drawbacks or challenges:
+    Learning curve for those unfamiliar with functional programming.
+    Potential performance trade-offs in certain scenarios.</code></pre>
+<p>Conclusion (2 minutes)</p>
+<pre><code>Recap the key points discussed in the talk.
+Emphasize the power and flexibility of functional programming in designing data pipelines.
+Encourage attendees to explore and experiment with functional programming concepts in their own data processing workflows.</code></pre>
+</div>
+</div>
+</div>
+</div>
+</aside></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5e7ce798-5147-4a15-8ff6-ba53ac8ae978">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7730,7 +7932,23 @@ Conclusion (2 minutes)
 </div>
 </div>
 </div>
-</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=e41e5d18-8233-4339-9094-3690ebf75c1f">
+</div><aside class="notes">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8f4ecf80-f780-436d-88dd-220055bdae5f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Commençons avec la propriété de réutilisabilité car il sera réutilisée dans tous les autres exemples.</p>
+<p>Le besoin général est de pouvoir définir des fonctions paramétrables utilisables dans plusieurs contextes : un bloc de traitement d'un graphe pourrait servir dans un autre graphe.</p>
+<p>La PF permet ce genre de chose avec le concept de Curryfication (Currying) : définir une fonction pré-paramétrée pour quelle soit utilisée par la suite.</p>
+<p>En Python, <code>functools.partial</code> permet ce type de construction.
+Voyons comment s'en servir avec un exemple.</p>
+</div>
+</div>
+</div>
+</div>
+</aside></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=e41e5d18-8233-4339-9094-3690ebf75c1f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7804,7 +8022,20 @@ Conclusion (2 minutes)
 </div>
 </div>
 </div>
-</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=973652d9-3804-43fd-a913-561fe022ad2c">
+</div><aside class="notes">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0ae0afd0-02ce-4778-a554-8ffcb79870af">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Peut être l'aspect le plus connu de la programmation fonctionnelle : pouvoir chainer les fonctions les unes aux autres !</p>
+<p>En Python, la composabilité n'est pas supportée nativement mais voyons comment cela se présente :</p>
+</div>
+</div>
+</div>
+</div>
+</aside></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=973652d9-3804-43fd-a913-561fe022ad2c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7901,7 +8132,23 @@ Conclusion (2 minutes)
 </div>
 </div>
 </div>
-</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=e3dcc96e-38d6-4f2d-997e-25d38f88fcde">
+</div><aside class="notes">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a3215a5a-2e61-4a9e-ae78-cfa2e4ee5b6d">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Dernier concept permettant de faire le lien entre tous et surement le plus puissant pour les graphes : l'évaluation paresseuse (lazy evaluation) ! Mais ce n'est pas sans problème ...</p>
+<p>Evaluer une entité uniquement lorsque l'on en a besoin permet de mettre en place un flux de données en streaming. En Python, cela passe par l'utilisation des <em>générateurs</em>.</p>
+<p>Le problème avec l'évaluation paresseuse est que l'on ne peut plus forcément chainer les fonctions entre elles telles quelles. Python fourni la fonction <code>map</code> qui permet d'appliquer une fonction à un itérable (un générateur est un itérable, mais l'inverse n'est pas forcément vrai).</p>
+<p>Autre problème : comment utiliser un itérable par deux ou plusieurs tâches suivantes ? La fonction <code>itertools.tee</code> permet de dupliquer l'itérateur autant de fois que nécessaire.</p>
+<p>Enfin, le problème de l'évaluation paresseuse est qu'il faut un déclencheur de sa matérialisation : généralement en Python la construction d'une liste final permet de déclencher la chaine d'évaluation.</p>
+</div>
+</div>
+</div>
+</div>
+</aside></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=e3dcc96e-38d6-4f2d-997e-25d38f88fcde">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7988,7 +8235,7 @@ Conclusion (2 minutes)
 <li>Données volumineuses bénéficient du streaming avec les générateurs</li>
 <li>Traitement des générateurs par évaluation paresseuse</li>
 <li>Test facilité</li>
-<li>Traitement parallèle possible (<code>concurrent.futures</code>)</li>
+<li>Traitement concurrent / parallèle possible (<code>concurrent.futures</code>)</li>
 </ul>
 </div>
 </div>
