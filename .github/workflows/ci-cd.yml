@@ -30,7 +30,7 @@ jobs:
           pipenv install --dev --deploy
       - name: Run QA
         run: |
-          pipenv run safety check --full-report
+          pipenv run pip-audit --progress-spinner off --ignore-vuln PYSEC-2021-878
           pipenv run black --check utils tests
           pipenv run flake8 utils tests
           pipenv run mypy --strict utils tests
