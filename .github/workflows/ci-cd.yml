@@ -6,8 +6,8 @@ env:
   BASE_URL_PREVIEW: website-romainclement.vercel.app
 
 jobs:
-  test:
-    name: Test
+  qa:
+    name: QA
     runs-on: ubuntu-latest
 
     steps:
@@ -28,12 +28,16 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install --upgrade pipenv
           pipenv install --dev --deploy
-      - name: Run QA
+      - name: Dependencies audit
+        run: pipenv run pip-audit --progress-spinner off
+      - name: Lint check
         run: |
-          pipenv run pip-audit --progress-spinner off --ignore-vuln PYSEC-2021-878
           pipenv run black --check utils tests
           pipenv run flake8 utils tests
-          pipenv run mypy --strict utils tests
+      - name: Static check
+        run: pipenv run mypy --strict utils tests
+      - name: Tests
+        run: |
           pipenv run pytest -v --cov=utils --cov=tests --cov-branch --cov-report=term-missing tests
           pipenv run coverage xml
       - name: Publish code coverage to Codecov
@@ -44,7 +48,7 @@ jobs:
 
   build-preview:
     name: Build Preview
-    needs: test
+    needs: qa
     runs-on: ubuntu-latest
     if: ${{ !contains(github.ref, 'master') && !contains(github.ref, 'tags')}}
 
@@ -98,7 +102,7 @@ jobs:
 
   build-production:
     name: Build Production
-    needs: test
+    needs: qa
     runs-on: ubuntu-latest
     if: contains(github.ref, 'master')
 
@@ -172,7 +176,7 @@ jobs:
       - name: Deploy to Vercel
         run: |
           cd dist
-          DEPLOYMENT_URL=$(vercel --confirm --token $VERCEL_TOKEN)
+          DEPLOYMENT_URL=$(vercel --yes --token $VERCEL_TOKEN)
           vercel alias --token $VERCEL_TOKEN set $DEPLOYMENT_URL $VERCEL_ALIAS
 
   deploy-production:
