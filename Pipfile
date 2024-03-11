@@ -15,7 +15,7 @@ readtime = "==3.0.0"
 [dev-packages]
 black = "==23.12.1"
 faker = "==19.13.0"
-feedparser = "==6.0.10"
+feedparser = "==6.0.11"
 flake8 = "==6.1.0"
 jsonschema = "==4.20.0"
 jupyterlab = "==4.1.0a3"
