@@ -41,7 +41,7 @@ jobs:
           pipenv run pytest -v --cov=utils --cov=tests --cov-branch --cov-report=term-missing tests
           pipenv run coverage xml
       - name: Publish code coverage to Codecov
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           file: ./coverage.xml
