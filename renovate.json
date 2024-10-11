@@ -4,6 +4,7 @@
     ":preserveSemverRanges",
     ":disableDependencyDashboard"
   ],
+  "lockFileMaintenance": { "enabled": true },
   "rangeStrategy": "bump",
   "labels": ["dependencies"],
   "assignees": ["rclement"],
