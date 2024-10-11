@@ -4,6 +4,7 @@
     ":preserveSemverRanges",
     ":disableDependencyDashboard"
   ],
+  "enabledManagers": ["pipenv", "github-actions"],
   "lockFileMaintenance": { "enabled": true },
   "rangeStrategy": "bump",
   "labels": ["dependencies"],
