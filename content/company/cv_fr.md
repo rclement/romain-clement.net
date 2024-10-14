@@ -30,15 +30,15 @@ Mes domaines d'expertise et d'intérêts actuels inclus :
 
 Lors de mes collaborations, je m'efforce de délivrer des solutions lean et pragmatiques en cycles itératifs, afin de développer des produits à forte valeur ajoutée.
 
-Je suis également organisateur du Meetup Python Grenoble, rendez-vous mensuel de la communauté Python alpine.
+Conférencier technique régulier depuis 2019, je suis également organisateur du Meetup Python Grenoble, rendez-vous mensuel de la communauté Python alpine.
 
 ## Compétences
 
 Technologies utilisées de manière régulière (liste non-exhaustive):
 
-- Ingénierie logicielle: Git, Python, Pytest, Mypy, Black, Flake8, Flask, Django, FastAPI
-- Data Science: Scikit-Learn, Keras, Tensorflow, Pandas, Numpy, Matplotlib, Jupyter, MLFlow
-- Data: PostgreSQL, SQLite, Datasette, Metabase
+- Ingénierie logicielle: Git, Python, Pytest, Ruff, Uv, Mypy, Flask, Django, FastAPI
+- Data Science: Scikit-Learn, Tensorflow, Spark, Polars, Pandas, Numpy, Matplotlib, Jupyter, MLFlow, ONNX
+- Data: Databricks, Delta Lake, DuckDB, Arrow, PostgreSQL, SQLite, Datasette, Metabase
 - Infrastructure: Docker, Kubernetes, Terraform, Azure, GCP, Scaleway
 - Automatisation: GitLab-CI, GitHub Actions
 
@@ -64,12 +64,28 @@ Technologies utilisées de manière régulière (liste non-exhaustive):
 
 ## Expérience
 
-**Août 2018 - Présent: Ingénieur et Formateur Data / Machine Learning, Indépendant**
-:   J'accompagne des entreprises dans la conception et le développement d'applications data et machine learning.
+**Août 2018 - Présent: Consultant indépendant Data / Machine Learning (Datalpia)**
+:   J'accompagne des entreprises dans l'industrialisation d'applications data et machine learning, que ce soit pour des cibles cloud, edge ou hybrides.
     Je suis également formateur en Data / IA / DevOps au sein de plusieurs instituts de formation.<br>
     <small>
-    Data Engineering · Data Science · Machine Learning · Deep Learning · DevOps · MLOps · Python · SQL · Docker · Kubernetes · Terraform · CI/CD
+    Machine Learning Engineering · Data Engineering · Data Science · Deep Learning · DevOps · MLOps · Python · SQL · Databricks · Docker · Kubernetes · Terraform · CI/CD
     </small>
+
+    **Août 2023 - Décembre 2025 | Schneider Electric : Lead Technique Data et MLOps**<br>
+    Au sein de l'équipe AI Solutions du AI Hub, industrialisation de use-cases d'intelligence artificielle dans les secteurs de l'automatisation industrielle et de la gestion énergétique intelligente : détection d'anomalies visuelles, maintenance prédictive industrielle, optimisation énergétique des bâtiments.
+
+    - Architecture technique et fonctionnelle cloud, edge, hybride
+    - Développements de pipelines de traitements de données et d'apprentissage automatique
+    - Gestion de données structurées et non-structurées sur datalakes Azure
+    - Optimisation de modèles de Deep Learning pour accélérateur AI Hailo-8
+    - Déploiements sur plateformes Azure Data Factory, Azure Machine Learning, Azure Databricks
+    - Mise en place de processus d'observabilité des pipelines et des modèles
+    - Automatisation complète du cycle de vie en mode DevOps (CI/CD, TDD, IaC)
+    - Aide à la montée en compétences de data scientists et data engineers
+    - Gestion de projet Agile SCRUM
+    - Collaboration internationale avec des équipe aux Etats-Unis, en Inde et en Allemagne
+
+    <small>Machine Learning Engineering · Data Engineering · MLOps · Python · SQL · Pandas · Spark · Docker · Terraform · CI/CD · Azure Machine Learning · Databricks · MLFlow · Scikit-Learn · PyTorch · ONNX · GitHub Enterprise</small>
 
     **Avril 2020 - Aujourd'hui | 440Hz : Lead Technique Software et Data**<br>
     Découverte des besoins, planification projet et mise en place de la stack technique afin d'automatiser progressivement l'activité orientée analyse et traitement de données. Gestion de l’infrastructure sur les plateformes Scaleway et Heroku.
