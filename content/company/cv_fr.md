@@ -65,11 +65,23 @@ Technologies utilisées de manière régulière (liste non-exhaustive):
 ## Expérience
 
 **Août 2018 - Présent: Ingénieur et Formateur Data / Machine Learning, Indépendant**
-:   J'accompagne des entreprises dans la conception et le développement d'applications data et machine learning.
+:   J'accompagne des entreprises dans l'industrialisation d'applications data et machine learning, que ce soit pour des cibles cloud ou edge.
     Je suis également formateur en Data / IA / DevOps au sein de plusieurs instituts de formation.<br>
     <small>
-    Data Engineering · Data Science · Machine Learning · Deep Learning · DevOps · MLOps · Python · SQL · Docker · Kubernetes · Terraform · CI/CD
+    Machine Learning Engineering · Data Engineering · Data Science · Deep Learning · DevOps · MLOps · Python · SQL · Docker · Kubernetes · Terraform · CI/CD
     </small>
+
+    **Août 2023 - Aujourd'hui | Schneider Electric : Lead Technique MLOps**<br>
+    Au sein de l'équipe AI Solutions du AI Hub, industrialisation de use-cases d'intelligence artificielle : inspection visuelle industrielle, maintenance prédictive, optimisation énergétique.
+
+    - Accompagnement de Data Scientists pour l'industrialisation de workflows ML
+    - Développement de pipelines pour l'entraînement et l'inférence de modèles sur Azure Machine Learning et Databricks
+    - Gestion de données structurées et non-structurées sur datalake Azure
+    - Optimisation de modèles de Deep Learning pour accélérateur AI Hailo-8
+    - Infrastructure et déploiements cloud et edge
+    - Collaboration internationale avec des équipe aux Etats-Unis, en Inde et en Allemagne
+
+    <small>Machine Learning Engineering · Data Engineering · MLOps · Python · Docker · Terraform · CI/CD · Azure Machine Learning · Databricks · MLFlow · Scikit-Learn · PyTorch · ONNX</small>
 
     **Avril 2020 - Aujourd'hui | 440Hz : Lead Technique Software et Data**<br>
     Découverte des besoins, planification projet et mise en place de la stack technique afin d'automatiser progressivement l'activité orientée analyse et traitement de données. Gestion de l’infrastructure sur les plateformes Scaleway et Heroku.
