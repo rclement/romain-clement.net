@@ -95,6 +95,7 @@ jobs:
         with:
           name: build-preview
           path: dist
+          include-hidden-files: true
       - id: output_step
         run: |
           echo "::set-output name=github_ref_slug::${GITHUB_REF_SLUG_URL}"
@@ -145,6 +146,7 @@ jobs:
         with:
           name: build-production
           path: dist
+          include-hidden-files: true
       - id: output_step
         run: echo "::set-output name=site_url::${SITE_URL}"
 
