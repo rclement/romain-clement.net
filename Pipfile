@@ -14,7 +14,7 @@ readtime = "==3.0.0"
 
 [dev-packages]
 black = "==24.10.0"
-faker = "==30.3.0"
+faker = "==30.6.0"
 feedparser = "==6.0.11"
 flake8 = "==7.1.1"
 jsonschema = "==4.23.0"
