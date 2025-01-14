@@ -2165,11 +2165,11 @@
         },
         "license-expression": {
             "hashes": [
-                "sha256:6464397f8ed4353cc778999caec43b099f8d8d5b335f282e26a9eb9435522f05",
-                "sha256:7c8f240c6e20d759cb8455e49cb44a923d9e25c436bf48d7e5b8eea660782c04"
+                "sha256:679646bc3261a17690494a3e1cada446e5ee342dbd87dcfa4a0c24cc5dce13ee",
+                "sha256:9f02105f9e0fcecba6a85dfbbed7d94ea1c3a70cf23ddbfb5adf3438a6f6fce0"
             ],
             "markers": "python_version >= '3.9'",
-            "version": "==30.4.0"
+            "version": "==30.4.1"
         },
         "markdown-it-py": {
             "hashes": [
