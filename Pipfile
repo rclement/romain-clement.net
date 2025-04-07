@@ -23,7 +23,7 @@ notebook = "==7.2.2"
 mypy = "==1.14.1"
 matplotlib ="==3.10.0"
 pandas = "==2.2.3"
-pip-audit = "==2.7.3"
+pip-audit = "==2.9.0"
 pytest = "==8.3.4"
 pytest-cov = "==6.0.0"
 
