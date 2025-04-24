@@ -173,6 +173,8 @@ jobs:
         with:
           name: build-preview
           path: dist
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
       - name: Set vercel alias using branch slug
         run: echo "VERCEL_ALIAS=${GITHUB_REF_SLUG_URL}-${BASE_URL_PREVIEW}" >> $GITHUB_ENV
       - name: Deploy to Vercel
@@ -206,6 +208,8 @@ jobs:
         with:
           name: build-production
           path: dist
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
       - name: Deploy to Vercel
         run: cd dist && vercel --confirm --token $VERCEL_TOKEN --prod
       - name: Setup Pages
