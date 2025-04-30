@@ -1128,14 +1128,6 @@
             "markers": "python_version >= '3.9'",
             "version": "==4.9.0"
         },
-        "appnope": {
-            "hashes": [
-                "sha256:1de3860566df9caf38f01f86f65e0e13e379af54f9e4bee1e66b48f2efffd1ee",
-                "sha256:502575ee11cd7a28c0205f379b525beefebab9d161b7c964670864014ed7213c"
-            ],
-            "markers": "python_version >= '3.6'",
-            "version": "==0.1.4"
-        },
         "argon2-cffi": {
             "hashes": [
                 "sha256:879c3e79a2729ce768ebb7d36d4609e3a78a4ca2ec3a9f12286ca057e3d0db08",
@@ -3153,11 +3145,11 @@
         },
         "setuptools": {
             "hashes": [
-                "sha256:a38f898dcd6e5380f4da4381a87ec90bd0a7eec23d204a5552e80ee3cab6bd27",
-                "sha256:c40a5b3729d58dd749c0f08f1a07d134fb8a0a3d7f87dc33e7c5e1f762138650"
+                "sha256:20fe373a22ef9f3925512650d1db90b1b8de01cdb6df91ab1788263139cbf9a2",
+                "sha256:f4b49d457765b3aae7cbbeb1c71f6633a61b729408c2d1a837dae064cca82ef2"
             ],
             "markers": "python_version >= '3.9'",
-            "version": "==80.0.0"
+            "version": "==80.0.1"
         },
         "sgmllib3k": {
             "hashes": [
