@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "a243e74a9d1e32af4ce2604974a874d682e34314927ee562b72da52befe83406"
+            "sha256": "edb58fb55bfeac56fd2c68c8d4a6a17ec3167dcf6a945cee050351d4ef18c76a"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -757,11 +757,11 @@
         },
         "pyyaml-env-tag": {
             "hashes": [
-                "sha256:37f081041b8dca44ed8eb931ce0056f97de17251450f0ed08773dc2bcaf9e683",
-                "sha256:bc952534a872b583f66f916e2dd83e7a7b9087847f4afca6d9c957c48b258ed2"
+                "sha256:17109e1a528561e32f026364712fee1264bc2ea6715120891174ed1b980d2e04",
+                "sha256:2eb38b75a2d21ee0475d6d97ec19c63287a7e140231e4214969d0eac923cd7ff"
             ],
             "markers": "python_version >= '3.9'",
-            "version": "==1.0"
+            "version": "==1.1"
         },
         "pyzmq": {
             "hashes": [
@@ -1927,11 +1927,11 @@
         },
         "jupyter-server": {
             "hashes": [
-                "sha256:872d989becf83517012ee669f09604aa4a28097c0bd90b2f424310156c2cdae3",
-                "sha256:9d446b8697b4f7337a1b7cdcac40778babdd93ba614b6d68ab1c0c918f1c4084"
+                "sha256:3d8db5be3bc64403b1c65b400a1d7f4647a5ce743f3b20dbdefe8ddb7b55af9e",
+                "sha256:65d4b44fdf2dcbbdfe0aa1ace4a842d4aaf746a2b7b168134d5aaed35621b7f6"
             ],
             "markers": "python_version >= '3.9'",
-            "version": "==2.15.0"
+            "version": "==2.16.0"
         },
         "jupyter-server-terminals": {
             "hashes": [
@@ -2359,12 +2359,12 @@
         },
         "notebook": {
             "hashes": [
-                "sha256:498f12cf567d95b20e780d62d52564ee4310248b3175e996b667b5808028e5d3",
-                "sha256:96894962b230013ea0c0a466e4e642c5aace25ba8c86686175b69990ef628ff9"
+                "sha256:9ccef602721aaa5530852e3064710b8ae5415c4e2ce26f8896d0433222755259",
+                "sha256:e739defd28c3f615a6bfb0a2564bd75018a9cc6613aa00bbd9c15e68eed2de1b"
             ],
             "index": "pypi",
             "markers": "python_version >= '3.8'",
-            "version": "==7.4.1"
+            "version": "==7.4.2"
         },
         "notebook-shim": {
             "hashes": [
