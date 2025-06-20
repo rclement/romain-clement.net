@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "1f7096af2bc343afb2914c042c9edec36ef920aba5d70f779e0002f294a8da6e"
+            "sha256": "dd9d2b9a01181877dd80062d1a200554321151495f4aa8b4ce1ed6c5ea73305f"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -446,11 +446,11 @@
         },
         "markdown": {
             "hashes": [
-                "sha256:794a929b79c5af141ef5ab0f2f642d0f7b1872981250230e72682346f7cc90dc",
-                "sha256:7df81e63f0df5c4b24b7d156eb81e4690595239b7d70937d0409f1b0de319c6f"
+                "sha256:247b9a70dd12e27f67431ce62523e675b866d254f900c4fe75ce3dda62237c45",
+                "sha256:5c83764dbd4e00bdd94d85a19b8d55ccca20fe35b2e678a1422b380324dd5f24"
             ],
             "markers": "python_version >= '3.9'",
-            "version": "==3.8"
+            "version": "==3.8.2"
         },
         "markdown2": {
             "hashes": [
@@ -1062,11 +1062,11 @@
         },
         "urllib3": {
             "hashes": [
-                "sha256:414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466",
-                "sha256:4e16665048960a0900c702d4a66415956a584919c03361cac9f1df5c5dd7e813"
+                "sha256:3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760",
+                "sha256:e6b01673c0fa6a13e374b50871808eb3bf7046c4b125b216f6bf1cc604cff0dc"
             ],
             "markers": "python_version >= '3.9'",
-            "version": "==2.4.0"
+            "version": "==2.5.0"
         },
         "watchdog": {
             "hashes": [
@@ -1712,12 +1712,12 @@
         },
         "flake8": {
             "hashes": [
-                "sha256:93b92ba5bdb60754a6da14fa3b93a9361fd00a59632ada61fd7b130436c40343",
-                "sha256:fa558ae3f6f7dbf2b4f22663e5343b6b6023620461f8d4ff2019ef4b5ee70426"
+                "sha256:b9696257b9ce8beb888cdbe31cf885c90d31928fe202be0889a7cdafad32f01e",
+                "sha256:fe044858146b9fc69b551a4b490d69cf960fcb78ad1edcb84e7fbb1b4a8e3872"
             ],
             "index": "pypi",
             "markers": "python_version >= '3.9'",
-            "version": "==7.2.0"
+            "version": "==7.3.0"
         },
         "fonttools": {
             "hashes": [
@@ -2721,11 +2721,11 @@
         },
         "pycodestyle": {
             "hashes": [
-                "sha256:35863c5974a271c7a726ed228a14a4f6daf49df369d8c50cd9a6f58a5e143ba9",
-                "sha256:c8415bf09abe81d9c7f872502a6eee881fbe85d8763dd5b9924bb0a01d67efae"
+                "sha256:c4b5b517d278089ff9d0abdec919cd97262a3367449ea1c8b49b91529167b783",
+                "sha256:dd6bf7cb4ee77f8e016f9c8e74a35ddd9f67e1d5fd4184d86c3b98e07099f42d"
             ],
             "markers": "python_version >= '3.9'",
-            "version": "==2.13.0"
+            "version": "==2.14.0"
         },
         "pycparser": {
             "hashes": [
@@ -2737,11 +2737,11 @@
         },
         "pyflakes": {
             "hashes": [
-                "sha256:5039c8339cbb1944045f4ee5466908906180f13cc99cc9949348d10f82a5c32a",
-                "sha256:6dfd61d87b97fba5dcfaaf781171ac16be16453be6d816147989e7f6e6a9576b"
+                "sha256:b24f96fafb7d2ab0ec5075b7350b3d2d2218eab42003821c06344973d3ea2f58",
+                "sha256:f742a7dbd0d9cb9ea41e9a24a918996e8170c799fa528688d40dd582c8265f4f"
             ],
             "markers": "python_version >= '3.9'",
-            "version": "==3.3.2"
+            "version": "==3.4.0"
         },
         "pygments": {
             "hashes": [
@@ -3289,11 +3289,11 @@
         },
         "urllib3": {
             "hashes": [
-                "sha256:414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466",
-                "sha256:4e16665048960a0900c702d4a66415956a584919c03361cac9f1df5c5dd7e813"
+                "sha256:3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760",
+                "sha256:e6b01673c0fa6a13e374b50871808eb3bf7046c4b125b216f6bf1cc604cff0dc"
             ],
             "markers": "python_version >= '3.9'",
-            "version": "==2.4.0"
+            "version": "==2.5.0"
         },
         "wcwidth": {
             "hashes": [
