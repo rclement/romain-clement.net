@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "668d51914698229f963b080d787d92b46730666657020b76daee617d879a27b1"
+            "sha256": "d914e1d0488e356ba02f564e0edda16b9c8784414b96d58a2010b7113a9369e9"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -2423,12 +2423,12 @@
         },
         "notebook": {
             "hashes": [
-                "sha256:32840f7f777b6bff79bb101159336e9b332bdbfba1495b8739e34d1d65cbc1c0",
-                "sha256:392fd501e266f2fb3466c6fcd3331163a2184968cb5c5accf90292e01dfe528c"
+                "sha256:351635461aca9dad08cf8946a4216f963e2760cc1bf7b1aaaecb23afc33ec046",
+                "sha256:7c2c4ea245913c3ad8ab3e5d36b34a842c06e524556f5c2e1f5d7d08c986615e"
             ],
             "index": "pypi",
             "markers": "python_version >= '3.8'",
-            "version": "==7.4.4"
+            "version": "==7.4.5"
         },
         "notebook-shim": {
             "hashes": [
