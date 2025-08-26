@@ -22,9 +22,7 @@ jobs:
       - name: Dependencies audit
         run: uv run pip-audit
       - name: Lint check
-        run: |
-          uv run black --check utils tests
-          uv run flake8 utils tests
+        run: uv run ruff check utils tests
       - name: Static check
         run: uv run mypy --strict utils tests
       - name: Tests
