@@ -10,13 +10,13 @@
 
 ``` bash
 # install dependencies
-$ pipenv install -d
+$ uv sync
 
 # serve with hot reload at http://localhost:8000
-$ mkdocs serve
+$ uv run --env-file .env mkdocs serve
 
 # generate static project
-$ mkdocs build
+$ uv run --env-file .env mkdocs build
 ```
 
 For detailed explanation on how things work, checkout [MkDocs docs](https://mkdocs.org).
