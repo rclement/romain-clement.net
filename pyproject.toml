@@ -30,7 +30,7 @@ dev = [
     "pandas==2.3.2",
     "pip-audit==2.9.0",
     "pytest==8.4.2",
-    "pytest-cov==6.2.1",
+    "pytest-cov==7.0.0",
     "ruff==0.13.0",
     "types-jsonschema>=4.25.1.20250822",
 ]
