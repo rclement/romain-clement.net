@@ -23,6 +23,7 @@ nav:
       - projects/griffonnage.md
   - Talks:
       - talks/index.md
+      - talks/pyconfr-lyon-2025-lakehouse.md
       - talks/pydata-paris-2025-ml-models.md
       - talks/pydata-paris-2025-lakehouse.md
       - talks/macbookpro-from-the-dead.md
