@@ -28,7 +28,7 @@ dev = [
     "mypy==1.19.0",
     "matplotlib==3.10.7",
     "pandas==2.3.3",
-    "pip-audit==2.9.0",
+    "pip-audit==2.10.0",
     "pytest==9.0.1",
     "pytest-cov==7.0.0",
     "ruff==0.14.7",
