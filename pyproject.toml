@@ -31,7 +31,7 @@ dev = [
     "pip-audit==2.9.0",
     "pytest==9.0.1",
     "pytest-cov==7.0.0",
-    "ruff==0.14.7",
+    "ruff==0.14.8",
     "types-jsonschema>=4.25.1.20250822",
 ]
 
