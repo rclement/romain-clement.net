@@ -71,7 +71,7 @@ jobs:
           cp content/.vercelignore dist/.
           echo "${SITE_URL}" > dist/CNAME
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: build-preview
           path: dist
@@ -113,7 +113,7 @@ jobs:
           cp content/.vercelignore dist/.
           echo "${SITE_URL}" > dist/CNAME
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: build-production
           path: dist
@@ -140,7 +140,7 @@ jobs:
       - name: Inject slug/short variables
         uses: rlespinasse/github-slug-action@v5
       - name: Download build artifacts
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v7
         with:
           name: build-preview
           path: dist
@@ -175,7 +175,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Download build artifacts
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v7
         with:
           name: build-production
           path: dist
