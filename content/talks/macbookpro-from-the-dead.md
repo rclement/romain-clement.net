@@ -10,6 +10,18 @@ My MacBook Pro 2015 has served me well for the last 7 years. However, recently a
 
 This lightning talk is a review with a humourous take on what it takes to try to repair a laptop with hard-to-fix components. It should be the mandatory warning information hardware vendor should provide to customers when buying their products!
 
+## Video
+
+<iframe
+    width="600"
+    height="340"
+    title="PyData Paris 2024 - Romain Clement - Bringing my MacBook Pro from the Dead"
+    src="https://www.youtube.com/embed/Z2agL6Dgako?start=2394"
+    sandbox="allow-same-origin allow-scripts allow-popups"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+
 ## Slides
 
 <iframe
