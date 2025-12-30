@@ -6,6 +6,18 @@ Talk given on October 1st, 2025 at the [PyData Paris 2025][pydata] conference.
 
 Deploying ML models doesn’t have to mean spinning up servers and writing backend code. This talk shows how to run machine learning inference directly in the browser—using ONNX and WebAssembly—to go from prototype to interactive demo in minutes, not weeks.
 
+## Video
+
+<iframe
+    width="600"
+    height="340"
+    title="PyData Paris 2025 - Romain Clement - Machine Learning in the Browser: Fast Iteration with ONNX & WebAssembly"
+    src="https://www.youtube-nocookie.com/embed/6kWpRAr1ic8"
+    frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+></iframe>
+
 ## Slides
 
 <iframe
