@@ -5,18 +5,6 @@ hide:
 robots: noindex, nofollow
 ---
 
-<!--
-Idea:
-- use YAML frontmatter metadata for sections
-- use specific cv jinja2 template (might require css print media queries for good printing)
-- add print link in template
-- auto-generate PDF on CI? (might not be necessary)
-- samples:
-    - https://www.arp242.net/cv/cv-martintournoij
-    - https://serhii.vasylenko.info/cv/
-    - https://ano.ee/cv
- -->
-
 # Romain Clement
 
 > Freelance Data / Machine Learning Engineer & Trainer
@@ -42,15 +30,15 @@ My current domains of expertise and interest include:
 
 When collaborating with companies, I strive to deliver lean and pragmatic solutions in iterative cycles, in order to develop products with strong added value.
 
-I am also the organizer of the Meetup Python Grenoble, monthly meeting of the alpine Python community.
+Regular technical speaker at various events since 2019, I am also the organizer of the Meetup Python Grenoble, monthly meeting of the alpine Python community.
 
 ## Skills
 
 Technologies used on a regular basis (non-exhaustive list):
 
-- Software engineering: Git, Python, Pytest, Mypy, Black, Flake8, Flask, Django, FastAPI
-- Data Science: Scikit-Learn, Keras, Tensorflow, Pandas, Numpy, Matplotlib, Jupyter, MLFlow
-- Data: PostgreSQL, SQLite, Datasette, Metabase
+- Software engineering: Git, Python, Pytest, Ruff, Uv, Mypy, Flask, Django, FastAPI
+- Data Science: Scikit-Learn, Tensorflow, Spark, Polars, Pandas, Numpy, Matplotlib, Jupyter, MLFlow, ONNX
+- Data: Databricks, Delta Lake, DuckDB, Arrow, PostgreSQL, SQLite, Datasette, Metabase
 - Infrastructure: Docker, Kubernetes, Terraform, Azure, GCP, Scaleway
 - Automation: GitLab-CI, GitHub Actions
 
@@ -77,13 +65,28 @@ Technologies used on a regular basis (non-exhaustive list):
 
 ## Work Experience
 
-**August 2018 - Present: Data / Machine Learning Engineer & Trainer | Freelance**
-:   I work with companies in data and machine learning applications design and
-    development. I am also a part-time data and AI development trainer within
-    several education institutes.<br>
+**August 2018 - Present: Freelance Data / Machine Learning Consultant (Datalpia)**
+:   I help companies industrialize data and machine learning applications, whether for cloud, edge, or hybrid targets.
+    I am also a part-time data and AI development trainer within several education institutes.<br>
     <small>
-    Data Engineering · Data Science · Machine Learning · Deep Learning · DevOps · MLOps · Python · SQL · Docker · Kubernetes · Terraform · CI/CD
+    Machine Learning Engineering · Data Engineering · Data Science · Deep Learning · DevOps · MLOps · Python · SQL · Databricks · Docker · Kubernetes · Terraform · CI/CD
     </small>
+
+    **August 2023 - December 2025 | Schneider Electric: Data and MLOps Technical Lead**<br>
+    Within the AI Hub's AI Solutions team, industrialization of artificial intelligence use cases in the industrial automation and smart energy management sectors: visual anomaly detection, industrial predictive maintenance, building energy consumption optimization.
+
+    - Cloud, edge, and hybrid technical and functional architecture
+    - Development of data processing and machine learning pipelines
+    - Management of structured and unstructured data on Azure datalakes
+    - Optimization of Deep Learning models for Hailo-8 AI accelerator
+    - Deployments on Azure Data Factory, Azure Machine Learning, Azure Databricks platforms
+    - Implementation of pipeline and model observability processes
+    - Complete automation of the lifecycle in DevOps mode (CI/CD, TDD, IaC)
+    - Assistance in upskilling data scientists and data engineers
+    - Agile SCRUM project management
+    - International collaboration with teams in the United States, India, and Germany
+
+    <small>Machine Learning Engineering · Data Engineering · MLOps · Python · SQL · Pandas · Spark · Docker · Terraform · CI/CD · Azure Machine Learning · Databricks · MLFlow · Scikit-Learn · PyTorch · ONNX · GitHub Enterprise</small>
 
     **April 2020 - Today | 440Hz : Software and Data Technical Lead**<br>
     Identification of requirements, project planning and implementation of the technical stack to progressively automate data analysis and processing business activities. Infrastructure management on Scaleway and Heroku platforms.
