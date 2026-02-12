@@ -20,7 +20,7 @@ dependencies = [
 
 [dependency-groups]
 dev = [
-    "faker==40.1.0",
+    "faker==40.4.0",
     "feedparser==6.0.12",
     "jsonschema==4.26.0",
     "jupyterlab==4.4.10",
