@@ -12,6 +12,18 @@ Nous verrons comment obtenir les fonctionnalités avancées (tables ACID, histor
 
 Cette conférence s'adresse aux ingénieurs data, ingénieurs ML et data scientists souhaitant simplifier leur stack technique sans perdre les fonctionnalités essentielles.
 
+## Video
+
+<iframe
+    width="600"
+    height="340"
+    title="PyConFR Lyon 2025 - Romain Clement - Travailler avec des Data Lakehouses en Python, sans Spark"
+    src="https://indymotion.fr/videos/embed/5dsPsSnoe6YeQ7LBgWKNAt"
+    frameborder="0"
+    allow="fullscreen"
+    sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+></iframe>
+
 ## Slides
 
 <iframe
