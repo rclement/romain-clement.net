@@ -21,8 +21,7 @@ jobs:
         run: uv sync --all-extras --dev
       - name: Dependencies audit
         run: |
-          uv run pip-audit \
-            --ignore-vuln CVE-2025-53000
+          uv run pip-audit
       - name: Lint check
         run: uv run ruff check utils tests
       - name: Static check
