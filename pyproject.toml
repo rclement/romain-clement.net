@@ -7,7 +7,7 @@ license = { text = "AGPL-3.0-or-later" }
 authors = [
     { name = "Romain Clement", email = "git@romain-clement.net" }
 ]
-requires-python = "==3.13.*"
+requires-python = "==3.14.*"
 dependencies = [
     "babel==2.18.0",
     "mkdocs==1.6.1",
