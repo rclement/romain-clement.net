@@ -27,7 +27,7 @@ dev = [
     "notebook==7.5.3",
     "mypy==1.19.1",
     "matplotlib==3.10.8",
-    "pandas==3.0.0",
+    "pandas==3.0.1",
     "pip-audit==2.10.0",
     "pytest==9.0.2",
     "pytest-cov==7.0.0",
