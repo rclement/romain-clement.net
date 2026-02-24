@@ -24,7 +24,7 @@ dev = [
     "feedparser==6.0.12",
     "jsonschema==4.26.0",
     "jupyterlab==4.5.5",
-    "notebook==7.5.3",
+    "notebook==7.5.4",
     "mypy==1.19.1",
     "matplotlib==3.10.8",
     "pandas==3.0.1",
