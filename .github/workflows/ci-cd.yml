@@ -157,7 +157,9 @@ jobs:
       - name: Get current branch name slug
         run: |
           BRANCH_NAME="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
+          MAX_SLUG_LENGTH=$((63 - ${#BASE_URL_PREVIEW} - 1))
           BRANCH_NAME_SLUG=$(echo "${BRANCH_NAME}" | tr '[:upper:]' '[:lower:]' | sed -E 's#[^a-z0-9]+#-#g; s#^-+##; s#-+$##')
+          BRANCH_NAME_SLUG=${BRANCH_NAME_SLUG:0:$MAX_SLUG_LENGTH}
           echo "BRANCH_NAME_SLUG=${BRANCH_NAME_SLUG}" >> $GITHUB_ENV
       - name: Set preview site URL using branch slug
         run: echo "SITE_URL=https://${BRANCH_NAME_SLUG}-${BASE_URL_PREVIEW}" >> $GITHUB_ENV
