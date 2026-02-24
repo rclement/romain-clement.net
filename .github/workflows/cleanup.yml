@@ -23,15 +23,7 @@ jobs:
       - name: Get current branch name slug
         run: |
           BRANCH_NAME="${GITHUB_EVENT_REF}"
-          if [ -z "${BASE_URL_PREVIEW}" ]; then
-            echo "BASE_URL_PREVIEW is not set."
-            exit 1
-          fi
           MAX_SLUG_LENGTH=$((63 - ${#BASE_URL_PREVIEW} - 1))
-          if [ "$MAX_SLUG_LENGTH" -le 0 ]; then
-            echo "BASE_URL_PREVIEW is too long to compute a valid branch slug."
-            exit 1
-          fi
           BRANCH_NAME_SLUG=$(echo "${BRANCH_NAME}" | tr '[:upper:]' '[:lower:]' | sed -E 's#[^a-z0-9]+#-#g; s#^-+##; s#-+$##')
           BRANCH_NAME_SLUG=${BRANCH_NAME_SLUG:0:$MAX_SLUG_LENGTH}
           echo "BRANCH_NAME_SLUG=${BRANCH_NAME_SLUG}" >> $GITHUB_ENV
