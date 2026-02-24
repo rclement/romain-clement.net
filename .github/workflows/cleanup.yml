@@ -16,13 +16,11 @@ jobs:
       VERCEL_TOKEN: ${{ secrets.NOW_TOKEN }}
 
     steps:
-      - name: Inject slug/short variables
-        uses: rlespinasse/github-slug-action@v5
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
       - name: Get current branch name slug
         run: |
-          BRANCH_NAME="${GITHUB_EVENT_REF}"
+          BRANCH_NAME="${{ github.event.ref }}"
           MAX_SLUG_LENGTH=$((63 - ${#BASE_URL_PREVIEW} - 1))
           BRANCH_NAME_SLUG=$(echo "${BRANCH_NAME}" | tr '[:upper:]' '[:lower:]' | sed -E 's#[^a-z0-9]+#-#g; s#^-+##; s#-+$##')
           BRANCH_NAME_SLUG=${BRANCH_NAME_SLUG:0:$MAX_SLUG_LENGTH}
