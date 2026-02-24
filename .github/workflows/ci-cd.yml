@@ -156,10 +156,19 @@ jobs:
         run: uv sync --all-extras --dev
       - name: Get current branch name slug
         run: |
+          if [ -z "${BASE_URL_PREVIEW}" ]; then
+            echo "BASE_URL_PREVIEW must be set"
+            exit 1
+          fi
           BRANCH_NAME="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
+          MIN_SLUG_LENGTH=8
           MAX_SLUG_LENGTH=$((63 - ${#BASE_URL_PREVIEW} - 1))
+          if [ "${MAX_SLUG_LENGTH}" -lt "${MIN_SLUG_LENGTH}" ]; then
+            echo "BASE_URL_PREVIEW is too long for preview alias generation"
+            exit 1
+          fi
           BRANCH_NAME_SLUG=$(echo "${BRANCH_NAME}" | tr '[:upper:]' '[:lower:]' | sed -E 's#[^a-z0-9]+#-#g; s#^-+##; s#-+$##')
-          BRANCH_NAME_SLUG=${BRANCH_NAME_SLUG:0:$MAX_SLUG_LENGTH}
+          BRANCH_NAME_SLUG=$(echo "${BRANCH_NAME_SLUG:0:$MAX_SLUG_LENGTH}" | sed -E 's#-+$##')
           echo "BRANCH_NAME_SLUG=${BRANCH_NAME_SLUG}" >> $GITHUB_ENV
       - name: Set preview site URL using branch slug
         run: echo "SITE_URL=https://${BRANCH_NAME_SLUG}-${BASE_URL_PREVIEW}" >> $GITHUB_ENV
