@@ -218,7 +218,7 @@ jobs:
           path: dist
           include-hidden-files: true
       - id: output_step
-        run: echo "::set-output name=site_url::${SITE_URL}"
+        run: echo "site_url=${SITE_URL}" >> $GITHUB_OUTPUT
 
   deploy-preview:
     name: Deploy Preview
@@ -228,6 +228,9 @@ jobs:
       name: preview/${{ needs.build-preview.outputs.github_ref_slug }}
       url: ${{ needs.build-preview.outputs.site_url }}
     if: ${{ github.ref != 'refs/heads/master' && !startsWith(github.ref, 'refs/tags/') }}
+
+    outputs:
+      site_url: ${{ needs.build-preview.outputs.site_url }}
 
     env:
       VERCEL_ORG_ID: ${{ secrets.NOW_ORG_ID }}
@@ -251,6 +254,24 @@ jobs:
           DEPLOYMENT_URL=$(vercel --yes --token $VERCEL_TOKEN)
           vercel alias --token $VERCEL_TOKEN set $DEPLOYMENT_URL $VERCEL_ALIAS
 
+  e2e-preview:
+    name: E2E Tests Preview
+    needs: deploy-preview
+    runs-on: ubuntu-latest
+    if: ${{ github.ref != 'refs/heads/master' && !startsWith(github.ref, 'refs/tags/') }}
+
+    steps:
+      - uses: actions/checkout@v6
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          enable-cache: true
+          cache-dependency-glob: "uv.lock"
+      - name: Install dependencies
+        run: uv sync --all-extras --dev
+      - name: Run E2E tests
+        run: uv run pytest -v e2e_tests --base-url "${{ needs.deploy-preview.outputs.site_url }}"
+
   deploy-production:
     name: Deploy Production
     needs: build-production
@@ -259,6 +280,9 @@ jobs:
       name: production
       url: ${{ needs.build-production.outputs.site_url }}
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+
+    outputs:
+      site_url: ${{ needs.build-production.outputs.site_url }}
 
     permissions:
       pages: write
@@ -289,3 +313,21 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  e2e-production:
+    name: E2E Tests Production
+    needs: deploy-production
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+
+    steps:
+      - uses: actions/checkout@v6
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          enable-cache: true
+          cache-dependency-glob: "uv.lock"
+      - name: Install dependencies
+        run: uv sync --all-extras --dev
+      - name: Run E2E tests
+        run: uv run pytest -v e2e_tests --base-url "${{ needs.deploy-production.outputs.site_url }}"
