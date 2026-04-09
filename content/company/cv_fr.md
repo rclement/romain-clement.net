@@ -7,7 +7,7 @@ robots: noindex, nofollow
 
 # Romain Clement
 
-> Ingénieur et Formateur Data / Machine Learning | Freelance
+> Consultant indépendant MLOps
 
 [:fontawesome-solid-at:](mailto:cv@romain-clement.net "E-mail")
 <span style="margin-right: 0.5rem;"></span>
@@ -64,12 +64,20 @@ Technologies utilisées de manière régulière (liste non-exhaustive):
 
 ## Expérience
 
-**Août 2018 - Présent: Consultant indépendant Data / Machine Learning (Datalpia)**
+**Août 2018 - Présent: Consultant indépendant MLOps (Datalpia)**
 :   J'accompagne des entreprises dans l'industrialisation d'applications data et machine learning, que ce soit pour des cibles cloud, edge ou hybrides.
     Je suis également formateur en Data / IA / DevOps au sein de plusieurs instituts de formation.<br>
     <small>
     Machine Learning Engineering · Data Engineering · Data Science · Deep Learning · DevOps · MLOps · Python · SQL · Databricks · Docker · Kubernetes · Terraform · CI/CD
     </small>
+
+    **Mars 2026 - Aujourd'hui | Blue Ortho : Consultant MLOps**<br>
+    Accompagnement technique et organisationnel de la stratégie MLOps en cours de mise en oeuvre chez Blue Ortho.
+
+    - Audit technique et organisationnel de la stratégie MLOps
+    - Conseil sur la stratégie MLOps court/moyen/long terme
+
+    <small>MLOps · Machine Learning Engineering · Data Engineering · Python · Pandas · Azure · Kubernetes · Docker · OpenTofu · CI/CD · Scikit-Learn · PyTorch · ONNX</small>
 
     **Août 2023 - Décembre 2025 | Schneider Electric : Lead Technique Data et MLOps**<br>
     Au sein de l'équipe AI Solutions du AI Hub, industrialisation de use-cases d'intelligence artificielle dans les secteurs de l'automatisation industrielle et de la gestion énergétique intelligente : détection d'anomalies visuelles, maintenance prédictive industrielle, optimisation énergétique des bâtiments.
