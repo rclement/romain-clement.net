@@ -69,6 +69,19 @@ Looking for a freelance engineer and/or trainer for your next project? Let's tal
 
 ---
 
+<iframe
+    src="https://business-card-generator.vercel.app/card?card_type=vcard&firstname=Romain&lastname=Clement&nickname=&picture=https%3A%2F%2Fdatalpia.com%2Fstatic%2Flogo.svg&birthday=&company=Datalpia&job=Owner&email=hello%40datalpia.com&phone=%2B33686101895&website=https%3A%2F%2Fdatalpia.com&street=&city=&zipcode=&state=&country="
+    width="500"
+    height="600"
+    scrolling="no"
+    frameborder="0"
+    webkitallowfullscreen
+    mozallowfullscreen
+    allowfullscreen
+></iframe>
+
+---
+
 You can either fill the contact form below or book a 30 minutes call with me.
 Be sure to include every detail I should know in advance to make it effective!
 
