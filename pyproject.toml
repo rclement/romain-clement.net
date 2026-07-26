@@ -23,7 +23,7 @@ dev = [
     "faker==40.12.0",
     "feedparser==6.0.12",
     "jsonschema==4.26.0",
-    "jupyterlab==4.5.6",
+    "jupyterlab==4.5.10",
     "notebook==7.5.5",
     "mypy==1.19.1",
     "matplotlib==3.10.8",
