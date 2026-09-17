@@ -1,9 +1,9 @@
 import json
+from pathlib import Path
+
 import feedparser
 import jsonschema
 import pytest
-
-from pathlib import Path
 from mkdocs.config.defaults import MkDocsConfig
 
 

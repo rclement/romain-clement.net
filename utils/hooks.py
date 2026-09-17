@@ -1,12 +1,13 @@
 import email.utils
 import re
+from collections.abc import MutableMapping
+from datetime import UTC, date, datetime
+from pathlib import Path
+from typing import Any
+
 import jinja2
 import mkdocs.exceptions
 import readtime
-
-from datetime import date, datetime, timezone
-from pathlib import Path
-from typing import Any, Dict, MutableMapping, Union
 from babel.dates import format_date
 from mkdocs.config.defaults import MkDocsConfig
 from mkdocs.structure.pages import Page
@@ -27,12 +28,12 @@ form_regex = re.compile(r"\{\{ form \}\}")
 
 
 def render_form(
-    source: str, metadata: MutableMapping[str, Any], forms_config: Dict[str, Any]
+    source: str, metadata: MutableMapping[str, Any], forms_config: dict[str, Any]
 ) -> str:
     page_form = metadata.get("form")
     if page_form is not None:
         form_name = page_form.get("name")
-        if form_name is not None and form_name not in forms_config.keys():
+        if form_name is not None and form_name not in forms_config:
             raise mkdocs.exceptions.PluginError(
                 f"Undefined form {form_name}. Please define the form in MkDocs config."
             )
@@ -52,13 +53,13 @@ def render_form(
     return source
 
 
-def to_iso8601(dt: Union[date, datetime]) -> str:
-    dt = datetime.combine(dt, datetime.min.time(), tzinfo=timezone.utc)
+def to_iso8601(dt: date | datetime) -> str:
+    dt = datetime.combine(dt, datetime.min.time(), tzinfo=UTC)
     return dt.isoformat()
 
 
-def to_rfc822(dt: Union[date, datetime]) -> str:
-    dt = datetime.combine(dt, datetime.min.time(), tzinfo=timezone.utc)
+def to_rfc822(dt: date | datetime) -> str:
+    dt = datetime.combine(dt, datetime.min.time(), tzinfo=UTC)
     return email.utils.format_datetime(dt, usegmt=False)
 
 
