@@ -1,17 +1,16 @@
 import math
+from datetime import UTC, date, datetime
+from typing import Any
+from unittest.mock import MagicMock
+
 import jinja2
 import mkdocs.exceptions
 import pytest
-
-from datetime import date, datetime
-from unittest.mock import MagicMock
-from typing import Any, Dict, Union
 from faker import Faker
 from mkdocs.config.defaults import MkDocsConfig
 from mkdocs.structure.pages import Page
 
 from utils import hooks
-
 
 # ------------------------------------------------------------------------------
 
@@ -53,36 +52,36 @@ def markdown_form(faker: Faker) -> str:
 
 
 @pytest.fixture(scope="function")
-def page_meta_form() -> Dict[str, Any]:
-    return dict(
-        form=dict(
-            name="test_form",
-            fields=dict(
-                name=dict(
-                    label="Name",
-                    placeholder="Your name",
-                    type="text",
-                    autocomplete=True,
-                    required=True,
-                )
-            ),
-            buttons=dict(submit=dict(type="submit", value="Send")),
-            redirect=dict(success="/success", error="/error"),
-        )
-    )
+def page_meta_form() -> dict[str, Any]:
+    return {
+        "form": {
+            "name": "test_form",
+            "fields": {
+                "name": {
+                    "label": "Name",
+                    "placeholder": "Your name",
+                    "type": "text",
+                    "autocomplete": True,
+                    "required": True,
+                }
+            },
+            "buttons": {"submit": {"type": "submit", "value": "Send"}},
+            "redirect": {"success": "/success", "error": "/error"},
+        }
+    }
 
 
 @pytest.fixture(scope="function")
-def config_forms() -> Dict[str, Any]:
-    return dict(
-        test_form=dict(
-            base_url="https://forms.com",
-            method="POST",
-            action_path="/api/mail/form",
-            action_path_js="/api/mail",
-            enable_js=True,
-        )
-    )
+def config_forms() -> dict[str, Any]:
+    return {
+        "test_form": {
+            "base_url": "https://forms.com",
+            "method": "POST",
+            "action_path": "/api/mail/form",
+            "action_path_js": "/api/mail",
+            "enable_js": True,
+        }
+    }
 
 
 # ------------------------------------------------------------------------------
@@ -135,7 +134,7 @@ def test_localized_date_success(
 
 
 def test_render_form_success(
-    markdown_form: str, page_meta_form: Dict[str, Any], config_forms: Dict[str, Any]
+    markdown_form: str, page_meta_form: dict[str, Any], config_forms: dict[str, Any]
 ) -> None:
     action_path_url = str(config_forms["test_form"]["base_url"]) + str(
         config_forms["test_form"]["action_path"]
@@ -150,7 +149,7 @@ def test_render_form_success(
 
 
 def test_render_form_undefined_name(
-    markdown_form: str, page_meta_form: Dict[str, Any], config_forms: Dict[str, Any]
+    markdown_form: str, page_meta_form: dict[str, Any], config_forms: dict[str, Any]
 ) -> None:
     page_meta_form["form"]["name"] = "undefined_form"
     with pytest.raises(mkdocs.exceptions.PluginError):
@@ -158,7 +157,7 @@ def test_render_form_undefined_name(
 
 
 def test_render_form_no_placeholder(
-    markdown_form: str, page_meta_form: Dict[str, Any], config_forms: Dict[str, Any]
+    markdown_form: str, page_meta_form: dict[str, Any], config_forms: dict[str, Any]
 ) -> None:
     markdown_form = markdown_form.replace("{{ form }}", "")
     rendered = hooks.render_form(markdown_form, page_meta_form, config_forms)
@@ -166,7 +165,7 @@ def test_render_form_no_placeholder(
 
 
 def test_render_form_no_form(
-    markdown_form: str, page_meta_form: Dict[str, Any], config_forms: Dict[str, Any]
+    markdown_form: str, page_meta_form: dict[str, Any], config_forms: dict[str, Any]
 ) -> None:
     del page_meta_form["form"]
     rendered = hooks.render_form(markdown_form, page_meta_form, config_forms)
@@ -180,10 +179,10 @@ def test_render_form_no_form(
     ("dt", "expected"),
     (
         (date(2021, 1, 2), "2021-01-02T00:00:00+00:00"),
-        (datetime(2021, 1, 2), "2021-01-02T00:00:00+00:00"),
+        (datetime(2021, 1, 2, tzinfo=UTC), "2021-01-02T00:00:00+00:00"),
     ),
 )
-def test_to_iso8601(dt: Union[date, datetime], expected: str) -> None:
+def test_to_iso8601(dt: date | datetime, expected: str) -> None:
     result = hooks.to_iso8601(dt)
     assert result == expected
 
@@ -195,10 +194,10 @@ def test_to_iso8601(dt: Union[date, datetime], expected: str) -> None:
     ("dt", "expected"),
     (
         (date(2021, 1, 2), "Sat, 02 Jan 2021 00:00:00 +0000"),
-        (datetime(2021, 1, 2), "Sat, 02 Jan 2021 00:00:00 +0000"),
+        (datetime(2021, 1, 2, tzinfo=UTC), "Sat, 02 Jan 2021 00:00:00 +0000"),
     ),
 )
-def test_to_rfc822(dt: Union[date, datetime], expected: str) -> None:
+def test_to_rfc822(dt: date | datetime, expected: str) -> None:
     result = hooks.to_rfc822(dt)
     assert result == expected
 
@@ -219,10 +218,10 @@ def test_on_env_success() -> None:
 
 
 def test_on_page_markdown_success(
-    markdown_form: str, page_meta_form: Dict[str, Any], config_forms: Dict[str, Any]
+    markdown_form: str, page_meta_form: dict[str, Any], config_forms: dict[str, Any]
 ) -> None:
     config = MkDocsConfig()
-    config["extra"] = dict(forms=config_forms)
+    config["extra"] = {"forms": config_forms}
     page = Page("Test Page", MagicMock(), config)
     page.meta = page_meta_form
 

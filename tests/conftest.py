@@ -1,13 +1,12 @@
 import os
-import pytest
-
+from collections.abc import Generator
 from pathlib import Path
 from shutil import rmtree
-from typing import Generator
+
+import pytest
+from mkdocs.commands import build
 from mkdocs.config.base import load_config
 from mkdocs.config.defaults import MkDocsConfig
-from mkdocs.commands import build
-
 
 os.environ["SITE_URL"] = "http://localhost"
 os.environ["MAILER_URL"] = "http://mailer.local"
@@ -23,7 +22,7 @@ def mkdocs_config() -> MkDocsConfig:
 
 
 @pytest.fixture(scope="session", autouse=True)
-def mkdocs_build(mkdocs_config: MkDocsConfig) -> Generator[None, None, None]:
+def mkdocs_build(mkdocs_config: MkDocsConfig) -> Generator[None]:
     mkdocs_config["plugins"].run_event("startup", command="build", dirty=False)
     build.build(mkdocs_config)
     mkdocs_config["plugins"].run_event("shutdown")
