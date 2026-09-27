@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif">
+<title>Intermediate representation model</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"/></marker></defs>
+<g fill="none" stroke="#94a3b8" stroke-width="3" marker-end="url(#arrow)">
+<path d="M 372 255 C 420 255 420 345 466 345"/><path d="M 372 395 L 466 395"/><path d="M 372 535 C 420 535 420 445 466 445"/>
+<path d="M 810 345 C 860 345 860 255 906 255"/><path d="M 810 395 L 906 395"/><path d="M 810 445 C 860 445 860 535 906 535"/>
+</g>
+<rect x="470" y="220" width="340" height="320" rx="20" fill="#1e293b" stroke="#e2e8f0" stroke-width="3" stroke-dasharray="10 8"/>
+<g text-anchor="middle" font-size="29" font-weight="700" fill="#f1f5f9">
+<text x="640" y="268">Intermediate</text><text x="640" y="304">Representation Model</text>
+</g>
+<g fill="none" stroke="#94a3b8" stroke-width="2.5">
+<path d="M 590 372 L 640 416"/><path d="M 690 372 L 640 416"/><path d="M 640 416 L 640 462"/><path d="M 640 462 L 640 506"/>
+</g>
+<g fill="#dbeafe" stroke="#3b82f6" stroke-width="2.5">
+<rect x="560" y="352" width="60" height="28" rx="8"/><rect x="660" y="352" width="60" height="28" rx="8"/><rect x="600" y="402" width="80" height="28" rx="8"/><rect x="600" y="448" width="80" height="28" rx="8"/>
+<rect x="610" y="494" width="60" height="28" rx="8" fill="#dcfce7" stroke="#22c55e"/>
+</g>
+</svg>
