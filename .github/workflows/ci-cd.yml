@@ -218,7 +218,8 @@ jobs:
           path: dist
           include-hidden-files: true
       - id: output_step
-        run: echo "site_url=${SITE_URL}" >> $GITHUB_OUTPUT
+        # Read from file instead of env to avoid GitHub Actions masking secret values in outputs
+        run: echo "site_url=$(cat dist/CNAME)" >> $GITHUB_OUTPUT
 
   deploy-preview:
     name: Deploy Preview
